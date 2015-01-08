@@ -1,7 +1,20 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
+include_once("./db_connect.inc");
+
 // Declaring GET-Variables as Normals
 $state = $_GET['state'];
 $id = $_GET['id'];
+
+// Importing classes
+include_once("./classes/class_conflict.php");
+include_once("./classes/class_user.php");
+
+// Instance User Classes
+/*$user_objects = array();
+foreach($users as $user) {
+	$user_objects[] = new user;
+}*/
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +26,14 @@ $id = $_GET['id'];
 </head>
 <body>
 <section id="mirror">
-	<div class="mirror"></div>
+	<div class="mirror">
+<?php
+	switch($state) {
+		default:
+			echo "<img src='./img/mirror_states/welcome.jpg'>";
+	}
+?>
+	</div>
 </section>
 <section id="bracelet">
 	<div class="bracelet vibration">
@@ -25,5 +45,8 @@ $id = $_GET['id'];
 		<span class="LED"></span>
 	</div>
 </section>
+<?php
+	$user = new User(0);
+?>
 </body>
 </html>
