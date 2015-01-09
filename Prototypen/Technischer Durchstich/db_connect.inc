@@ -1,9 +1,9 @@
 <?php
 
-// Verbindungsvariable samt Zugangsdaten festlegen
+// Connection variable including access details
 @$GLOBALS['db'] = mysqli_connect("localhost", "root", "", "s3");
 
-// Verbindung überprüfen
+// doublecheck connection
 if (mysqli_connect_errno()) {
   printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
   exit();

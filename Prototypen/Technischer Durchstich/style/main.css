@@ -20,6 +20,7 @@ div.mirror {
 	width:372px;
 	height:600px;
 	border:3px solid #ccc;
+	background:#eae9e9;
 	box-shadow: #eee 3px 3px 5px;
 }
 
@@ -44,4 +45,45 @@ div.bracelet {
 	background:#ccc;
 	border-radius:8px;
 	border:2px solid #aaa;
+}
+
+nav ul, nav * {
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+
+nav > ul > li {
+	display:inline-block;
+	vertical-align: top;
+	margin:3px 5px;
+	padding:3px;
+	width:40px;
+	background:#fff;
+	border-radius:20px;
+	overflow:hidden;
+}
+
+nav img {
+	width:20px;
+	margin:3px;
+	cursor: pointer;
+	opacity:.4;
+}
+
+nav .self img {
+	opacity: 1;
+}
+
+nav li ul {
+	display:none;
+	color:#000;
+}
+
+nav li.active {
+	box-shadow: 0 0 3px;
+}
+
+nav li.active ul {
+	display:block;
 }

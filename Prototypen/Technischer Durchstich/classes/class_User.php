@@ -1,6 +1,6 @@
 <?php
+require_once("./classes/class_conflict.php");
 include_once("./db_connect.inc");
-include_once("./classes/class_conflict.php");
 
 class User 
 {
@@ -8,6 +8,7 @@ class User
 	public $tech_id;
 	public $name;
 	public $picture;
+	public $color;
 	public $description;
 	public $initialized;
 	public $conflicts_active = array();
@@ -22,6 +23,7 @@ class User
 				users.tech_id,
 				users.name,
 				users.picture,
+				users.color,
 				users.description,
 				users.initialized,
 				conflicts.id AS conflict_id
@@ -39,6 +41,7 @@ class User
 			$this->tech_id = $row->tech_id;
 			$this->name = $row->name;
 			$this->picture = $row->picture;
+			$this->color = $row->color;
 			$this->description = $row->description;
 			$this->initialized = $row->initialized;
 
@@ -53,7 +56,7 @@ class User
 					elseif(isset($conflict->created_with) && $conflict->created_with == $this->id)
 						$this->conflicts_passive[] = $conflict;
 					else
-						die("conflict can not be assigned");
+						die(__FILE__.": A conflict could not be assigned");
 				
 				}
 			} while ($row = $user_db_outcome->fetch_object());

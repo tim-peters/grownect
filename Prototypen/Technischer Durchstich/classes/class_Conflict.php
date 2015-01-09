@@ -1,4 +1,5 @@
 <?php
+include_once("./db_connect.inc");
 
 class Conflict {
 	public $id;
