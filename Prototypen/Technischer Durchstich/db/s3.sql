@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 09. Jan 2015 um 15:36
+-- Erstellungszeit: 10. Jan 2015 um 20:41
 -- Server Version: 5.6.16
 -- PHP-Version: 5.5.9
 
@@ -90,16 +90,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `tech_id` (`tech_id`,`picture`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Daten für Tabelle `users`
 --
 
 INSERT INTO `users` (`id`, `created`, `last_modified`, `tech_id`, `name`, `initialized`, `description`, `picture`, `color`) VALUES
-(1, '2015-01-07 18:56:02', '2015-01-09 14:31:59', '12345techid', 'Tim Scheller', 1, 'Der beste', './img/user.png', '#ffff00'),
-(2, '2015-01-09 12:46:29', '2015-01-09 14:32:03', 'dfgdfgfdsg', 'Nadine Peters', 1, 'Hi Folks!', './img/user.png', '#00ffff'),
-(3, '2015-01-09 12:46:29', '2015-01-09 14:32:07', 'dhgffjdfhj', 'Doreen Mlakar', 1, 'sdfasdf sdfdsaf', './img/user.png', '#ff00ff');
+(1, '2015-01-07 18:56:02', '2015-01-09 18:44:44', '12345techid', 'Tim Scheller', 1, 'Der beste', './img/user.png', '#ff0000'),
+(2, '2015-01-09 12:46:29', '2015-01-09 18:46:21', 'dfgdfgfdsg', 'Nadine Peters', 1, 'Hi Folks!', './img/user.png', '#44ff44'),
+(3, '2015-01-09 12:46:29', '2015-01-09 18:44:57', 'dhgffjdfhj', 'Doreen Mlakar', 1, 'sdfasdf sdfdsaf', './img/user.png', '#0000ff');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -64,6 +64,18 @@ nav > ul > li {
 	overflow:hidden;
 }
 
+nav .amount_issues {
+	position:absolute;
+	display: block;
+	width:14px;
+	height:14px;
+	margin:-1px 32px;
+	font-size:10px;
+	color:#fff;
+	text-shadow:#000 0 0 2px;
+	border-radius:14px;
+}
+
 nav img {
 	width:20px;
 	margin:3px;
@@ -84,6 +96,6 @@ nav li.active {
 	box-shadow: 0 0 3px;
 }
 
-nav li.active ul {
+nav li.open ul {
 	display:block;
 }

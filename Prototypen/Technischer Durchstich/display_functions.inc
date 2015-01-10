@@ -21,7 +21,7 @@ function showUserbar (&$user_objects, $as, $with = null) {
 		"other" => [ // structure for the icons of the other users
 			[
 				"icon" => "add",
-				"state" => "new_conflict",
+				"state" => "add_conflict",
 				"id" => true
 			],
 			[
@@ -38,10 +38,18 @@ function showUserbar (&$user_objects, $as, $with = null) {
 	foreach($user_objects as $user_object) { // for each existing user object
 		
 		$is_self = ($user_object->id == $as); // check whether it's the viewer himself or not
+		$is_active = ($user_object->id == $with); // check whether it's an affected user or not
 
-		$output .= ($is_self) ? "<li class='self'" : "<li"; // create a <li>-tag; if it's the viewer himself, add a class ("self")
-		$output .= " style='color: ".$user_object->color."'>\n	"; // set the css-color to the color of the user (important for the colored box-shadow)
-		
+		$output .= "<li class='"; // create a li-tag
+		// if it's the viewer himself, add a class ("self"); if it's an other user which is affekted by the running interaction, add class "active"
+		if($is_self)
+			$output .= "self";
+		elseif($is_active)
+			$output .= "active";
+
+		$output .= "' style='color: ".$user_object->color."'>\n	"; // set the css-color to the color of the user (important for the colored box-shadow)
+		$output .= "<span style='background: ".$user_object->color."' class='amount_issues'>".count($user_object->conflicts_passive)."</span>\n";
+
 		if(isset($with)) $output .= "<a href='?state=start'>"; // if a user is chosen (e.g. while creating a event with him), every image should link back to the startpage
 		
 		$output .= "<img src='".$user_object->picture."' alt='".$user_object->name."'>"; // add the user's image (with his name as fallback)
@@ -60,7 +68,7 @@ function showUserbar (&$user_objects, $as, $with = null) {
 				$output .= "		<li>\n"; // create a icon
 				$output .= "			<a href='?state=".$option['state']; // with the right adress
 				if(isset($option['id'])) $output .= "&id=".$user_object->id; // including the id (if nessesary)
-				$output .= 				"''>".$option['icon']."</a>\n";
+				$output .= 				"'>".$option['icon']."</a>\n";
 				$output .= "		</li>\n";
 			}
 			$output .= "	</ul>\n";
