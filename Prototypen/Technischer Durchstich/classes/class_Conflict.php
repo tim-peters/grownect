@@ -47,14 +47,16 @@ class Conflict {
 	 * @return boolean      successful created?
 	 */
 	protected function createNewConflict($_created_by) {
-		if($GLOBALS['db']->query("
+		global $db;
+
+		if($db->query("
 			INSERT INTO 
 				conflicts(created_by, created_with, progress) 
 			VALUES 
 			  	('".$_created_by."', -1, 0)
 	  	"))
 		{
-			$this->id = $GLOBALS['db']->insert_id;
+			$this->id = $db->insert_id;
 			$this->created_by = $_created_by;
 			$this->created = time();
 
@@ -62,7 +64,7 @@ class Conflict {
 		}
 		else
 		{
-			printf(__FILE__.", Line ".__LINE__.": ".$GLOBALS['db']->error);
+			$GLOBALS['log']->error("Failed to update database",__FILE__,__line__,$db->error);
 			return false;
 		}
 	}
@@ -73,9 +75,10 @@ class Conflict {
 	 * @return boolean			successful?
 	 */
 	protected function createFromDatabase($_id) {
+		global $db;
 
 		$this->id = $_id;			
-		if($conflict_db_outcome = $GLOBALS['db']->query("
+		if($conflict_db_outcome = $db->query("
 			SELECT
 				id,
 				UNIX_TIMESTAMP(created),
@@ -113,7 +116,7 @@ class Conflict {
 		}
 		else
 		{
-			printf(__FILE__.", Line ".__LINE__.": ".$GLOBALS['db']->error);
+			$GLOBALS['log']->error("A database operation could not be completed",__FILE__,__line__,$db->error,true);
 			return false;
 		}
 	}
@@ -123,8 +126,10 @@ class Conflict {
 	 * @return boolean 	sucessfull?
 	 */
 	protected function updateDatabase() {
+		global $db;
+
 		$translated_solved = ($this->solved == 0) ? 0 : date("Y-m-d H:i:s", $this->solved);
-		if($GLOBALS['db']->query("
+		if($db->query("
 			UPDATE
 				conflicts
 			SET
@@ -147,7 +152,7 @@ class Conflict {
 		}
 		else
 		{
-			printf(__FILE__.", Line ".__LINE__.": ".$GLOBALS['db']->error);
+			$GLOBALS['log']->error("Failed to update database",__FILE__,__line__,$db->error);
 			return false;
 		}
 	}

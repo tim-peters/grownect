@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
+require_once("./classes/class_Log.php");
 
 // Importing classes
 require_once("./classes/class_Conflict.php");
@@ -11,7 +12,7 @@ include_once("./display_functions.inc");
 
 // Instanciate User Classes
 $user_objects = array(); // create an empty array named $user_objects
-if($user_db_content = $GLOBALS['db']->query("SELECT id FROM users")) // get all User with their id from database
+if($user_db_content = $db->query("SELECT id FROM users")) // get all User with their id from database
 while($row = $user_db_content->fetch_object()) { // for each user...
 	$user_objects[$row->id] = User::fromDb($row->id); // create an object from class User, filled with atrributes from database and store it in the $user_objects array
 }
@@ -49,7 +50,7 @@ else // fallback
 		Act/View as 
 		<select name="change_user" size="1">
 			<?php
-			if($user_db_content = $GLOBALS['db']->query("SELECT id, name FROM users"))
+			if($user_db_content = $db->query("SELECT id, name FROM users"))
 			{
 				echo "			<option value='-1'> - </option>\n"; 
 				while($row = $user_db_content->fetch_object()) 
@@ -133,9 +134,10 @@ else // fallback
 				break;
 				
 				default: // new conflict to be set and specified
-					$instance = Conflict::fromNew($actual_user);
 					if(isset($id))
 					{
+						echo showUserbar($user_objects, $actual_user, $id);
+						$instance = Conflict::fromNew($actual_user);
 						$instance->setCreated_with($id);
 						$user_objects[$actual_user]->conflicts_active[$instance->id] = $instance;
 					}
@@ -175,6 +177,10 @@ else // fallback
 	</div>
 	<?php } ?>
 </section>
+
+<?php
+$GLOBALS['log']->printErrors();
+?>
 
 <script type="text/javascript" src="./js/core/jquery.js"></script>
 <script type="text/javascript">

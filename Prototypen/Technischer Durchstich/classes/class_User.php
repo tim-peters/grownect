@@ -37,9 +37,10 @@ class User
 	}
 
 	protected function createFromDatabase($_id) {
+		global $db;
 		$this->id = $_id;
 
-		if($user_db_outcome = $GLOBALS['db']->query("
+		if($user_db_outcome = $db->query("
 			SELECT
 				users.tech_id,
 				users.name,
@@ -77,7 +78,7 @@ class User
 					elseif(isset($conflict->created_with) && $conflict->created_with == $this->id)
 						$this->conflicts_passive[$conflict->id] = $conflict;
 					else
-						die(__FILE__.", Zeile ".__LINE__.": A conflict could not be assigned");
+						$GLOBALS['log']->error("A conflict could not be assigned",__FILE__,__line__,NULL,true);
 				
 				}
 			} while ($row = $user_db_outcome->fetch_object());
@@ -87,21 +88,22 @@ class User
 		}
 		else
 		{
-			printf(__FILE__.", Zeile ".__LINE__.": An user could not be found in database (id: ".$this->id.")\n");
+			$GLOBALS['log']->error("An user could not be found in database (id: ".$this->id.")",__FILE__,__line__,NULL,true);
 			return false;
 		}
 	}
 
 	protected function createFromPostData($tech_id, $name, $picture, $description, $color) {
-		
+		global $db;
+
 		// check if a user with this tech_id (braclet) is already existing
-		if($user_db_outcome = $GLOBALS['db']->query("SELECT id, tech_id, initialized FROM users WHERE tech_id = ".$tech_id))
+		if($user_db_outcome = $db->query("SELECT id, tech_id, initialized FROM users WHERE tech_id = ".$tech_id))
 		{
 			while($row = $user_db_outcome->fetch_object()) {
 				if($row->initialized == null || $row->initialized == false) // check if this user has already been initialized
 				{
 					// Add transfered information to user's databse entry and set his status to initialized
-					if($GLOBALS['db']->query("
+					if($db->query("
 						INSERT INTO 
 							users(name, picture, description, color, initialized) 
 						VALUES 
@@ -121,26 +123,26 @@ class User
 					}
 					else
 					{
-						die(__FILE__.", Zeile ".__LINE__.": Error: A database operation could not be completed");
+						$GLOBALS['log']->error("A database operation could not be completed",__FILE__,__line__,$db->error,true);
 					}
 				}
 				else
 				{
-					printf(__FILE__.", Zeile ".__LINE__.": There is already an user connected to this bracelet (tech_id: ".$row->tech_id.").\n");
+					$GLOBALS['log']->error("There is already an user connected to this bracelet (tech_id: ".$row->tech_id.")",__FILE__,__line__);
 					return false;
 				}
 			}
 		}
 		else // create new user
 		{
-			if($GLOBALS['db']->query("
+			if($db->query("
 				INSERT INTO 
 					users(tech_id, name, picture, description, color, initialized) 
 				VALUES 
 				  	('".$tech_id."', '".$name."', '".$picture."', '".$description."', '".$color."', '1')
 		  	"))
 			{
-				$this->id = $GLOBALS['db']->insert_id;
+				$this->id = $db->insert_id;
 				$this->tech_id = $tech_id;
 				$this->name = $name;
 				$this->picture = $picture;
@@ -153,7 +155,7 @@ class User
 			}
 			else
 			{
-				die(__FILE__.", Zeile ".__LINE__.": Error: A database operation could not be completed\n ".$GLOBALS['db']->error);
+				$GLOBALS['log']->error("A database operation could not be completed",__FILE__,__line__,$db->error,true);
 			}
 		}
 	}

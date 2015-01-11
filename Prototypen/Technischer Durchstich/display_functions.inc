@@ -6,7 +6,7 @@
  * @param  int 		$with 			Id of the user the main user is ineracting with (disabled several functions if set)
  * @return String 					HTML-Strukture
  */
-function showUserbar (&$user_objects, $as, $with = null, $choose_mode = false) {
+function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 	$content = [ // Set the structure: Which icons should be displayed when (& how)?
 		"self" => [ // structure for the user himself
 			[

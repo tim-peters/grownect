@@ -1,7 +1,7 @@
 <?php
 
 // Connection variable including access details
-@$GLOBALS['db'] = mysqli_connect("localhost", "root", "", "s3");
+@$db = mysqli_connect("localhost", "root", "", "s3");
 
 // doublecheck connection
 if (mysqli_connect_errno()) {
