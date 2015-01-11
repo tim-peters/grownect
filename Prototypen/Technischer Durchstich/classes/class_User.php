@@ -20,7 +20,7 @@ class User
 		//$this->id = $_id;
 	}
 
-	public static function byDB($_id) {
+	public static function fromDb($_id) {
 		$instance = new self();
 		if($instance->createFromDatabase($_id))
 			return $instance;
@@ -28,7 +28,7 @@ class User
 			return false;
 	}
 
-	public static function byPOST($tech_id, $name, $picture, $description = "Loret Ipsum Dolor", $color = null) {
+	public static function fromNew($tech_id, $name, $picture, $description = "Loret Ipsum Dolor", $color = null) {
 		$instance = new self();
 		if($instance->createFromPostData($tech_id, $name, $picture, $description, $color))
 			return $instance;
@@ -70,12 +70,12 @@ class User
 			do {
 				if(isset($row->conflict_id)) 
 				{
-					$conflict = new Conflict($row->conflict_id);
+					$conflict = Conflict::fromDb($row->conflict_id);
 
 					if(isset($conflict->created_by) && $conflict->created_by == $this->id)
-						$this->conflicts_active[] = $conflict;
+						$this->conflicts_active[$conflict->id] = $conflict;
 					elseif(isset($conflict->created_with) && $conflict->created_with == $this->id)
-						$this->conflicts_passive[] = $conflict;
+						$this->conflicts_passive[$conflict->id] = $conflict;
 					else
 						die(__FILE__.", Zeile ".__LINE__.": A conflict could not be assigned");
 				

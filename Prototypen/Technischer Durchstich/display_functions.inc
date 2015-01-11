@@ -6,7 +6,7 @@
  * @param  int 		$with 			Id of the user the main user is ineracting with (disabled several functions if set)
  * @return String 					HTML-Strukture
  */
-function showUserbar (&$user_objects, $as, $with = null) {
+function showUserbar (&$user_objects, $as, $with = null, $choose_mode = false) {
 	$content = [ // Set the structure: Which icons should be displayed when (& how)?
 		"self" => [ // structure for the user himself
 			[
@@ -51,10 +51,11 @@ function showUserbar (&$user_objects, $as, $with = null) {
 		$output .= "<span style='background: ".$user_object->color."' class='amount_issues'>".count($user_object->conflicts_passive)."</span>\n";
 
 		if(isset($with)) $output .= "<a href='?state=start'>"; // if a user is chosen (e.g. while creating a event with him), every image should link back to the startpage
-		
+		elseif(isset($choose_mode)) $output .= "<a href='?state=".$choose_mode."&id=".$user_object->id."&progress=1'>";
+
 		$output .= "<img src='".$user_object->picture."' alt='".$user_object->name."'>"; // add the user's image (with his name as fallback)
 		
-		if(isset($with)) // the link-tag from above needs to be closed (of it exists)
+		if(isset($with) || isset($choose_mode)) // the link-tag from above needs to be closed (of it exists)
 			$output .= "</a>\n";
 		else // if not: means: If there is not interaction in progress
 		{

@@ -99,3 +99,16 @@ nav li.active {
 nav li.open ul {
 	display:block;
 }
+
+.big_userpic {
+	display:inline-block;
+	width:100px;
+	height: 100px;
+	border-radius:75px;
+	background:#fff;	
+}
+
+.big_userpic img {
+	height:75px;
+	margin:8px;
+}
