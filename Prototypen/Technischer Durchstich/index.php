@@ -142,7 +142,7 @@ else // fallback
 						$user_objects[$actual_user]->conflicts_active[$instance->id] = $instance;
 					}
 					else
-						die("Error: You need to specify a person you want to open a conflict with.");
+						$GLOBALS['log']->error("Error: You need to specify a person you want to open a conflict with.",__FILE__,__LINE__,null,true);
 
 					$startway = rand(1,3);
 					switch($startway) {
