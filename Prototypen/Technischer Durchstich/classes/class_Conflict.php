@@ -161,11 +161,35 @@ class Conflict {
 	 * Sets the created_with attribute
 	 * @param int 	$_created_with 	id of the user a conflict is getting create with
 	 */
-	public function setCreated_with($_created_with) {
+	public function setCreated_with($_created_with, $updateDatabase = true) {
 		$this->progress = 1;
 		$this->created_with = $_created_with;
 
-		$this->updateDatabase();
+		if($updateDatabase)
+			$this->updateDatabase();
+	}
+
+	/**
+	 * Sets the moment_used attribute to
+	 * @param int 	$id 	id of the used moment
+	 */
+	public function setMoment_used($id, $updateDatabase = true) {
+		$this->moment_used = $id;
+
+		if($updateDatabase)
+			$this->updateDatabase();
+	}
+
+	/**
+	* Sets the progress attribute to
+	* @param int 	$_progress 	Number of progress
+	*/
+	public function setProgress($_progress, $updateDatabase = true) {
+		$this->progress = $_progress;
+
+
+		if($updateDatabase)
+			$this->updateDatabase();
 	}
 }
 

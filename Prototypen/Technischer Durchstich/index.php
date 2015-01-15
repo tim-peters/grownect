@@ -67,95 +67,28 @@ else // fallback
 	//echo showUserbar($user_objects, $actual_user);
 	echo "View of ".$user_objects[$actual_user]->name;
 
-	if($actual_user < 0) $state = "sign_up";
+	if($actual_user < 0) $state = "sign_up"; // if a user has not been initialized already: show him the sign up screen
 	switch($state) {
 
 
 		case "sign_up": {
-			switch($progress) {
-				case 1:
-					// TODO: Checking tranfered data to avoid malware injection
-					if($_POST['name'] != "" || $_POST['color'] != "") {
-						
-						$tech_id = md5(rand(0,99999)); // FIXME: Replace by real tech_id (from bracelet)
-						$picture = "./img/user.png"; // FIXME: replace by real image url
-
-						$new_user_object = User::fromNew($tech_id, $_POST['name'], $picture, $_POST['description'], $_POST['color']);
-						$id = $new_user_object->id;
-						$user_objects[$id] = $new_user_object;
-						echo "<h2>User erfolgreich angelegt!</h2>\n";
-						echo "<a href='?state=start&change_user=".$id."'>weiter</a>\n";
-					}
-				break;
-
-				default:
-				echo "<br><br><br>\n";
-				echo "<p class='big_userpic'><img src='./img/user.png'></p>\n";
-				echo "<form method='post' action='?state=".$state."&progress=1'>\n";
-				echo "	<p>\n";
-				echo "		<input type='text' name='name' placeholder='Your Name' required>\n";
-				echo "	</p>\n";
-				echo "	<p>\n";
-				echo "		<input type='color' name='color' value='".sprintf('#%06x',rand(0,16777215))."' required>\n";
-				echo "	</p>\n";
-				echo "	<p>\n";
-				echo "		<textarea name='description' placeholder='Tell us something about ya!'></textarea>\n";
-				echo "	</p>\n";
-				echo "	<input type='submit' value='weiter'>\n";
-				echo "</form>\n";
-			}
+			include("./states/sign_up.inc");
 		break; }
 
 
+		case "homescreen":
 		case "start":
-			$conflicts_just_opened = array();
-			foreach($user_objects[$actual_user]->conflicts_active as $conflict_active)
-				if($conflict_active->progress == 0) $conflicts_just_opened[] = $conflict_active->$id;
-			if(count($conflicts_just_opened) > 0)
-			{
-				echo showUserbar($user_objects, $actual_user, null, "add_conflict");
-				echo "<h2>You have ".count($conflicts_just_opened)." open conflicts you need to specify.</h2>\n";
-				echo "<strong>Please choose the user, you were in trouble with at ".date('r', $user_objects[$actual_user]->conflicts_active[$conflicts_just_opened[0]]->created)."</strong>\n";
-			}
-			else
-				echo showUserbar($user_objects, $actual_user);
+			include("./states/homescreen.inc");
 		break;
 
 
 		case "add_moment":
-			echo showUserbar($user_objects, $actual_user, $id);
-			echo "<h2>Creating a good moment with ".$user_objects[$id]->name."</h2>";
+			include("./states/add_moment.inc");
 		break;
 
 
 		case "add_conflict": {
-			switch(progress) {
-				case 1: // already opened conflict to be specified (e.g. by hit on bracelet)
-				break;
-				
-				default: // new conflict to be set and specified
-					if(isset($id))
-					{
-						echo showUserbar($user_objects, $actual_user, $id);
-						$instance = Conflict::fromNew($actual_user);
-						$instance->setCreated_with($id);
-						$user_objects[$actual_user]->conflicts_active[$instance->id] = $instance;
-					}
-					else
-						$GLOBALS['log']->error("Error: You need to specify a person you want to open a conflict with.",__FILE__,__LINE__,null,true);
-
-					$startway = rand(1,3);
-					switch($startway) {
-						case 1:
-						break;
-
-						case 2:
-						break;
-
-						case 3:
-						break;
-					}
-			}
+			include("./states/add_conflict.inc");
 		break; }
 
 

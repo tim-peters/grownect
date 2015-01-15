@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Jan 2015 um 16:37
+-- Erstellungszeit: 15. Jan 2015 um 23:15
 -- Server Version: 5.6.16
--- PHP-Version: 5.5.9
+-- PHP-Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -62,13 +62,20 @@ INSERT INTO `conflicts` (`id`, `created`, `solved`, `created_by`, `created_with`
 CREATE TABLE IF NOT EXISTS `moments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_by` int(11) NOT NULL,
-  `with` int(11) NOT NULL,
+  `created_with` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   `path` varchar(256) NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Daten für Tabelle `moments`
+--
+
+INSERT INTO `moments` (`id`, `created_by`, `created_with`, `type`, `path`, `content`) VALUES
+(1, 4, 1, 0, '', 'hello');
 
 -- --------------------------------------------------------
 
@@ -90,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `tech_id` (`tech_id`,`picture`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Daten für Tabelle `users`
