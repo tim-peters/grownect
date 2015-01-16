@@ -1,7 +1,10 @@
 <?php
 	$conflicts_just_opened = array();
 	foreach($user_objects[$actual_user]->conflicts_active as $conflict_active)
-		if($conflict_active->progress == 0) $conflicts_just_opened[] = $conflict_active->$id;
+	{
+		//var_dump($conflict_active);
+		if($conflict_active->progress == 0) $conflicts_just_opened[] = $conflict_active->id;
+	}
 	if(count($conflicts_just_opened) > 0)
 	{
 		echo showUserbar($user_objects, $actual_user, null, "add_conflict");
