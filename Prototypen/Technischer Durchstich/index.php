@@ -99,6 +99,7 @@ else // fallback
 	</div>
 </section>
 <section id="bracelet">
+<!--
 	<div class="bracelet vibration">
 		<br><?php echo $user_objects[$actual_user]->name; ?>
 		<span class="LED blink_green"></span>
@@ -109,11 +110,14 @@ else // fallback
 		<span class="LED"></span>
 	</div>
 	<?php } ?>
-</section>
+-->
 
 <?php
+$GLOBALS['log']->printEvents();
 $GLOBALS['log']->printErrors();
 ?>
+
+</section>
 
 <script type="text/javascript" src="./js/core/jquery.js"></script>
 <script type="text/javascript">

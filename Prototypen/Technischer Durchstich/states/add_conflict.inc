@@ -23,7 +23,7 @@ switch(progress) {
 				echo "<textarea placeholder='Explain the situation you've acted in the same way.' required></textarea>";
 			break;
 			case 2:
-				if($moment_db_outcome = $db->query("
+				if($moment_db_outcome = $db->query(" 
 					SELECT
 						id,
 						created_by,
@@ -37,17 +37,11 @@ switch(progress) {
 						(created_by = ".$actual_user." AND created_with = ".$id.")
 						OR
 						(created_with = ".$actual_user." AND created_by = ".$id.")
-				"))
+				")) // FIXME: MYSQL-Ausdruck ersetzen. Siehe test.php
 				{
-					$moments = array();
-					while($row = $moment_db_outcome->fetch_object())
-					{
-						$moments[] = $row;
-					}
 
-					if(count($moments) > 0) 
+					if($moment_row = $moment_db_outcome->fetch_object()) 
 					{
-						$moment_row = $moments[rand(0,count($moments))];
 						$moment = Moment::fromRow($moment_row);
 
 						$moment->show();
