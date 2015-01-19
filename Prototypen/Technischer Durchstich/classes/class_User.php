@@ -1,5 +1,6 @@
 <?php
 require_once("./classes/class_Conflict.php");
+require_once("./classes/class_Pusher.php");
 include_once("./db_connect.inc");
 
 class User 
@@ -158,6 +159,18 @@ class User
 				$GLOBALS['log']->error("A database operation could not be completed",__FILE__,__line__,$db->error,true);
 			}
 		}
+	}
+
+	public function sendToBracelet($event) {
+		$app_id = '103648';
+		$app_key = '80c930949c53e186da3a';
+		$app_secret = '777b9e075eb9c337ea1e';
+
+		$pusher = new Pusher($app_key, $app_secret, $app_id);
+
+		$data['name'] = $event;
+		$data['id'] = $this->tech_id;
+		$pusher->trigger('grownect', 'events', $data);
 	}
 }
 
