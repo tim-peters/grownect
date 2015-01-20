@@ -8,30 +8,27 @@ class Moment {
 	public $path;
 	public $content;
 
-	public static function fromRow($data) {
+	public static function fromRowArray($data) {
 		$instance = new self();
-		if($instance->createFromDatabaseRow($data))
+		if($instance->createFromDatabaseRowArray($data))
 			return $instance;
 		else
 			return false;
 	}
 
-	protected function createFromDatabaseRow($data) {
-		$this->id = $data->id;
-		$this->created_by = $data->created_by;
-		$this->created_with = $data->created_with;
-		$this->type = $data->type;
-		$this->path = $data->path;
-		$this->content = $data->content;
+	protected function createFromDatabaseRowArray($data) {
+		$this->id = $data['id'];
+		$this->created_by = $data['created_by'];
+		$this->created_with = $data['created_with'];
+		$this->type = $data['type'];
+		$this->path = $data['path'];
+		$this->content = $data['content'];
 		return true;
 	}
 
 	public function show() {
-		switch($this->type) {
-			case 0: // text
-				echo $this->content."\n";
-			break;
 
+		switch($this->type) {
 			case 1: // image
 				echo "<img src=\"".$this->path."\">\n";
 			break;
@@ -41,9 +38,32 @@ class Moment {
 
 			case 3: // video
 			break;
-		}
-		echo "Schöner Moment wird angezeigt";
 
+			default: // text
+				echo $this->content."\n";
+		}
+
+		echo "Schöner Moment wird angezeigt";
+		return true;
+	}
+
+	public function setUse($user) {
+		global $db;
+
+		if($db->query("
+			INSERT INTO
+				moments_use(moment, user)
+			VALUES
+				('".$this->id."', '".$user."')
+		"))
+		{
+			return true;
+		}
+		else
+		{
+			$GLOBALS['log']->error("Failed to update database",__FILE__,__line__,$db->error);
+			return false;
+		}
 	}
 }
 

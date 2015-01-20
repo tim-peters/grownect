@@ -81,8 +81,8 @@ class Conflict {
 		if($conflict_db_outcome = $db->query("
 			SELECT
 				id,
-				UNIX_TIMESTAMP(created),
-				UNIX_TIMESTAMP(solved),
+				UNIX_TIMESTAMP(created) as created,
+				UNIX_TIMESTAMP(solved) as solved,
 				created_by,
 				created_with,
 				moment_used,

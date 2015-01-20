@@ -49,13 +49,20 @@ class User
 				users.color,
 				users.description,
 				users.initialized,
-				conflicts.id AS conflict_id
+				conflicts.id AS conflict_id,
+				conflicts.solved
 			FROM
 				users
 			LEFT JOIN
 				conflicts
 			ON
-				conflicts.created_by = users.id OR conflicts.created_with = users.id
+				conflicts.solved = '0000-00-00 00:00:00.000000'
+				AND
+				(
+					conflicts.created_by = users.id 
+					OR
+					conflicts.created_with = users.id
+				)
 			WHERE 
 				users.id = ".$this->id ))
 		{
