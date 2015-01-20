@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Jan 2015 um 23:15
+-- Erstellungszeit: 20. Jan 2015 um 12:00
 -- Server Version: 5.6.16
 -- PHP-Version: 5.5.11
 
@@ -42,16 +42,17 @@ CREATE TABLE IF NOT EXISTS `conflicts` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Daten für Tabelle `conflicts`
 --
 
 INSERT INTO `conflicts` (`id`, `created`, `solved`, `created_by`, `created_with`, `moment_used`, `progress`, `weight`, `description`, `improvements`, `time_costs`, `explanation`) VALUES
-(1, '2015-01-07 19:30:35', NULL, 0, 1, 0, 0, 0, 'erstes Problem', '', 0, ''),
-(2, '2015-01-07 19:31:18', NULL, 3, 0, 0, 0, 0, 'zweitest Problem', '', 0, ''),
-(3, '2015-01-07 19:31:18', NULL, 0, 3, 0, 0, 0, 'drittes Problem', '', 0, '');
+(1, '2015-01-07 19:30:35', NULL, 2, 1, 0, 1, 0, 'erstes Problem', '', 0, ''),
+(2, '2015-01-07 19:31:18', NULL, 3, 1, 0, 0, 0, 'zweitest Problem', '', 0, ''),
+(3, '2015-01-07 19:31:18', NULL, 1, 3, 0, 1, 0, 'drittes Problem', '', 0, ''),
+(4, '2015-01-16 10:50:39', '0000-00-00 00:00:00', 3, 3, 0, 1, 0, '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -66,16 +67,42 @@ CREATE TABLE IF NOT EXISTS `moments` (
   `type` int(11) NOT NULL,
   `path` varchar(256) NOT NULL,
   `content` text NOT NULL,
+  `rating` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `moments`
 --
 
-INSERT INTO `moments` (`id`, `created_by`, `created_with`, `type`, `path`, `content`) VALUES
-(1, 4, 1, 0, '', 'hello');
+INSERT INTO `moments` (`id`, `created_by`, `created_with`, `type`, `path`, `content`, `rating`) VALUES
+(1, 3, 1, 0, '', 'hello', 0),
+(2, 1, 2, 0, '', 'Moment zwischen 1 und 2. Erstellt von 2', 0),
+(3, 2, 1, 0, '', 'Konflikt zwischen 2 und 1. Erstellt bei 2', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `moments_use`
+--
+
+CREATE TABLE IF NOT EXISTS `moments_use` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `moment` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Daten für Tabelle `moments_use`
+--
+
+INSERT INTO `moments_use` (`id`, `moment`, `user`, `used`) VALUES
+(1, 2, 1, '2015-01-19 15:28:24'),
+(2, 2, 2, '2015-01-19 15:28:24'),
+(3, 2, 2, '2015-01-19 15:28:35');
 
 -- --------------------------------------------------------
 
@@ -97,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `tech_id` (`tech_id`,`picture`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `users`
