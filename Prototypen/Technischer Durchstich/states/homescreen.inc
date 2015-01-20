@@ -6,11 +6,19 @@
 			$conflicts_to_specify[$conflict_active->progress][] = $conflict_active->id;
 	}
 
-	if(count($conflicts_to_specify[0]) > 0)
+	if(isset($conflicts_to_specify[0]))
 	{
-		echo showUserbar($user_objects, $actual_user, null, "add_conflict");
-		echo "<h2>You have ".count($conflicts_to_specify)." open conflicts you need to specify.</h2>\n";
-		echo "<strong>Please choose the user, you were in trouble with at ".date('r', $user_objects[$actual_user]->conflicts_active[current($conflicts_to_specify)[0]]->created)."</strong>\n";
+		$amount_unspecified = count($conflicts_to_specify[0]);
+		if($amount_unspecified == 1) {
+			echo "<h2>Tab on the person you're in trouble with</h2>\n";
+			echo showUserbar($user_objects, $actual_user, null, "add_conflict&conflict_id=".$conflicts_to_specify[0][0]);
+		}
+		else
+		{
+			echo showUserbar($user_objects, $actual_user, null, "add_conflict&conflict_id=".$conflicts_to_specify[0][0]);
+			echo "<h2>You have ".count($conflicts_to_specify)." open conflicts you need to specify.</h2>\n";
+			echo "<strong>Please choose the user, you were in trouble with at ".date('r', $user_objects[$actual_user]->conflicts_active[current($conflicts_to_specify)[0]]->created)."</strong>\n";
+		}
 	}
 	else
 	{

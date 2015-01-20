@@ -25,23 +25,33 @@ function filterMoments($workingCopy, $maxUseTimestamp) {
 
 switch($progress) {
 	default: // new conflict to be set and specified
+		$instance = Conflict::fromNew($actual_user);
+		$conflict_id = $instance->id;
+		$user_objects[$actual_user]->conflicts_active[$conflict_id] = $instance;
+
+	case 1;
 		if(isset($id))
 		{
-			echo showUserbar($user_objects, $actual_user, $id);
-			$instance = Conflict::fromNew($actual_user);
-			$instance->setCreated_with($id);
-			$conflict_id = $instance->id;
-			$user_objects[$actual_user]->conflicts_active[$conflict_id] = $instance;
+			if(!isset($conflict_id) && isset($_GET['conflict_id']))
+			{
+				$conflict_id = $_GET['conflict_id'];
+			}
+			elseif(!isset($conflict_id))
+			{
+				$GLOBALS['log']->error("Error: On this step a conflict id needs to be specified.",__FILE__,__LINE__,null,true);	
+			}
+			$user_objects[$actual_user]->conflicts_active[$conflict_id]->setCreated_with($id);
 		}
 		else
-			$GLOBALS['log']->error("Error: On this Device you need to specify a person you want to open a conflict with.",__FILE__,__LINE__,null,true);
-	
+			$GLOBALS['log']->error("Error: A conflict opponent needs to be specified.",__FILE__,__LINE__,null,true);
+
+
 	case 2; // First Step of conflict solving
 		
 		if(!isset($conflict_id) && isset($id))
 			$conflict_id == $id;
 		elseif(!isset($conflict_id))
-			$GLOBALS['log']error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
+			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
 
 		$startway = 2;//rand(1,2); FIXME:
 		switch($startway) {
@@ -119,7 +129,7 @@ switch($progress) {
 
 			break;
 		}
-		echo "<a href='?state=add_moment&progress=".$progress+1."&id=".$conflict_id."'>weiter</a>\n";
+		echo "<a href='?state=add_moment&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
 	break;
 }
 ?>

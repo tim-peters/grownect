@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL);// ^ E_NOTICE);
 require_once("./classes/class_Log.php");
 
 // Importing classes
@@ -24,7 +24,7 @@ $progress = $_GET['progress'];
 $id = $_GET['id'];
 
 // Set the user which is actually viewing/acting
-if($_GET['change_user']) // if a new user is getting set
+if(isset($_GET['change_user'])) // if a new user is getting set
 {
 	setcookie("user",$_GET['change_user']); // set a cookie to "remember" this choice
 	$actual_user = $_GET['change_user'];

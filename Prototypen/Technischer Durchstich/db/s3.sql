@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 20. Jan 2015 um 12:00
+-- Erstellungszeit: 20. Jan 2015 um 19:04
 -- Server Version: 5.6.16
--- PHP-Version: 5.5.11
+-- PHP-Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `conflicts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `solved` timestamp NULL DEFAULT NULL,
+  `solved` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   `created_by` int(11) NOT NULL,
   `created_with` int(11) NOT NULL,
   `moment_used` int(11) NOT NULL,
@@ -42,17 +42,21 @@ CREATE TABLE IF NOT EXISTS `conflicts` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Daten für Tabelle `conflicts`
 --
 
 INSERT INTO `conflicts` (`id`, `created`, `solved`, `created_by`, `created_with`, `moment_used`, `progress`, `weight`, `description`, `improvements`, `time_costs`, `explanation`) VALUES
-(1, '2015-01-07 19:30:35', NULL, 2, 1, 0, 1, 0, 'erstes Problem', '', 0, ''),
-(2, '2015-01-07 19:31:18', NULL, 3, 1, 0, 0, 0, 'zweitest Problem', '', 0, ''),
-(3, '2015-01-07 19:31:18', NULL, 1, 3, 0, 1, 0, 'drittes Problem', '', 0, ''),
-(4, '2015-01-16 10:50:39', '0000-00-00 00:00:00', 3, 3, 0, 1, 0, '', '', 0, '');
+(1, '2015-01-07 19:30:35', '0000-00-00 00:00:00', 2, 1, 0, 1, 0, 'erstes Problem', '', 0, ''),
+(2, '2015-01-07 19:31:18', '0000-00-00 00:00:00', 3, 1, 0, 0, 0, 'zweitest Problem', '', 0, ''),
+(3, '2015-01-07 19:31:18', '0000-00-00 00:00:00', 1, 3, 0, 2, 0, 'drittes Problem', '', 0, ''),
+(4, '2015-01-16 10:50:39', '0000-00-00 00:00:00', 3, 3, 0, 1, 0, '', '', 0, ''),
+(5, '2015-01-20 13:38:00', '0000-00-00 00:00:00', 2, 3, 0, 1, 0, '', '', 0, ''),
+(6, '2015-01-20 13:40:21', '0000-00-00 00:00:00', 2, 1, 0, 2, 0, '', '', 0, ''),
+(7, '2015-01-20 13:50:43', '0000-00-00 00:00:00', 2, 1, 0, 1, 0, '', '', 0, ''),
+(23, '2015-01-20 16:49:23', '0000-00-00 00:00:00', 1, 2, 3, 1, 0, '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -78,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `moments` (
 
 INSERT INTO `moments` (`id`, `created_by`, `created_with`, `type`, `path`, `content`, `rating`) VALUES
 (1, 3, 1, 0, '', 'hello', 0),
-(2, 1, 2, 0, '', 'Moment zwischen 1 und 2. Erstellt von 2', 0),
+(2, 1, 2, 0, '', 'Moment zwischen 1 und 2. Erstellt von 2', 30),
 (3, 2, 1, 0, '', 'Konflikt zwischen 2 und 1. Erstellt bei 2', 0);
 
 -- --------------------------------------------------------
@@ -93,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `moments_use` (
   `user` int(11) NOT NULL,
   `used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Daten für Tabelle `moments_use`
@@ -102,7 +106,10 @@ CREATE TABLE IF NOT EXISTS `moments_use` (
 INSERT INTO `moments_use` (`id`, `moment`, `user`, `used`) VALUES
 (1, 2, 1, '2015-01-19 15:28:24'),
 (2, 2, 2, '2015-01-19 15:28:24'),
-(3, 2, 2, '2015-01-19 15:28:35');
+(3, 2, 2, '2015-01-19 15:28:35'),
+(18, 2, 2, '2015-01-20 14:08:53'),
+(19, 2, 1, '2015-01-20 17:29:50'),
+(20, 3, 1, '2015-01-20 17:33:07');
 
 -- --------------------------------------------------------
 
@@ -112,14 +119,14 @@ INSERT INTO `moments_use` (`id`, `moment`, `user`, `used`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `tech_id` varchar(512) NOT NULL,
   `name` varchar(128) NOT NULL,
-  `initialized` tinyint(1) NOT NULL DEFAULT '0',
   `description` text NOT NULL,
-  `picture` varchar(256) NOT NULL,
   `color` varchar(20) NOT NULL,
+  `picture` varchar(256) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `initialized` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `tech_id` (`tech_id`,`picture`),
   UNIQUE KEY `id_2` (`id`),
@@ -130,10 +137,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`id`, `created`, `last_modified`, `tech_id`, `name`, `initialized`, `description`, `picture`, `color`) VALUES
-(1, '2015-01-07 18:56:02', '2015-01-09 18:44:44', '12345techid', 'Tim Scheller', 1, 'Der beste', './img/user.png', '#ff0000'),
-(2, '2015-01-09 12:46:29', '2015-01-09 18:46:21', 'dfgdfgfdsg', 'Nadine Peters', 1, 'Hi Folks!', './img/user.png', '#44ff44'),
-(3, '2015-01-09 12:46:29', '2015-01-09 18:44:57', 'dhgffjdfhj', 'Doreen Mlakar', 1, 'sdfasdf sdfdsaf', './img/user.png', '#0000ff');
+INSERT INTO `users` (`id`, `tech_id`, `name`, `description`, `color`, `picture`, `created`, `last_modified`, `initialized`) VALUES
+(1, '12345techid', 'Tim Scheller', 'Der beste', '#ff0000', './img/user.png', '2015-01-07 18:56:02', '2015-01-09 18:44:44', 1),
+(2, 'dfgdfgfdsg', 'Nadine Peters', 'Hi Folks!', '#44ff44', './img/user.png', '2015-01-09 12:46:29', '2015-01-09 18:46:21', 1),
+(3, 'dhgffjdfhj', 'Doreen Mlakar', 'sdfasdf sdfdsaf', '#0000ff', './img/user.png', '2015-01-09 12:46:29', '2015-01-09 18:44:57', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
