@@ -1,128 +1,158 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
 
-$actual_user = 2;
-$id = 1;
-
-$daysSinceUse = .5;
-$maxUseTimestamp = time() -($daysSinceUse*24*60*60);
-
-include("./db_connect.inc");
-
-
-function filterMoments($workingCopy, $maxUseTimestamp) {
-	$counter = array();
-	$toBeUnset = array();
-	foreach($workingCopy as $row) 
-	{
-		if($row['UNIX_TIMESTAMP(u.used)'] != null && $row['UNIX_TIMESTAMP(u.used)'] >= $maxUseTimestamp)
-			$toBeUnset[$row['id']] = true;
-		elseif($row['UNIX_TIMESTAMP(u.used)'])
-			$counter[$row['id']]++;
-	}
-	foreach($workingCopy as $key => $row) 
-	{
-		$id = $row['id'];
-		if($counter[$id] >= 3 || $toBeUnset[$id]) {
-			unset($workingCopy[$key]);
+switch ($_GET['state']) {
+	case 'check':
+		if(isset($_GET['id']))
+		{
+			$files = glob("./files/".$_GET['id']."/*");
+			if(count($files) > 0)
+			{
+				echo $files[0];
+				exit;
+			}
+			else
+				echo 0;
 		}
-	}
-
-	return $workingCopy;
-}
-
-
-if($moment_db_outcome = $db->query("
-	SELECT
-		m.id,
-		m.created_by,
-		m.created_with,
-		m.type,
-		m.path,
-		m.content,
-		m.rating,
-		UNIX_TIMESTAMP(u.used)
-	FROM
-		moments as m
-	LEFT JOIN
-		moments_use as u
-	ON
-		u.moment = m.id
-		AND
-		u.user = ".$actual_user."
-	WHERE 
-		(
-			m.created_by = ".$actual_user." 
-			AND 
-			m.created_with = ".$id."
-		)
-		OR
-		(
-			m.created_with = ".$actual_user." 
-			AND 
-			m.created_by = ".$id."
-		)
-	ORDER BY
-		m.rating DESC,
-		u.used ASC
-"))
-{
-	$original = array();
-	echo "<h3>Orginal Outcome</h3>";
-	echo "<table border='1'>\n";
-	$row = mysqli_fetch_assoc($moment_db_outcome);
-	echo "<tr>\n";
-	foreach ($row as $key => $value) {
-		echo "	<td><strong>".$key."</strong></td>\n";
-	}
-	echo "<tr>\n\n";
+		else
+			die("Error: ID is missing");
+	break;
 	
-	do
-	{
-		$original[] = $row;
-		echo "<tr>\n";
-		foreach ($row as $value) {
-			echo "	<td>".$value."</td>\n";
+	case 'upload':
+		if(isset($_GET['id']))
+		{
+			if($_POST) {
+				$uploaddir = __DIR__.'/files/'.$_GET['id']."/";
+				$uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
+				$check = getimagesize($_FILES["userfile"]["tmp_name"]);
+   				if($check !== false) {
+					if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+						echo "<h3>erfolgreich hochgeladen!</h3>\n";
+					}
+					else
+						die("error: "+$_FILES['userfile']['error']);
+				}
+				else
+				{
+					echo "<h3>Bitte nur Bilder hochladen!</h3>\n";
+					echo "<a href='?state=create&id=".$_GET['id'].">zurück</a>";
+				}
+			}
+			else
+			{
+				?>
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<title>Bild hochladen</title>
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<style>
+					body {
+						font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+						font-size: 13px;
+						text-align: center;
+					}
+
+					div.upload {
+						display:inline-block;
+					    width: 157px;
+					    height: 57px;
+					    background: url(https://lh6.googleusercontent.com/-dqTIJRTqEAQ/UJaofTQm3hI/AAAAAAAABHo/w7ruR1SOIsA/s157/upload.png);
+					    overflow: hidden;
+					}
+
+					div.upload input {
+					    display: block !important;
+					    width: 157px !important;
+					    height: 57px !important;
+					    opacity: 0 !important;
+					    overflow: hidden !important;
+					}
+		
+					</style>
+				</head>
+				<body>
+				<form enctype="multipart/form-data" action="" method="POST" id="form">
+		        <div class="upload">
+		        	<input type="hidden" name="value" />
+			        <input type="file" id="file" name="userfile" onChange="document.getElementById('form').submit()" />
+			    </div>
+				</form>
+				</body>
+				</html>
+				<?php
+			}
 		}
-		echo "<tr>\n\n";
-	} while($row = mysqli_fetch_assoc($moment_db_outcome));
-	echo "</table>\n";
-
-	$filtered = filterMoments($original, $maxUseTimestamp);
-
-	echo "<h3>Orginal Outcome</h3>";
-	echo "<table border='1'>\n";
-	echo "<tr>\n";
-	foreach ($filtered[0] as $key => $value) {
-		echo "	<td><strong>".$key."</strong></td>\n";
-	}
-	echo "<tr>\n\n";
-
-	foreach ($filtered as $row) {
+		else
+			die("Error: ID is missing");
+	break;
 	
-		echo "<tr>\n";
-		foreach ($row as $value) {
-			echo "	<td>".$value."</td>\n";
+	case 'img':
+		if(isset($_GET['id']))
+		{
+			include("./classes/class_QRcode.php");
+			QRcode::png("http://$_SERVER[HTTP_HOST]$_SERVER[SCRIPT_NAME]?state=upload&id=".$_GET['id']);
 		}
-		echo "<tr>\n\n";
-	}
-	echo "</table>\n";
+		else
+			die("Error: ID is missing");
 
-}
-else
-{
-	die($db->error);
+
+	case 'create':
+	if(isset($_GET['id']))
+	{
+		$id = $_GET['id'];
+		if(!is_dir("./files/".$id."/")) mkdir("./files/".$id."/");
+
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<title>File upload</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+			<script>
+				function isItUploaded()
+				{
+					console.log("run: isItUploaded()");
+					$.ajax({
+						type: "POST",
+						url: "?state=check&id=<?php echo $id; ?>"
+					})
+					.done(function( msg ) {
+						if(msg != 0)
+						{
+							$("img").attr("src", msg);
+							$("strong").html("<a href='./'>Neues Bild hochladen?</a>");
+						}
+						else
+							setTimeout(function() { isItUploaded() },1000);
+					});
+				}
+				setTimeout(function() { isItUploaded(); },5000);
+			</script>
+			<style>
+			body {
+				text-align: center;;
+			}
+			img {
+				max-width: 90%;
+			}
+			</style>
+		</head>
+		<body>
+		<strong>Scanne den QR-Code mit deinem Smartphone!</strong><br>
+		<img alt="Scanne den QR-Code mit deinem Smartphone!" src="?state=img&id=<?php echo $id; ?>">
+		</body>
+		</html>
+		<?php
+	}
+	break;
+
+	default:
+		$id = md5(time()+"fileupload"+rand(000,999));
+		header("Location: ?state=create&id=".$id);
+		//echo "<a href='?state=create&id=".$id."'></a>";
+	break;
 }
 
 ?>
-
-
-</body>
-</html>
