@@ -27,10 +27,11 @@ class Moment {
 	}
 
 	public function show() {
+		$content = "";
 
 		switch($this->type) {
 			case 1: // image
-				echo "<img src=\"".$this->path."\">\n";
+				$content .= "<img src=\"".$this->path."\">\n";
 			break;
 
 			case 2: // sound file
@@ -40,11 +41,10 @@ class Moment {
 			break;
 
 			default: // text
-				echo $this->content."\n";
+				$content .= $this->content."\n";
 		}
-
-		echo "Schöner Moment wird angezeigt";
-		return true;
+		$content .= "Schöner Moment wird angezeigt\n";
+		return $content;
 	}
 
 	public function setUse($user) {

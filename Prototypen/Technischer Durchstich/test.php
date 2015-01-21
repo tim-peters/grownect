@@ -122,7 +122,7 @@ switch ($_GET['state']) {
 						if(msg != 0)
 						{
 							$("img").attr("src", msg);
-							$("strong").html("<a href='./'>Neues Bild hochladen?</a>");
+							$("strong").html("<a href='./ '>Neues Bild hochladen?</a>");
 						}
 						else
 							setTimeout(function() { isItUploaded() },1000);
@@ -146,6 +146,55 @@ switch ($_GET['state']) {
 		</html>
 		<?php
 	}
+	break;
+
+	case 'show':
+	?>
+	<html>
+	<head>
+		<title></title>
+	<style>
+	body {
+		margin:10px auto;
+		width:900px;
+		-moz-column-count:3;
+	    -moz-column-gap: 3%;
+	    -moz-column-width: 30%;
+	    -webkit-column-count:3;
+	    -webkit-column-gap: 3%;
+	    -webkit-column-width: 30%;
+	    column-count: 3;
+	    column-gap: 3%;
+	    column-width: 30%;
+	    background:#ccc;
+	}
+	a {
+		display:block;
+		padding-bottom: 5px;
+	}
+	</style>
+	</head>
+	<body>
+
+	<?php
+		if ( ! function_exists('glob_recursive'))
+		{
+		    // Does not support flag GLOB_BRACE        
+		   function glob_recursive($pattern, $flags = 0)
+		   {
+		     $files = glob($pattern, $flags);
+		     foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir)
+		     {
+		       $files = array_merge($files, glob_recursive($dir.'/'.basename($pattern), $flags));
+		     }
+		  return $files;
+		  }
+		}
+		$images = glob_recursive("./files/*/*.*");
+		foreach($images as $image)
+			echo "<a href='".$image."'><img src=".$image." width='300'></a>\n";
+
+		echo "</body></html>";
 	break;
 
 	default:

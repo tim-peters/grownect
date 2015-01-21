@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);// ^ E_NOTICE);
+error_reporting(E_ALL ^ E_NOTICE);
 require_once("./classes/class_Log.php");
 
 // Importing classes
@@ -34,70 +34,96 @@ elseif(isset($_COOKIE['user'])) // if a user has been set before
 else // fallback
 	$actual_user = -1;
 
+$content = [
+	"head" => "",
+	"title" => "",
+	"style" => "",
+	"script" => "$(\"nav ul > li\").click(function() {\n	$(this).toggleClass(\"open\");\n	$(\"nav .open\").not(this).removeClass(\"open\");\n});",
+	"body" => "",
+	"css" => [
+		"./style/all.css",
+		"./style/main.css"
+	], 
+	"js" => [
+		"./js/core/jquery.js"
+	]
+];
+//////////////////////////////////////////
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-<link rel="stylesheet" href="./style/all.css" type="text/css" />
-<link rel="stylesheet" href="./style/main.css" type="text/css" />
+//echo showUserbar($user_objects, $actual_user);
+if($actual_user < 0) $state = "sign_up"; // if a user has not been initialized already: show him the sign up screen
+switch($state) {
 
-</head>
-<body>
-<div class="free" style="width:500px;margin:0 auto;">
-	<form action="" method="GET">
-		Act/View as 
-		<select name="change_user" size="1">
-			<?php
+
+	case "sign_up": {
+		include("./states/sign_up.inc");
+	break; }
+
+
+	case "homescreen":
+	case "start":
+	default:
+		include("./states/homescreen.inc");
+	break;
+
+
+	case "add_moment":
+		include("./states/add_moment.inc");
+	break;
+
+
+	case "add_conflict": {
+		include("./states/add_conflict.inc");
+	break; }
+
+
+	//default:
+	//	$content['body'] .= "<a href='?state=start'><img src='./img/mirror_states/welcome.jpg'></a>";
+}
+
+echo "<!DOCTYPE html>\n";
+echo "<html>\n";
+echo "<head>\n";
+echo "<title>".$content['title']."</title>\n";
+foreach ($content['css'] as $css_path) {
+	echo "<link rel=\"stylesheet\" href=\"".$css_path."\" type=\"text/css\" />\n";
+}
+echo $content['head']."\n";
+if($content['style'] != "")
+{
+	echo "<style type=\"text/css\">\n";
+	echo $content['style']."\n";
+	echo "</style>\n";
+}
+echo "</head>\n";
+echo "<body>\n";
+echo "<div class=\"free\" style=\"width:500px;margin:0 auto;\">\n";
+echo "	<form action=\"\" method=\"GET\">\n";
+echo "		Act/View as \n";
+echo "		<select name=\"change_user\" size=\"1\">\n";
 			if($user_db_content = $db->query("SELECT id, name FROM users"))
 			{
 				echo "			<option value='-1'> - </option>\n"; 
-				while($row = $user_db_content->fetch_object()) 
-					echo "			<option value='".$row->id."'>".$row->name."</option>\n"; 
+				while($row = $user_db_content->fetch_object())
+				{
+					echo "			<option value='".$row->id."'";
+					if($row->id == $actual_user) echo " selected";
+					echo ">".$row->name."</option>\n"; 
+				}
 			}
-			?>
-		</select>
-		<input type="submit" />
-	</form>
-</div>
-<section id="mirror">
-	<div class="mirror">
-<?php
-	//echo showUserbar($user_objects, $actual_user);
-	echo "View of ".$user_objects[$actual_user]->name;
+echo "		</select>\n";
+echo "		<input type=\"submit\" />\n";
+echo "	</form>\n";
+echo "</div>\n";
+echo "<section id=\"mirror\">\n";
+echo "	<div class=\"mirror\">";
+//echo "View of ".$user_objects[$actual_user]->name."<br>\n";
 
-	if($actual_user < 0) $state = "sign_up"; // if a user has not been initialized already: show him the sign up screen
-	switch($state) {
-
-
-		case "sign_up": {
-			include("./states/sign_up.inc");
-		break; }
-
-
-		case "homescreen":
-		case "start":
-			include("./states/homescreen.inc");
-		break;
-
-
-		case "add_moment":
-			include("./states/add_moment.inc");
-		break;
-
-
-		case "add_conflict": {
-			include("./states/add_conflict.inc");
-		break; }
-
-
-		default:
-			echo "<a href='?state=start'><img src='./img/mirror_states/welcome.jpg'></a>";
-	}
+echo $content['body']."\n\n";
+echo "	</div>\n";
+echo "</section>\n";
 ?>
-	</div>
-</section>
+
 <section id="bracelet">
 <!--
 	<div class="bracelet vibration">
@@ -119,12 +145,17 @@ $GLOBALS['log']->printErrors();
 
 </section>
 
-<script type="text/javascript" src="./js/core/jquery.js"></script>
-<script type="text/javascript">
-$("nav ul > li").click(function() {
-	$(this).toggleClass("open");
-	$("nav .open").not(this).removeClass("open");
-});
-</script>
-</body>
-</html>
+<?php
+foreach ($content['js'] as $js_path) {
+	echo "<script type=\"text/javascript\" src=\"".$js_path."\"></script>\n";
+}
+
+if($content['script'] != "")
+{
+	echo "<script type=\"text/javascript\">\n";
+	echo $content['script']."\n";
+	echo "</script>\n";
+}
+
+echo "</body>\n";
+echo "</html>\n";

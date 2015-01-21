@@ -10,25 +10,25 @@ switch($progress) {
 			$new_user_object = User::fromNew($tech_id, $_POST['name'], $picture, $_POST['description'], $_POST['color']);
 			$id = $new_user_object->id;
 			$user_objects[$id] = $new_user_object;
-			echo "<h2>User erfolgreich angelegt!</h2>\n";
-			echo "<a href='?state=start&change_user=".$id."'>weiter</a>\n";
+			$content['body'] .= "<h2>User erfolgreich angelegt!</h2>\n";
+			$content['body'] .= "<a href='?state=start&change_user=".$id."'>weiter</a>\n";
 		}
 	break;
 
 	default:
-	echo "<br><br><br>\n";
-	echo "<p class='big_userpic'><img src='./img/user.png'></p>\n";
-	echo "<form method='post' action='?state=".$state."&progress=1'>\n";
-	echo "	<p>\n";
-	echo "		<input type='text' name='name' placeholder='Your Name' required>\n";
-	echo "	</p>\n";
-	echo "	<p>\n";
-	echo "		<input type='color' name='color' value='".sprintf('#%06x',rand(0,16777215))."' required>\n";
-	echo "	</p>\n";
-	echo "	<p>\n";
-	echo "		<textarea name='description' placeholder='Tell us something about ya!'></textarea>\n";
-	echo "	</p>\n";
-	echo "	<input type='submit' value='weiter'>\n";
-	echo "</form>\n";
+	$content['body'] .= "<br><br><br>\n";
+	$content['body'] .= "<p class='big_userpic'><img src='./img/user.png'></p>\n";
+	$content['body'] .= "<form method='post' action='?state=".$state."&progress=1'>\n";
+	$content['body'] .= "	<p>\n";
+	$content['body'] .= "		<input type='text' name='name' placeholder='Your Name' required>\n";
+	$content['body'] .= "	</p>\n";
+	$content['body'] .= "	<p>\n";
+	$content['body'] .= "		<input type='color' name='color' value='".sprintf('#%06x',rand(0,16777215))."' required>\n";
+	$content['body'] .= "	</p>\n";
+	$content['body'] .= "	<p>\n";
+	$content['body'] .= "		<textarea name='description' placeholder='Tell us something about ya!'></textarea>\n";
+	$content['body'] .= "	</p>\n";
+	$content['body'] .= "	<input type='submit' value='weiter'>\n";
+	$content['body'] .= "</form>\n";
 }
 ?>

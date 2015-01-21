@@ -56,8 +56,8 @@ switch($progress) {
 		$startway = 2;//rand(1,2); FIXME:
 		switch($startway) {
 			case 1:
-				echo "<h2>Did you ever act in a similar way?</h2>";
-				echo "<textarea placeholder='Explain the situation you've acted in the same way.' required></textarea>";
+				$content['body'] .= "<h2>Did you ever act in a similar way?</h2>";
+				$content['body'] .= "<textarea placeholder='Explain the situation you've acted in the same way.' required></textarea>";
 			break;
 
 			case 2:
@@ -112,7 +112,7 @@ switch($progress) {
 					{
 						$moment = Moment::fromRowArray($moment_row);
 
-						if($moment->show()) {
+						if($content['body'] .= $moment->show()) {
 							$moment->setUse($actual_user);
 						}
 
@@ -122,14 +122,14 @@ switch($progress) {
 					}
 					else // .. else if not
 					{
-						echo "letzte pos handlung";
+						$content['body'] .= "letzte pos handlung";
 						// Frage nach letzter Positiver Handlung
 					}
 				}
 
 			break;
 		}
-		echo "<a href='?state=add_moment&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
+		$content['body'] .= "<a href='?state=add_moment&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
 	break;
 }
 ?>
