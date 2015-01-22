@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL);
 
 switch ($_GET['state']) {
 	case 'check':
@@ -90,7 +90,7 @@ switch ($_GET['state']) {
 	case 'img':
 		if(isset($_GET['id']))
 		{
-			if(!is_dir("./files/".$_GET['id']."/")) mkdir("./files/".$_GET['id']."/");
+			if(!is_dir("./files/".$_GET['id']."/")) mkdir("./files/".$_GET['id']."/",0755,true);
 
 			require_once("../classes/class_QRcode.php");
 			QRcode::png("http://$_SERVER[HTTP_HOST]$_SERVER[SCRIPT_NAME]?state=upload&id=".$_GET['id']);

@@ -139,7 +139,7 @@ echo "</section>\n";
 -->
 
 <?php
-$GLOBALS['log']->printEvents();
+//$GLOBALS['log']->printEvents();
 $GLOBALS['log']->printErrors();
 ?>
 

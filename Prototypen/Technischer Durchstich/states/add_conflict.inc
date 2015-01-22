@@ -24,12 +24,12 @@ function filterMoments($workingCopy, $maxUseTimestamp) {
 }
 
 switch($progress) {
-	default: // new conflict to be set and specified
+	default: // CREATE NEW CONFLICT
 		$instance = Conflict::fromNew($actual_user);
 		$conflict_id = $instance->id;
 		$user_objects[$actual_user]->conflicts_active[$conflict_id] = $instance;
 
-	case 1;
+	case 1; // SET CONFLICT OPPONENT
 		if(isset($id))
 		{
 			if(!isset($conflict_id) && isset($_GET['conflict_id']))
@@ -46,14 +46,19 @@ switch($progress) {
 			$GLOBALS['log']->error("Error: A conflict opponent needs to be specified.",__FILE__,__LINE__,null,true);
 
 
-	case 2; // First Step of conflict solving
+	case 2: // CHECK PULS AND CALM DOWN
+		$user_objects[$actual_user]->sendToBracelet('checkPuls');
+		
+	break;
+
+	case 3; // First Step of conflict solving
 		
 		if(!isset($conflict_id) && isset($id))
 			$conflict_id == $id;
 		elseif(!isset($conflict_id))
 			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
 
-		$startway = 2;//rand(1,2); FIXME:
+		$startway = rand(1,2);
 		switch($startway) {
 			case 1:
 				$content['body'] .= "<h2>Did you ever act in a similar way?</h2>";
