@@ -74,9 +74,6 @@ switch($progress) {
 					$file_name = array_pop($uri_parts);
 					$file_id = array_pop($uri_parts);
 
-					if(!is_dir("./img/moments/".$file_id."/")) 
-						mkdir("./img/moments/".$file_id."/");
-					
 					if(rename("./api/files/".$file_id."/".$file_name, "./img/moments/".$file_id."_".$file_name))
 					//if(true) // FOR DEBUG ONLY!
 					{

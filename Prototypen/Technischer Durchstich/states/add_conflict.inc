@@ -48,6 +48,7 @@ switch($progress) {
 
 	case 2: // CHECK PULS AND CALM DOWN
 		$user_objects[$actual_user]->sendToBracelet('checkPuls');
+		$content['body'] .= "checking for puls";
 		
 	break;
 
