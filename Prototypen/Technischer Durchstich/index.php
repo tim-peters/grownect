@@ -98,7 +98,8 @@ if($content['style'] != "")
 echo "</head>\n";
 echo "<body>\n";
 echo "<div class=\"free\" style=\"width:500px;margin:0 auto;\">\n";
-echo "	<form action=\"\" method=\"GET\">\n";
+echo "	<a href=\"./bracelet.php?id=".$user_objects[$actual_user]->id."\" target=\"_blank\">Open ".$user_objects[$actual_user]->name."'s Bracelet</a> or ";
+echo "<form action=\"\" method=\"GET\">\n";
 echo "		Act/View as \n";
 echo "		<select name=\"change_user\" size=\"1\">\n";
 			if($user_db_content = $db->query("SELECT id, name FROM users"))

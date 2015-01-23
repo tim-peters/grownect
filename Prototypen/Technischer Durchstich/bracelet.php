@@ -28,10 +28,9 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 			switch(data.name) {
 				case "checkPulse":
 					var pulse = getPulse();
-					var get_id = getParameterByName('id');
 					console.log("working");
 					var dataObject = {
-						id: get_id,
+						id: techID,
 						name: 'setPulse',
 						value: pulse
 					};
