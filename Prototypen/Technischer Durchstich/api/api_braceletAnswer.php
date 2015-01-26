@@ -21,7 +21,7 @@ if($_POST)
 			$pusher = new Pusher($app_key, $app_secret, $app_id);
 			$data['id'] = $_POST['id'];
 			
-			if($_POST['value'] < 0.95)
+			if($_POST['value'] < 0.25)
 			{
 				$data['name'] = "setLoudness";
 				$data['value'] = $_POST['value'];

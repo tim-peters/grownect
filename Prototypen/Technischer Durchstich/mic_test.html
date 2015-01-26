@@ -43,7 +43,7 @@ var audioSuccess = function(stream) {
     audioSource = audioContext.createMediaStreamSource(stream);
     
     audioGain = audioContext.createGain();
-    audioGain.gain.value = 1.0; //Lautstärke
+    audioGain.gain.value = 0; //Lautstärke
     audioGain.connect(audioContext.destination);
     
     audioAnalyser = audioContext.createAnalyser();

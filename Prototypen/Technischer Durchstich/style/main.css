@@ -112,3 +112,11 @@ nav li.open ul {
 	height:75px;
 	margin:8px;
 }
+
+#loudnessIndikator {
+		background:red;
+		width:1px;
+		height:0.1px;
+		margin-left:100px;
+		transform: scale(200);
+	}

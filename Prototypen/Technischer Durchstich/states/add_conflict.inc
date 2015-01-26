@@ -47,8 +47,21 @@ switch($progress) {
 
 
 	case 2: // CHECK PULS AND CALM DOWN
-		$user_objects[$actual_user]->sendToBracelet('checkPuls');
-		$content['body'] .= "checking for puls";
+		if(!isset($conflict_id) && isset($_GET['conflict_id']))
+		{
+			$conflict_id = $_GET['conflict_id'];
+		}
+		elseif(!isset($conflict_id))
+		{
+			$GLOBALS['log']->error("Error: On this step a conflict id needs to be specified.",__FILE__,__LINE__,null,true);	
+		}
+		$user_objects[$actual_user]->sendToBracelet('checkPulse');
+		$content['js'][] = "//js.pusher.com/2.2/pusher.min.js";
+		$content['js'][] = "./js/core/jquery.js";
+		$content['js'][] = "./js/custom/screamCheck.js";
+		$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
+		$content['script'] .= "var redirectURI = '?state=".$state."&id=".$conflict_id."&progress=3';\n";
+		$content['body'] .= "<strong class=\"message\">checking for pulse</strong>\n";
 		
 	break;
 
