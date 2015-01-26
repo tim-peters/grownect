@@ -13,7 +13,7 @@ class Log {
 		$this->events[] = $event;
 	}
 
-	public function error($msg, $file, $line, $second_msg, $critical = false) {
+	public function error($msg, $file, $line, $second_msg = null, $critical = false) {
 		$error = [
 			"msg" => $msg,
 			"file" => $file,

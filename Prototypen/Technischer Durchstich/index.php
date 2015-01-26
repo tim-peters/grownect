@@ -66,6 +66,9 @@ switch($state) {
 		include("./states/homescreen.inc");
 	break;
 
+	case "edit_profile":
+		include("./states/edit_profile.inc");
+	break;
 
 	case "add_moment":
 		include("./states/add_moment.inc");

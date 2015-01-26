@@ -168,6 +168,46 @@ class User
 		}
 	}
 
+	/**
+	 * Commits all changes made to object to databse
+	 * @return boolean 	sucessfull?
+	 */
+	protected function updateDatabase() {
+		global $db;
+
+		if($db->query("
+			UPDATE
+				users
+			SET
+				tech_id = '".$this->tech_id."',
+				name = '".$this->name."',
+				description = '".$this->description."',
+				color = '".$this->color."',
+				picture = '".$this->picture."',
+				last_modified = '".$this->last_modified."',
+				initialized = '".$this->initialized."'
+			WHERE
+				id = ".$this->id 
+		))
+		{
+			return true;
+		}
+		else
+		{
+			$GLOBALS['log']->error("Failed to update database",__FILE__,__line__,$db->error);
+			return false;
+		}
+	}
+
+	public function setPicture($_picture, $updateDatabase = true) {
+		$this->picture = $_picture;
+
+		if($updateDatabase)
+			if($this->updateDatabase()) return true;
+		else
+			return true;
+	}
+
 	public function sendToBracelet($event) {
 		$app_id = '103648';
 		$app_key = '80c930949c53e186da3a';

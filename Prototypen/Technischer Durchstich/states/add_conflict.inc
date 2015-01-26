@@ -62,6 +62,7 @@ switch($progress) {
 		$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
 		$content['script'] .= "var redirectURI = '?state=".$state."&id=".$conflict_id."&progress=3';\n";
 		$content['body'] .= "<strong class=\"message\">checking for pulse</strong>\n";
+		// FIXME: Enhancement: Fallback if Braclet is offline
 		
 	break;
 
