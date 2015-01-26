@@ -121,6 +121,29 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 		});
 	}
 
+	var sendBlocker;
+	function initializeSendText(_val, _hash) {
+		clearTimeout(sendBlocker);
+		sendBlocker = setTimeout(function(val, hash) { 
+			sendText(val, hash) 
+		},200, _val, _hash);
+	}
+
+	function sendText(text, hash) {
+		console.log("working");
+		var dataObject = {
+			id: techID,
+			hash: hash,
+			name: 'setText',
+			value: text
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "./api/api_braceletAnswer.php",
+			data: dataObject
+		});
+	}
 
 	channel.bind('events', function(data) {
 		console.log("event registered");
@@ -152,6 +175,18 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 
 				case "endScream":
 					audioStop();
+				break;
+
+				case "getText":
+
+					$("h1").after("<textarea></textarea>")
+							.next().delay(0).focus()
+							.bind('keyup', function(){
+								initializeSendText($(this).val(), data.hash);
+							})
+							.focusout(function() { 
+								$(this).remove()
+							});
 				break;
 
 				default:
@@ -207,6 +242,5 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 </head>
 <body>
 <h1 id="h1"><?php echo $user_object->name; ?>'s Bracelet</h1>
-<input type="button" onClick="audioStop()" value="stop" />
 </body>
 </html>
