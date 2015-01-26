@@ -20,6 +20,8 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	var pusher = new Pusher('80c930949c53e186da3a');
 	var channel = pusher.subscribe('grownect');
 
+	var isScreaming = false;
+
 	channel.bind('events', function(data) {
 		console.log("event registered");
 		if(data.id == techID)
@@ -27,20 +29,53 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 			console.log("event accepted: "+data.name);
 			switch(data.name) {
 				case "checkPulse":
-					var pulse = getPulse();
-					console.log("working");
-					var dataObject = {
-						id: techID,
-						name: 'setPulse',
-						value: pulse
-					};
-					
-					$.ajax({
-						type: "POST",
-						url: "./api/api_braceletAnswer.php",
-						data: dataObject,
-						success: handlePulseAnswer
+					getPulse(function (pulse) {
+						console.log("working");
+						var dataObject = {
+							id: techID,
+							name: 'setPulse',
+							value: pulse
+						};
+						
+						$.ajax({
+							type: "POST",
+							url: "./api/api_braceletAnswer.php",
+							data: dataObject,
+							success: handlePulseAnswer
+						});
 					});
+				break;
+
+				case "startScream":
+					isScreaming = true;
+					
+					function sendLoudness(volume) {
+						console.log("working");
+						var dataObject = {
+							id: techID,
+							name: 'setLoudness',
+							value: volume
+						};
+
+						function restart() {
+							if(isScreaming)
+								setTimeout(function() { getLoudness(sendLoudness); }, 150);
+						}
+						
+						$.ajax({
+							type: "POST",
+							url: "./api/api_braceletAnswer.php",
+							data: dataObject,
+							success: restart
+						});
+					}
+
+					getLoudness(sendLoudness);
+				break;
+
+				case "endScream":
+					console.log("working");
+					isScreaming = false;
 				break;
 
 				default:
@@ -49,14 +84,36 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 		}
 	});
 
+	/*channel.bind('answers', function(data) {
+		console.log("answer registered");
+		if(data.id == techID)
+		{
+			console.log("answer accepted: "+data.name);
+			switch(data.name) {
+				case "setLoudness":
+				default:
+					console.error("Received event could not be identified");
+			}
+		}
+	});*/
+
 	function handlePulseAnswer(msg) {
 		console.log("Answer: "+msg);
 	}
 
-	function getPulse() {
-		return Math.random(55,170);
+	function getPulse(callback) {
+		setTimeout(function() {
+			console.log("Pulse ermittelt");
+			callback(Math.floor(Math.random() * (170 - 55 + 1)) + 55);
+		}, 3000);
 	}
 
+	function getLoudness(callback) {
+		setTimeout(function() {
+			console.log("Loudness ermittelt");
+			callback(Math.random());
+		}, 50);
+	}
 
 	/**
 	 * SOURCE: http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript

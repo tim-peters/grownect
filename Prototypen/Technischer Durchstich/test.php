@@ -8,11 +8,31 @@ $actual_user = $_GET['id'];
 if(!isset($_GET['id']) || !$user_objects[$actual_user] = User::FromDb($actual_user))
 	die("No User specified");
 
+require_once("./classes/class_Pusher.php");
+$app_id = '103648';
+$app_key = '80c930949c53e186da3a';
+$app_secret = '777b9e075eb9c337ea1e';
+
+$pusher = new Pusher($app_key, $app_secret, $app_id);
+
+$data['name'] = "checkPulse";
+$data['id'] = $user_objects[$actual_user]->tech_id;
+$pusher->trigger('grownect', 'events', $data);
+
 ?>
 <!doctype html>
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+	#loudnessIndikator {
+		background:red;
+		width:1px;
+		height:0.1px;
+		margin-left:100px;
+		transform: scale(200);
+	}
+	</style>
 	<script type="text/javascript" src="//js.pusher.com/2.2/pusher.min.js"> </script>
 	<script type="text/javascript" src="./js/core/jquery.js"> </script>
 	<script type="text/javascript">
@@ -20,23 +40,54 @@ if(!isset($_GET['id']) || !$user_objects[$actual_user] = User::FromDb($actual_us
 	var pusher = new Pusher('80c930949c53e186da3a');
 	var channel = pusher.subscribe('grownect');
 
-	channel.bind('answers', function(data) {
+	
+	channel.bind('events', function(data) {
 		console.log("event detected: "+data);
 		console.log("id: "+data.id+", name: "+data.name);
 		if(data.id == techID && data.name == "startScream")
 		{
-			// Mikro Lautstärke ermitteln
+			$(".message").text("Scream as loud as you can into your bracelet now!")
+						.after("<div id=\"loudnessIndikator\"></div>");
+			console.log("recognized: startScream");
 
-		} 
+		}
 		else if(data.id == techID && data.name == "endScream")
 		{
-			var pulse = data.value;
-			console.log("pulse = "+pulse);
+			$(".message").text("Congratulations! You'll be redirected now.");
+			console.log("recognized: endScream");
 
 		}
 		else
 		{
 			console.log("Received event could not be identified");
+			console.dir(data);
+		}
+	});
+
+	var lastLoudness = 0;
+	channel.bind('answers', function(data) {
+		console.log("answer detected: "+data);
+		console.log("id: "+data.id+", name: "+data.name);
+		if(data.id == techID && data.name == "setLoudness")
+		{
+			console.log("setLoudness to "+data.value);
+			$("#loudnessIndikator").animate({width:data.value+"px"}, 200);
+			
+			/*
+			$({ value: lastLoudness }).animate({ value: data.value }, 
+			{
+				step: function() {
+					$("#loudnessIndikator").attr("value", this.value);
+				},
+				complete: function() {
+					console.log("complete animation");
+					lastLoudness = this.value;
+				}
+			});*/
+		} 
+		else
+		{
+			console.log("Received answer could not be identified");
 			console.dir(data);
 		}
 	});
