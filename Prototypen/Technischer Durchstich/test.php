@@ -23,7 +23,12 @@ if(!isset($_GET['id']) || !$user_objects[$actual_user] = User::FromDb($actual_us
 	channel.bind('answers', function(data) {
 		console.log("event detected: "+data);
 		console.log("id: "+data.id+", name: "+data.name);
-		if(data.id == techID && data.name == "endScream")
+		if(data.id == techID && data.name == "startScream")
+		{
+			// Mikro Lautstärke ermitteln
+
+		} 
+		else if(data.id == techID && data.name == "endScream")
 		{
 			var pulse = data.value;
 			console.log("pulse = "+pulse);
@@ -35,6 +40,15 @@ if(!isset($_GET['id']) || !$user_objects[$actual_user] = User::FromDb($actual_us
 			console.dir(data);
 		}
 	});
+
+	function sendLoudness(volume) {
+		$.ajax({
+			type: "POST",
+			url: "./api/api_braceletAnswer.php",
+			data: dataObject,
+			success: handlePulseAnswer
+		});
+	}
 
 	</script>
 </head>
