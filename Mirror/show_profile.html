@@ -4,11 +4,8 @@
 		<meta http-equiv="Content-Style-Type" content="text/css">
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
 		<title>Mirror</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script src="jquery-1.11.1.js" type="text/javascript"></script>
-
-
-     
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script src="jquery-1.11.1.js" type="text/javascript"></script>	
 
 	<style type="text/css">
 	                         
@@ -55,10 +52,8 @@
 		.menu{
 			display:none;
 			padding-top: 250px;
-
 		}
 		
-
 		li{
 			padding:20px;
 			display:inline-block;
@@ -71,6 +66,7 @@
 			display:block;
 		}
 
+
         .writingbox{
  			opacity: 0.6;
     		filter: alpha(opacity=60);
@@ -79,66 +75,109 @@
 			height:1200px;
 			text-align:center;	
 			margin:0 auto;
-
-
+			top:0;
+			left:0;
 		}
 
-#hintergrund {
- display:none;
- background:#000000;
- opacity:0.9;
- filter:alpha(opacity=90);
- position:absolute;
- top:0px;
- left:0px;
- min-width:100%;
- min-height:100%;
- z-index:1000;
-}
+
+		#hintergrund {
+			 display:none;
+			 background:#000000;
+			 opacity:0.9;
+			 filter:alpha(opacity=90);
+			 position:absolute;
+			 top:0px;
+			 left:0px;
+			 min-width:100%;
+			 min-height:100%;
+			 z-index:1000;
+			}
 
 
-#anzeige {
- display:none;
- position:fixed;
- top:30%;
- left:50%;
- margin-left:-200px;
- width:400px;
- height: 200px;
- background:gray;
- padding:10px 15px 10px 15px;
- z-index:1001;
- text-align: center;
+		#anzeige {
+			 display:none;
+			 position:fixed;
+			 top:30%;
+			 left:50%;
+			 margin-left:-200px;
+			 width:400px;
+			 height: 200px;
+			 background:gray;
+			 padding:10px 15px 10px 15px;
+			 z-index:1001;
+			 text-align: center;
+			}
 
-}
+		#out {
+		    position: absolute; 
+		    top: 0px;
+		    right: 0px;
+		  }
 
-#out {
-    position: absolute; 
-    top: 0px;
-    right: 0px;
-  }
 
+    	img  { 
+    		display:block;
+    		vertical-align: middle;
+    		position: absolute;
+    		margin-left:50px;
+    		margin-top:50%;
+    		top: 50%;
+
+            background-image:url(img/button.png);
+            width:120px; height:70px;
+			 }
+
+   		img:hover { 
+   			background-image:url(img/button_on.png); } 
 
 	</style>
+
 	</head>
 <body>
+
+	<div>
+     <a href=""> <span></span><img src="img/button.jpg" /></a>
+	</div>
+
+	/*???? irgendwie komm ich mit den a links bei dem button nicht klar habe die oben im css als img benannt...?*/
 	
-		<div class="user" style="background-image:url(img/grownect_nadine.png)">
+	<div class="user" style="background-image:url(img/grownect_nadine.png)">
 	</div>
 
 	<div class="writingbox">
+
+    	<div style="background-color: #700000;  
+			width: 800px;
+			height:50px;			
+			margin:0px auto;
+			text-align:center;
+			padding:50px;
+			vertical-align:middle;
+			">
+      
+           <p> Hier soll eigentlich Text in der writingbox und auch in der roten spalte mittig stehen. Außerdem muss hierfür eine andere Schrift generiert werden! Achja scheiß Umlaute. ansicht ist nur für das beispiel rot</p>
+		</div>
+		
+
+	<input type="text" name="" value="">
+
+
 	</div>
 
+
 <a id="lightbox" href="#"> 
-	<div style="background-color: #000000; 
-			position:fixed; 
+	<div style="background-color: #000000;  
+			position:fixed;
 			width: 1080px;
 			height:1920px;			
-			margin:0px auto;"></div></a> 
+			margin:0px auto;
+			text-align:center;">
+	</div>
+</a> 
 
 
 <div id="anzeige">
-    <br> <br> <br><p>Hey do not touch me! Do something useful!</p> <br>
+    <br> <br> <br><p>"Hey do not touch me! Do something useful!" (Zur Info: Eigentlich soll der Randbereich, oder gerade der Bereich in dem nichts ist aktiv sein - d.h. z.B. Wenn der User den Spiegel 5mal hintereinander antoucht (ihn nervt) oder der User ständig neben die Formularfelder klickt soll der Text erscheinen. Dachte mir dass das eventuell ein Charakterzug wäre. </p> <br>
         <a id="out" href="#"><img src="LINK" height="50" width="50" /></a>
     </p>
 </div>
@@ -164,8 +203,9 @@
 
 
 
-
-
 	</script>
-	</body>
+
+
+
+</body>
 </html>
