@@ -16,16 +16,19 @@ switch($progress) {
 	case 1:
 		switch($_GET['type']) {
 			default:
+			$content['js'][] = "./js/core/pusher.min.js";
+			$content['js'][] = "./js/core/jquery.js";
+			$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
+			$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
 			$content['body'] .= "<form method='POST' action='?state=".$state."&progress=2&id=".$id."&type=0'>\n";
-			$content['body'] .= "<textarea name=\"text\" placeholder='Describe the moment in your words here...' required></textarea><br>\n";
+			$content['body'] .= "<textarea name=\"text\" id=\"".createHash()."\" placeholder='Describe the moment in your words here...' required></textarea><br>\n";
 			$content['body'] .= "<select name='rating' size='1'><option value='0'>*</option><option value='25'>**</option><option value='50'>***</option><option value='75'>****</option><option value='100' selected>*****</option></select>\n";
 			$content['body'] .= "<input type='submit' value='save moment'>\n";
 			$content['body'] .= "</form>\n";
 			break;
 
 			case 1:
-				$id_hash = md5(time()+"fileupload"+rand(000,999));
-				
+				$id_hash = createHash();
 				$content['script'] .= "function isItUploaded()\n";
 				$content['script'] .= "{\n";
 				$content['script'] .= "	console.log(\"run: isItUploaded()\");\n";

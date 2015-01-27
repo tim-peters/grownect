@@ -8,6 +8,7 @@ require_once("./classes/class_User.php");
 
 // Importing dependencies
 include_once("./db_connect.inc");
+include_once("./helper_functions.inc");
 include_once("./display_functions.inc");
 
 // Instanciate User Classes

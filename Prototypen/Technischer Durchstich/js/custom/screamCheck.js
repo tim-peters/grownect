@@ -1,6 +1,3 @@
-var pusher = new Pusher('80c930949c53e186da3a');
-var channel = pusher.subscribe('grownect');
-
 channel.bind('events', function(data) {
 	console.log("event detected: "+data);
 	console.log("id: "+data.id+", name: "+data.name);

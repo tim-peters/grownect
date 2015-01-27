@@ -13,12 +13,10 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 <head>
 	<title>Bracelet</title>
 	<link rel="stylesheet" href="./style/all.css" type="text/css" />
-	<script type="text/javascript" src="//js.pusher.com/2.2/pusher.min.js"> </script>
+	<script type="text/javascript" src="./js/core/pusher.min.js"> </script>
 	<script type="text/javascript" src="./js/core/jquery.js"> </script>
 	<script type="text/javascript">
 	var techID = "<?php echo $user_object->tech_id; ?>";
-	var pusher = new Pusher('80c930949c53e186da3a');
-	var channel = pusher.subscribe('grownect');
 
 	var timeBetweenLoudnessPosts =  250;
 
@@ -181,7 +179,7 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 
 					$("h1").after("<textarea></textarea>")
 							.next().delay(0).focus()
-							.bind('keyup', function(){
+							.bind('keyup input change', function(){
 								initializeSendText($(this).val(), data.hash);
 							})
 							.focusout(function() { 
@@ -215,8 +213,8 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	function getPulse(callback) {
 		setTimeout(function() {
 			console.log("Pulse ermittelt");
-			//callback(Math.floor(Math.random() * (170 - 55 + 1)) + 55);
-			callback(129);
+			callback(Math.floor(Math.random() * (170 - 55 + 1)) + 55);
+			//callback(129);
 		}, 1000);
 	}
 

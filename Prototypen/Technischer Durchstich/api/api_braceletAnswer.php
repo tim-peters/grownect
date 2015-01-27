@@ -43,6 +43,18 @@ if($_POST)
 			$pusher->trigger('grownect', 'answers', $data);
 			echo 1;
 		break;
+
+		case "startVoiceRec":
+			$pusher = new Pusher($app_key, $app_secret, $app_id);
+
+			$data['name'] = "getText";
+			$data['hash'] = $_POST['hash'];
+			$data['id'] = $_POST['id'];
+			$pusher->trigger('grownect', 'events', $data);
+		break;
+
+		default:
+			echo 0;
 	}
 }
 else

@@ -56,7 +56,7 @@ switch($progress) {
 			$GLOBALS['log']->error("Error: On this step a conflict id needs to be specified.",__FILE__,__LINE__,null,true);	
 		}
 		$user_objects[$actual_user]->sendToBracelet('checkPulse');
-		$content['js'][] = "//js.pusher.com/2.2/pusher.min.js";
+		$content['js'][] = "./js/core/pusher.min.js";
 		$content['js'][] = "./js/core/jquery.js";
 		$content['js'][] = "./js/custom/screamCheck.js";
 		$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
@@ -76,8 +76,12 @@ switch($progress) {
 		$startway = rand(1,2);
 		switch($startway) {
 			case 1:
+				$content['js'][] = "./js/core/pusher.min.js";
+				$content['js'][] = "./js/core/jquery.js";
+				$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
+				$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
 				$content['body'] .= "<h2>Did you ever act in a similar way?</h2>";
-				$content['body'] .= "<textarea placeholder='Explain the situation you've acted in the same way.' required></textarea>";
+				$content['body'] .= "<textarea placeholder='Explain the situation you've acted in the same way.' id=\"".createHash()."\" required></textarea>";
 			break;
 
 			case 2:
@@ -149,7 +153,7 @@ switch($progress) {
 
 			break;
 		}
-		$content['body'] .= "<a href='?state=add_moment&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
+		$content['body'] .= "<a href='?state=add_conflict&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
 	break;
 }
 ?>
