@@ -10,22 +10,22 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 	$content = [ // Set the structure: Which icons should be displayed when (& how)?
 		"self" => [ // structure for the user himself
 			[
-				"icon" => "edit",
+				"icon" => "edit profile",
 				"state" => "edit_profile"
 			],
 			[
-				"icon" => "stat",
+				"icon" => "my conficts",
 				"state" => "show_statistics"
 			]
 		],
 		"other" => [ // structure for the icons of the other users
 			[
-				"icon" => "add",
+				"icon" => "create conflict",
 				"state" => "add_conflict",
 				"id" => true
 			],
 			[
-				"icon" => "moment",
+				"icon" => "add moment",
 				"state" => "add_moment",
 				"id" => true
 			]
@@ -50,14 +50,15 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 		$output .= "' style='color: ".$user_object->color."'>\n	"; // set the css-color to the color of the user (important for the colored box-shadow)
 		$output .= "<span style='background: ".$user_object->color."' class='amount_issues'>".count($user_object->conflicts_passive)."</span>\n";
 
-		if(isset($with)) $output .= "<a href='?state=start'>"; // if a user is chosen (e.g. while creating a event with him), every image should link back to the startpage
-		elseif(isset($choose_mode) && !$is_self) $output .= "<a href='?state=".$choose_mode."&id=".$user_object->id."&progress=1'>";
+		/*if(isset($with)) $output .= "<a href='?state=start'>"; // if a user is chosen (e.g. while creating a event with him), every image should link back to the startpage
+		else*/if(isset($choose_mode) && !$is_self) $output .= "<a href='?state=".$choose_mode."&id=".$user_object->id."&progress=1'>";
 
 		$output .= "<img src='".$user_object->picture."' alt='".$user_object->name."'>"; // add the user's image (with his name as fallback)
 		
-		if(isset($with) || (isset($choose_mode) && !$is_self)) // the link-tag from above needs to be closed (of it exists)
+		//if(isset($with) || (isset($choose_mode) && !$is_self)) // the link-tag from above needs to be closed (of it exists)
+		if(isset($choose_mode) && !$is_self)
 			$output .= "</a>\n";
-		else // if not: means: If there is not interaction in progress
+		elseif(!isset($with)) // if not: means: If there is not interaction in progress
 		{
 			// display the dropdown menu for each user
 			$output .= "\n	<ul>\n";
@@ -82,6 +83,12 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 	$output .= "</nav>\n";
 
 	return $output; // return the whole html store in the $output variable
+}
+
+function showHomebutton() {
+	$output = "<a href=\"./\" title=\"Back to homescreen\">Cancel</a>\n";
+
+	return $output;
 }
 
 ?>
