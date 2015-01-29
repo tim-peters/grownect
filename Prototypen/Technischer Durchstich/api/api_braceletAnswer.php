@@ -45,11 +45,21 @@ if($_POST)
 		break;
 
 		case "startVoiceRec":
-			$pusher = new Pusher($app_key, $app_secret, $app_id);
-
 			$data['name'] = "getText";
 			$data['hash'] = $_POST['hash'];
 			$data['id'] = $_POST['id'];
+			$pusher->trigger('grownect', 'events', $data);
+		break;
+
+		case "setUser":
+			$data['name'] = "setUser";
+			$data['id'] = $_POST['user'];
+			$pusher->trigger('grownect', 'events', $data);
+		break;
+
+		case "leaveUser":
+			$data['name'] = "leaveUser";
+			$data['id'] = $_POST['user'];
 			$pusher->trigger('grownect', 'events', $data);
 		break;
 

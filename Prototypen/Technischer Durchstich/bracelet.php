@@ -193,18 +193,50 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 		}
 	});
 
-	/*channel.bind('answers', function(data) {
-		console.log("answer registered");
-		if(data.id == techID)
-		{
-			console.log("answer accepted: "+data.name);
-			switch(data.name) {
-				case "setLoudness":
-				default:
-					console.error("Received event could not be identified");
+	$(document).ready(function() {
+		var isAtMirror = false;
+		$("input[name='mirror']").click(function(){
+			var that = this;
+			var user_id = getParameterByName('id');
+			if(!isAtMirror)
+			{
+				console.log("working");
+				var dataObject = {
+					id: techID,
+					name: 'setUser',
+					user: user_id
+				};
+				
+				$.ajax({
+					type: "POST",
+					url: "./api/api_braceletAnswer.php",
+					data: dataObject,
+					user: user_id
+				}).done(function() {
+					$(that).val("I'm away from mirror");
+					isAtMirror = true;
+				});
 			}
-		}
-	});*/
+			else
+			{
+				console.log("working");
+				var dataObject = {
+					id: techID,
+					name: 'leaveUser',
+					user: user_id
+				};
+				
+				$.ajax({
+					type: "POST",
+					url: "./api/api_braceletAnswer.php",
+					data: dataObject
+				}).done(function() {
+					$(that).val("I'm in front of the mirror");
+					isAtMirror = false;
+				});
+			}
+		});
+	});
 
 	function handlePulseAnswer(msg) {
 		console.log("Answer: "+msg);
@@ -240,5 +272,6 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 </head>
 <body>
 <h1 id="h1"><?php echo $user_object->name; ?>'s Bracelet</h1>
+<input type="button" name="mirror" value="I'm in front of the mirror">
 </body>
 </html>

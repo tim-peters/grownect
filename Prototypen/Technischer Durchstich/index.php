@@ -46,7 +46,9 @@ $content = [
 		"./style/main.css"
 	], 
 	"js" => [
-		"./js/core/jquery.js"
+		"./js/core/jquery.js",
+		"./js/core/pusher.min.js",
+		"./js/custom/app.js"
 	]
 ];
 //////////////////////////////////////////
@@ -85,6 +87,7 @@ switch($state) {
 	//	$content['body'] .= "<a href='?state=start'><img src='./img/mirror_states/welcome.jpg'></a>";
 }
 
+$content['js'] = array_unique($content['js']);
 echo "<!DOCTYPE html>\n";
 echo "<html>\n";
 echo "<head>\n";
