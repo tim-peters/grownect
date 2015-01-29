@@ -64,6 +64,15 @@ nav > ul > li {
 	overflow:hidden;
 }
 
+nav ul ul a {
+	display: block;
+	line-height: 12px;
+	font-size:11px;
+	margin:7px auto;
+	text-decoration: none;
+	color:#000;
+}
+
 nav .amount_issues {
 	position:absolute;
 	display: block;

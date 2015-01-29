@@ -93,4 +93,5 @@ switch($progress) {
 		}
 	break;
 }
+$content['body'] .= showHomebutton();
 ?>

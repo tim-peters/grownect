@@ -53,5 +53,5 @@ switch($_GET['progress']) {
 		$content['body'] .= "<a href=\"?state=".$state."&progress=1\">Change</a>\n";
 		$content['body'] .= "<h2>".$user_objects[$actual_user]->name."</h2>";
 }
-
+$content['body'] .= showHomebutton();
 ?>

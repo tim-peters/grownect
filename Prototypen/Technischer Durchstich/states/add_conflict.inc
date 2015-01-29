@@ -156,4 +156,5 @@ switch($progress) {
 		$content['body'] .= "<a href='?state=add_conflict&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
 	break;
 }
+$content['body'] .= showHomebutton();
 ?>
