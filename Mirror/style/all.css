@@ -68,10 +68,12 @@
 
 		.clicked .user {
 			opacity: 0.5;
+
 		}
 
 		.user.open {
 			opacity: 1;
+			
 		}
 
 		#defaultuser{
@@ -150,5 +152,8 @@
 		}
 
 
+		#recognizeduser{
+			border:1px solid white;
+		}
 
 
