@@ -36,21 +36,29 @@
 
 			display: inline-block;
 			background-size: cover;
-			width: 120px;
-			height: 120px;
+			width: 100px;
+			height: 100px;
 			border-radius: 150px;
 			margin: 15px;			
 			text-align: center;
 			vertical-align: top;
+			opacity: 0.4;
+    		filter: alpha(opacity=40);
 		}
 
-		#defaultuser{
+		#klickeduser{
 
+		display: absolute;
+		margin-top: -10px;
 		background-color: #333333;
-		width: 120px;
-		height: 120px;
+		width: 150px;
+		height: 150px;
 		border-radius: 150px;
 		text-align: center;
+		opacity: 1;
+    	filter: alpha(opacity=100);
+
+
 		
 		}
 
@@ -88,14 +96,14 @@
 
 		.openconflicts{
 			position:absolute;
-			border:5px solid black;
-			margin-top: 80px;
-			margin-left: 80px;
-			width: 25px;
-			height: 25px;
+			border:6px solid black;
+			margin-top: 100px;
+			margin-left: 100px;
+			width: 35px;
+			height: 35px;
 			border-radius: 150px;
 			text-align: center;	
-			font: 16px/8px PT sans;
+			font: 18px/11px PT sans;
 			overflow: hidden;
 
 		}
@@ -115,7 +123,7 @@
 	
 	
 		<div class="user" style="background-image:url(img/grownect_nadine.png)">
-		<div class="openconflicts" style="background-color:#6f007f"><br>1</div>
+
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
@@ -124,8 +132,8 @@
 		</div>
 	</div>
 
-		<div class="user" id="defaultuser" style="background-image:url(img/user.png)">
-		<div class="openconflicts" style="background-color:#ff6347"><br>2</div>
+		<div class="user" style="background-image:url(img/grownect_nadine.png)">
+
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
@@ -135,7 +143,7 @@
 	</div>
 	
 		<div class="user" style="background-image:url(img/Bali_2013.jpg)">
-		<div class="openconflicts"  style="background-color:#ff0000"><br></div>
+
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
@@ -144,7 +152,7 @@
 		</div>
 	</div>
 
-	<div class="user" style="background-image:url(img/grownect_nadine.png)">
+	<div class="user" id="klickeduser" style="background-image:url(img/grownect_nadine.png)">
 		<div class="openconflicts" style="background-color:#f5506f"><br>5</div>
 		<div class="menu">
 			<ul> 
@@ -155,7 +163,6 @@
 	</div>
 
 	<div class="user" style="background-image:url(img/grownect_tim.png)">
-		<div class="openconflicts" style="background-color:#005500"><br>3</div>
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
