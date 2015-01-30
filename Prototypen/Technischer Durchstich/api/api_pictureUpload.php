@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 
 switch ($_GET['state']) {
+	// check whether a picture has already been uploaded
 	case 'check':
 		if(isset($_GET['id']))
 		{
@@ -18,75 +19,83 @@ switch ($_GET['state']) {
 			die("Error: ID is missing");
 	break;
 	
+	// site to upload a picture (for smartphone)
 	case 'upload':
 		if(isset($_GET['id']))
 		{
-			if($_POST) {
-				$uploaddir = __DIR__.'/files/'.$_GET['id']."/";
-				$uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
-				$check = getimagesize($_FILES["userfile"]["tmp_name"]);
-   				if($check !== false) {
-					if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-						echo "<h3>erfolgreich hochgeladen!</h3>\n";
+			if(count(glob("files/".$_GET['id']."/*") <= 0)
+			{
+				if($_POST) {
+					$uploaddir = __DIR__.'/files/'.$_GET['id']."/";
+					$uploadfile = $uploaddir.basename($_FILES['userfile']['name']);
+					$check = getimagesize($_FILES["userfile"]["tmp_name"]);
+	   				if($check !== false) {
+						if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+							// FIXME: Enhancement: Creating Thumbnail from Image
+							echo "<h3>erfolgreich hochgeladen!</h3>\n";
+						}
+						else
+							die("error: "+$_FILES['userfile']['error']);
 					}
 					else
-						die("error: "+$_FILES['userfile']['error']);
+					{
+						echo "<h3>Bitte nur Bilder hochladen!</h3>\n";
+						echo "<a href='?state=create&id=".$_GET['id'].">zurück</a>";
+					}
 				}
 				else
 				{
-					echo "<h3>Bitte nur Bilder hochladen!</h3>\n";
-					echo "<a href='?state=create&id=".$_GET['id'].">zurück</a>";
+					?>
+					<!DOCTYPE html>
+					<html>
+					<head>
+						<title>Bild hochladen</title>
+						<meta name="viewport" content="width=device-width, initial-scale=1.0">
+						<style>
+						body {
+							font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+							font-size: 13px;
+							text-align: center;
+						}
+
+						div.upload {
+							display:inline-block;
+						    width: 157px;
+						    height: 57px;
+						    background: url("../img/picture_upload.png");
+						    overflow: hidden;
+						}
+
+						div.upload input {
+						    display: block !important;
+						    width: 157px !important;
+						    height: 57px !important;
+						    opacity: 0 !important;
+						    overflow: hidden !important;
+						}
+			
+						</style>
+					</head>
+					<body>
+					<form enctype="multipart/form-data" action="" method="POST" id="form">
+			        <div class="upload">
+			        	<input type="hidden" name="value" />
+				        <input type="file" id="file" name="userfile" onChange="document.getElementById('form').submit()" />
+				    </div>
+					</form>
+					</body>
+					</html>
+					<?php
 				}
 			}
 			else
-			{
-				?>
-				<!DOCTYPE html>
-				<html>
-				<head>
-					<title>Bild hochladen</title>
-					<meta name="viewport" content="width=device-width, initial-scale=1.0">
-					<style>
-					body {
-						font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
-						font-size: 13px;
-						text-align: center;
-					}
-
-					div.upload {
-						display:inline-block;
-					    width: 157px;
-					    height: 57px;
-					    background: url(https://lh6.googleusercontent.com/-dqTIJRTqEAQ/UJaofTQm3hI/AAAAAAAABHo/w7ruR1SOIsA/s157/upload.png);
-					    overflow: hidden;
-					}
-
-					div.upload input {
-					    display: block !important;
-					    width: 157px !important;
-					    height: 57px !important;
-					    opacity: 0 !important;
-					    overflow: hidden !important;
-					}
-		
-					</style>
-				</head>
-				<body>
-				<form enctype="multipart/form-data" action="" method="POST" id="form">
-		        <div class="upload">
-		        	<input type="hidden" name="value" />
-			        <input type="file" id="file" name="userfile" onChange="document.getElementById('form').submit()" />
-			    </div>
-				</form>
-				</body>
-				</html>
-				<?php
-			}
+				die("Error: An Image has already been uploaded with that code");
 		}
 		else
 			die("Error: ID is missing");
 	break;
 	
+	// create a QR-Code to access the upload site
 	case 'img':
 		if(isset($_GET['id']))
 		{

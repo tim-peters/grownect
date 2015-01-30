@@ -4,6 +4,12 @@ class Log {
 	private $events = array();
 	private $errors = array();
 
+	/**
+	 * log an event
+	 * @param  String 	$msg  description of the event
+	 * @param  String 	$file file path 
+	 * @param  int 		$line line number
+	 */
 	public function event($msg, $file, $line) {
 		$event = [
 			"msg" => $msg
@@ -13,6 +19,14 @@ class Log {
 		$this->events[] = $event;
 	}
 
+	/**
+	 * log an error
+	 * @param  String 	$msg  		description of the event
+	 * @param  String 	$file 		file path 
+	 * @param  int 		$line line 	number
+	 * @param  String  	$second_msg an optional second description (e.g. for sql error messages)
+	 * @param  boolean 	$critical   does the error influence the following code?
+	 */
 	public function error($msg, $file, $line, $second_msg = null, $critical = false) {
 		$error = [
 			"msg" => $msg,
@@ -29,6 +43,9 @@ class Log {
 		$this->errors[] = $error;
 	}
 
+	/**
+	 * Prints all logged error in a list
+	 */
 	public function printErrors() {
 		if(count($this->errors) > 0)
 		{
@@ -47,6 +64,9 @@ class Log {
 		}
 	}
 
+	/**
+	 * Prints all logged events in a list
+	 */
 	public function printEvents() {
 		if(count($this->events) > 0)
 		{
@@ -66,5 +86,6 @@ class Log {
 
 }
 
+// Initialize global Log variable and instanziate object
 $GLOBALS['log'] = new Log;
 ?>

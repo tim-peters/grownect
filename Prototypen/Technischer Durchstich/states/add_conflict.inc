@@ -56,8 +56,6 @@ switch($progress) {
 			$GLOBALS['log']->error("Error: On this step a conflict id needs to be specified.",__FILE__,__LINE__,null,true);	
 		}
 		$user_objects[$actual_user]->sendToBracelet('checkPulse');
-		$content['js'][] = "./js/core/pusher.min.js";
-		$content['js'][] = "./js/core/jquery.js";
 		$content['js'][] = "./js/custom/screamCheck.js";
 		$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
 		$content['script'] .= "var redirectURI = '?state=".$state."&id=".$conflict_id."&progress=3';\n";
@@ -76,8 +74,6 @@ switch($progress) {
 		$startway = rand(1,2);
 		switch($startway) {
 			case 1:
-				$content['js'][] = "./js/core/pusher.min.js";
-				$content['js'][] = "./js/core/jquery.js";
 				$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
 				$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
 				$content['body'] .= "<h2>Did you ever act in a similar way?</h2>";

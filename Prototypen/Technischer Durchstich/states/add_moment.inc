@@ -16,8 +16,6 @@ switch($progress) {
 	case 1:
 		switch($_GET['type']) {
 			default:
-			$content['js'][] = "./js/core/pusher.min.js";
-			$content['js'][] = "./js/core/jquery.js";
 			$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
 			$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
 			$content['body'] .= "<form method='POST' action='?state=".$state."&progress=2&id=".$id."&type=0'>\n";
