@@ -1,23 +1,26 @@
 channel.bind('events', function(data) {
 	console.log("event detected: "+data);
 	console.log("id: "+data.id+", name: "+data.name);
-	if(data.id == techID && data.name == "startScream")
+	if(data.id == techID)
 	{
-		$(".message").text("Scream as loud as you can into your bracelet now!")
-					.after("<div id=\"loudnessIndikator\"></div>");
-		console.log("recognized: startScream");
-
-	}
-	else if(data.id == techID && data.name == "endScream")
-	{
-		$(".message").html("Congratulations! Screaming out your anger can help to calm down. <a href=\""+redirectURI+"\">Continue</a>");
-		console.log("recognized: endScream");
-
-	}
-	else
-	{
-		console.log("Received event could not be identified");
-		console.dir(data);
+		switch(data.name) {
+			case "startScream":
+				$(".message").text("Scream as loud as you can into your bracelet now!")
+							.after("<div id=\"loudnessIndikator\"></div>");
+				console.log("recognized: startScream");
+			break;
+			case "endScream":
+				$(".message").html("Congratulations! Screaming out your anger can help to calm down. <a href=\""+redirectURI+"\">Continue</a>");
+				console.log("recognized: endScream");
+			break;
+			case "skipScream":
+				$(".message").html("Congratulations! It seems like you are calm enough to solve this conflict. <a href=\""+redirectURI+"\">Continue</a>");
+				console.log("recognized: skipScream");
+			break;
+			default:
+				console.log("Received event could not be identified");
+				console.dir(data);
+		}
 	}
 });
 

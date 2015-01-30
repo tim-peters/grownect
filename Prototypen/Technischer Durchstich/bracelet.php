@@ -27,6 +27,7 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	var audioGain = null;
 	var audioData = null;
 	var volume = null;
+	window.stopRecording = false;
 
 	/**
 	 * Source: http://www.standardabweichung.de/code/javascript/html5-microphone-access
@@ -44,14 +45,7 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	};
 
 	var audioStop = function () {
-		console.log("audio stop")
-		clearInterval(audioClearID);
-		audioContext = null;
-		audioSource = null;
-		audioAnalyser = null;
-		audioGain = null;
-		audioData = null;
-		volume = null;
+		window.stopRecording = true;
 	}
 
 	var audioSuccess = function(stream) {
@@ -79,6 +73,14 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	    
 	    var timeSinceReset = 0;
 	    var sampleAudioStream = function() {
+		    if(window.stopRecording)
+		    {
+		    	console.log("audio stop");
+		    	clearInterval(audioClearID); // stop sending
+		    	stream.stop(); // free microphone
+		    	window.stopRecording = false;
+		    }
+
 	        audioAnalyser.getByteFrequencyData(audioData);
 	        
 	        for (var i = 0, length = audioData.length, sum = 0; i < length; i++) {
@@ -94,7 +96,6 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	        	timeSinceReset = 0;
 	        }
 	    };
-	    
 	    audioClearID = setInterval(sampleAudioStream, 20);
 	    
 	    volume = 0;
@@ -177,7 +178,7 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 
 				case "getText":
 
-					$("h1").after("<textarea></textarea>")
+					$("h1").after("<textarea>"+data.value+"</textarea>")
 							.next().delay(0).focus()
 							.bind('keyup input change', function(){
 								initializeSendText($(this).val(), data.hash);
@@ -273,5 +274,6 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 <body>
 <h1 id="h1"><?php echo $user_object->name; ?>'s Bracelet</h1>
 <input type="button" name="mirror" value="I'm in front of the mirror">
+
 </body>
 </html>

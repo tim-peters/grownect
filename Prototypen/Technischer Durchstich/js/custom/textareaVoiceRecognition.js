@@ -3,10 +3,12 @@ $(document).ready(function() {
 			var hash = $(this).attr("id");
 			$(this).after("<a href=\"#\" class=\"startVoiceRecog\" data-id=\""+hash+"\">start Voice Recognition</a>\n")
 			.next().click(function() {
+				alert(text);
 				var dataObject = {
 					id: techID,
 					name: 'startVoiceRec',
-					'hash': hash
+					'hash': hash,
+					value: text
 				};
 				
 				$.ajax({

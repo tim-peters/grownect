@@ -11,7 +11,7 @@ if($_POST)
 	switch($_POST['name']) {
 		case "setPulse":
 
-			$data['name'] = ($_POST['value'] > 110) ? "startScream" : "endScream";
+			$data['name'] = ($_POST['value'] > 110) ? "startScream" : "skipScream";
 			$data['id'] = $_POST['id'];
 			$pusher->trigger('grownect', 'events', $data);
 			echo 1;
@@ -48,6 +48,7 @@ if($_POST)
 			$data['name'] = "getText";
 			$data['hash'] = $_POST['hash'];
 			$data['id'] = $_POST['id'];
+			$data['value'] = $_POST['value'];
 			$pusher->trigger('grownect', 'events', $data);
 			echo 1;
 		break;
