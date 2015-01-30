@@ -54,7 +54,8 @@ $content = [
 //////////////////////////////////////////
 
 //echo showUserbar($user_objects, $actual_user);
-if($actual_user < 0) $state = "sign_up"; // if a user has not been initialized already: show him the sign up screen
+if(!isset($user_objects[$actual_user])) $state = "sign_up"; // if a user has not been initialized already: show him the sign up screen
+if($actual_user < 0) $state = "start";
 switch($state) {
 
 
@@ -105,7 +106,8 @@ if($content['style'] != "")
 echo "</head>\n";
 echo "<body>\n";
 echo "<div class=\"free\" style=\"width:500px;margin:0 auto;\">\n";
-echo "	<a href=\"./bracelet.php?id=".$user_objects[$actual_user]->id."\" target=\"_blank\">Open ".$user_objects[$actual_user]->name."'s Bracelet</a> or ";
+if(isset($user_objects[$actual_user]))
+	echo "	<a href=\"./bracelet.php?id=".$user_objects[$actual_user]->id."\" target=\"_blank\">Open ".$user_objects[$actual_user]->name."'s Bracelet</a> or ";
 echo "<form action=\"\" method=\"GET\">\n";
 echo "		Act/View as \n";
 echo "		<select name=\"change_user\" size=\"1\" onchange=\"this.form.submit()\">\n";

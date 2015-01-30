@@ -49,18 +49,21 @@ if($_POST)
 			$data['hash'] = $_POST['hash'];
 			$data['id'] = $_POST['id'];
 			$pusher->trigger('grownect', 'events', $data);
+			echo 1;
 		break;
 
 		case "setUser":
 			$data['name'] = "setUser";
 			$data['id'] = $_POST['user'];
 			$pusher->trigger('grownect', 'events', $data);
+			echo 1;
 		break;
 
 		case "leaveUser":
 			$data['name'] = "leaveUser";
 			$data['id'] = $_POST['user'];
 			$pusher->trigger('grownect', 'events', $data);
+			echo 1;
 		break;
 
 		default:

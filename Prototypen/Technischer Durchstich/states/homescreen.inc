@@ -1,4 +1,6 @@
 <?php
+if(isset($user_objects[$actual_user]))
+{
 	$conflicts_to_specify = array();
 	foreach($user_objects[$actual_user]->conflicts_active as $conflict_active)
 	{
@@ -30,4 +32,5 @@
 			$content['body'] .= "<a href='?state=add_conflict&progress=".$next_progress."&conflict_id=".current($conflicts_to_specify)[0]."'>Tab here, to specify your conflict with ".$user_objects[$user_objects[$actual_user]->conflicts_active[current($conflicts_to_specify)[0]]->created_with]->name." (Created ".date('r', $user_objects[$actual_user]->conflicts_active[current($conflicts_to_specify)[0]]->created).")</a>\n";
 		}
 	}
+}
 ?>
