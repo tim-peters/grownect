@@ -42,6 +42,16 @@
 			margin: 15px;			
 			text-align: center;
 			vertical-align: top;
+			opacity: 1;
+			transition:opacity .8s ease-out;
+		}
+
+		.klicked .user {
+			opacity: 0.5;
+		}
+
+		.user.open {
+			opacity: 1;
 		}
 
 		#defaultuser{
@@ -79,7 +89,7 @@
 			overflow: hidden;
 		}
 
-		.open {
+		.open .menu {
 			height: 200px;
 			opacity:1;
 			padding-top: 110px;
@@ -171,10 +181,18 @@
 </body>
 	<script type="text/javascript">
 		
-
-		$(".user").click(function(){ // trigger 
-		$(this).children(".menu").toggleClass("open");
-
+		$(".user").click(function(){ // trigger
+			if($(".user.open").not(this).length)
+			{
+				$(".user").not(this).removeClass("open");
+				$(this).toggleClass("open");
+			}
+			else
+			{
+				$(".user").not(this).removeClass("open");
+				$(this).toggleClass("open");
+				$(this).parent(".usercontainer").toggleClass("klicked", $(".user.open").not(this).length);
+			}
 		});
 
 	</script>
