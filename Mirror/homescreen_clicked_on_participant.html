@@ -6,7 +6,7 @@
 		<title>Mirror</title>
 	<script type="text/javascript" src="./js/core/jquery.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="style/all.css">
 
@@ -14,7 +14,7 @@
 	</head>
 <body>
 
-	<div class="usercontainer">
+	<div class="usercontainer small" >
 	
 	
 		<div class="user" style="background-image:url(img/grownect_nadine.png)">
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 
-		<div class="user" id="defaultuser" style="background-image:url(img/user.png)">
+		<div class="user" style="background-image:url(img/grownect_nadine.png)">
 		<div class="openconflicts" style="background-color:#ff6347"><br>2</div>
 		<div class="menu">
 			<ul> 
@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	
-		<div class="user" style="background-image:url(img/Bali_2013.jpg)">
+		<div class="user" id="clickeduser" style="background-image:url(img/Bali_2013.jpg)">
 		<div class="openconflicts"  style="background-color:#ff0000"><br></div>
 		<div class="menu">
 			<ul> 
@@ -47,7 +47,7 @@
 		</div>
 	</div>
 
-	<div class="user" style="background-image:url(img/grownect_nadine.png)">
+	<div class="user" id="clickeduser" style="background-image:url(img/grownect_nadine.png)">
 		<div class="openconflicts" style="background-color:#f5506f"><br>5</div>
 		<div class="menu">
 			<ul> 
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 
-	<div class="user" style="background-image:url(img/grownect_tim.png)">
+	<div class="user" style="background-image:url(img/grownect_tim.png)">	
 		<div class="openconflicts" style="background-color:#005500"><br>3</div>
 		<div class="menu">
 			<ul> 
@@ -72,14 +72,5 @@
 
 
 </body>
-	<script type="text/javascript">
-		
-		$(".user").click(function(){ // trigger
-			if(!$(".user.open").not(this).length)
-				$(this).parent(".usercontainer").toggleClass("clicked");
-			$(".user").not(this).removeClass("open");
-			$(this).toggleClass("open");
-		});
 
-	</script>
 </html>
