@@ -50,7 +50,7 @@ switch($progress) {
 				$content['body'] .= "<h3 class=\"do\">Scan the QR-Code to upload a photo from your smartphone!<h3>\n";
 				$content['body'] .= "<img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\" width=\"159\" class=\"qr\"> <br>\n";
 
-				// FIXME: Enhancement: Integrate Rating-Input 
+				// FIXME: Enhancement: Integrate Name and Date (optional)
 			break;
 		}
 	break;
@@ -61,7 +61,7 @@ switch($progress) {
 				if(isset($_POST['text']) && isset($_POST['rating']))
 				{
 					$instance = Moment::fromNew($actual_user, $id, 0, $_POST['rating'], null, $_POST['text']);
-					$content['body'] .= "Erfolgreich erstellt!\n";
+					$content['body'] .= "Erfolgreich erstellt!\n";Erf
 				}
 				else
 					$GLOBALS['log']->error("Text or rating is missing",__FILE__,__LINE__,null,true);

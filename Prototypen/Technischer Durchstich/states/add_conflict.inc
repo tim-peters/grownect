@@ -67,7 +67,7 @@ switch($progress) {
 	case 3; // First Step of conflict solving
 		
 		if(!isset($conflict_id) && isset($id))
-			$conflict_id == $id;
+			$conflict_id = $id;
 		elseif(!isset($conflict_id))
 			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
 
@@ -141,15 +141,27 @@ switch($progress) {
 						// FIXME: Add: richtig weiterverlinken
 					}
 					else // .. else if not
-					{
-						$content['body'] .= "letzte pos handlung";
-						// Frage nach letzter Positiver Handlung
+					{	// Frage nach letzter Positiver Handlung
+						$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
+						$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
+						$content['body'] .= "<h2>What has ".$user_objects[$id]->name." done for you?</h2>";
+						$content['body'] .= "<textarea placeholder='Describe something positive ".$user_objects[$id]->name." has done for or with you.' id=\"".createHash()."\" required></textarea>";
+						
 					}
 				}
 
 			break;
 		}
 		$content['body'] .= "<a href='?state=add_conflict&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
+	break;
+
+	case 4: // declare feelings
+	break;
+
+	case 5: // Lückentext
+	break;
+
+	case 6: // add reminder
 	break;
 }
 $content['body'] .= showHomebutton();

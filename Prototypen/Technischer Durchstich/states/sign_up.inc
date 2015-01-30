@@ -23,7 +23,7 @@ switch($progress) {
 			$new_user_object = User::fromNew($tech_id, $_POST['name'], $picture, $_POST['description'], $_POST['color']);
 			$id = $new_user_object->id;
 			$user_objects[$id] = $new_user_object;
-			$content['body'] .= "<h2>User erfolgreich angelegt!</h2>\n";
+			$content['body'] .= "<h2>User erfolgreich angelegt!</h2>\n"; // FIXME: Replace with auto redirect
 			$content['body'] .= "<a href='?state=start&change_user=".$id."'>weiter</a>\n";
 		}
 	break;
