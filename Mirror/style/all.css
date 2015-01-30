@@ -1,1 +1,148 @@
 /* main stylesheet */
+	                         
+
+		body {
+			border:1px dotted white;
+			background-color: #000000;
+			width: 858px;
+			height: 1533px;			
+			margin:0 auto;
+			font-family: 'PT Sans', sans-serif; 
+			font-size: 10px;
+			/*line-height: 12px;*/
+			color:white;
+		}
+
+
+		.usercontainer{
+
+			width:858px;
+			margin-top: 50px;
+			text-align: center;
+		}
+
+
+		.user{
+
+			display: inline-block;
+			background-size: cover;
+			width: 120px;
+			height: 120px;
+			border-radius: 150px;
+			margin: 15px;			
+			text-align: center;
+			vertical-align: top;
+			opacity: 1;
+			transition:opacity .8s ease-out;
+		}
+
+
+		.usersmall{
+
+			display: inline-block;
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+			border-radius: 150px;
+			margin: 15px;			
+			text-align: center;
+			vertical-align: top;
+			opacity: 0.4;
+    		filter: alpha(opacity=40);
+		}
+
+		#clickeduser{
+
+		display: absolute;
+		margin-top: -10px;
+		background-color: #333333;
+		width: 150px;
+		height: 150px;
+		border-radius: 150px;
+		text-align: center;
+		opacity: 1;
+    	filter: alpha(opacity=100);
+
+
+
+		.clicked .user {
+			opacity: 0.5;
+		}
+
+		.user.open {
+			opacity: 1;
+		}
+
+		#defaultuser{
+
+		background-color: #333333;
+		width: 120px;
+		height: 120px;
+		border-radius: 150px;
+		text-align: center;
+		
+		}
+
+		
+		.menu ul {
+			list-style: none;
+			padding:0;
+			margin:0;
+		}
+
+		.menu li{
+			display: inline-block;
+			padding:10px;
+			display:inline-block;
+			line-height: 130%;
+			text-align: center;
+			width:38px;
+			text-transform: uppercase; /* mache den Text zu Vasalien */
+		}
+		
+		.menu{
+			height: 0; /* instead of display:none; (because height is animatable but display isn't) */
+			opacity:0;
+			padding-top: 100px;
+			transition:padding 1s .1s, opacity .6s, height 1s .1s; /* animation: backwarts */;
+			overflow: hidden;
+		}
+
+		.open .menu {
+			height: 200px;
+			opacity:1;
+			padding-top: 110px;
+			transition:padding ease-out .6s, opacity .6s; /* animation */
+		}
+
+		.openconflicts{
+			position:absolute;
+			border:5px solid black;
+			margin-top: 80px;
+			margin-left: 80px;
+			width: 25px;
+			height: 25px;
+			border-radius: 150px;
+			text-align: center;	
+			font: 16px/8px PT sans;
+			overflow: hidden;
+
+		}
+
+
+		#openconflicts_clickeduser {
+			position:absolute;
+			border:6px solid black;
+			margin-top: 100px;
+			margin-left: 100px;
+			width: 35px;
+			height: 35px;
+			border-radius: 150px;
+			text-align: center;	
+			font: 18px/11px PT sans;
+			overflow: hidden;
+
+		}
+
+
+
