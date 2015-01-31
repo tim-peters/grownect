@@ -11,6 +11,8 @@
 		transform: scale(200);
 	}
 	</style>
+<script type="text/javascript" src="../js/core/jquery.js"></script>
+<script type="text/javascript" src="../js/core/jquery.knob.js"></script>
 <script type="text/javascript">
 var audioContext = null;
 var audioSource = null;
@@ -62,8 +64,9 @@ var audioSuccess = function(stream) {
         }
         
         volume = sum / (length * 256);
-        document.getElementById("loudnessIndikator").style.width = volume+"px";
-        document.getElementById("h1").innerHTML = volume;
+        //document.getElementById("loudnessIndikator").style.width = volume+"px";
+        //document.getElementById("h1").innerHTML = volume;
+        $(".dial").val(volume).trigger("change");
     };
     
     setInterval(sampleAudioStream, 20);
@@ -75,11 +78,26 @@ var audioError = function(event) {
   console.error("audioError");  
 };
 
+$(function() {
+    $(".dial").knob({
+        'min':0,
+        'max':.3,
+        'step':0.01,
+        'angleArc':180,
+        'angleOffset':-90,
+        'readOnly':true,
+        'displayPrevious':true
+    });
+});
+
 audioStart();
 </script>
 </head>
 <body>
+<!--
 <div id="loudnessIndikator"></div>
 <h1 id="h1">0</h1>
+-->
+<input type="text" value="0.5" class="dial">
 </body>
 </html>
