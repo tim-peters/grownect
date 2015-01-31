@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 require_once("./classes/class_Log.php");
 
 // Importing classes
@@ -20,9 +20,9 @@ while($row = $user_db_content->fetch_object()) { // for each user...
 $user_db_content->close();
 
 // Declaring GET-Variables as regular variables
-$state = $_GET['state'];
-$progress = $_GET['progress'];
-$id = $_GET['id'];
+$state = secureString($_GET['state']);
+$progress = secureString($_GET['progress']);
+$id = secureString($_GET['id']);
 
 // Set the user which is actually viewing/acting
 if(isset($_GET['change_user'])) // if a new user is getting set

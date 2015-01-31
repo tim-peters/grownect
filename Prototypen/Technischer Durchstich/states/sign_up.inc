@@ -20,7 +20,7 @@ switch($progress) {
 				$GLOBALS['log']->error("Image could not be found/moved.",__FILE__,__LINE__);
 			}
 
-			$new_user_object = User::fromNew($tech_id, $_POST['name'], $picture, $_POST['description'], $_POST['color']);
+			$new_user_object = User::fromNew($tech_id, secureString($_POST['name']), $picture, secureString($_POST['description']), secureString($_POST['color']));
 			$id = $new_user_object->id;
 			$user_objects[$id] = $new_user_object;
 			$content['body'] .= "<h2>User erfolgreich angelegt!</h2>\n"; // FIXME: Replace with auto redirect

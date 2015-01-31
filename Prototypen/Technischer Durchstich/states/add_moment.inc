@@ -60,8 +60,8 @@ switch($progress) {
 			default:
 				if(isset($_POST['text']) && isset($_POST['rating']))
 				{
-					$instance = Moment::fromNew($actual_user, $id, 0, $_POST['rating'], null, $_POST['text']);
-					$content['body'] .= "Erfolgreich erstellt!\n";Erf
+					$instance = Moment::fromNew($actual_user, $id, 0, secureString($_POST['rating']), null, secureString($_POST['text']));
+					$content['body'] .= "Erfolgreich erstellt!\n"; // FIXME: Change wording
 				}
 				else
 					$GLOBALS['log']->error("Text or rating is missing",__FILE__,__LINE__,null,true);
@@ -79,7 +79,7 @@ switch($progress) {
 					//if(true) // FOR DEBUG ONLY!
 					{
 						//echo $actual_user.", ".$id.", 1, ".$_POST['rating'].", ".$_POST['img']."\n";
-						$instance = Moment::fromNew($actual_user, $id, 1, $_POST['rating'], $_POST['img']);
+						$instance = Moment::fromNew($actual_user, $id, 1, secureString($_POST['rating']), secureString($_POST['img']));
 						$content['body'] .= "Erfolgreich erstellt!\n";
 					}
 					else

@@ -23,7 +23,7 @@ switch ($_GET['state']) {
 	case 'upload':
 		if(isset($_GET['id']))
 		{
-			if(count(glob("files/".$_GET['id']."/*") <= 0)
+			if(count(glob("files/".$_GET['id']."/*")) <= 0)
 			{
 				if($_POST) {
 					$uploaddir = __DIR__.'/files/'.$_GET['id']."/";

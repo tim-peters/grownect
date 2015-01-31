@@ -49,7 +49,7 @@ switch($progress) {
 	case 2: // CHECK PULS AND CALM DOWN
 		if(!isset($conflict_id) && isset($_GET['conflict_id']))
 		{
-			$conflict_id = $_GET['conflict_id'];
+			$conflict_id = secureString($_GET['conflict_id']);
 		}
 		elseif(!isset($conflict_id))
 		{
