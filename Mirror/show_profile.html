@@ -4,150 +4,333 @@
 		<meta http-equiv="Content-Style-Type" content="text/css">
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
 		<title>Mirror</title>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-		<script src="jquery-1.11.1.js" type="text/javascript"></script>	
+		<script src="./js/core/jquery.js" type="text/javascript"></script>	
+
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
 	<style type="text/css">
 	                         
 
-		*{
-			margin:0;
-			padding:0;
-			font: 12px helvetica CY ; 
-			line-height: 10px;
-			color:white;
-
-			text-decoration: none; /*schrift wird nicht unterstrichen*/
-
-		}
-
-		body {
+body {
 			border:1px dotted white;
 			background-color: #000000;
-			width: 1080px;
-			height:1920px;			
+			width: 858px;
+			height: 1533px;			
 			margin:0 auto;
+			font-family: 'PT Sans', sans-serif; 
+			font-size: 10px;
+			/*line-height: 12px;*/
+			color:white;
 		}
 
-		.user{
 
-			background-size: cover;
-			width: 250px;
-			height: 250px;
-			border-radius: 150px;
-			margin:50px auto;			
+		.usercontainer{
+
+			width:858px;
+			margin-top: 50px;
 			text-align: center;
+		}
+
+
+		 /*.user{
+
+			display: inline-block;
+			background-size: cover;
+			width: 120px;
+			height: 120px;
+			border-radius: 150px;
+			margin: 15px;			
+			text-align: center;
+			vertical-align: top;
+			opacity: 1;
+			transition:opacity .8s ease-out;
+		} */
+
+
+		.small .user{
+
+			display: inline-block;
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+			border-radius: 150px;
+			margin: 15px;			
+			text-align: center;
+			vertical-align: top;
+			opacity: 0.4;
+    		filter: alpha(opacity=40);
+		}
+
+	.usercontainer .clickeduser{
+
+			display: absolute;
+			margin-top: -10px;
+			background-color: #333333;
+			width: 150px;
+			height: 150px;
+			border-radius: 150px;
+			text-align: center;
+			opacity: 1;
+	    	filter: alpha(opacity=100);
+
+        }  /* wenn ich hier den style entferne zeigt es mir die icons unter dem bild untereinander auf aber so sind sie nebeneinander...*/
+
+
+		.clicked .user {
+			opacity: 0.5;
+
+		}
+
+		.user.open {
+			opacity: 1;
+			
 		}
 
 		#defaultuser{
 
 		background-color: #333333;
-		width: 250px;
-		height: 250px;
+		width: 120px;
+		height: 120px;
 		border-radius: 150px;
 		text-align: center;
 		
 		}
+
 		
-		.menu{
-			display:none;
-			padding-top: 250px;
-		}
-		
-		li{
-			padding:20px;
-			display:inline-block;
-			line-height: 130%;
-			margin: auto;
-			text-align:center;
+		.menu ul {
+			list-style: none;
+			padding:0;
+			margin:0;
 		}
 
-		.open { 
-			display:block;
+		.menu li{
+			display: inline-block;
+			padding:10px;
+			display:inline-block;  /*doppelt hält besser? :D */
+			line-height: 130%;
+			text-align: center;
+			width:38px;
+			text-transform: uppercase; /* mache den Text zu Vasalien */
 		}
+		
+		.menu{
+			height: 0; /* instead of display:none; (because height is animatable but display isn't) */
+			opacity:0;
+			padding-top: 100px;
+			transition:padding 1s .1s, opacity .6s, height 1s .1s; /* animation: backwarts */;
+			overflow: hidden;
+		}
+
+		.open .menu {
+			height: 200px;
+			opacity:1;
+			padding-top: 110px;
+			transition:padding ease-out .6s, opacity .6s; /* animation */
+		}
+
+		
+		/*.openconflicts{
+			position:absolute;
+			border:5px solid black;
+			margin-top: 80px;
+			margin-left: 80px;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			text-align: center;	
+			font: 16px/8px PT sans;
+			overflow: hidden;
+
+
+		} */
+
+		.small .openconflicts{
+			display:none;
+
+		}
+
+
+		/*.clickeduser .openconflicts{
+			display: block;
+			border:6px solid black;
+			margin-top: 100px;
+			margin-left: 100px;
+			width: 35px;
+			height: 35px;
+			font: 18px/11px PT sans;
+
+		} */
+
+
+		#recognizeduser{
+			border:1px solid white;
+		}
+
+
+
+		.usersignup{
+			display:block;
+			margin: 100px auto 40px;
+			border-radius: 50%;
+			background-color: #222222;
+			background:url"img/user.png") center center no-repeat;
+			background-size: cover;
+			width: 350px;
+			height: 350px;
+			text-align: center;
+		}
+
+		h1{
+
+			display:block;
+			color: #ffffff;
+			width:350px;
+			margin: auto;
+			font-size: 70px;
+			text-align: center;
+		}
+
+
+		.signupcontainer ul{
+			list-style: none;
+		}
+
+		
+		.signupcontainer ul{
+			display:block;
+			text-align: center;
+			line-height: 200%;
+			font-size: 16px;
+	
+
+		}
+
 
 
         .writingbox{
+        	position:relative;
  			opacity: 0.6;
     		filter: alpha(opacity=60);
  			background-color:white;
- 			width: 900px;
-			height:1200px;
+ 			width: 700px;
+			height:800px;
 			text-align:center;	
 			margin:0 auto;
-			top:0;
+			top: 150px;
 			left:0;
 		}
 
 
-		#hintergrund {
-			 display:none;
-			 background:#000000;
-			 opacity:0.9;
-			 filter:alpha(opacity=90);
-			 position:absolute;
-			 top:0px;
-			 left:0px;
-			 min-width:100%;
-			 min-height:100%;
-			 z-index:1000;
-			}
-
-
-		#anzeige {
-			 display:none;
-			 position:fixed;
-			 top:30%;
-			 left:50%;
-			 margin-left:-200px;
-			 width:400px;
-			 height: 200px;
-			 background:gray;
-			 padding:10px 15px 10px 15px;
-			 z-index:1001;
-			 text-align: center;
-			}
-
-		#out {
-		    position: absolute; 
-		    top: 0px;
-		    right: 0px;
-		  }
-
-
-    	img  { 
-    		display:block;
-    		vertical-align: middle;
-    		position: absolute;
-    		margin-left:50px;
-    		margin-top:50%;
-    		top: 50%;
+    	a.button { 
+    		
+    		padding:0;
+    		float:left;
+    		position: absolute; /*liegt über elemente darüber*/
+    		margin-left:250px; /*randabstand*/
+    		margin-top:1020px; /* % bezieht sich auf die breite*/
 
             background-image:url(img/button.png);
-            width:120px; height:70px;
+            width:150px; height:80px;
+
+            
 			 }
 
-   		img:hover { 
+		a.button li {
+
+
+            clear:left;
+            list-style:none;
+			color: #ffffff;
+			text-align: center;
+			font-size: 20px;
+
+		}
+
+   		a.button:hover { 
    			background-image:url(img/button_on.png); } 
+
+
+
+   		.button_close {
+   			width: 500px;
+			height:500px;
+			margin-left:1000px;
+   		}
 
 	</style>
 
 	</head>
 <body>
 
-	<div>
-     <a href=""> <span></span><img src="img/button.jpg" /></a>
-	</div>
 
-	/*???? irgendwie komm ich mit den a links bei dem button nicht klar habe die oben im css als img benannt...?*/
+<div class="usercontainer small" >
 	
-	<div class="user" style="background-image:url(img/grownect_nadine.png)">
+	
+		<div class="user" style="background-image:url(img/grownect_nadine.png)">
+		<div class="openconflicts" style="background-color:#6f007f"><br>1</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>	
+			</ul>
+		</div>
 	</div>
 
+		<div class="user" style="background-image:url(img/grownect_nadine.png)">
+		<div class="openconflicts" style="background-color:#ff6347"><br>2</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>		
+			</ul>
+		</div>
+	</div>
+	
+		<div class="user" style="background-image:url(img/Bali_2013.jpg)">
+		<div class="openconflicts"  style="background-color:#ff0000"><br></div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>		
+			</ul>
+		</div>
+	</div>
+
+	<div class="user" style="background-image:url(img/grownect_nadine.png)">
+		<div class="openconflicts" style="background-color:#f5506f"><br>5</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/profile.png" width="20"><br><br>show<br>profile</li>
+				<li><img src="img/statistic.png" width="20"><br><br>show<br>conflicts</li>	
+			</ul>
+		</div>
+	</div>
+
+	<div class="user" style="background-image:url(img/grownect_tim.png)">	
+		<div class="openconflicts" style="background-color:#005500"><br>3</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>			
+			</ul>
+		</div>
+	</div>
+ 
+
+</div>
+
+	
+     <li><a class="button" href=""><img src="img/button.jpg"/>cancel</a></li>
+
+	<!-- ???? irgendwie komm ich mit den a links bei dem button nicht klar habe die oben im css als img benannt...? -->
+	
+
+	<a class="button_close" href=""><img src="img/button_close.jpg"/></a>
+	
 	<div class="writingbox">
 
     	<div style="background-color: #700000;  
-			width: 800px;
+			width: 500px;
 			height:50px;			
 			margin:0px auto;
 			text-align:center;
@@ -165,42 +348,21 @@
 	</div>
 
 
-<a id="lightbox" href="#"> 
-	<div style="background-color: #000000;  
-			position:fixed;
-			width: 1080px;
-			height:1920px;			
-			margin:0px auto;
-			text-align:center;">
-	</div>
-</a> 
-
-
-<div id="anzeige">
-    <br> <br> <br><p>"Hey do not touch me! Do something useful!" (Zur Info: Eigentlich soll der Randbereich, oder gerade der Bereich in dem nichts ist aktiv sein - d.h. z.B. Wenn der User den Spiegel 5mal hintereinander antoucht (ihn nervt) oder der User ständig neben die Formularfelder klickt soll der Text erscheinen. Dachte mir dass das eventuell ein Charakterzug wäre. </p> <br>
-        <a id="out" href="#"><img src="LINK" height="50" width="50" /></a>
-    </p>
-</div>
-
-<div id="hintergrund"> </div>
-
 
 	<script type="text/javascript">
 		
 
-		$(".user").click(function(){ // trigger 
-		$(this).children(".menu").toggleClass("open");
-		$(".menu .open").not(this).removeClass("open"); //keine Ahnung? wie lass ich die aufgklappten untermenüs verschwinden?
+		
+		$(".user").click(function(){ // trigger
+			if(!$(".user.open").not(this).length)
+				$(this).parent(".usercontainer ").toggleClass("clicked");
+			$(".user").not(this).removeClass("open .user .user clickeduser");
+			$(this).toggleClass("open .user clickeduser");
 		});
 
-
-		$("a#lightbox").click(function(){
-    	$("#hintergrund, #anzeige").fadeIn(300);
- 		})
- 		$("a#out").click(function(){
-     	$("#hintergrund, #anzeige").fadeOut(300);
-		})
-
+		$(".button_close").click(function(){ // trigger 
+		$(".menu .open").not(this).removeClass("open"); //keine Ahnung? wie lass ich die aufgklappten untermenüs verschwinden?
+		}); //wenn klasse aktiv ist funktioniert das nicht mehr also nach user not parent with dieser klasse (inaktiv)
 
 
 	</script>
