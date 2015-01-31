@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 
 switch ($_GET['state']) {
-	// check whether a picture has already been uploaded
+	// check if a picture has already been uploaded
 	case 'check':
 		if(isset($_GET['id']))
 		{
@@ -62,7 +62,7 @@ switch ($_GET['state']) {
 							display:inline-block;
 						    width: 157px;
 						    height: 57px;
-						    background: url("../img/picture_upload.png");
+						    background: url("../img/upload_button.png");
 						    overflow: hidden;
 						}
 

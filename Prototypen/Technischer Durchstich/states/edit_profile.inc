@@ -39,6 +39,7 @@ switch($_GET['progress']) {
 			if(rename("./api/files/".$file_id."/".$file_name, "./img/users/".$file_id."_".$file_name))
 			//if(true) // FOR DEBUG ONLY!
 			{
+				createThumb("./img/users/".$file_id."_".$file_name, 250);
 				if(!$user_objects[$actual_user]->setPicture("./img/users/".$file_id."_".$file_name))
 					$GLOBALS['log']->error("Picture could not be updated",__FILE__,__LINE__);
 			}

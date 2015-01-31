@@ -153,15 +153,29 @@ switch($progress) {
 			break;
 		}
 		$content['body'] .= "<a href='?state=add_conflict&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
+		// FIXME: Auswertung hinzufügen (zumindest Progress in der DB hochsetzen) -> POST abfragen, dann per header(location) weiter
 	break;
 
 	case 4: // declare feelings
+		if(!isset($conflict_id) && isset($id))
+			$conflict_id = $id;
+		elseif(!isset($conflict_id))
+			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
+
 	break;
 
 	case 5: // Lückentext
+		if(!isset($conflict_id) && isset($id))
+			$conflict_id = $id;
+		elseif(!isset($conflict_id))
+			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
 	break;
 
 	case 6: // add reminder
+		if(!isset($conflict_id) && isset($id))
+			$conflict_id = $id;
+		elseif(!isset($conflict_id))
+			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
 	break;
 }
 $content['body'] .= showHomebutton();

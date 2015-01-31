@@ -13,6 +13,7 @@ switch($progress) {
 			//if(true) // FOR DEBUG ONLY!
 			{
 				$picture = "./img/moments/".$file_id."_".$file_name;
+				createThumb($picture,250);
 			}
 			else
 			{
@@ -50,7 +51,7 @@ switch($progress) {
 	$content['script'] .= "}\n";
 	$content['script'] .= "setTimeout(function() { isItUploaded(); },5000);\n";
 	$content['body'] .= "<br><br><br>\n";
-	$content['body'] .= "<h3 class=\"do\">Scan the QR-Code to upload a profile photo from your smartphone!<h3>\n";
+	$content['body'] .= "<h3 class=\"do\">Scan the QR-Code to upload a profile photo from your smartphone!</h3>\n";
 	$content['body'] .= "<form method='post' action='?state=".$state."&progress=1'>\n";
 	$content['body'] .= "<p class='big_userpic'><img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\" width=\"159\" class=\"qr\"></p> <br>\n";
 	$content['body'] .= "	<p>\n";
