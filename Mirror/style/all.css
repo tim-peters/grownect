@@ -51,7 +51,7 @@
     		filter: alpha(opacity=40);
 		}
 
-		#clickeduser{
+		.usercontainer .clickeduser{
 
 			display: absolute;
 			margin-top: -10px;
@@ -96,7 +96,7 @@
 		.menu li{
 			display: inline-block;
 			padding:10px;
-			display:inline-block;
+			display:inline-block;  /*doppelt hält besser? :D */
 			line-height: 130%;
 			text-align: center;
 			width:38px;
@@ -140,7 +140,7 @@
 		}
 
 
-		#clickeduser .openconflicts{
+		.clickeduser .openconflicts{
 			display: block;
 			border:6px solid black;
 			margin-top: 100px;
@@ -156,4 +156,43 @@
 			border:1px solid white;
 		}
 
+
+
+		.usersignup{
+			display:block;
+			margin: 100px auto 40px;
+			border-radius: 50%;
+			background-color: #222222;
+			background:url"img/user.png") center center no-repeat;
+			background-size: cover;
+			width: 350px;
+			height: 350px;
+			text-align: center;
+		}
+
+		h1{
+
+			display:block;
+			color: #ffffff;
+			width:350px;
+			margin: auto;
+			font-size: 70px;
+			text-align: center;
+		}
+
+
+		.signupcontainer ul{
+			list-style: none;
+		}
+
+		
+		.signupcontainer ul{
+			display:block;
+			text-align: center;
+			line-height: 200%;
+			font-size: 16px;
+	
+
+
+		}
 
