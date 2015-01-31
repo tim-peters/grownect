@@ -4,7 +4,7 @@ if(isset($user_objects[$actual_user]))
 	$conflicts_to_specify = array();
 	foreach($user_objects[$actual_user]->conflicts_active as $conflict_active)
 	{
-		if($conflict_active->progress <= 3) 
+		if($conflict_active->progress <= 5)
 			$conflicts_to_specify[$conflict_active->progress][] = $conflict_active->id;
 	}
 

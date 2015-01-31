@@ -191,6 +191,19 @@ class Conflict {
 		if($updateDatabase)
 			$this->updateDatabase();
 	}
+
+	/**
+	* Sets the weight attribute to
+	* @param int 	$_weight 	Rating of conflict weight
+	*/
+	public function setWeight($_weight, $updateDatabase = true) {
+		$this->progress = 4;
+		$this->weight = $_weight;
+
+
+		if($updateDatabase)
+			$this->updateDatabase();
+	}
 }
 
 ?>

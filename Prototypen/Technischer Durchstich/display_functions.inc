@@ -91,4 +91,10 @@ function showHomebutton() {
 	return $output;
 }
 
+function showNextButton($redirect_url) {
+	$output = "<a href=\"".$redirect_url."\" title=\"Continue with next step\">Continue</a>\n";
+
+	return $output;
+}
+
 ?>

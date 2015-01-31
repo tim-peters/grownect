@@ -2,6 +2,13 @@
 require_once("./classes/class_Moment.php");
 include_once("./db_connect.inc");
 
+
+/**
+ * removes all moments which have been used since $maxUseTimestamp or have been used more than 3 times (by this user) at all.
+ * @param  SQL_assoc_array 	$workingCopy     A result of a SQL Request
+ * @param  timestamp 		$maxUseTimestamp 
+ * @return array            Array of Entries (SQL rows?)
+ */
 function filterMoments($workingCopy, $maxUseTimestamp) {
 	$counter = array();
 	$toBeUnset = array();
@@ -25,157 +32,208 @@ function filterMoments($workingCopy, $maxUseTimestamp) {
 
 switch($progress) {
 	default: // CREATE NEW CONFLICT
-		$instance = Conflict::fromNew($actual_user);
-		$conflict_id = $instance->id;
-		$user_objects[$actual_user]->conflicts_active[$conflict_id] = $instance;
+		$actual_conflict = Conflict::fromNew($actual_user);
+		$conflict_id = $actual_conflict->id;
+		$user_objects[$actual_user]->conflicts_active[$conflict_id] = &$actual_conflict;
 
 	case 1; // SET CONFLICT OPPONENT
 		if(isset($id))
 		{
-			if(!isset($conflict_id) && isset($_GET['conflict_id']))
-			{
-				$conflict_id = $_GET['conflict_id'];
-			}
-			elseif(!isset($conflict_id))
-			{
+			if(!isset($conflict_id))
 				$GLOBALS['log']->error("Error: On this step a conflict id needs to be specified.",__FILE__,__LINE__,null,true);	
-			}
-			$user_objects[$actual_user]->conflicts_active[$conflict_id]->setCreated_with($id);
+
+			if(!isset($actual_conflict))
+				$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
+
+			$actual_conflict->setCreated_with($id);
 		}
 		else
 			$GLOBALS['log']->error("Error: A conflict opponent needs to be specified.",__FILE__,__LINE__,null,true);
 
 
 	case 2: // CHECK PULS AND CALM DOWN
-		if(!isset($conflict_id) && isset($_GET['conflict_id']))
-		{
-			$conflict_id = secureString($_GET['conflict_id']);
-		}
-		elseif(!isset($conflict_id))
-		{
+		if(!isset($conflict_id))
 			$GLOBALS['log']->error("Error: On this step a conflict id needs to be specified.",__FILE__,__LINE__,null,true);	
-		}
-		$user_objects[$actual_user]->sendToBracelet('checkPulse');
-		$content['js'][] = "./js/custom/screamCheck.js";
-		$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
-		$content['script'] .= "var redirectURI = '?state=".$state."&id=".$conflict_id."&progress=3';\n";
-		$content['body'] .= "<strong class=\"message\">checking for pulse</strong>\n";
-		// FIXME: Enhancement: Fallback if Braclet is offline
 		
+		if(!isset($actual_conflict))
+			$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
+
+		$redirect_url = "?state=".$state."&progress=3&conflict_id=".$conflict_id;
+
+		if($actual_conflict->progress < $progress)
+		{
+			$user_objects[$actual_user]->sendToBracelet('checkPulse');
+			$content['js'][] = "./js/custom/screamCheck.js";
+			$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
+			$content['script'] .= "var redirectURI = '".$redirect_url."';\n";
+			$content['body'] .= "<strong class=\"message\">checking for pulse</strong>\n";
+			// FIXME: Enhancement: Fallback if Braclet is offline
+			 
+			$actual_conflict->setProgress(2);
+		}
+		else
+			header("Location: ".$redirect_url);
 	break;
+
 
 	case 3; // First Step of conflict solving
 		
-		if(!isset($conflict_id) && isset($id))
-			$conflict_id = $id;
-		elseif(!isset($conflict_id))
+		if(!isset($conflict_id))
 			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
+		
+		if(!isset($actual_conflict))
+			$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
 
-		$startway = rand(1,2);
-		switch($startway) {
-			case 1:
-				$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
-				$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
-				$content['body'] .= "<h2>Did you ever act in a similar way?</h2>";
-				$content['body'] .= "<textarea placeholder='Explain the situation you've acted in the same way.' id=\"".createHash()."\" required></textarea>";
-			break;
+		$redirect_url = "?state=add_conflict&progress=".($progress+1)."&conflict_id=".$conflict_id;
 
-			case 2:
-				$daysSinceUse = .5;
-				$maxUseTimestamp = time() -($daysSinceUse*24*60*60);
+		if($actual_conflict->progress < $progress)
+		{
+			$startway = rand(1,2);
+			switch($startway) {
+				case 1:
+					$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
+					$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
+					$content['body'] .= "<h2>Did you ever act in a similar way?</h2>";
+					$content['body'] .= "<textarea placeholder='Explain the situation you've acted in the same way.' id=\"".createHash()."\" required></textarea>";
+				break;
 
-				if(!$moment_db_outcome = $db->query("
-					SELECT
-						m.id,
-						m.created_by,
-						m.created_with,
-						m.type,
-						m.path,
-						m.content,
-						m.rating,
-						UNIX_TIMESTAMP(u.used)
-					FROM
-						moments as m
-					LEFT JOIN
-						moments_use as u
-					ON
-						u.moment = m.id
-						AND
-						u.user = ".$actual_user."
-					WHERE 
-						(
-							m.created_by = ".$actual_user." 
-							AND 
-							m.created_with = ".$id."
-						)
-						OR
-						(
-							m.created_with = ".$actual_user." 
-							AND 
-							m.created_by = ".$id."
-						)
-					ORDER BY
-						m.rating DESC,
-						u.used ASC
-				"))
-				{
-					$GLOBALS['log']->error("Database Error",__FILE__,__line__,$db->error,true);
-				}
-				else
-				{
-					// Filter DB results
-					$moments= array();
-					while($moments[] = mysqli_fetch_assoc($moment_db_outcome));
-					$moment_row = filterMoments($moments, $maxUseTimestamp)[0];
+				case 2:
+					$daysSinceUse = .5;
+					$maxUseTimestamp = time() -($daysSinceUse*24*60*60);
 
-					if(count($moment_row)) // If at least one fitting positive moment was found..
+					if(!$moment_db_outcome = $db->query("
+						SELECT
+							m.id,
+							m.created_by,
+							m.created_with,
+							m.type,
+							m.path,
+							m.content,
+							m.rating,
+							UNIX_TIMESTAMP(u.used)
+						FROM
+							moments as m
+						LEFT JOIN
+							moments_use as u
+						ON
+							u.moment = m.id
+							AND
+							u.user = ".$actual_user."
+						WHERE 
+							(
+								m.created_by = ".$actual_user." 
+								AND 
+								m.created_with = ".$id."
+							)
+							OR
+							(
+								m.created_with = ".$actual_user." 
+								AND 
+								m.created_by = ".$id."
+							)
+						ORDER BY
+							m.rating DESC,
+							u.used ASC
+					"))
 					{
-						$moment = Moment::fromRowArray($moment_row);
+						$GLOBALS['log']->error("Database Error",__FILE__,__line__,$db->error,true);
+					}
+					else
+					{
+						// Filter DB results
+						$moments= array();
+						while($moments[] = mysqli_fetch_assoc($moment_db_outcome));
+						$moment_row = filterMoments($moments, $maxUseTimestamp)[0];
 
-						if($content['body'] .= $moment->show()) {
-							$moment->setUse($actual_user);
+						if(count($moment_row)) // If at least one fitting positive moment was found..
+						{
+							$moment = Moment::fromRowArray($moment_row);
+
+							if($content['body'] .= $moment->show()) {
+								$moment->setUse($actual_user);
+							}
+
+							$user_objects[$actual_user]->conflicts_active[$conflict_id]->setMoment_used($moment->id, false);
+							$user_objects[$actual_user]->conflicts_active[$conflict_id]->setProgress(2); // FIXME
+							// FIXME: Add: richtig weiterverlinken
 						}
-
-						$user_objects[$actual_user]->conflicts_active[$conflict_id]->setMoment_used($moment->id, false);
-						$user_objects[$actual_user]->conflicts_active[$conflict_id]->setProgress(2); // FIXME
-						// FIXME: Add: richtig weiterverlinken
+						else // .. else if not
+						{	// Frage nach letzter Positiver Handlung
+							$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
+							$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
+							$content['body'] .= "<h2>What has ".$user_objects[$id]->name." done for you?</h2>";
+							$content['body'] .= "<textarea placeholder='Describe something positive ".$user_objects[$id]->name." has done for or with you.' id=\"".createHash()."\" required></textarea>";
+							
+						}
 					}
-					else // .. else if not
-					{	// Frage nach letzter Positiver Handlung
-						$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
-						$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
-						$content['body'] .= "<h2>What has ".$user_objects[$id]->name." done for you?</h2>";
-						$content['body'] .= "<textarea placeholder='Describe something positive ".$user_objects[$id]->name." has done for or with you.' id=\"".createHash()."\" required></textarea>";
-						
-					}
-				}
-
-			break;
+				break;
+			}
+			$actual_conflict->setProgress(3);
+			$content['body'] .= "<a href='".$redirect_url."'>weiter</a>\n";
 		}
-		$content['body'] .= "<a href='?state=add_conflict&progress=".($progress+1)."&id=".$conflict_id."'>weiter</a>\n";
-		// FIXME: Auswertung hinzufügen (zumindest Progress in der DB hochsetzen) -> POST abfragen, dann per header(location) weiter
+		else
+			header("Location: ".$redirect_url);
 	break;
 
 	case 4: // declare feelings
-		if(!isset($conflict_id) && isset($id))
-			$conflict_id = $id;
-		elseif(!isset($conflict_id))
+		if(!isset($conflict_id))
 			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
 
+		if(!isset($actual_conflict))
+			$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
+
+		$redirect_url = "?state=add_conflict&progress=".($progress+1)."&conflict_id=".$conflict_id;	
+
+		if($actual_conflict->progress < $progress)
+		{
+			if($_POST['feelings'])
+			{
+				$score = 1;
+				$actual_conflict->setWeight($score);
+				header("Location: ".$redirect_url);
+			}
+			else
+			{
+				$content['body'] .= "<h1>How do you feel?</h1>\n";
+				$content['body'] .= "<form action=\"\" method=\"POST\">\n";
+				$content['body'] .= "<input type=\"submit\" name=\"feelings\" value=\"Continue\">\n";
+				$content['body'] .= "</form>\n";
+
+			}
+		}
 	break;
 
-	case 5: // Lückentext
-		if(!isset($conflict_id) && isset($id))
-			$conflict_id = $id;
-		elseif(!isset($conflict_id))
+	case 5: // LÜCKENTEXT
+		if(!isset($conflict_id))
 			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
+
+		if(!isset($actual_conflict))
+			$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
+
+		$redirect_url = "?state=".$state."&progress=".($progress+1)."&conflict_id=".$conflict_id;	
+
+		if($actual_conflict->progress < $progress)
+		{
+
+		}
+		else
+			header("Location: ".$redirect_url);
 	break;
 
-	case 6: // add reminder
-		if(!isset($conflict_id) && isset($id))
-			$conflict_id = $id;
-		elseif(!isset($conflict_id))
+
+	case 6: // ADD REMINDER
+		if(!isset($conflict_id))
 			$GLOBALS['log']->error("Error: On this step the conflict needs to be already specified by an id (via $_GET)",__FILE__,__LINE__,null,true);
+
+		if(!isset($actual_conflict))
+			$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
+
+		$redirect_url = "?state=home";
+
+		if($actual_conflict->progress < $progress)
+		{
+
+		}
 	break;
 }
 $content['body'] .= showHomebutton();

@@ -23,6 +23,7 @@ $user_db_content->close();
 $state = secureString($_GET['state']);
 $progress = secureString($_GET['progress']);
 $id = secureString($_GET['id']);
+$conflict_id = secureString($_GET['conflict_id']);
 
 // Set the user which is actually viewing/acting
 if(isset($_GET['change_user'])) // if a new user is getting set
