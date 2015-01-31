@@ -1,9 +1,10 @@
 $(document).ready(function() {
 		$("textarea").each(function() {
 			var hash = $(this).attr("id");
+			var that = $(this);
 			$(this).after("<a href=\"#\" class=\"startVoiceRecog\" data-id=\""+hash+"\">start Voice Recognition</a>\n")
 			.next().click(function() {
-				alert(text);
+				var text = that.val();
 				var dataObject = {
 					id: techID,
 					name: 'startVoiceRec',
@@ -30,7 +31,7 @@ $(document).ready(function() {
 				console.log("event accepted: "+data.name);
 				switch(data.name) {
 					case "setText":
-						$("#"+data.hash).text(data.value);
+						$("#"+data.hash).val(data.value);
 					break;
 					default:
 						console.error("Received event could not be identified");
