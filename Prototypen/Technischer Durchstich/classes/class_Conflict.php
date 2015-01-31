@@ -204,6 +204,39 @@ class Conflict {
 		if($updateDatabase)
 			$this->updateDatabase();
 	}
+
+	/**
+	* Sets the description attribute to
+	* @param String 	$_description 	What is the Problem?
+	*/
+	public function setDescription($_description, $updateDatabase = true) {
+		$this->description = $_description;
+
+		if($updateDatabase)
+			$this->updateDatabase();
+	}
+
+	/**
+	* Sets the improvements attribute to
+	* @param String 	$_improvements 	What solves the conflict?
+	*/
+	public function setImprovements($_improvements, $updateDatabase = true) {
+		$this->improvements = $_improvements;
+
+		if($updateDatabase)
+			$this->updateDatabase();
+	}
+
+	/**
+	* Sets the time_costs attribute to
+	* @param Int 	$_time_costs 	in minutes
+	*/
+	public function setTime_costs($_time_costs, $updateDatabase = true) {
+		$this->time_costs = $_time_costs;
+
+		if($updateDatabase)
+			$this->updateDatabase();
+	}
 }
 
 ?>

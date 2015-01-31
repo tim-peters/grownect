@@ -82,4 +82,8 @@ function createThumb($src, $size, $prefix = null)
 	imagedestroy($dest_img);
 }
 
+function cutToRange($input, $max, $min = 0) {
+	return intval(($input > $max) ? $max : (($input < $min) ? $min : $input));
+}
+
 ?>
