@@ -1,8 +1,13 @@
 <?php
 
 class Log {
+	protected $logfile;
 	private $events = array();
 	private $errors = array();
+
+	public function __construct($_logfile = "./log/events.txt") {
+		$this->logfile = $_logfile;
+	}
 
 	/**
 	 * log an event
@@ -16,6 +21,12 @@ class Log {
 			];
 		if(isset($file)) $event["file"] = $file;
 		if(isset($line)) $event["line"] = $line;
+
+		$fp = fopen($this->logfile, "a");
+		$logline = date("d.M.Y|G.i.s")."|seite:".$file.", line:".$line."|".$msg."\n";
+		fwrite($fp, $logline);
+		fclose($fp); 
+
 		$this->events[] = $event;
 	}
 

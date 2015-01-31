@@ -1,5 +1,7 @@
 <?php
 require_once("../classes/class_Pusher.php");
+require_once("../classes/class_Log.php");
+$GLOBALS['log'] = new Log("../log/events.txt");
 
 $app_id = '103648';
 $app_key = '80c930949c53e186da3a';
@@ -14,6 +16,7 @@ if($_POST)
 			$data['name'] = ($_POST['value'] > 110) ? "startScream" : "skipScream";
 			$data['id'] = $_POST['id'];
 			$pusher->trigger('grownect', 'events', $data);
+			$GLOBALS['log']->event("API: triggered '".$data['name']."' for bracelet with id '".$data['id']."'",__FILE__,__LINE__);
 			echo 1;
 		break;
 
@@ -31,6 +34,7 @@ if($_POST)
 			{
 				$data['name'] = "endScream";
 				$pusher->trigger('grownect', 'events', $data);
+				$GLOBALS['log']->event("API: triggered '".$data['name']."' for bracelet with id '".$data['id']."'",__FILE__,__LINE__);
 			}
 
 			echo 1;
@@ -43,6 +47,7 @@ if($_POST)
 			$data['hash'] = $_POST['hash'];
 			$data['value'] = $_POST['value'];
 			$pusher->trigger('grownect', 'answers', $data);
+			//$GLOBALS['log']->event("API: triggered '".$data['name']."' with value '".$data['value']."' for id '".$data['id']."'/'".$data['hash']."'",__FILE__,__LINE__);
 			echo 1;
 		break;
 
@@ -61,6 +66,7 @@ if($_POST)
 			$data['name'] = "setUser";
 			$data['id'] = $_POST['user'];
 			$pusher->trigger('grownect', 'events', $data);
+			$GLOBALS['log']->event("API: triggered '".$data['name']."' to id '".$data['id']."'",__FILE__,__LINE__);
 			echo 1;
 		break;
 
@@ -69,6 +75,7 @@ if($_POST)
 			$data['name'] = "leaveUser";
 			$data['id'] = $_POST['user'];
 			$pusher->trigger('grownect', 'events', $data);
+			$GLOBALS['log']->event("API: triggered '".$data['name']."' for id '".$data['id']."'",__FILE__,__LINE__);
 			echo 1;
 		break;
 
