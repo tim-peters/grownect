@@ -16,7 +16,7 @@ if($_POST)
 			$data['name'] = ($_POST['value'] > 110) ? "startScream" : "skipScream";
 			$data['id'] = $_POST['id'];
 			$pusher->trigger('grownect', 'events', $data);
-			$GLOBALS['log']->event("API: triggered '".$data['name']."' for bracelet with id '".$data['id']."'",__FILE__,__LINE__);
+			$GLOBALS['log']->event("API: triggered '".$data['name']."' (Pulse:".$_POST['value'].") for bracelet with id '".$data['id']."'",__FILE__,__LINE__);
 			echo 1;
 		break;
 
