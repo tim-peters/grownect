@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<title>Mirror</title>
+		<script src="./js/core/jquery.js" type="text/javascript"></script>	
+
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+	                         
+
+		 /*.hier der rein-kopierte part von Doreen*/
+
+body {
+			border:1px dotted white;
+			background-color: #000000;
+			width: 858px;
+			height: 1533px;			
+			margin:0 auto;
+			font-family: 'PT Sans', sans-serif; 
+			font-size: 10px;
+			/*line-height: 12px;*/
+			color:white;
+		}
+
+
+		.usercontainer{
+
+			width:858px;
+			margin-top: 50px;
+			text-align: center;
+		}
+
+
+		 /*.user{
+
+			display: inline-block;
+			background-size: cover;
+			width: 120px;
+			height: 120px;
+			border-radius: 150px;
+			margin: 15px;			
+			text-align: center;
+			vertical-align: top;
+			opacity: 1;
+			transition:opacity .8s ease-out;
+		} */
+
+
+		.small .user{
+
+			display: inline-block;
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+			border-radius: 150px;
+			margin: 15px;			
+			text-align: center;
+			vertical-align: top;
+			opacity: 0.4;
+    		filter: alpha(opacity=40);
+		}
+
+	.usercontainer .clickeduser{
+
+			display: absolute;
+			margin-top: -10px;
+			background-color: #333333;
+			width: 150px;
+			height: 150px;
+			border-radius: 150px;
+			text-align: center;
+			opacity: 1;
+	    	filter: alpha(opacity=100);
+
+        }  /* wenn ich hier den style entferne zeigt es mir die icons unter dem bild untereinander auf aber so sind sie nebeneinander...*/
+
+
+		.clicked .user {
+			opacity: 0.5;
+
+		}
+
+		.user.open {
+			opacity: 1;
+			
+		}
+
+		#defaultuser{
+
+		background-color: #333333;
+		width: 120px;
+		height: 120px;
+		border-radius: 150px;
+		text-align: center;
+		
+		}
+
+		
+		.menu ul {
+			list-style: none;
+			padding:0;
+			margin:0;
+		}
+
+		.menu li{
+			display: inline-block;
+			padding:10px;
+			display:inline-block;  /*doppelt hält besser? :D */
+			line-height: 130%;
+			text-align: center;
+			width:38px;
+			text-transform: uppercase; /* mache den Text zu Vasalien */
+		}
+		
+		.menu{
+			height: 0; /* instead of display:none; (because height is animatable but display isn't) */
+			opacity:0;
+			padding-top: 100px;
+			transition:padding 1s .1s, opacity .6s, height 1s .1s; /* animation: backwarts */;
+			overflow: hidden;
+		}
+
+		.open .menu {
+			height: 200px;
+			opacity:1;
+			padding-top: 110px;
+			transition:padding ease-out .6s, opacity .6s; /* animation */
+		}
+
+		
+		/*.openconflicts{
+			position:absolute;
+			border:5px solid black;
+			margin-top: 80px;
+			margin-left: 80px;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			text-align: center;	
+			font: 16px/8px PT sans;
+			overflow: hidden;
+
+
+		} */
+
+		.small .openconflicts{
+			display:none;
+
+		}
+
+
+		/*.clickeduser .openconflicts{
+			display: block;
+			border:6px solid black;
+			margin-top: 100px;
+			margin-left: 100px;
+			width: 35px;
+			height: 35px;
+			font: 18px/11px PT sans;
+
+		} */
+
+
+		#recognizeduser{
+			border:1px solid white;
+		}
+
+
+
+		.usersignup{
+			display:block;
+			margin: 100px auto 40px;
+			border-radius: 50%;
+			background-color: #222222;
+			background:url"img/user.png") center center no-repeat;
+			background-size: cover;
+			width: 350px;
+			height: 350px;
+			text-align: center;
+		}
+
+		h1{
+
+			display:block;
+			color: #ffffff;
+			width:350px;
+			margin: auto;
+			font-size: 70px;
+			text-align: center;
+		}
+
+
+		.signupcontainer ul{
+			list-style: none;
+		}
+
+		
+		.signupcontainer ul{
+			display:block;
+			text-align: center;
+			line-height: 200%;
+			font-size: 16px;
+		}
+
+
+/*. Ab Hier der Container mit 2 Spalten und Zeilen
+		} */
+
+
+
+		.container {
+			background-color:black;
+			width: inherit;
+			width: 500px;
+			height:600px;
+			margin:200px auto;
+			top: 300px;
+			padding:30px;
+		}
+
+
+
+		.writingboxh1 {
+			float:left;
+			background-color:black;  
+			width: 460px;
+			height:50px;			
+			margin:20px 10px 100px 20px;
+			text-align:left;
+			padding:0px;
+			vertical-align:middle;
+			font-size: 21px;
+
+		}
+
+
+		.kasten {
+			overflow: hidden;
+			float: left;
+			margin:20px 10px 20px 20px;
+			display:block;
+			padding:20px;
+			text-align:center;
+			vertical-align:middle;
+			background-color:#222222;
+			width: 175px;
+			height: 120px;
+			
+			}
+
+		.kasten ul {
+			list-style: none;
+			padding:0;
+			margin:0;
+		}
+
+		.kasten li{
+			display: inline-block;
+			padding:10px;
+			display:inline-block;  /*doppelt hält besser? :D */
+			vertical-align:middle;
+			text-align: center;
+			
+			font-size: 21px;
+			
+		}
+
+		.container p {
+			padding:30px;
+			font-size: 21px;
+			vertical-align:middle;
+			text-align: center;
+}
+
+button.btn1{
+			position: absolute;
+			margin:0px 20px 0px 20px;
+			bottom: 80px;
+			left: 50%;
+			transform:translate(-50%,0);
+   			background-color: #000000;
+   			border:0px;
+   			color: #ffffff;
+   			font-size: 16px;
+		}
+
+		.btn img{
+			margin:0px 20px 0px 20px;
+		}
+
+button.btn2{
+			position: absolute;
+			margin:0px 20px 0px 20px;
+			bottom: 80px;
+			right: 50%;
+			transform:translate(-50%,0);
+   			background-color: #000000;
+   			border:0px;
+   			color: #ffffff;
+   			font-size: 16px;
+		}
+
+		.btn img{
+			margin:0px 20px 0px 20px;
+		}
+
+
+
+	</style>
+
+	</head>
+<body>
+
+
+<body>
+
+
+	<!--hier das Menü-->
+
+	<div class="usercontainer small" >
+	
+	
+		<div class="user" style="background-image:url(img/grownect_nadine.png)">
+		<div class="openconflicts" style="background-color:#f2786d"><br>1</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>	
+			</ul>
+		</div>
+	</div>
+
+		<div class="user" style="background-image:url(img/grownect_nadine.png)">
+		<div class="openconflicts" style="background-color:#acda8d"><br>2</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>		
+			</ul>
+		</div>
+	</div>
+	
+		<div class="user clickeduser" style="background-image:url(img/Bali_2013.jpg)">
+		<div class="openconflicts"  style="background-color:#8d1c1c"><br></div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>		
+			</ul>
+		</div>
+	</div>
+
+	<div class="user clickeduser" style="background-image:url(img/grownect_nadine.png)">
+		<div class="openconflicts" style="background-color:#f59556"><br>5</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/profile.png" width="20"><br><br>show<br>profile</li>
+				<li><img src="img/statistic.png" width="20"><br><br>show<br>conflicts</li>	
+			</ul>
+		</div>
+	</div>
+
+	<div class="user" style="background-image:url(img/grownect_tim.png)">	
+		<div class="openconflicts" style="background-color:#1b3140"><br>3</div>
+		<div class="menu">
+			<ul> 
+				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
+				<li><img src="img/conflict-w.png" width="25"><br><br>add<br>conflict</li>			
+			</ul>
+		</div>
+	</div>
+ 
+</div>
+
+
+<!--oben Menü - unten die der spalten-container-->
+
+<div class="container">
+	<div class="writingboxh1">
+		<h2>Let out your rage while screaming as loud as you can into your bracelet</h2>
+	</div>
+
+	<img src="img/xxxx" width="350" hight="200"><br><br> <!--hier muss ich die lautstärke einstellen-->		
+	
+	
+		
+		         
+          <!--<input type="text" name="" value="">-->
+
+	</div>
+	
+     
+<button type="button" type="submit" class="btn1"><img src="img/btn1.png" width="28"> &nbsp; next</button>
+<button type="button" type="submit" class="btn2"><img src="img/btn2.png" width="28"> &nbsp; cancel</button>
+
+
+
+	<script type="text/javascript">
+		
+//das funktioniert nicht so ganz!
+		
+		$(".user").click(function(){ // trigger
+			if(!$(".user.open").not(this).length)
+				$(this).parent(".usercontainer ").toggleClass("clicked");
+			$(".user").not(this).removeClass("open .user .user clickeduser");
+			$(this).toggleClass("open .user clickeduser");
+		});
+
+		$(".button_close").click(function(){ // trigger 
+		$(".menu .open").not(this).removeClass("open"); //keine Ahnung? wie lass ich die aufgklappten untermenüs verschwinden?
+		}); //wenn klasse aktiv ist funktioniert das nicht mehr also nach user not parent with dieser klasse (inaktiv)
+
+
+	</script>
+
+
+
+</body>
+</html>

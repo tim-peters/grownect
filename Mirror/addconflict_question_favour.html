@@ -11,6 +11,8 @@
 	<style type="text/css">
 	                         
 
+		 /*.hier der rein-kopierte part von Doreen*/
+
 body {
 			border:1px dotted white;
 			background-color: #000000;
@@ -201,61 +203,122 @@ body {
 			text-align: center;
 			line-height: 200%;
 			font-size: 16px;
-	
+		}
 
+
+/*. Ab Hier der Container mit 2 Spalten und Zeilen
+		} */
+
+
+
+		.container {
+			background-color:black;
+			width: inherit;
+			width: 500px;
+			height:600px;
+			margin:200px auto;
+			top: 300px;
+			padding:30px;
 		}
 
 
 
-        .writingbox{
-        	position:relative;
- 			opacity: 0.6;
-    		filter: alpha(opacity=60);
- 			background-color:white;
- 			width: 700px;
-			height:800px;
-			text-align:center;	
-			margin:0 auto;
-			top: 150px;
-			left:0;
+		.writingboxh1 {
+			float:left;
+			background-color:black;  
+			width: 460px;
+			height:50px;			
+			margin:20px 10px 100px 20px;
+			text-align:left;
+			padding:0px;
+			vertical-align:middle;
+			font-size: 21px;
+
 		}
 
 
-    	a.button { 
-    		
-    		padding:0;
-    		float:left;
-    		position: absolute; /*liegt über elemente darüber*/
-    		margin-left:250px; /*randabstand*/
-    		margin-top:1020px; /* % bezieht sich auf die breite*/
+		.kasten {
+			overflow: hidden;
+			float: left;
+			margin:20px 10px 20px 20px;
+			display:block;
+			padding:20px;
+			text-align:center;
+			vertical-align:middle;
+			background-color:#222222;
+			width: 175px;
+			height: 120px;
+			
+			}
 
-            background-image:url(img/button.png);
-            width:150px; height:80px;
+		.kasten ul {
+			list-style: none;
+			padding:0;
+			margin:0;
+		}
 
-            
-			 }
-
-		a.button li {
-
-
-            clear:left;
-            list-style:none;
-			color: #ffffff;
+		.kasten li{
+			display: inline-block;
+			padding:10px;
+			display:inline-block;  /*doppelt hält besser? :D */
+			vertical-align:middle;
 			text-align: center;
-			font-size: 20px;
-
+			
+			font-size: 21px;
+			
 		}
 
-   		a.button:hover { 
-   			background-image:url(img/button_on.png); } 
+		.container p {
+			padding:30px;
+			font-size: 21px;
+			vertical-align:middle;
+			text-align: center;
+}
+
+button.btn1{
+			position: absolute;
+			margin:0px 20px 0px 20px;
+			bottom: 80px;
+			left: 50%;
+			transform:translate(-50%,0);
+   			background-color: #000000;
+   			border:0px;
+   			color: #ffffff;
+   			font-size: 16px;
+		}
+
+		.btn img{
+			margin:0px 20px 0px 20px;
+		}
+
+button.btn2{
+			position: absolute;
+			margin:0px 20px 0px 20px;
+			bottom: 80px;
+			right: 50%;
+			transform:translate(-50%,0);
+   			background-color: #000000;
+   			border:0px;
+   			color: #ffffff;
+   			font-size: 16px;
+		}
+
+		.btn img{
+			margin:0px 20px 0px 20px;
+		}
 
 
 
-   		.button_close {
-   			width: 500px;
-			height:500px;
-			margin-left:1000px;
-   		}
+
+		textarea.signup{
+			color: #ffffff;
+			font-size: 16px;
+			border: 0px solid #FF0000;
+			background-color: #222222;
+			height: 40px;
+			width: 200px;
+			padding: 10px;
+			}
 
 	</style>
 
@@ -263,11 +326,16 @@ body {
 <body>
 
 
-<div class="usercontainer small" >
+<body>
+
+
+	<!--hier das Menü-->
+
+	<div class="usercontainer small" >
 	
 	
 		<div class="user" style="background-image:url(img/grownect_nadine.png)">
-		<div class="openconflicts" style="background-color:#6f007f"><br>1</div>
+		<div class="openconflicts" style="background-color:#f2786d"><br>1</div>
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
@@ -277,7 +345,7 @@ body {
 	</div>
 
 		<div class="user" style="background-image:url(img/grownect_nadine.png)">
-		<div class="openconflicts" style="background-color:#ff6347"><br>2</div>
+		<div class="openconflicts" style="background-color:#acda8d"><br>2</div>
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
@@ -286,8 +354,8 @@ body {
 		</div>
 	</div>
 	
-		<div class="user" style="background-image:url(img/Bali_2013.jpg)">
-		<div class="openconflicts"  style="background-color:#ff0000"><br></div>
+		<div class="user clickeduser" style="background-image:url(img/Bali_2013.jpg)">
+		<div class="openconflicts"  style="background-color:#8d1c1c"><br></div>
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
@@ -296,8 +364,8 @@ body {
 		</div>
 	</div>
 
-	<div class="user" style="background-image:url(img/grownect_nadine.png)">
-		<div class="openconflicts" style="background-color:#f5506f"><br>5</div>
+	<div class="user clickeduser" style="background-image:url(img/grownect_nadine.png)">
+		<div class="openconflicts" style="background-color:#f59556"><br>5</div>
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/profile.png" width="20"><br><br>show<br>profile</li>
@@ -307,7 +375,7 @@ body {
 	</div>
 
 	<div class="user" style="background-image:url(img/grownect_tim.png)">	
-		<div class="openconflicts" style="background-color:#005500"><br>3</div>
+		<div class="openconflicts" style="background-color:#1b3140"><br>3</div>
 		<div class="menu">
 			<ul> 
 				<li><br><br><img src="img/moment-w.png" width="25"><br><br>create<br>moment</li>
@@ -316,42 +384,51 @@ body {
 		</div>
 	</div>
  
-
 </div>
 
-	
-     <li><a class="button" href=""><img src="img/button.jpg"/>cancel</a></li>
 
-	<!-- ???? irgendwie komm ich mit den a links bei dem button nicht klar habe die oben im css als img benannt...? -->
-	
+<!--oben Menü - unten die der spalten-container-->
 
-	<a class="button_close" href=""><img src="img/button_close.jpg"/></a>
-	
-	<div class="writingbox">
-
-    	<div style="background-color: #700000;  
-			width: 500px;
-			height:50px;			
-			margin:0px auto;
-			text-align:center;
-			padding:50px;
-			vertical-align:middle;
-			">
-      
-           <p> Hier soll eigentlich Text in der writingbox und auch in der roten spalte mittig stehen. Außerdem muss hierfür eine andere Schrift generiert werden! Achja scheiß Umlaute. ansicht ist nur für das beispiel rot</p>
-		</div>
-		
-
-	<input type="text" name="" value="">
-
+<div class="container">
+	<div class="writingboxh1">
+		<h2>What was Users last favour?</h2>
+	</div>
+	<div class="kasten">
+		<ul> 
+			<li>      </li> <!--hier muss ich noch ein div für das Bild einfügen, außerdem verschwindet das datum-->		
+		</ul>
+	</div>
+	<div class="kasten">
+		<ul> 
+			<li><img src="img/makefg-2.php.png" width="50"></li> <!--hier muss ich noch ein div für das Bild einfügen, außerdem verschwindet das datum-->		
+		</ul>
+	</div>
+	<div class="kasten">
+		<ul> 
+			<li><br><input type="text" name="" value=""></li>		
+		</ul>
 
 	</div>
+		<div class="kasten">
+		<ul> 
+			<li><img src="img/keyboard-2-512.png" width="50"></li> <!--hier muss ich noch ein div für das Bild einfügen, außerdem verschwindet das datum-->		
+		</ul> 
+	</div>
+		
+		         
+          <!--<input type="text" name="" value="">-->
+
+	</div>
+	
+     
+<button type="button" type="submit" class="btn1"><img src="img/btn1.png" width="28"> &nbsp; next</button>
+<button type="button" type="submit" class="btn2"><img src="img/btn2.png" width="28"> &nbsp; cancel</button>
 
 
 
 	<script type="text/javascript">
 		
-
+//das funktioniert nicht so ganz!
 		
 		$(".user").click(function(){ // trigger
 			if(!$(".user.open").not(this).length)
