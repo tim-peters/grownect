@@ -187,6 +187,17 @@
 		}
 
 
+		h2{
+
+			display:block;
+			color: #ffffff;
+			width:350px;
+			margin: auto;
+			font-size: 24px;
+			text-align: center;
+			padding: 20px;
+		}
+
 		
 		.signupcontainer p{
 			display:block;
@@ -253,3 +264,40 @@
 		}
 
 
+		/*SHOW PROFILE*/
+
+		.userlarge{
+			display:block;
+			margin: 150px auto 40px;
+			border-radius: 50%;
+			background-color: #222222;
+			background:url"img/user.png") center center no-repeat;
+			background-size: cover;
+			width: 350px;
+			height: 350px;
+			text-align: center;
+		}
+
+		textarea.changeprofile{
+			display:block;
+			margin:auto;
+			color: #ffffff;
+			font-size: 16px;
+			border: 0px solid #FF0000;
+			background-color: #222222;
+			height: 80px;
+			width: 200px;
+			padding: 10px;
+			resize:none;
+		}
+
+		.userlarge img{
+			margin:250px 0 0px 250px;
+			opacity: 1;
+		}
+
+
+		.welcome{
+			display:block;
+			margin: 400px auto 40px;
+		}
