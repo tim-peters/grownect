@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset='UTF-8'>
+<style type="text/css">
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  cursor: default;
+}
+.rating > span:hover,
+.rating > span:hover ~ span,
+.rating > span.active,
+.rating > span.active ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before,
+.rating > span.active:before,
+.rating > span.active ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0;
+   color: gold;
+}
+
+</style>
+</head>
+<body>
+
+<input type="number" name="rating" />
+<div class="rating">
+	<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+
+</body>
+<script type="text/javascript" src="../js/core/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".rating span").click(function() {
+		var amount = 4-$(".rating span").index(this);
+		$("input[name='rating']").val(amount*25);
+		$(".rating .active").removeClass("active");
+		$(".rating span").each(function() {
+			var dc;
+			if(dc = $(this).attr("data-class"))
+				$(this).removeAttr("data-class");
+		});
+		$(this).addClass("active");
+	});
+	$(".rating").hover(function() {
+		$("span.active", this).attr("data-class", "active").removeClass("active");
+	},
+	function() {
+		$("span", this).each(function() {
+			var dc;
+			if(dc = $(this).attr("data-class"))
+				$(this).attr("class", dc);
+		});
+	});
+});
+</script>
+
+</html>
