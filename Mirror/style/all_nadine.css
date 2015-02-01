@@ -315,6 +315,7 @@
 		/* CONTAINER 2 SPALTEN UND ZEILEN FÜR MOMENTS */
 
 
+
 		.containerbig {
 			background-color:gray;
 			width: inherit;
@@ -325,22 +326,31 @@
 			padding:30px;
 		}
 
-		.containersmall {
-			background-color:gray;
-			width: inherit;
-			width: 500px;
-			height:600px;
-			margin:200px auto;
-			top: 300px;
-			padding:30px;
-		}
 
 		.containerbig ul {
 			list-style: none;
 			padding:0;
 			margin:0px;
+			;
+		}
+
+		.containerbig li {
+			list-style: none;
+			padding:0;
+			margin:0px;
 			font-size: 16px;
 		}
+
+		.containerbig p {
+			font-size: 21px; 
+			font-weight: bold;
+			padding: 10px 0 0px 20px;
+			margin-bottom: 5px;
+
+}
+
+
+
 		.containerbig > ul {  /*innere ul wird angesprochen*/
 			margin-bottom: 10px; 
 			height: 400px;
@@ -355,30 +365,26 @@
 
 		}
 
+		.containerbig ul ul {
+			display:none;
+		}
+
 		.containerbig ul ul li {   /*Zeilenabstand von dem Äußeren ul bis zum li*/
 			margin-bottom: 8px; 
 			margin-top: 8px;
 
 		}
 
-		
-    	a.button ul ul li { 
-    		
-    		padding:0;
-    		float:left;
-    		 /*liegt über elemente darüber*/
-    		margin-left:250px; /*randabstand*/
-    		margin-top:1020px; /* % bezieht sich auf die breite*/
+		#conflictlist a{
+			position:absolute;
+			display:block;
+		}
 
-            background-image:url(img/grownect_doreen_klein.png);
-            width:150px; height:80px;
-
-            
-			 }
+		#conflictlist a.opened {
+			font-weight:bold;
+		}
 
 
-   		a.button ul ul li:hover { 
-   			background-image:url(img/grownect_doreen_klein.png); } 
 
 		/*.containerbig p {
 			border:2px;
@@ -387,8 +393,18 @@
 			height: 200px;
 			padding:30px;
 			font-size: 21px;
-			text-align: left;    /*dhier eigentlich textumbruch...*/
+			text-align: left;    /*dhier eigentlich textumbruch...
 }*/
+
+		/* .containersmall {
+			background-color:gray;
+			width: inherit;
+			width: 500px;
+			height:600px;
+			margin:200px auto;
+			top: 300px;
+			padding:30px;
+		} */
 
 
 		.containersmall p {
@@ -432,6 +448,8 @@
 			font-size: 21px;
 			
 		}
+
+
 
 
 

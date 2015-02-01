@@ -77,17 +77,18 @@
 <div class="containerbig">
 	
 		<h2>Conflicts</h2>
-		<ul>
-				<img src="img/grownect_doreen_klein.png" width="100px" hight:"100px" style="float:left; border-radius:50%; margin:10px 30px 10px 30px">
+		<ul id="conflictlist">
+				<img src="img/grownect_doreen_klein.png" width="70px" hight:"70px" style="float:left; border-radius:50%; margin:40px 30px 10px 30px">
 			<li>
-				does not clean up
-    
+				<p> {User} does not clean up</p>
 
 				<ul>
 					<li>Anzahl Erinnerungen</li>
 					<li>Event Dropdown</li> 
 				</ul>
-				Erstellungsdatum: 14.12.2014 
+				<br>
+				14.12.2014 
+				<a href="#" class="toggle">Show more...</a>
 			</li>
 			<li>
 				does not clean up
@@ -118,6 +119,36 @@
 
 
 	<script type="text/javascript">
+
+	/* Source: http://stackoverflow.com/questions/22263266/jquery-toggle-text-to-change-on-click */
+	jQuery.fn.extend({
+	    toggleText: function (a, b){
+	        var that = this;
+	            if (that.text() != a && that.text() != b){
+	                that.text(a);
+	            }
+	            else
+	            if (that.text() == a){
+	                that.text(b);
+	            }
+	            else
+	            if (that.text() == b){
+	                that.text(a);
+	            }
+	        return this;
+	    }
+	});
+
+	$(document).ready(function(){
+		$("#conflictlist a").click(function(event){
+			//alert($(this).parent().find("ul").text());
+			$(this).parent().find("ul").slideToggle("fast");
+			$(this).toggleClass("opened");
+			$(this).toggleText("Show more...", "Show less..."); //hier dann auch Benennung von a Ändern!
+			event.preventDefault();
+		});
+	});
+
 	</script>
 
 </body>
