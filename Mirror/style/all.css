@@ -348,6 +348,26 @@
 			text-align: center;
 		}
 
+		.editprofile{
+			position: absolute;
+			border-radius: 50%;
+			margin-top: -140px;
+			margin-left: 475px;
+			background-color: #f59556;
+			border: 13px solid black;
+			background:url"img/user.png") center center no-repeat;
+			background-size: cover;
+			width: 75px;
+			height: 75px;
+		}
+
+
+		.editprofile img{
+			text-align: center;
+			margin:16px;
+		}
+
+
 		textarea {
 			color: #ffffff;
 			border: 1px solid #333;
