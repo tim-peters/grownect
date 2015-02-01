@@ -4,6 +4,8 @@
 	<title></title>
 	<meta charset='UTF-8'>
 <style type="text/css">
+
+/* Stern Rating css */
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -35,14 +37,19 @@
 </head>
 <body>
 
-<input type="number" name="rating" />
+
+<!-- Das hier an der Stelle einfügen, wo das Rating sein soll. 
+Die Größe der Sterne kann über die Schriftgröße (innerhalb von .rating) bestimmt werden -->
+<input type="hidden" name="rating" />
 <div class="rating">
 	<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 </div>
-
+<!-- Ende Rating -->
 </body>
+
 <script type="text/javascript" src="../js/core/jquery.js"></script>
 <script type="text/javascript">
+// Das folgende in den JS-Script Bereich
 $(document).ready(function() {
 	$(".rating span").click(function() {
 		var amount = 4-$(".rating span").index(this);
