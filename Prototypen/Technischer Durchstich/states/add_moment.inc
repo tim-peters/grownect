@@ -79,7 +79,7 @@ switch($progress) {
 					//if(true) // FOR DEBUG ONLY!
 					{
 						//echo $actual_user.", ".$id.", 1, ".$_POST['rating'].", ".$_POST['img']."\n";
-						$instance = Moment::fromNew($actual_user, $id, 1, secureString($_POST['rating']), secureString($_POST['img']));
+						$instance = Moment::fromNew($actual_user, $id, 1, secureString($_POST['rating']), "./img/moments/".$file_id."_".$file_name);
 						$content['body'] .= "Erfolgreich erstellt!\n";
 					}
 					else
