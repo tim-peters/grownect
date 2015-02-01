@@ -250,7 +250,7 @@
 
 		button.btn{
 			position: absolute;
-			bottom: 250px;
+			bottom: 350px;
 			left: 50%;
 			transform:translate(-50%,0);
    			background-color: #000000;
