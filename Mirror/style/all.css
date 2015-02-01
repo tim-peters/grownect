@@ -209,12 +209,13 @@
 		input.signup{
 			color: #ffffff;
 			font-size: 16px;
-			border: 0px solid #FF0000;
-			background-color: #222222;
+			border: 1px solid #333;
+			background-color: #111;
 			border-radius: 0px;
 			height: 30px;
 			width: 200px;
-			padding: 10px;
+			margin:20px;
+			padding: 5px 10px;
 		}
 
 
@@ -230,33 +231,36 @@
 		}*/
 
 		textarea.signup{
-			color: #ffffff;
-			font-size: 16px;
-			border: 0px solid #FF0000;
-			background-color: #222222;
-			height: 40px;
-			width: 200px;
-			padding: 10px;
-			resize:none;
+			height: 145px;
+			width: 300px;
+		}
+
+			textarea.signup:focus {
+			border: 1px solid #FFFFFF;
+
 		}
 
 		.colorpicker{
 			margin: 0px auto;
-			background-color: #222222;
+			background-color: #000000;
 			width:220px;
 			height: 100px;
 			text-align: center;
+			padding:20px 0 0 0;
 		}
 
 		button.btn{
 			position: absolute;
-			bottom: 350px;
+			bottom: 250px;
 			left: 50%;
 			transform:translate(-50%,0);
    			background-color: #000000;
    			border:0px;
    			color: #ffffff;
    			font-size: 16px;
+   			border: 1px solid #ccc;
+   			padding: 4px 18px 13px 0;
+
 		}
 
 		.btn img{
@@ -270,29 +274,34 @@
 			display:block;
 			margin: 150px auto 40px;
 			border-radius: 50%;
-			background-color: #222222;
+			background-color: #111;
 			background:url"img/user.png") center center no-repeat;
 			background-size: cover;
-			width: 350px;
-			height: 350px;
+			width: 300px;
+			height: 300px;
 			text-align: center;
 		}
 
-		textarea.changeprofile{
+		textarea {
+			color: #ffffff;
+			border: 1px solid #333;
+			background-color: #111;
 			display:block;
 			margin:auto;
-			color: #ffffff;
 			font-size: 16px;
-			border: 0px solid #FF0000;
-			background-color: #222222;
-			height: 80px;
-			width: 200px;
 			padding: 10px;
 			resize:none;
+			font-family: 'PT Sans', sans-serif;
+		}
+
+		textarea.changeprofile{
+			
+			height: 145px;
+			width: 300px;
 		}
 
 		.userlarge img{
-			margin:250px 0 0px 250px;
+			margin:215px 0 0px 220px;
 			opacity: 1;
 		}
 
