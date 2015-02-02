@@ -1,4 +1,5 @@
-/* main stylesheet */	                         
+/* main stylesheet */
+	                         
 
 		body {
 			position:relative;
@@ -203,7 +204,7 @@
 
 		.usersignup{
 			display:block;
-			margin: 100px auto 40px;
+			margin: 200px auto 40px;
 			border-radius: 50%;
 			background-color: #222222;
 			background:url"img/user.png") center center no-repeat;
@@ -216,7 +217,7 @@
 		.edit{
 			position: absolute;
 			border-radius: 50%;
-			margin-top: 280px;
+			margin-top: 380px;
 			margin-left: 475px;
 			background-color: #acda8d;
 			border: 13px solid black;
@@ -236,21 +237,14 @@
 
 		h1{
 
-			display:block;
 			color: #ffffff;
-			width:500px;
-			margin: auto;
 			font-size: 70px;
 			text-align: center;
 		}
 
 
 		h2{
-
-			display:block;
 			color: #ffffff;
-			width:500px;
-			margin: auto;
 			font-size: 24px;
 			text-align: center;
 		}
@@ -380,7 +374,7 @@
 		}
 
 		textarea.changeprofile{
-			
+			display:block;
 			height: 145px;
 			width: 300px;
 		}
@@ -428,7 +422,6 @@
 
 		.textarea{
 			display:block;
-
 			margin: 0 270px;
 			width:500px;
 			height:500px;
@@ -455,6 +448,13 @@
 			padding:10px;
 			vertical-align: top;
 
+		}
+
+
+		/*LAST_GOOD_MOMENT*/
+
+		h2.moment{
+			margin:100px auto;
 		}
 
 
@@ -522,7 +522,7 @@
    			color: #ffffff;
    			font-size: 16px;
    			border: 1px solid #ccc;
-   			padding: 9px 18px 13px 0;
+   			padding: 11px 18px 13px 0;
 
 		}
 
@@ -574,7 +574,7 @@
 			padding:10px 10px 10px 100px;
 			text-align: left;
 			width:390px;
-			border-bottom:1px solid white;
+			border-bottom:1px solid #333;
 			min-height:50px;
 
 		}
@@ -643,4 +643,20 @@
 		#conflictlist a.opened:after {
 			transform: rotate(180deg);
 			margin:-16px 65px;
+		}
+
+		/* HOMESCREEN MESSAGE */
+
+		.messages {
+			width:400px;
+			margin:100px auto;
+			padding:15px 10px 30px;
+			text-align: center;
+			border:1px solid #333;
+			cursor: pointer;
+		}
+
+		.messages a {
+			color:#aaa;
+			text-decoration: none;
 		}

@@ -45,8 +45,10 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 
 		$output .= "<div class=\"user"; // create a li-tag
 		// if it's the viewer himself, add a class ("self"); if it's an other user which is affekted by the running interaction, add class "active"
-		if($is_self)
+		if($is_self && isset($with))
 			$output .= " clickeduser\" id=\"recognizeduser";
+		elseif($is_self)
+			$output .= "\" id=\"recognizeduser";
 		elseif($is_active)
 			$output .= " clickeduser";
 
