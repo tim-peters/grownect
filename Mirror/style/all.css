@@ -440,6 +440,27 @@
 		}
 
 
+		
+		/*SCREAM*/
+
+
+		.scream{
+			text-align: center;
+			padding:0;
+		}
+
+		#loudnessIndikator {
+			background:red;
+			width:1px;
+			height:0.1px;
+			margin-left:100px;
+			transform: scale(200);
+		}
+
+
+
+		
+
 		/*LAST_GOOD_MOMENT*/
 
 		h2.moment{
