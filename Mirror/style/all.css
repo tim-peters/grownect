@@ -629,10 +629,22 @@
 			position:absolute;
 			display:block;
 			color:#ccc;
-			margin-left: 340px;
+			margin-left: 320px;
 			margin-top: -10px;
+			text-decoration: none;
+			font-size:13px;
 		}
 
-		#conflictlist a.opened {
-			font-weight:bold;
+		#conflictlist a:after {
+			display: block;
+			content:url("../img/pfeil_runter.png");
+			width:10px;
+			margin:-15px 67px;
+			transform:rotate(270deg);
+			transition:all .5s ease;
+		}
+
+		#conflictlist a.opened:after {
+			transform: rotate(180deg);
+			margin:-16px 65px;
 		}
