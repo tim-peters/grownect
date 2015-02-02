@@ -270,10 +270,6 @@
 		}
 
 
-		textarea.signup{
-			height: 145px;
-			width: 300px;
-		}
 
 		input:focus {
 			border: 1px solid #FFFFFF;
@@ -361,13 +357,6 @@
 		}
 
 
-		textarea.changeprofile{
-			display:block;
-			height: 145px;
-			width: 300px;
-		}
-
-
 		.welcome{
 			display:block;
 			margin: 400px auto 40px;
@@ -408,11 +397,13 @@
 			margin:100px auto;
 		}
 
+		/*TEXTAREA*/
+
 		.textarea{
 			display:block;
 			margin: 0 270px;
-			width:500px;
-			height:500px;
+			width:400px;
+			height:200px;
 		}
 
 		 textarea {
