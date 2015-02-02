@@ -1,7 +1,9 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
 require_once("./classes/class_Log.php");
-
+require_once("./classes/class_Conflict.php");
+require_once("./classes/class_Pusher.php");
+include_once("./db_connect.inc");
 include_once("./classes/class_User.php");
 
 if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
@@ -20,7 +22,7 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 
 	var timeBetweenLoudnessPosts =  250;
 
-	var audioClearID;
+	var clearID;
 	var audioContext = null;
 	var audioSource = null;
 	var audioAnalyser = null;
@@ -76,7 +78,7 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 		    if(window.stopRecording)
 		    {
 		    	console.log("audio stop");
-		    	clearInterval(audioClearID); // stop sending
+		    	clearInterval(clearID); // stop sending
 		    	stream.stop(); // free microphone
 		    	window.stopRecording = false;
 		    }
@@ -96,7 +98,7 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	        	timeSinceReset = 0;
 	        }
 	    };
-	    audioClearID = setInterval(sampleAudioStream, 20);
+	    clearID = setInterval(sampleAudioStream, 20);
 	    
 	    volume = 0;
 	};
@@ -144,6 +146,81 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 		});
 	}
 
+	function initializeConflict(data) {
+		$("h1").text("blinkt").css("color", data.value); // FIXME
+		clearID = setTimeout(function() { read(data.text); }, 5000);
+		
+		$(".buttons").append(function() {
+			return $("<button name='nope'>Hauen (nein)</button>").click(function() {knowsProblem(false, data.conflict)});
+		});
+		$(".buttons").append(function() {
+			return $("<button name='jep'>Wischen (ja)</button>").click(function() {knowsProblem(true, data.conflict)});
+		});
+	}
+
+	function getNameFromConflict(id) {
+		var eventName = "getNameFromConflict";
+		var dataObject = {
+			id: techID,
+			name: eventName,
+			value: id
+		};
+
+		var result="";
+		$.ajax({
+			type: "POST",
+			url: "./api/api_braceletAnswer.php",
+			data: dataObject,
+			async:false,
+			success:function(data) {
+				result = data;
+			}
+		});
+		return result;
+	}
+
+	function demandExplanation(id) {
+		var name = getNameFromConflict(id);
+		read("You should let "+name+" know why you acted that way, to let him understand the situation better. If you don't want to help solving the conflict, it's time to hit the bracelet now. Otherwise tab and hold the bracelet and start talking.");
+	}
+
+	function read(text, callback) {
+		console.log("reading: "+text);
+		if(callback != undefined)
+			callback();
+	}
+
+	function knowsProblem(jep, id) {
+		clearTimeout(clearID);
+		if(jep) // User knows the problem
+		{
+			// Tells User to explain his situation
+			demandExplanation(id);
+		}
+		else // User does not know what's the problem
+		{
+			// Demand explanation
+			var eventName = "getProblemDescription";
+			var dataObject = {
+				id: techID,
+				name: eventName,
+				value: id
+			};
+
+			function processAnswer(answer) {
+				read(answer, function() { demandExplanation(id) });
+			};
+
+			$.ajax({
+				type: "POST",
+				url: "./api/api_braceletAnswer.php",
+				data: dataObject,
+				success: processAnswer
+			});
+
+		}
+	}
+
 	channel.bind('events', function(data) {
 		console.log("event registered");
 		if(data.id == techID)
@@ -186,6 +263,11 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 							.focusout(function() { 
 								$(this).remove()
 							});
+				break;
+
+				case "conflictCreated":
+					console.log("conflictCreated");
+					initializeConflict(data);
 				break;
 
 				default:
@@ -273,7 +355,8 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 </head>
 <body>
 <h1 id="h1"><?php echo $user_object->name; ?>'s Bracelet</h1>
-<input type="button" name="mirror" value="I'm in front of the mirror">
-
+<div class="buttons">
+	<input type="button" name="mirror" value="I'm in front of the mirror">
+</div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
-require_once("./classes/class_Conflict.php");
-require_once("./classes/class_Pusher.php");
-include_once("./db_connect.inc");
+//require_once("./classes/class_Conflict.php");
+//require_once("./classes/class_Pusher.php");
+//include_once("./db_connect.inc");
 
 class User 
 {
@@ -208,7 +208,7 @@ class User
 			return true;
 	}
 
-	public function sendToBracelet($event) {
+	public function sendToBracelet($event, $value = null) {
 		$app_id = '103648';
 		$app_key = '80c930949c53e186da3a';
 		$app_secret = '777b9e075eb9c337ea1e';
@@ -217,6 +217,9 @@ class User
 
 		$data['name'] = $event;
 		$data['id'] = $this->tech_id;
+		if(isset($value))
+			foreach($value as $key => $val)
+				$data[$key] = $val;
 		$pusher->trigger('grownect', 'events', $data);
 	}
 }

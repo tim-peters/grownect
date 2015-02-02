@@ -4,6 +4,7 @@ require_once("./classes/class_Log.php");
 
 // Importing classes
 require_once("./classes/class_Conflict.php");
+require_once("./classes/class_Pusher.php");
 require_once("./classes/class_User.php");
 
 // Importing dependencies

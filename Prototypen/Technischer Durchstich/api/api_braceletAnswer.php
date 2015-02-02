@@ -1,5 +1,9 @@
 <?php
+
 require_once("../classes/class_Pusher.php");
+require_once("../db_connect.inc");
+require_once("../classes/class_Conflict.php");
+require_once("../classes/class_User.php");
 require_once("../classes/class_Log.php");
 $GLOBALS['log'] = new Log("../log/events.txt");
 
@@ -12,6 +16,7 @@ if($_POST)
 {
 	switch($_POST['name']) {
 		// decide whether the user needs to scream in his bracelet or not depending on the received pulse frequency
+		// FIXME: Better Solution: Direct answer (echo) instead of second pusher-event
 		case "setPulse": 
 			$data['name'] = ($_POST['value'] > 110) ? "startScream" : "skipScream";
 			$data['id'] = $_POST['id'];
@@ -77,6 +82,21 @@ if($_POST)
 			$pusher->trigger('grownect', 'events', $data);
 			$GLOBALS['log']->event("API: triggered '".$data['name']."' for id '".$data['id']."'",__FILE__,__LINE__);
 			echo 1;
+		break;
+
+		case "getProblemDescription":
+			$conflict_id = $_POST['value'];
+			$actual_conflict = Conflict::fromDb($conflict_id);
+			$user_object = User::fromDb($actual_conflict->created_by);
+			$output = $user_object->name." said the issue is, that ".$actual_conflict->description;
+			echo $output;
+		break;
+
+		case "getNameFromConflict":
+			$conflict_id = $_POST['value'];
+			$actual_conflict = Conflict::fromDb($conflict_id);
+			$user_object = User::fromDb($actual_conflict->created_by);
+			echo $user_object->name;
 		break;
 
 		default:
