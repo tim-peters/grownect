@@ -10,3 +10,10 @@ channel.bind('events', function(data) {
 		break;
 	}
 });
+
+$(".usercontainer:not(.small) .user").click(function(){ // trigger
+	if(!$(".user.open").not(this).length)
+		$(this).parent(".usercontainer").toggleClass("clicked");
+	$(".user").not(this).removeClass("open");
+	$(this).toggleClass("open");
+});

@@ -10,22 +10,22 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 	$content = [ // Set the structure: Which icons should be displayed when (& how)?
 		"self" => [ // structure for the user himself
 			[
-				"icon" => "edit profile",
+				"icon" => "<br><br><img src=\"img/profile.png\" width=\"20\"><br><br>show<br>profile",
 				"state" => "edit_profile"
 			],
 			[
-				"icon" => "my conficts",
+				"icon" => "<img src=\"img/statistic.png\" width=\"20\"><br><br>show<br>conflicts",
 				"state" => "show_statistics"
 			]
 		],
 		"other" => [ // structure for the icons of the other users
 			[
-				"icon" => "create conflict",
+				"icon" => "<img src=\"img/conflict-w.png\" width=\"25\"><br><br>add<br>conflict",
 				"state" => "add_conflict",
 				"id" => true
 			],
 			[
-				"icon" => "add moment",
+				"icon" => "<br><br><img src=\"img/moment-w.png\" width=\"25\"><br><br>create<br>moment",
 				"state" => "add_moment",
 				"id" => true
 			]
@@ -33,38 +33,37 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 	];
 
 	// Fill the structure (above) with content and generate the HTML outcome
-	$output  = "<nav>\n";
-	$output .= "<ul>\n";
+	$output .= "<div class=\"usercontainer";
+	if(isset($with)) $output .= " small";
+	$output .= "\">\n";
 	foreach($user_objects as $user_object) { // for each existing user object
 		
 		$is_self = ($user_object->id == $as); // check whether it's the viewer himself or not
 		$is_active = ($user_object->id == $with); // check whether it's an affected user or not
 
-		$output .= "<li class='"; // create a li-tag
+		if(isset($choose_mode) && !$is_self) $output .= "<a href='?state=".$choose_mode."&id=".$user_object->id."&progress=1'>";
+
+		$output .= "<div class=\"user"; // create a li-tag
 		// if it's the viewer himself, add a class ("self"); if it's an other user which is affekted by the running interaction, add class "active"
 		if($is_self)
-			$output .= "self";
+			$output .= " clickeduser\" id=\"recognizeduser";
 		elseif($is_active)
-			$output .= "active";
+			$output .= " clickeduser";
 
-		$output .= "' style='color: ".$user_object->color."'>\n	"; // set the css-color to the color of the user (important for the colored box-shadow)
-		$output .= "<span style='background: ".$user_object->color."' class='amount_issues'>".count($user_object->conflicts_passive)."</span>\n";
+		$output .= "\" style=\"background-image: url('".$user_object->picture."')\">\n";
+		$output .= "<div class=\"openconflicts\" style='background-color:".$user_object->color."'><br>".count($user_object->conflicts_passive)."</div>\n";
 
-		/*if(isset($with)) $output .= "<a href='?state=start'>"; // if a user is chosen (e.g. while creating a event with him), every image should link back to the startpage
-		else*/if(isset($choose_mode) && !$is_self) $output .= "<a href='?state=".$choose_mode."&id=".$user_object->id."&progress=1'>";
-
-		$output .= "<img src='".$user_object->picture."' alt='".$user_object->name."'>"; // add the user's image (with his name as fallback)
+		if(isset($choose_mode) && !$is_self) $output .= "</a>\n";
 		
-		//if(isset($with) || (isset($choose_mode) && !$is_self)) // the link-tag from above needs to be closed (of it exists)
-		if(isset($choose_mode) && !$is_self)
-			$output .= "</a>\n";
 		elseif(!isset($with)) // if not: means: If there is not interaction in progress
 		{
 			// display the dropdown menu for each user
-			$output .= "\n	<ul>\n";
+			$output .= "\n	<div class=\"menu\">\n";
+			$output .= "	<ul>\n";
 
 			// use the right structure, depending on whether it's the icon of the user himself ot another
 			$user_key = ($is_self) ? "self" : "other";
+			//var_dump($content);
 			foreach($content[$user_key] as $option) // then for each part of the struktre (above)...
 			{
 				$output .= "		<li>\n"; // create a icon
@@ -74,13 +73,13 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 				$output .= "		</li>\n";
 			}
 			$output .= "	</ul>\n";
+			$output .= "	</div>\n";
 		}
 
-		$output .= "</li>\n"; 
+		$output .= "</div>\n"; 
 	}
 
-	$output .= "</ul>\n";
-	$output .= "</nav>\n";
+	$output .= "</div>\n";
 
 	return $output; // return the whole html store in the $output variable
 }

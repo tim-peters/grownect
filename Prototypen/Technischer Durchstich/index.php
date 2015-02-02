@@ -45,7 +45,7 @@ $content = [
 	"body" => "",
 	"css" => [
 		"./style/all.css",
-		"./style/main.css"
+		"http://fonts.googleapis.com/css?family=PT+Sans"
 	], 
 	"js" => [
 		"./js/core/jquery.js",
@@ -126,37 +126,9 @@ echo "		<select name=\"change_user\" size=\"1\" onchange=\"this.form.submit()\">
 echo "		</select>\n";
 echo "	</form>\n";
 echo "</div>\n";
-echo "<section id=\"mirror\">\n";
-echo "	<div class=\"mirror\">";
-//echo "View of ".$user_objects[$actual_user]->name."<br>\n";
 
 echo $content['body']."\n\n";
-echo "	</div>\n";
-echo "</section>\n";
-?>
 
-<section id="bracelet">
-<!--
-	<div class="bracelet vibration">
-		<br><?php echo $user_objects[$actual_user]->name; ?>
-		<span class="LED blink_green"></span>
-	</div>
-	<?php if(isset($id)) { ?>
-	<div class="bracelet">
-		<br><?php echo $user_objects[$id]->name; ?>
-		<span class="LED"></span>
-	</div>
-	<?php } ?>
--->
-
-<?php
-//$GLOBALS['log']->printEvents();
-$GLOBALS['log']->printErrors();
-?>
-
-</section>
-
-<?php
 foreach ($content['js'] as $js_path) {
 	echo "<script type=\"text/javascript\" src=\"".$js_path."\"></script>\n";
 }
@@ -170,3 +142,4 @@ if($content['script'] != "")
 
 echo "</body>\n";
 echo "</html>\n";
+?>
