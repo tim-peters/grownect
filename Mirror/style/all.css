@@ -237,21 +237,14 @@
 
 		h1{
 
-			display:block;
 			color: #ffffff;
-			width:500px;
-			margin: auto;
 			font-size: 70px;
 			text-align: center;
 		}
 
 
 		h2{
-
-			display:block;
 			color: #ffffff;
-			width:500px;
-			margin: auto;
 			font-size: 24px;
 			text-align: center;
 		}
@@ -381,7 +374,7 @@
 		}
 
 		textarea.changeprofile{
-			
+			display:block;
 			height: 145px;
 			width: 300px;
 		}
@@ -429,7 +422,6 @@
 
 		.textarea{
 			display:block;
-
 			margin: 0 270px;
 			width:500px;
 			height:500px;
@@ -456,6 +448,13 @@
 			padding:10px;
 			vertical-align: top;
 
+		}
+
+
+		/*LAST_GOOD_MOMENT*/
+
+		h2.moment{
+			margin:100px auto;
 		}
 
 
@@ -523,7 +522,7 @@
    			color: #ffffff;
    			font-size: 16px;
    			border: 1px solid #ccc;
-   			padding: 9px 18px 13px 0;
+   			padding: 11px 18px 13px 0;
 
 		}
 
@@ -575,7 +574,7 @@
 			padding:10px 10px 10px 100px;
 			text-align: left;
 			width:390px;
-			border-bottom:1px solid white;
+			border-bottom:1px solid #333;
 			min-height:50px;
 
 		}
