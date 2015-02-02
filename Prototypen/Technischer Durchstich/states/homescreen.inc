@@ -24,11 +24,22 @@ if(isset($user_objects[$actual_user]))
 	else
 	{
 		$content['body'] .= showUserbar($user_objects, $actual_user);
+
+		function countOpenConflict($array) {
+			$n = 0;
+			foreach($array as $part)
+			{
+				if(is_array($part))
+					$n += count($part);
+			}
+			return $n;
+		}
+
 		if(count($conflicts_to_specify) > 0)
 		{
 			$content['body'] .= "<div class=\"messages\">\n";
 			$next_progress = key($conflicts_to_specify)+1;
-			$amount_open_conflicts = (count($conflicts_to_specify, 1) - count($conflicts_to_specify)); // Second Layer Array parts
+			$amount_open_conflicts = countOpenConflict($conflicts_to_specify); // Second Layer Array parts
 			$content['body'] .= "<h2>You have ".$amount_open_conflicts." open conflicts.</h2>\n";
 			$content['body'] .= "<a href='?state=add_conflict&progress=".$next_progress."&conflict_id=".current($conflicts_to_specify)[0]."'>Tab here, to specify your conflict with ".$user_objects[$user_objects[$actual_user]->conflicts_active[current($conflicts_to_specify)[0]]->created_with]->name." (Created ".date('r', $user_objects[$actual_user]->conflicts_active[current($conflicts_to_specify)[0]]->created).")</a>\n";
 			$content['body'] .= "</div>\n";
