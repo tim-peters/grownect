@@ -82,11 +82,28 @@
 <!--oben Menü - unten die der spalten-container-->
 
 <div class="container">
-		<h2>Scan this code with your
-			Smartphone to upload photos</h2>
+		<h2>Photo Upload</h2>
 
-		<div class="kasteneinbild">
-			<img src="img/qrcode.jpg" width="150" hight="150" style="margin:auto; vertical-align:middle; text-align:center; padding:80px;">
+	<div class="kasteneinbild">
+		<div class="qr">
+			<img src="img/qrcode.jpg" width="159">
+		</div>
+	</div>
+		
+	<p>
+		<input type='text2' class="signup2" name='name2' placeholder='Type in the title' required>		<input type='text3' class="signup3" name='name3' placeholder='Date'>
+	</p>
+
+
+	<!-- Das hier an der Stelle einfügen, wo das Rating sein soll. 
+	Die Größe der Sterne kann über die Schriftgröße (innerhalb von .rating) bestimmt werden -->
+	<input type="hidden" name="rating" />
+	<div class="rating">
+		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+	</div>
+	<!-- Ende Rating -->
+
+
 	</div>
 
 	   <button type="button" type="submit" class="btn"><img src="img/confirm.png" width="25">Okay</button>
@@ -94,7 +111,30 @@
 
 	<script type="text/javascript">
 		
-
+	// Das folgende in den JS-Script Bereich
+	$(document).ready(function() {
+		$(".rating span").click(function() {
+			var amount = 4-$(".rating span").index(this);
+			$("input[name='rating']").val(amount*25);
+			$(".rating .active").removeClass("active");
+			$(".rating span").each(function() {
+				var dc;
+				if(dc = $(this).attr("data-class"))
+					$(this).removeAttr("data-class");
+			});
+			$(this).addClass("active");
+		});
+		$(".rating").hover(function() {
+			$("span.active", this).attr("data-class", "active").removeClass("active");
+		},
+		function() {
+			$("span", this).each(function() {
+				var dc;
+				if(dc = $(this).attr("data-class"))
+					$(this).attr("class", dc);
+			});
+		});
+	});
 
 	</script>
 

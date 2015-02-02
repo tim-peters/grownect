@@ -638,7 +638,7 @@
 		.messages {
 			width:400px;
 			margin:100px auto;
-			padding:15px 10px 30px;
+		padding:15px 10px 30px;
 			text-align: center;
 			border:1px solid #333;
 			cursor: pointer;
@@ -652,7 +652,7 @@
 
 		/*. AB HIER NADINE CODE */
 
-		/*. CONTAINER MOMENTS (2 KASTEN UND 2 ZEILEN) */
+/*. CONTAINER MOMENTS (2 KASTEN UND 2 ZEILEN) */
 
 
 		.container {
@@ -700,17 +700,85 @@
 			text-align: center;
 		}	
 
-/* BILDUPLOAD MOMENTS EINSPALTIG */
+/* BILDUPLOAD QR-CODE MOMENTS EINSPALTIG */
 
 
 		.kasteneinbild {
-				margin:0 auto;
-				padding:20px;
+				margin:70px auto 0;
 				text-align:center;
 				vertical-align:middle;
-				background-color:#222222;
+				background-color:#ffffff;
 				width: 350px;
 				height: 350px;
 				}
+
+		.qr img {
+				margin:0 auto;
+				padding:80px 20px 20px 20px;
+				text-align:center;
+				vertical-align:middle;
+		}
+
+
+		/* Stern Rating css */
+
+
+		.rating {
+		  unicode-bidi: bidi-override;
+		  direction: rtl;
+		  text-align: center;
+		}
+		.rating > span {
+		  display: inline-block;
+		  position: relative;
+		  width: 2.0em;
+		  cursor: default;
+		  color:#fff;
+		}
+		.rating > span:hover,
+		.rating > span:hover ~ span,
+		.rating > span.active,
+		.rating > span.active ~ span {
+		  color: transparent;
+		}
+		.rating > span:hover:before,
+		.rating > span:hover ~ span:before,
+		.rating > span.active:before,
+		.rating > span.active ~ span:before {
+		   content: "\2605";
+		   position: absolute;
+		   left: 0;
+		   color: white;
+		}
+
+		/* Textinput Name und Datum */
+
+
+		input.signup2 {
+			color: #ffffff;
+			font-size: 16px;
+			border: 1px solid #333;
+			background-color: #111;
+			border-radius: 0px;
+			height: 30px;
+			width: 200px;
+			margin:0 auto 30px;
+			padding: 5px 10px;
+		}
+
+		input.signup3 {
+			color: #ffffff;
+			font-size: 16px;
+			border: 1px solid #333;
+			background-color: #111;
+			border-radius: 0px;
+			height: 30px;
+			width: 100px;
+			padding: 5px 10px;
+		}
+
+
+
+
 
 				  
