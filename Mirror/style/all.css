@@ -27,7 +27,6 @@
 		.user{
 
 			display: inline-block;
-			background-size: cover;
 			width: 120px;
 			height: 120px;
 			border-radius: 150px;
@@ -35,9 +34,14 @@
 			text-align: center;
 			vertical-align: top;
 			opacity: 1;
+			overflow:hidden;
 			transition:opacity .8s ease-out;
 		}
 
+		.user img {
+			width:100%;
+			border:none;
+		}
 
 		.small .user{
 

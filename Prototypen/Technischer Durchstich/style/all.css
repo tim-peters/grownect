@@ -27,7 +27,6 @@
 		.user{
 
 			display: inline-block;
-			background-size: cover;
 			width: 120px;
 			height: 120px;
 			border-radius: 150px;
@@ -35,9 +34,14 @@
 			text-align: center;
 			vertical-align: top;
 			opacity: 1;
+			overflow:hidden;
 			transition:opacity .8s ease-out;
 		}
 
+		.user img {
+			width:100%;
+			border:none;
+		}
 
 		.small .user{
 
@@ -270,12 +274,8 @@
 		}
 
 
-		textarea.signup{
-			height: 145px;
-			width: 300px;
-		}
 
-		textarea.signup:focus {
+		input:focus {
 			border: 1px solid #FFFFFF;
 
 		}
@@ -361,25 +361,6 @@
 		}
 
 
-		textarea {
-			color: #ffffff;
-			border: 1px solid #333;
-			background-color: #111;
-			display:block;
-			margin:auto;
-			font-size: 16px;
-			padding: 10px;
-			resize:none;
-			font-family: 'PT Sans', sans-serif;
-		}
-
-		textarea.changeprofile{
-			display:block;
-			height: 145px;
-			width: 300px;
-		}
-
-
 		.welcome{
 			display:block;
 			margin: 400px auto 40px;
@@ -420,11 +401,13 @@
 			margin:100px auto;
 		}
 
+		/*TEXTAREA*/
+
 		.textarea{
 			display:block;
 			margin: 0 270px;
-			width:500px;
-			height:500px;
+			width:400px;
+			height:200px;
 		}
 
 		 textarea {
@@ -439,6 +422,10 @@
 			font-family: 'PT Sans', sans-serif;
 			height: 145px;
 			width: 300px;
+		}
+
+		textarea:focus {
+			border: 1px solid #FFFFFF;
 		}
 
 		.input {
@@ -593,7 +580,6 @@
 			position:static;
 
 		}
-
 
 		#conflictlist img {
 			float: left;
