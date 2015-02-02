@@ -207,16 +207,28 @@ body {
 		}
 
 
+	h2{
+
+			display:block;
+			color: #ffffff;
+			width:500px;
+			margin: auto;
+			font-size: 24px;
+			text-align: center;
+		}
+
+
+
 /*. Ab Hier der Container mit 2 Spalten und Zeilen
 		} */
 
 
 
-		.container {
-			background-color:black;
+		.aussenrahmen {
+			background-color:red;
 			width: inherit;
 			width: 500px;
-			height:600px;
+			height:700px;
 			margin:200px auto;
 			top: 300px;
 			padding:30px;
@@ -224,24 +236,10 @@ body {
 
 
 
-		.writingboxh1 {
-			float:left;
-			background-color:black;  
-			width: 460px;
-			height:50px;			
-			margin:20px 10px 100px 20px;
-			text-align:left;
-			padding:0px;
-			vertical-align:middle;
-			font-size: 21px;
-
-		}
-
-
 		.kasten {
 			overflow: hidden;
 			float: left;
-			margin:20px 10px 20px 20px;
+			margin:17px;
 			display:block;
 			padding:20px;
 			text-align:center;
@@ -261,7 +259,6 @@ body {
 		.kasten li{
 			display: inline-block;
 			padding:10px;
-			display:inline-block;  /*doppelt hält besser? :D */
 			vertical-align:middle;
 			text-align: center;
 			
@@ -269,44 +266,14 @@ body {
 			
 		}
 
-		.container p {
+		.aussenrahmen p {
 			padding:30px;
 			font-size: 21px;
 			vertical-align:middle;
 			text-align: center;
 }
 
-button.btn1{
-			position: absolute;
-			margin:0px 20px 0px 20px;
-			bottom: 80px;
-			left: 50%;
-			transform:translate(-50%,0);
-   			background-color: #000000;
-   			border:0px;
-   			color: #ffffff;
-   			font-size: 16px;
-		}
 
-		.btn img{
-			margin:0px 20px 0px 20px;
-		}
-
-button.btn2{
-			position: absolute;
-			margin:0px 20px 0px 20px;
-			bottom: 80px;
-			right: 50%;
-			transform:translate(-50%,0);
-   			background-color: #000000;
-   			border:0px;
-   			color: #ffffff;
-   			font-size: 16px;
-		}
-
-		.btn img{
-			margin:0px 20px 0px 20px;
-		}
 
 
 
@@ -379,10 +346,9 @@ button.btn2{
 
 <!--oben Menü - unten die der spalten-container-->
 
-<div class="container">
-	<div class="writingboxh1">
+<div class="aussenrahmen">
 		<h2>Moments</h2>
-	</div>
+
 	<div class="kasten">
 		<ul> 
 			<li><img src="img/2015-01-24 16.06.09.jpg" width="170" hight="115"><br><br>date: 14.12.2014</li> <!--hier muss ich noch ein div für das Bild einfügen, außerdem verschwindet das datum-->		
@@ -395,11 +361,12 @@ button.btn2{
 		<ul> 
 			<li><img src="img/conflict-w.png" width="50"><br>plus</li>		
 		</ul>
-
 	</div>
-		<div class="kasten">
+
+	<div class="kasten">
 		<p>text</p> 
 	</div>
+
 		
 		         
           <!--<input type="text" name="" value="">-->
@@ -407,25 +374,13 @@ button.btn2{
 	</div>
 	
      
-<button type="button" type="submit" class="btn1"><img src="img/btn1.png" width="28"> &nbsp; next</button>
-<button type="button" type="submit" class="btn2"><img src="img/btn2.png" width="28"> &nbsp; cancel</button>
+
 
 
 
 	<script type="text/javascript">
 		
-//das funktioniert nicht so ganz!
-		
-		$(".user").click(function(){ // trigger
-			if(!$(".user.open").not(this).length)
-				$(this).parent(".usercontainer ").toggleClass("clicked");
-			$(".user").not(this).removeClass("open .user .user clickeduser");
-			$(this).toggleClass("open .user clickeduser");
-		});
 
-		$(".button_close").click(function(){ // trigger 
-		$(".menu .open").not(this).removeClass("open"); //keine Ahnung? wie lass ich die aufgklappten untermenüs verschwinden?
-		}); //wenn klasse aktiv ist funktioniert das nicht mehr also nach user not parent with dieser klasse (inaktiv)
 
 
 	</script>
