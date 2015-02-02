@@ -58,7 +58,7 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 			$output .= "<div class=\"openconflicts\" style='background-color:".$user_object->color."'><br>".count($user_object->conflicts_passive)."</div>\n";
 			$output .= "<img src=\"".$user_object->picture."\" alt=\"".$user_object->name."\">\n";
 
-			if(isset($choose_mode) && !$is_self) $output .= "</a>\n";
+			if(isset($choose_mode)) $output .= "</a>\n";
 			
 			elseif(!isset($with)) // if not: means: If there is not interaction in progress
 			{
