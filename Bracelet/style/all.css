@@ -1,1 +1,79 @@
-/* main stylesheet */
+.vibrating {
+	animation:vibration .1s infinite;
+}
+
+.vibration {
+	animation:vibration .1s 10;
+}
+
+@keyframes vibration {
+	0%, 100% {
+		transform:rotate(-.3deg);
+	}
+	50% {
+		transform:rotate(.3deg);
+	}
+}
+
+.blink_red {
+	animation:blink_red 0.8s infinite;
+}
+
+@keyframes blink_red {
+	0%,100% {
+		background:#ccc;
+		border:2px solid #aaa;
+		box-shadow: none;
+	}
+	50% {
+		background:red;
+		border:2px solid #ff7777;
+		box-shadow: #ffaaaa 0 0 15px;
+	}
+}
+
+.blink_blue {
+	animation:blink_blue 0.8s infinite;
+}
+
+@keyframes blink_blue {
+	0%,100% {
+		background:#ccc;
+		border:2px solid #aaa;
+		box-shadow: none;
+	}
+	50% {
+		background:blue;
+		border:2px solid #7777ff;
+		box-shadow: #aaaaff 0 0 15px;
+	}
+}
+
+.blink_green {
+	animation:blink_green 0.8s infinite;
+}
+
+@keyframes blink_green {
+	0%,100% {
+		background:#ccc;
+		border:2px solid #aaa;
+		box-shadow: none;
+	}
+	50% {
+		background:#44ff44;
+		border:2px solid #77ff77;
+		box-shadow: #aaffaa 0 0 15px;
+	}
+}
+
+
+.bracelet .LED {
+	position: absolute;
+	top:300px;
+	left:30px;
+	width:15px;
+	height: 15px;
+	background:#ccc;
+	border-radius:8px;
+	border:2px solid #aaa;
+}
