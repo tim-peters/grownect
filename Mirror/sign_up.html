@@ -29,10 +29,15 @@
 		<input type='text' class="signup" name='name' placeholder='Type in our name' required>
 	</p>
 
-	<!-- <p> Choose your color </p> 
-		<div class="colorpicker"><img src="img/colors.png" width="200"></div> -->
-	<!-- <p> <input type='color' class="color" name='color' value='#ff00ff' required>
-	</p> -->
+	<div class="textarea">
+	
+		<textarea class="signup" name='description' placeholder='Tell us something about you.'></textarea>
+		<div class="input"><img src="img/voicerecording.png" width="30"><img src="img/keyboard.png" width="30">
+
+	</div>
+	</div>
+
+	
 
 		<input type="hidden" name="color" />
 	<ul id="colorpicker">
@@ -47,10 +52,6 @@
 	<li class="active" style="background-color:#acda8d"></li>
 	<li style="background-color:#3f8143"></li>
 	</ul>
-
-	
-	<p>
-		<textarea class="signup" name='description' placeholder='Tell us something about you.'></textarea>
 	 
 
 	</div>
@@ -91,10 +92,13 @@ $(document).ready(function() {
 		$("input[name='color']").val(col);
 		$("#colorpicker .active").removeClass("active");
 		$(this).addClass("active");
+		$(".edit").css("background-color", col);
 	})
 	var random = Math.floor(Math.random()*10);
 	$("#colorpicker li").eq(random).click();
 });
+
+
 
 
 	</script>
