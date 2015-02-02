@@ -204,7 +204,7 @@
 
 		.usersignup{
 			display:block;
-			margin: 100px auto 40px;
+			margin: 200px auto 40px;
 			border-radius: 50%;
 			background-color: #222222;
 			background:url"img/user.png") center center no-repeat;
@@ -217,7 +217,7 @@
 		.edit{
 			position: absolute;
 			border-radius: 50%;
-			margin-top: 280px;
+			margin-top: 380px;
 			margin-left: 475px;
 			background-color: #acda8d;
 			border: 13px solid black;
