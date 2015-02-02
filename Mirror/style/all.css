@@ -644,3 +644,19 @@
 			transform: rotate(180deg);
 			margin:-16px 65px;
 		}
+
+		/* HOMESCREEN MESSAGE */
+
+		.messages {
+			width:400px;
+			margin:100px auto;
+			padding:15px 10px 30px;
+			text-align: center;
+			border:1px solid #333;
+			cursor: pointer;
+		}
+
+		.messages a {
+			color:#aaa;
+			text-decoration: none;
+		}
