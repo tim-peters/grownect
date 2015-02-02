@@ -4,18 +4,15 @@
 		<meta http-equiv="Content-Style-Type" content="text/css">
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
 		<title>Mirror</title>
-
 	<script type="text/javascript" src="./js/core/jquery.js"></script>
-	<script type="text/javascript" src="./js/core/jquery.knob.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="style/all.css">
 
 
 	</head>
 <body>
-
 
 	<div class="usercontainer small" >
 	
@@ -40,7 +37,7 @@
 		</div>
 	</div>
 	
-		<div class="user" style="background-image:url(img/Bali_2013.jpg)">
+		<div class="user clickeduser" style="background-image:url(img/Bali_2013.jpg)">
 		<div class="openconflicts"  style="background-color:#8d1c1c"><br></div>
 		<div class="menu">
 			<ul> 
@@ -73,39 +70,21 @@
 
 </div>
 
-<h2 class="yourconflicts">Your conflicts</h2>
+
+<h2 class="feelings"> How do you feel? </h2>
 
 
-	<ul class="topvalues"> 
-		<li><input type="text" value="0.5" class="dial" data-min="0" data-max="0"></li> 
-		<li><input type="text" value="0.5" class="dial" data-min="1" data-max=".2"></li>
-		<li><input type="text" value="0.5" class="dial" data-min="0" data-max=".3"></li>  
-	</ul>
+<div class="feelingslider"> 
 
+<p> <span>calm</span> <input type="range" class="slider" min="0" max="50" value="25" /> <span>angry</span> </p>
+<p> <span>understanding</span> <input type="range" class="slider" min="0" max="50" value="25" /> <span>confused</span> </p>
+<p> <span>satisfied</span> <input type="range" class="slider" min="0" max="50" value="25" /> <span>disappointed</span> </p>
 
-	<div class="statistic">Hier wird die ultimativ geile statistik angezeigt.</div>
+</div>
 
-
-
-	   <button type="button" type="submit" class="btn"><img src="img/confirm.png" width="25">Save</button>
-
+ <button type="button" type="submit" class="next"><img src="img/next.png" width="15">Next</button>
 
 
 </body>
-	<script type="text/javascript">
 
-$(function() {
-    $(".dial").knob({
-    	'thickness':0.1,
-    	'fgColor':"#fff",
-    	'bgColor':'#333',
-    	'inputColor':"#ffffff",
-    	'width':130,
-        'readOnly':true,
-        'rotation':'anticlockwise'
-
-    });
-});
-
-	</script>
 </html>

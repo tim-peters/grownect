@@ -10,7 +10,7 @@
 			margin:0 auto;
 			padding: 0;
 			font-family: 'PT Sans', sans-serif; 
-			font-size: 10px;
+			font-size: 16px;
 			/*line-height: 12px;*/
 			color:white;
 		}
@@ -395,13 +395,13 @@
 
 		/*MY CONFLICTS*/
 
-		h2.headline{
-			margin:50px auto;
+		h2.yourconflicts{
+			margin:100px auto;
 		}
 
 		ul.topvalues{
 			text-align: center;
-			margin:50px;
+			padding:0;
 		}
 
 		.topvalues li{
@@ -418,6 +418,80 @@
 			background-color: #222222;
 			text-align: center;
 			margin:100px auto;
+		}
+
+
+
+		/*FEELINGS*/
+
+		h2.feelings{
+			margin:100px auto;
+		}
+
+		.feelingslider p{
+			display: block;
+			text-align: center;
+		}
+
+
+		.feelingslider span {
+			display:inline-block;
+			width:100px;
+			text-align:right;
+			padding:20px;
+		}
+
+		.feelingslider input + span {
+			text-align:left;
+			padding:20px;
+		}
+
+		input[type='range'] {
+			-webkit-appearance: none;
+			border-radius: 5px;
+			background-color: #333;
+			height: 12px;
+			width:220px;
+			vertical-align: middle;
+		}
+		input[type='range']::-moz-range-track {
+			-moz-appearance: none;
+			border-radius: 5px;
+			background-color: #333;
+			height: 10px;
+		}
+		input[type='range']::-webkit-slider-thumb {
+			-webkit-appearance: none !important;
+			border-radius: 20px;
+			background-color: #fff;
+			height: 18px;
+			width: 18px;
+		}
+
+		input[type='range']::-moz-range-thumb {
+			-moz-appearance: none;
+			border-radius: 20px;
+			background-color: #FFF;
+			height: 20px;
+			width: 20px;
+		}
+
+		button.next{
+			position: absolute;
+			bottom: 250px;
+			left: 50%;
+			transform:translate(-50%,0);
+   			background-color: #000000;
+   			border:0px;
+   			color: #ffffff;
+   			font-size: 16px;
+   			border: 1px solid #ccc;
+   			padding: 4px 18px 13px 0;
+
+		}
+
+		.next img{
+			margin:0 10px;
 		}
 
 
