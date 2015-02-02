@@ -14,7 +14,6 @@
 		 /*.hier der rein-kopierte part von Doreen*/
 
 body {
-			position: relative;
 			border:1px dotted white;
 			background-color: #000000;
 			width: 858px;
@@ -24,6 +23,7 @@ body {
 			font-size: 10px;
 			/*line-height: 12px;*/
 			color:white;
+			position:relative;
 		}
 
 
@@ -207,28 +207,16 @@ body {
 		}
 
 
-	h2{
-
-			display:block;
-			color: #ffffff;
-			width:500px;
-			margin: auto;
-			font-size: 24px;
-			text-align: center;
-		}
-
-
-
 /*. Ab Hier der Container mit 2 Spalten und Zeilen
 		} */
 
 
 
-		.aussenrahmen {
-			background-color:red;
+		.container {
+			background-color:black;
 			width: inherit;
 			width: 500px;
-			height:700px;
+			height:600px;
 			margin:200px auto;
 			top: 300px;
 			padding:30px;
@@ -236,10 +224,24 @@ body {
 
 
 
+		.writingboxh1 {
+			float:left;
+			background-color:black;  
+			width: 460px;
+			height:50px;			
+			margin:20px 10px 100px 20px;
+			text-align:left;
+			padding:0px;
+			vertical-align:middle;
+			font-size: 21px;
+
+		}
+
+
 		.kasten {
 			overflow: hidden;
 			float: left;
-			margin:17px;
+			margin:20px 10px 20px 20px;
 			display:block;
 			padding:20px;
 			text-align:center;
@@ -259,6 +261,7 @@ body {
 		.kasten li{
 			display: inline-block;
 			padding:10px;
+			display:inline-block;  /*doppelt hält besser? :D */
 			vertical-align:middle;
 			text-align: center;
 			
@@ -266,7 +269,7 @@ body {
 			
 		}
 
-		.aussenrahmen p {
+		.container p {
 			padding:30px;
 			font-size: 21px;
 			vertical-align:middle;
@@ -276,6 +279,15 @@ body {
 
 
 
+		textarea.signup{
+			color: #ffffff;
+			font-size: 16px;
+			border: 0px solid #FF0000;
+			background-color: #222222;
+			height: 40px;
+			width: 200px;
+			padding: 10px;
+			}
 
 	</style>
 
@@ -346,41 +358,38 @@ body {
 
 <!--oben Menü - unten die der spalten-container-->
 
-<div class="aussenrahmen">
-		<h2>Moments</h2>
-
-	<div class="kasten">
-		<ul> 
-			<li><img src="img/2015-01-24 16.06.09.jpg" width="170" hight="115"><br><br>date: 14.12.2014</li> <!--hier muss ich noch ein div für das Bild einfügen, außerdem verschwindet das datum-->		
-		</ul>
-	</div>
-	<div class="kasten">
-		<p>date</p> 
+<div class="container">
+	<div class="writingboxh1">
+		<h2>Creating a good Moment</h2>
 	</div>
 	<div class="kasten">
 		<ul> 
-			<li><img src="img/conflict-w.png" width="50"><br>plus</li>		
+			<li><img src="img/moment-w.png" width="50" style="margin:10px"><br>upload a picture</li>
 		</ul>
 	</div>
-
 	<div class="kasten">
-		<p>text</p> 
+		<ul> 
+			<li><img src="img/voicerecording.png" width="50" style="margin:10px"><br>say something</li>
+		</ul>
 	</div>
-
-		
-		         
+	<div class="kasten">
+		<ul> 
+			<li><img src="img/keyboard.png" width="50" style="margin:10px"><br>write something</li>
+		</ul>
+	</div>
+	<div class="kasten">
+		<ul> 
+			<li><img src="img/x.png" width="50" style="margin:10px"><br>?</li>
+		</ul>
+	</div>				         
           <!--<input type="text" name="" value="">-->
-
 	</div>
 	
-     
-
 
 
 
 	<script type="text/javascript">
 		
-
 
 
 	</script>
