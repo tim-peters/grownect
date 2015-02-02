@@ -421,6 +421,43 @@
 		}
 
 
+		/*QUESTION_LAST_FAVOUR*/
+
+		h2.lastgoodfavour{
+			margin:100px auto;
+		}
+
+		.textarea{
+			display:block;
+
+			margin: 0 270px;
+			width:500px;
+			height:500px;
+		}
+
+		 textarea {
+			display: inline-block;
+			color: #ffffff;
+			border: 1px solid #333;
+			background-color: #111;
+			margin:auto;
+			font-size: 16px;
+			padding: 10px;
+			resize:none;
+			font-family: 'PT Sans', sans-serif;
+			height: 145px;
+			width: 300px;
+		}
+
+		.input {
+			display:inline-block;
+			width:30px;
+			height:145px;
+			padding:10px;
+			vertical-align: top;
+
+		}
+
 
 		/*FEELINGS*/
 
@@ -486,7 +523,7 @@
    			color: #ffffff;
    			font-size: 16px;
    			border: 1px solid #ccc;
-   			padding: 4px 18px 13px 0;
+   			padding: 9px 18px 13px 0;
 
 		}
 

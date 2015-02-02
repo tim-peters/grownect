@@ -421,26 +421,13 @@ button.btn2{
 
 	</div>
 	
-     
-<button type="button" type="submit" class="btn1"><img src="img/btn1.png" width="28"> &nbsp; next</button>
-<button type="button" type="submit" class="btn2"><img src="img/btn2.png" width="28"> &nbsp; cancel</button>
+	
+ <button type="button" type="submit" class="next"><img src="img/next.png" width="15">Next</button>
 
 
 
 	<script type="text/javascript">
 		
-//das funktioniert nicht so ganz!
-		
-		$(".user").click(function(){ // trigger
-			if(!$(".user.open").not(this).length)
-				$(this).parent(".usercontainer ").toggleClass("clicked");
-			$(".user").not(this).removeClass("open .user .user clickeduser");
-			$(this).toggleClass("open .user clickeduser");
-		});
-
-		$(".button_close").click(function(){ // trigger 
-		$(".menu .open").not(this).removeClass("open"); //keine Ahnung? wie lass ich die aufgklappten untermenüs verschwinden?
-		}); //wenn klasse aktiv ist funktioniert das nicht mehr also nach user not parent with dieser klasse (inaktiv)
 
 
 	</script>
