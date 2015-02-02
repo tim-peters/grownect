@@ -423,7 +423,7 @@
 
 		/*QUESTION_LAST_FAVOUR*/
 
-		h2.lastgoodfavour{
+		h2.lastgoodfavour, .conflicthead{
 			margin:100px auto;
 		}
 
@@ -560,9 +560,6 @@
 		
 		/* CONTAINER CONFLICTS */
 
-		.conflicthead {
-			margin-top:150px;
-		}
 
 		ul#conflictlist {
 			list-style: none;
