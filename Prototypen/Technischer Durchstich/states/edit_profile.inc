@@ -1,6 +1,6 @@
 <?php
 switch($_GET['progress']) {
-	case 1: // Receiving new Profile Picture
+	case 1: // Receiving new Data
 		if(isset($_POST['img']))
 		{
 
@@ -23,6 +23,8 @@ switch($_GET['progress']) {
 			$desc = secureString($_POST['description']);
 			$user_objects[$actual_user]->setDescription($desc);
 		}
+		Header("Location: ./");
+	break;
 
 	default: // Change Prodile Picture
 		$content['body'] .= showUserbar($user_objects, $actual_user, $id);
@@ -36,7 +38,7 @@ switch($_GET['progress']) {
 		$content['body'] .= "<div class=\"userlarge\" style=\"background-image:url('".$user_objects[$actual_user]->picture."')\"> 
 	</div>\n";
 		
-		$content['body'] .= "	<div class=\"editprofile\">\n";
+		$content['body'] .= "	<div class=\"editprofile\" style=\"background-color:".$user_objects[$actual_user]->color."\">\n";
 		$content['body'] .= "		<div class=\"qr\">\n";
 		$content['body'] .= "			Scan this code with your smartphone!<br>";
 		$content['body'] .= "			<img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\">";

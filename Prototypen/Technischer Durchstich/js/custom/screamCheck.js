@@ -27,7 +27,8 @@ channel.bind('events', function(data) {
 			break;
 			case "endScream":
 				$(".scream").hide();
-				$("h2").html("Feeling better now, right?<br>Screaming out your anger can help to calm down.").append("<a href=\""+redirectURI+"\">Continue</a>");
+				$("h2").html("Feeling better now, right?<br>Screaming out your anger can help to calm down.")
+				if(!$(".buttonbutton .next2").length) $(".buttonbutton").append("<button type=\"button\" onClick=\"window.location.href='"+redirectURI+"'\" class=\"next2\"><img src=\"img/next.png\" width=\"25\">Next</button>");
 				console.log("recognized: endScream");
 			break;
 			case "skipScream":

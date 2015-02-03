@@ -90,7 +90,10 @@ switch($progress) {
 			$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
 			$content['script'] .= "var redirectURI = '".$redirect_url."';\n";
 			$content['body'] .= "<h2>Checking for pulse...</h2>\n";
-			$content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./' \"class=\"cancel\"><img src=\"img/cancel.png\" width=\"25\">Continue later</button>\n";
+			$content['body'] .= "<div class=\"buttonbutton\">\n";
+			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
+			$content['body'] .= "</div>\n";
+
 			// FIXME: Enhancement: Fallback if Braclet is offline
 			 
 			$actual_conflict->setProgress(2); // FIXME: Enhancement: Erst nach Bestätigung der Clientinteraktion ausführen
@@ -245,7 +248,7 @@ switch($progress) {
 			}
 			else
 			{
-				$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);				$content['body'] .= "<h2 class=\"feelings\">How do you feel?</h2>\n";
+				$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);				$content['body'] .= "<h2>How do you feel?</h2>\n";
 				$content['body'] .= "<form action=\"\" method=\"POST\">\n";
 				
 				$content['body'] .= "<div class=\"feelingslider\">\n";
@@ -310,12 +313,12 @@ switch($progress) {
 				$content['script'] .=	"$(function() {\n";
 				$content['script'] .=	"		$(\".arrowleft\").click(function() {\n";
 				$content['script'] .=	"			if(parseInt($(\"input.minutes\").val()) > 0)\n";
-				$content['script'] .=	"				$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())-1);\n";
+				$content['script'] .=	"				$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())-5);\n";
 				$content['script'] .=	"			else\n";
 				$content['script'] .=	"				$(\"input.minutes\").val(0);\n";
 				$content['script'] .=	"		});\n";
 				$content['script'] .=	"		$(\".arrowright\").click(function() {\n";
-				$content['script'] .=	"			$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())+1);\n";
+				$content['script'] .=	"			$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())+5);\n";
 				$content['script'] .=	"		});\n";
 				$content['script'] .=	"	});\n";
 

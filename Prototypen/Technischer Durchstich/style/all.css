@@ -3,7 +3,7 @@
 
 		body {
 			position:relative;
-			border:1px dotted white;
+			/*border:1px dotted white;*/
 			background-color: #000000;
 			width: 858px;
 			height: 1533px;			
@@ -567,8 +567,9 @@
 			resize:none;
 			font-family: 'PT Sans', sans-serif;
 			text-align: center;
-			height: 40px;
+			height: 60px;
 			width: 350px;
+			overflow: hidden;
 		}
 
 		textarea:focus {

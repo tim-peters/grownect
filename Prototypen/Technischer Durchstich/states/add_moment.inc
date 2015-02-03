@@ -117,6 +117,7 @@ switch($progress) {
 						//echo $actual_user.", ".$id.", 1, ".$_POST['rating'].", ".$_POST['img']."\n";
 						$instance = Moment::fromNew($actual_user, $id, 1, secureString($_POST['title']), date('Y-m-d H:i:s', strtotime($_POST['date'])),secureString($_POST['rating']), "./img/moments/".$file_id."_".$file_name);
 						$content['body'] .= "<h2>Successfully uploaded</h2>\n";
+						$content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./'\"class=\"btn2\"><img src=\"img/confirm.png\" width=\"25\">back to homescreen</button>";
 					}
 					else
 						$GLOBALS['log']->error("Image could not be found/moved.",__FILE__,__LINE__,null,true);
