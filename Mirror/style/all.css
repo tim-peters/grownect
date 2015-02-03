@@ -327,7 +327,7 @@
 		}
 
 
-		button.btn{
+		button{
 			position: absolute;
 			bottom: 250px;
 			left: 50%;
@@ -338,7 +338,6 @@
    			font-size: 16px;
    			border: 1px solid #ccc;
    			padding: 4px 18px 13px 0;
-
 		}
 
 		.btn img{
@@ -529,19 +528,6 @@
 			width: 20px;
 		}
 
-		button.next{
-			position: absolute;
-			bottom: 250px;
-			left: 50%;
-			transform:translate(-50%,0);
-   			background-color: #000000;
-   			border:0px;
-   			color: #ffffff;
-   			font-size: 16px;
-   			border: 1px solid #ccc;
-   			padding: 11px 18px 13px 0;
-
-		}
 
 		.next img{
 			margin:0 10px;
@@ -774,8 +760,15 @@
 			background-color: #111;
 			border: 1px solid #333;
 			color:white;
-			width:300px;
+			width:200px;
+			height:40px;
 			padding:20px;
+			border-radius: 0;
+ 			/*-webkit-appearance: none;  /*Removes default chrome and safari style
+			-moz-appearance: none;/* Removes Default Firefox style*/
+			background: #111 url(img/pfeil_down.png) no-repeat 90% center;
+			text-indent: 0.01px; /* Removes default arrow from firefox*/
+			text-overflow: ""
 
 		}
 
@@ -942,7 +935,9 @@
 		}
 
 
-
+		h2.slogan{
+			margin:-20px auto;
+		}
 
 
 				  
