@@ -1,3 +1,5 @@
+var loudnessInput = $("<input type=\"text\" value=\"0\" class=\"dial\">");
+
 channel.bind('events', function(data) {
 	console.log("event detected: "+data);
 	console.log("id: "+data.id+", name: "+data.name);
@@ -5,16 +7,32 @@ channel.bind('events', function(data) {
 	{
 		switch(data.name) {
 			case "startScream":
-				$(".message").text("Scream as loud as you can into your bracelet now!")
-							.after("<div id=\"loudnessIndikator\"></div>");
+				$("h2").html("Let out your rage by screaming into your<br> bracelet as loud as you can.")
+							.after("<div class=\"scream\"></div>").next().append(loudnessInput);
+				loudnessInput.knob({
+			        'min':0,
+			        'max':.3,
+			        'step':0.01,
+			        'angleArc':180,
+			        'angleOffset':-90,
+			        'readOnly':true,
+			        'displayPrevious':true,
+			        'thickness':0.1,
+			        'fgColor':"#fff",
+			    	'bgColor':'#333',
+			    	'inputColor':"#ffffff"
+
+			    });
 				console.log("recognized: startScream");
 			break;
 			case "endScream":
-				$(".message").html("Congratulations! Screaming out your anger can help to calm down. <a href=\""+redirectURI+"\">Continue</a>");
+				$(".scream").hide();
+				$("h2").html("Feeling better now, right?<br>Screaming out your anger can help to calm down.").append("<a href=\""+redirectURI+"\">Continue</a>");
 				console.log("recognized: endScream");
 			break;
 			case "skipScream":
-				$(".message").html("Congratulations! It seems like you are calm enough to solve this conflict. <a href=\""+redirectURI+"\">Continue</a>");
+				window.location.href = redirectURI;
+				//$("h2").html("Congratulations! It seems like you are calm enough to solve this conflict. <a href=\""+redirectURI+"\">Continue</a>");
 				console.log("recognized: skipScream");
 			break;
 			default:
@@ -31,8 +49,7 @@ channel.bind('answers', function(data) {
 	if(data.id == techID && data.name == "setLoudness")
 	{
 		console.log("setLoudness to "+data.value);
-		$("#loudnessIndikator").animate({width:data.value+"px"}, 200);
-		
+		loudnessInput.val(data.value).trigger("change");
 		/*
 		$({ value: lastLoudness }).animate({ value: data.value }, 
 		{

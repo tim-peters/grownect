@@ -85,13 +85,14 @@ switch($progress) {
 		if($actual_conflict->progress < $progress)
 		{
 			$user_objects[$actual_user]->sendToBracelet('checkPulse');
+			$content['js'][] = "./js/core/jquery.knob.js";
 			$content['js'][] = "./js/custom/screamCheck.js";
 			$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
 			$content['script'] .= "var redirectURI = '".$redirect_url."';\n";
-			$content['body'] .= "<strong class=\"message\">checking for pulse</strong>\n";
+			$content['body'] .= "<h2>Checking for pulse...</h2>\n";
 			// FIXME: Enhancement: Fallback if Braclet is offline
 			 
-			$actual_conflict->setProgress(2); // FIXME: Enhancement: Erst nach Bestätigung der Clientinteraktion ausführen
+			//$actual_conflict->setProgress(2); // FIXME: Enhancement: Erst nach Bestätigung der Clientinteraktion ausführen
 			$GLOBALS['log']->event("Conflict: Pulse check intitiated (id:".$conflict_id.")",__FILE__,__LINE__);
 		}
 		else
