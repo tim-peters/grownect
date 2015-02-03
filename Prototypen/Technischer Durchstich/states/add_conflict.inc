@@ -84,7 +84,7 @@ switch($progress) {
 
 		if($actual_conflict->progress < $progress)
 		{
-			$user_objects[$actual_user]->sendToBracelet('checkPulse');
+			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);			$user_objects[$actual_user]->sendToBracelet('checkPulse');
 			$content['js'][] = "./js/core/jquery.knob.js";
 			$content['js'][] = "./js/custom/screamCheck.js";
 			$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
@@ -92,7 +92,7 @@ switch($progress) {
 			$content['body'] .= "<h2>Checking for pulse...</h2>\n";
 			// FIXME: Enhancement: Fallback if Braclet is offline
 			 
-			//$actual_conflict->setProgress(2); // FIXME: Enhancement: Erst nach Bestätigung der Clientinteraktion ausführen
+			$actual_conflict->setProgress(2); // FIXME: Enhancement: Erst nach Bestätigung der Clientinteraktion ausführen
 			$GLOBALS['log']->event("Conflict: Pulse check intitiated (id:".$conflict_id.")",__FILE__,__LINE__);
 		}
 		else
@@ -116,13 +116,20 @@ switch($progress) {
 		if($actual_conflict->progress < $progress)
 		{
 			$GLOBALS['log']->event("Conflict: First step of conflict solving initiated (id:".$conflict_id.")",__FILE__,__LINE__);
+			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
+
 			$startway = rand(1,2);
 			switch($startway) {
 				case 1:
 					$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
 					$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
-					$content['body'] .= "<h2>Did you ever act in a similar way?</h2>";
-					$content['body'] .= "<textarea placeholder='Explain the situation you've acted in the same way.' id=\"".createHash()."\" required></textarea>";
+					$content['body'] .= "<h2>Have you ever acted in a similiar way?<br>Explain the situation.</h2>";
+					$content['body'] .= "<div class=\"textarea\">";
+					$content['body'] .= "	<textarea name='description' placeholder=\"Type your description in here\" id=\"".createHash()."\"></textarea>";
+					$content['body'] .= "	<div class=\"input\"><img src=\"img/voicerecording.png\" width=\"30\">";
+					$content['body'] .= "		<img src=\"img/keyboard.png\" width=\"30\">";
+					$content['body'] .= "	</div>";
+					$content['body'] .= "</div>";
 					$GLOBALS['log']->event("Conflict: Displayed 'explain situation' site (id:".$conflict_id.")",__FILE__,__LINE__);
 				break;
 
@@ -190,8 +197,13 @@ switch($progress) {
 						{	// Frage nach letzter Positiver Handlung
 							$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
 							$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
-							$content['body'] .= "<h2>What has ".$user_objects[$id]->name." done for you?</h2>";
-							$content['body'] .= "<textarea placeholder='Describe something positive ".$user_objects[$actual_conflict->created_with]->name." has done for or with you.' id=\"".createHash()."\" required></textarea>";
+							$content['body'] .= "<h2>What has ".$user_objects[$actual_conflict->created_with]->name." done for you lately?</h2>";
+							$content['body'] .= "<div class=\"textarea\">";
+							$content['body'] .= "<textarea placeholder='Describe something positive...' id=\"".createHash()."\" required></textarea>";
+							$content['body'] .= "	<div class=\"input\"><img src=\"img/voicerecording.png\" width=\"30\">";
+							$content['body'] .= "		<img src=\"img/keyboard.png\" width=\"30\">";
+							$content['body'] .= "	</div>";
+							$content['body'] .= "</div>";
 							$GLOBALS['log']->event("Conflict: Asked for last positive thing (id:".$conflict_id.")",__FILE__,__LINE__);
 							
 						}
@@ -199,7 +211,7 @@ switch($progress) {
 				break;
 			}
 			$actual_conflict->setProgress(3);
-			$content['body'] .= "<a href='".$redirect_url."'>weiter</a>\n";
+			$content['body'] .= "<button type=\"button\" class=\"next\" onClick=\"window.location.href = '".$redirect_url."'\"><img src=\"img/next.png\" width=\"15\">Next</button>\n";
 		}
 		else
 			header("Location: ".$redirect_url);
@@ -229,12 +241,16 @@ switch($progress) {
 			}
 			else
 			{
-				$content['body'] .= "<h1>How do you feel?</h1>\n";
+				$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);				$content['body'] .= "<h2 class=\"feelings\">How do you feel?</h2>\n";
 				$content['body'] .= "<form action=\"\" method=\"POST\">\n";
-				$content['body'] .= "<p><input type=\"range\" name=\"angry\" min=\"0\" max=\"100\" ></p>\n";
-				$content['body'] .= "<p><input type=\"range\" name=\"confused\" min=\"0\" max=\"100\" ></p>\n";
-				$content['body'] .= "<p><input type=\"range\" name=\"disappointed\" min=\"0\" max=\"100\" ></p>\n";
-				$content['body'] .= "<button type=\"submit\" name=\"feelings\" value=\"val\">Continue</button>\n";
+				
+				$content['body'] .= "<div class=\"feelingslider\">\n";
+				$content['body'] .= "<p><span>calm</span><input type=\"range\" class=\"slider\" name=\"angry\" min=\"0\" max=\"100\" > <span>angry</span></p>\n";
+				$content['body'] .= "<p><span>understanding</span><input type=\"range\" class=\"slider\" name=\"confused\" min=\"0\" max=\"100\" > <span>confused</span></p>\n";
+				$content['body'] .= "<p><span>satisfied</span> <input type=\"range\" class=\"slider\" name=\"disappointed\" min=\"0\" max=\"100\" > <span>disappointed</span></p>\n";
+				$content['body'] .= "</div>\n";
+				$content['body'] .= "<button type=\"submit\" name=\"feelings\" class=\"next\" value=\"val\">Next</button>\n";
+
 				$content['body'] .= "</form>\n";
 				$GLOBALS['log']->event("Conflict: Asked for feelings (id:".$conflict_id.")",__FILE__,__LINE__);
 
@@ -282,12 +298,39 @@ switch($progress) {
 			}
 			else
 			{
-				$content['body'] .= "<h1>About the Conflict</h1>\n";
-				$content['body'] .= "<form action=\"\" method=\"POST\">\n";
-				$content['body'] .= "<p>What bothers me, is that <textarea name=\"event\" class=\"small\" id=\"".createHash()."\" required></textarea></p>\n";
-				$content['body'] .= "<p>The solution could be / I wish <textarea name=\"wish\" class=\"small\" id=\"".createHash()."\" placeholder=\"what is needed to solve the conflict and/or to avoid this problem in the future?\" required></textarea></p>\n";
-				$content['body'] .= "<p>It took me <input name=\"time\" type=\"number\" min=\"0\" max=\"1440\" /> minutes longer</p>\n";
-				$content['body'] .= "<button type=\"submit\" name=\"cloze\" value=\"val\">Continue</button>\n";
+				$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);	
+
+				$content['body'] .= "<h2>What exactly is the problem?<br>\nTry to explain it specifically. </h2>\n";
+				$content['body'] .= "<form method=\"POST\" action=\"\">\n";
+				$content['body'] .= "<div class=\"inputcloze\">\n";
+				$content['body'] .= "	<p>What bothers me is that..<br></p> \n";
+				$content['body'] .= "	<textarea name='event' id='".createHash()."' placeholder=\"Type in your problem here..\"></textarea>\n";
+				$content['body'] .= "	<div class=\"input\">\n";
+				$content['body'] .= "		<img src=\"img/voicerecording.png\" width=\"21\">\n";
+				$content['body'] .= "		<img src=\"img/keyboard.png\" width=\"21\">\n";
+				$content['body'] .= "	</div>\n";
+				$content['body'] .= "\n";
+				$content['body'] .= "	<div class=\"inputcloze\">\n";
+				$content['body'] .= "	<p>A solution could be / I wish...<br></p> \n";
+				$content['body'] .= "	<textarea name='event' id='".createHash()."' placeholder=\"Type in your wish here..\"></textarea>\n";
+				$content['body'] .= "	<div class=\"input\">\n";
+				$content['body'] .= "		<img src=\"img/voicerecording.png\" width=\"21\">\n";
+				$content['body'] .= "		<img src=\"img/keyboard.png\" width=\"21\">\n";
+				$content['body'] .= "	</div>\n";
+
+				$content['body'] .= "<div class=\"inputcloze\">\n";
+				$content['body'] .= "	<p>It took me several minutes longer:<br></p> \n";
+				$content['body'] .= "\n";
+				$content['body'] .= "	<div class=\"arrowleft\"><img src=\"img/pfeil_left.png\"></div>\n";
+				$content['body'] .= "\n";
+				$content['body'] .= "	<input class=\"minutes\" name=\"time\" type=\"text\" value=\"0\" />\n";
+				$content['body'] .= "\n";
+				$content['body'] .= "	<div class=\"arrowright\"><img src=\"img/pfeil_right.png\"></div>\n";
+				$content['body'] .= "\n";
+				$content['body'] .= "</div>\n";
+
+				$content['body'] .= "<button type=\"submit\" name=\"cloze\" value=\"val\">Next</button>\n";
+
 				$content['body'] .= "</form>\n";
 				$GLOBALS['log']->event("Conflict: showed sloze (id:".$conflict_id.")",__FILE__,__LINE__);
 			}
@@ -308,6 +351,7 @@ switch($progress) {
 		if($actual_conflict->progress < $progress)
 		{
 			// FIXME: Enhancement: Übersicht anzeigen
+			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
 			$content['body'] .= "<h1>Add Reminder</h1>\n";
 		}
 		else
@@ -323,6 +367,7 @@ switch($progress) {
 
 		if($actual_conflict->progress == 6) 
 		{
+			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
 			$user_objects[$actual_conflict->created_with]->sendToBracelet("conflictCreated",['value' => $actual_user->color, 'conflict' => $conflict_id, 'text' => $user_objects[$actual_conflict->created_with]->name.' has a Problem. Do you have an idea what it could be about?']);
 			$GLOBALS['log']->event("Conflict: Sent out conflictCreated event",__FILE__,__LINE__);
 			//$actual_conflict->setProgress($state); // FIXME: uncomment
