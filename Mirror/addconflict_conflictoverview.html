@@ -78,16 +78,28 @@
 <div class="inputcloze">
 
 	<p>overview of the conflict between you and {user}:</p>
-	<textarea name='description' placeholder="eg. {user} is not taking the rubbish out."></textarea>
+	<p>"{conflictdescription}""</p>
 	
 	<div class="remindings">
+		<p>Do you want to remind {user}?</p>
 		<p>Remindings:</p>
+
+
 		<div class="arrowleft"><img src="img/pfeil_left.png"></div>
 
-		<input type='text' class="reminding" name='name' placeholder='0' required> 
+		<input type='text' class="reminding" name='name' placeholder='0'> 
 
 		<div class="arrowright"><img src="img/pfeil_right.png"></div>
 	</div>
+
+	<p>When?</p>
+
+	<select> 
+		<option>rubbish bin has to be taken out</option>		
+		<option>toilet paper has to be filled up</option>
+		<option>etc.</option>
+
+	</select>
 
 </div>
 

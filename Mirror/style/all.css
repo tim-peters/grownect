@@ -591,6 +591,25 @@
 
 		}
 
+		.inputcloze div{
+			display: inline-block;
+		}
+
+
+		input.minutes{
+			display:inline-block;
+			width:600px;
+			color: #ffffff;
+			text-align: center;
+			font-size: 16px;
+			border: 1px solid #333;
+			background-color: #111;
+			border-radius: 0px;
+			height: 30px;
+			width: 30px;
+			margin:10px;
+			padding: 5px 10px;
+
 
 
 		/*ERROR*/
@@ -732,10 +751,14 @@
 			margin:50px;
 		}
 
+		.remindings div{
+			display: inline-block;
+		}
+
 		
 		input.reminding{
-			/*display:inline-block;
-			width:600px;*/
+			display:inline-block;
+			width:600px;
 			color: #ffffff;
 			font-size: 16px;
 			border: 1px solid #333;
@@ -746,4 +769,14 @@
 			margin:10px;
 			padding: 5px 10px;
 		}
+
+		select{
+			background-color: #111;
+			border: 1px solid #333;
+			color:white;
+			width:300px;
+			padding:20px;
+
+		}
+
 		
