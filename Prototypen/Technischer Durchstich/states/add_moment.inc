@@ -5,13 +5,28 @@ $content['body'] .= showUserbar($user_objects, $actual_user, $id);
 $content['body'] .= "<h2>Creating a good moment with ".$user_objects[$id]->name."</h2>";
 switch($progress) {
 	default:
-		$content['body'] .= "<h3>what kind of good moment do you want to create?</h3>\n";
-		$content['body'] .= "<ul>\n";
-		$content['body'] .= "	<li><a href='?state=".$state."&progress=1&id=".$id."&type=0'>Text</a></li>\n";
-		$content['body'] .= "	<li><a href='?state=".$state."&progress=1&id=".$id."&type=1'>Picture</a></li>\n";
-		$content['body'] .= "	<li><a href='?state=".$state."&progress=1&id=".$id."&type=2'>Voicemail</a></li>\n";
-		$content['body'] .= "	<li><a href='?state=".$state."&progress=1&id=".$id."&type=3'>Video</a></li>\n";
-		$content['body'] .= "</ul>\n";
+		$content['body'] .= "<div class=\"container\">\n";
+		$content['body'] .= "	<div class=\"kasten\">\n";
+		$content['body'] .= "		<ul> \n";
+		$content['body'] .= "			<li><a href=\"?state=".$state."&progress=1&id=".$id."&type=1\"><img src=\"img/moment-w.png\" width=\"50\" style=\"margin:10px\"><br>upload a picture</a></li>\n";
+		$content['body'] .= "		</ul>\n";
+		$content['body'] .= "	</div>\n";
+		$content['body'] .= "	<div class=\"kasten\">\n";
+		$content['body'] .= "		<ul> \n";
+		$content['body'] .= "			<li><a href=\"#\"><img src=\"img/voicerecording.png\" width=\"50\" style=\"margin:10px\"><br>say something</a></li>\n";
+		$content['body'] .= "		</ul>\n";
+		$content['body'] .= "	</div>\n";
+		$content['body'] .= "	<div class=\"kasten\">\n";
+		$content['body'] .= "		<ul> \n";
+		$content['body'] .= "			<li><a href=\"?state=".$state."&progress=1&id=".$id."&type=0\"><img src=\"img/keyboard.png\" width=\"50\" style=\"margin:10px\"><br>write something</a></li>\n";
+		$content['body'] .= "		</ul>\n";
+		$content['body'] .= "	</div>\n";
+		$content['body'] .= "	<div class=\"kasten\">\n";
+		$content['body'] .= "		<ul> \n";
+		$content['body'] .= "			<li><a href=\"#\"><img src=\"img/movie36.png\" width=\"50\" style=\"margin:10px\"><br>upload a video</a></li>\n";
+		$content['body'] .= "		</ul>\n";
+		$content['body'] .= "	</div>				         \n";
+		$content['body'] .= "</div>\n";
 	break;
 	case 1:
 		switch($_GET['type']) {
