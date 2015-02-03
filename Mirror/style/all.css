@@ -269,6 +269,7 @@
 			color: #ffffff;
 			font-size: 24px;
 			text-align: center;
+			margin:100px auto;
 		}
 
 		
@@ -387,9 +388,7 @@
 
 		/*MY CONFLICTS*/
 
-		h2.yourconflicts{
-			margin:100px auto;
-		}
+
 
 		ul.topvalues{
 			text-align: center;
@@ -416,7 +415,7 @@
 		/*QUESTION_LAST_FAVOUR*/
 
 		h2.lastgoodfavour, .conflicthead{
-			margin:100px auto;
+			margin:0px auto;
 		}
 
 		/*TEXTAREA*/
@@ -475,19 +474,10 @@
 
 
 
-		
-
-		/*LAST_GOOD_MOMENT*/
-
-		h2.moment{
-			margin:100px auto;
-		}
-
-
 		/*FEELINGS*/
 
 		h2.feelings{
-			margin:100px auto;
+			margin:0px auto;
 		}
 
 		.feelingslider p{
@@ -555,6 +545,51 @@
 		.next img{
 			margin:0 10px;
 		}
+
+
+		/*CLOZE*/
+
+		.inputcloze{
+			text-align: center;
+
+		}
+
+
+		.inputcloze{
+			display:block;
+			margin:40px auto;
+			width:600px;
+			height:600px;
+		}
+
+		 .inputcloze textarea {
+			display: inline-block;
+			color: #ffffff;
+			border: 1px solid #333;
+			background-color: #111;
+			margin-left: 50px;
+			font-size: 16px;
+			padding: 10px;
+			resize:none;
+			font-family: 'PT Sans', sans-serif;
+			text-align: center;
+			height: 40px;
+			width: 350px;
+		}
+
+		textarea:focus {
+			border: 1px solid #FFFFFF;
+		}
+
+		.input {
+			display:inline-block;
+			width:30px;
+			height:30px;
+			margin:0px;
+			vertical-align: top;
+
+		}
+
 
 
 		/*ERROR*/
