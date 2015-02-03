@@ -1,34 +1,6 @@
 <?php
-$content['body'] .= showUserbar($user_objects, $actual_user, $id);
 switch($_GET['progress']) {
-	case 1: // Change Prodile Picture
-		$id_hash = md5(time()+"fileupload"+rand(000,999));
-		
-		$content['script'] .= "function isItUploaded()\n";
-		$content['script'] .= "{\n";
-		$content['script'] .= "	console.log(\"run: isItUploaded()\");\n";
-		$content['script'] .= "	$.ajax({\n";
-		$content['script'] .= "		type: \"POST\",\n";
-		$content['script'] .= "		url: \"./api/api_pictureUpload.php?state=check&id=".$id_hash."\"\n";
-		$content['script'] .= "	})\n";
-		$content['script'] .= "	.done(function( msg ) {\n";
-		$content['script'] .= "		if(msg != 0)\n";
-		$content['script'] .= "		{\n";
-		$content['script'] .= "			$(\".do\").text('The mirror has received this photo. Do you wanna take it?');\n";
-		$content['script'] .= "			$(\"img.qr\").attr(\"src\", msg);\n";
-		$content['script'] .= "			$(\"img.qr\").after(\"<form method='POST' action='?state=".$state."&progress=2&id=".$id."'><input type='hidden' name='img' value='\"+msg+\"' /><input type='submit' value='save'></form>\");\n";
-		$content['script'] .= "		}\n";
-		$content['script'] .= "		else\n";
-		$content['script'] .= "			setTimeout(function() { isItUploaded() },1000);\n";
-		$content['script'] .= "	});\n";
-		$content['script'] .= "}\n";
-		$content['script'] .= "setTimeout(function() { isItUploaded(); },5000);\n";
-
-		$content['body'] .= "<h3 class=\"do\">Scan the QR-Code to upload a photo from your smartphone!<h3>\n";
-		$content['body'] .= "<img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\" width=\"159\" class=\"qr\"> <br>\n";
-	break;
-
-	case 2: // Receiving new Profile Picture
+	case 1: // Receiving new Profile Picture
 		if(isset($_POST['img']))
 		{
 
@@ -46,13 +18,42 @@ switch($_GET['progress']) {
 			else
 				$GLOBALS['log']->error("Image could not be found/moved.",__FILE__,__LINE__,null,true);
 		}
-		else
-			$GLOBALS['log']->error("Image URL is missing.",__FILE__,__LINE__,null,true);
+		if(isset($_POST['description']))
+		{
+			$desc = secureString($_POST['description']);
+			$user_objects[$actual_user]->setDescription($desc);
+		}
 
-	default:
-		$content['body'] .= "<img src=\"".$user_objects[$actual_user]->picture."\" width=\"300\"/><br>\n";
-		$content['body'] .= "<a href=\"?state=".$state."&progress=1\">Change</a>\n";
-		$content['body'] .= "<h2>".$user_objects[$actual_user]->name."</h2>";
+	default: // Change Prodile Picture
+		$content['body'] .= showUserbar($user_objects, $actual_user, $id);
+
+		$id_hash = createHash();
+		$content['js'][] = "./js/custom/change_profile.js";
+		$content['script'] .= "var apiurl = \"./api/api_pictureUpload.php?state=check&id=".$id_hash."\";\n";
+		
+		$content['body'] .= "<div class=\"userlarge\" style=\"background-image:url('".$user_objects[$actual_user]->picture."')\"> 
+	</div>\n";
+		
+		$content['body'] .= "	<div class=\"editprofile\">\n";
+		$content['body'] .= "		<div class=\"qr\">\n";
+		$content['body'] .= "			Scan this code with your smartphone!<br>";
+		$content['body'] .= "			<img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\">";
+		$content['body'] .= "		</div> ";
+		$content['body'] .= "		<img src=\"img/edit.png\" width=\"40\">";
+		$content['body'] .= "	</div>\n";
+
+		$content['body'] .= "<h1><b>".$user_objects[$actual_user]->name."</b></h1>\n";
+
+		$content['body'] .= "	<form method='post' action='?state=".$state."&progress=1'>\n";
+
+		$content['body'] .=	"<div class=\"textarea\">\n";
+		$content['body'] .= "	<textarea name='description'>".$user_objects[$actual_user]->description."</textarea>\n";
+		$content['body'] .= "<div class=\"input\"><img src=\"img/voicerecording.png\" width=\"30\"><img src=\"img/keyboard.png\" width=\"30\">\n";
+		$content['body'] .= "</div>";
+		$content['body'] .= "</div>";
+		$content['body'] .= "<button type=\"submit\" class=\"btn\"><img src=\"img/confirm.png\" width=\"25\">Save</button>";
+		$content['body'] .= "</form>";
+	break;
 }
 $content['body'] .= showHomebutton();
 ?>

@@ -208,6 +208,17 @@ class User
 			return true;
 	}
 
+	public function setDescription($_description, $updateDatabase = true) {
+		$this->description = $_description;
+
+		if($updateDatabase)
+		{
+			if($this->updateDatabase()) return true;
+		}
+		else
+			return true;
+	}
+
 	public function sendToBracelet($event, $value = null) {
 		$app_id = '103648';
 		$app_key = '80c930949c53e186da3a';

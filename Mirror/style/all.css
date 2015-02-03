@@ -240,7 +240,7 @@
 			margin:16px;
 		}
 
-		.edit .qr {
+		.editprofile .qr, .edit .qr {
 			display: none;
 			position: absolute;
 			width:160px;
@@ -252,7 +252,7 @@
 			background:transparent url("../img/qrbox.png") no-repeat;
 		}
 
-		.edit .qr img {
+		.editprofile .qr img, .edit .qr img {
 			width:159px;
 		}
 
@@ -353,8 +353,9 @@
 			margin: 150px auto 40px;
 			border-radius: 50%;
 			background-color: #111;
-			background:url"img/user.png") center center no-repeat;
+			background-image:url"img/user.png") no-repeat;
 			background-size: cover;
+			background-position: center;
 			width: 300px;
 			height: 300px;
 			text-align: center;
@@ -374,7 +375,7 @@
 		}
 
 
-		.editprofile img{
+		.editprofile > img{
 			text-align: center;
 			margin:16px;
 		}
