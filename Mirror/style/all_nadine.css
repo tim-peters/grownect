@@ -778,6 +778,37 @@
 		}
 
 
+/*FIRST TIME TIPS 2*/
+
+
+
+		.usercontainer .line {
+			display:inline-block;
+			margin-top: -15px;
+			margin-left: 100px;
+		}
+
+		.usercontainer .line2 {
+			display:inline-block;
+			margin-top: -50px;
+			margin-left: 80px;
+		}
+
+
+		.descriptiontwo {
+			background-color:#fff;
+			border-radius: 20%;
+			width:350px;
+			height:110px;
+			margin:auto;
+			color:black;
+			font-size: 24px;
+			padding:20px;
+			text-align: center;
+
+		}
+
+
 
 
 
