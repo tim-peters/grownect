@@ -27,6 +27,7 @@ switch($progress) {
 		$content['body'] .= "		</ul>\n";
 		$content['body'] .= "	</div>				         \n";
 		$content['body'] .= "</div>\n";
+		$content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel\"><img src=\"img/cancel.png\" width=\"25\">Back to homescreen</button>\n";
 	break;
 	case 1:
 		switch($_GET['type']) {
@@ -65,13 +66,13 @@ switch($progress) {
 				$content['script'] .= "setTimeout(function() { isItUploaded(); },5000);\n";
 
 
+				$content['body'] .= "<form method=\"POST\" action=\"?state=".$state."&progress=2&id=".$id."&type=1\"> 	\n";
 				$content['body'] .= "<div class=\"container\">\n";
 				$content['body'] .= "	<div class=\"kasteneinbild\">\n";
 				$content['body'] .= "		<div class=\"qr\">\n";
 				$content['body'] .= "			<img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\">\n";
 				$content['body'] .= "		</div>\n";
 				$content['body'] .= "	</div>\n";
-				$content['body'] .= "	<form method=\"POST\" action=\"?state=".$state."&progress=2&id=".$id."&type=1\"> 	\n";
 				$content['body'] .= "	<p>\n";
 				$content['body'] .= "		<input type='text' class=\"signup2\" name='title' placeholder='Type in the title' required>		<input type='date' class=\"signup3\" name='date' placeholder='Date'>\n";
 				$content['body'] .= "	</p>\n";
@@ -79,10 +80,12 @@ switch($progress) {
 				$content['body'] .= "	<div class=\"rating\">\n";
 				$content['body'] .= "		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>\n";
 				$content['body'] .= "	</div>\n";
-				$content['body'] .= "<button type=\"submit\" class=\"btn\"><img src=\"./img/confirm.png\" width=\"25\">Okay</button>\n";
-				$content['body'] .= "	</form>\n";
 				$content['body'] .= "</div>\n";
-
+				$content['body'] .= "<div class=\"buttonbutton\">\n";
+				$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
+				$content['body'] .= "	<button type=\"submit\" class=\"next2\"><img src=\"img/next.png\" width=\"25\">Next</button>\n";
+				$content['body'] .= "</div>\n";
+				$content['body'] .= "	</form>\n";
 				// FIXME: Enhancement: Integrate Name and Date (optional)
 			break;
 		}
@@ -124,5 +127,4 @@ switch($progress) {
 		}
 	break;
 }
-$content['body'] .= showHomebutton();
 ?>

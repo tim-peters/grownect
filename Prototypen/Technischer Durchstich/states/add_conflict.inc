@@ -90,6 +90,7 @@ switch($progress) {
 			$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
 			$content['script'] .= "var redirectURI = '".$redirect_url."';\n";
 			$content['body'] .= "<h2>Checking for pulse...</h2>\n";
+			$content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./' \"class=\"cancel\"><img src=\"img/cancel.png\" width=\"25\">Continue later</button>\n";
 			// FIXME: Enhancement: Fallback if Braclet is offline
 			 
 			$actual_conflict->setProgress(2); // FIXME: Enhancement: Erst nach Bestätigung der Clientinteraktion ausführen
@@ -211,7 +212,10 @@ switch($progress) {
 				break;
 			}
 			$actual_conflict->setProgress(3);
-			$content['body'] .= "<button type=\"button\" class=\"next\" onClick=\"window.location.href = '".$redirect_url."'\"><img src=\"img/next.png\" width=\"15\">Next</button>\n";
+			$content['body'] .= "<div class=\"buttonbutton\">\n";
+			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
+			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='".$redirect_url."'\" class=\"next2\"><img src=\"img/next.png\" width=\"25\">Next</button>\n";
+			$content['body'] .= "</div>\n";
 		}
 		else
 			header("Location: ".$redirect_url);
@@ -249,7 +253,10 @@ switch($progress) {
 				$content['body'] .= "<p><span>understanding</span><input type=\"range\" class=\"slider\" name=\"confused\" min=\"0\" max=\"100\" > <span>confused</span></p>\n";
 				$content['body'] .= "<p><span>satisfied</span> <input type=\"range\" class=\"slider\" name=\"disappointed\" min=\"0\" max=\"100\" > <span>disappointed</span></p>\n";
 				$content['body'] .= "</div>\n";
-				$content['body'] .= "<button type=\"submit\" name=\"feelings\" class=\"next\" value=\"val\">Next</button>\n";
+				$content['body'] .= "<div class=\"buttonbutton\">\n";
+				$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
+				$content['body'] .= "	<button type=\"submit\" name=\"feelings\" class=\"next next2\" value=\"val\"><img src=\"img/next.png\" width=\"25\">Next</button>\n";
+				$content['body'] .= "</div>\n";
 
 				$content['body'] .= "</form>\n";
 				$GLOBALS['log']->event("Conflict: Asked for feelings (id:".$conflict_id.")",__FILE__,__LINE__);
@@ -343,7 +350,10 @@ switch($progress) {
 				$content['body'] .= "\n";
 				$content['body'] .= "</div>\n";
 
-				$content['body'] .= "<button type=\"submit\" name=\"cloze\" value=\"val\">Next</button>\n";
+				$content['body'] .= "<div class=\"buttonbutton\">\n";
+				$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
+				$content['body'] .= "	<button type=\"submit\" name=\"cloze\" value=\"val\" class=\"next\"><img src=\"img/next.png\" width=\"25\">Next</button>\n";
+				$content['body'] .= "</div>\n";
 
 				$content['body'] .= "</form>\n";
 				$GLOBALS['log']->event("Conflict: showed sloze (id:".$conflict_id.")",__FILE__,__LINE__);
@@ -367,6 +377,11 @@ switch($progress) {
 			// FIXME: Enhancement: Übersicht anzeigen
 			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
 			$content['body'] .= "<h1>Add Reminder</h1>\n";
+
+			$content['body'] .= "<div class=\"buttonbutton\">\n";
+			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
+			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='".$redirect_url."'\" class=\"next2\"><img src=\"img/next.png\" width=\"25\">Next</button>\n";
+			$content['body'] .= "</div>\n";
 		}
 		else
 			header("Location: ".$redirect_url);
@@ -386,10 +401,11 @@ switch($progress) {
 			$GLOBALS['log']->event("Conflict: Sent out conflictCreated event",__FILE__,__LINE__);
 			//$actual_conflict->setProgress($state); // FIXME: uncomment
 			$content['body'] .= "<h2>Successfully created</h2>\n";
+
+			$content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./'\"class=\"btn2\"><img src=\"img/confirm.png\" width=\"25\">back to homescreen</button>";
 		}
 		else
 			$GLOBALS['log']->error("On this Step, the conflict needs to be definied completely but not be finsihed",__FILE__,__LINE__,null,true);
 	break;
 }
-$content['body'] .= showHomebutton();
 ?>

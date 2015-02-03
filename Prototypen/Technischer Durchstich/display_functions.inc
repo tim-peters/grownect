@@ -90,16 +90,4 @@ function showUserbar (&$user_objects, $as, $with = null, $choose_mode = null) {
 	return $output; // return the whole html store in the $output variable
 }
 
-function showHomebutton() {
-	$output = "<a href=\"./\" title=\"Back to homescreen\">Cancel</a>\n";
-
-	return $output;
-}
-
-function showNextButton($redirect_url) {
-	$output = "<a href=\"".$redirect_url."\" title=\"Continue with next step\">Continue</a>\n";
-
-	return $output;
-}
-
 ?>

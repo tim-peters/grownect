@@ -53,9 +53,12 @@ switch($_GET['progress']) {
 		$content['body'] .= "<div class=\"input\"><img src=\"img/voicerecording.png\" width=\"30\"><img src=\"img/keyboard.png\" width=\"30\">\n";
 		$content['body'] .= "</div>";
 		$content['body'] .= "</div>";
-		$content['body'] .= "<button type=\"submit\" class=\"btn\"><img src=\"img/confirm.png\" width=\"25\">Save</button>";
+		$content['body'] .= "<div class=\"buttonbutton\">\n";
+		$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
+		$content['body'] .= "	<button type=\"submit\" class=\"btn\"><img src=\"img/confirm.png\" width=\"25\">Save</button>\n";
+		$content['body'] .= "</div>\n";
+
 		$content['body'] .= "</form>";
 	break;
 }
-$content['body'] .= showHomebutton();
 ?>

@@ -70,7 +70,7 @@ switch($progress) {
 	$content['body'] .= "	<li style=\"background-color:#3f8143\"></li>";
 	$content['body'] .= "	</ul>";
 	$content['body'] .= "	</div>";
-	$content['body'] .= "	<button type=\"submit\" class=\"btn\"><img src=\"img/confirm.png\" width=\"25\">Get started</button>";
+	$content['body'] .= "	<button type=\"submit\" onClick=\"window.location.href=''\"class=\"btn2\"><img src=\"img/confirm.png\" width=\"25\">Get started</button>";
 	$content['body'] .= "	</form>";
 }
 ?>

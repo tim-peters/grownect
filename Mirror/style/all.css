@@ -37,7 +37,7 @@
 			transition:opacity .8s ease-out;
 		}
 
-		.user img {
+		.user > img {
 			width:100%;
 			height:100%;
 			border:none;
@@ -84,13 +84,12 @@
 		}
 
 		#defaultuser{
-
-		background-color: #333333;
-		width: 120px;
-		height: 120px;
-		border-radius: 150px;
-		text-align: center;
-		
+			background-color: #333333;
+			width: 120px;
+			height: 120px;
+			border-radius: 150px;
+			text-align: center;
+			
 		}
 
 		
@@ -103,16 +102,24 @@
 		.menu li{
 			display: inline-block;
 			padding:10px;
-			line-height: 130%;
+			line-height: 60%;
 			text-align: center;
 			width:38px;
 			text-transform: uppercase; /* mache den Text zu Vasalien */
+			overflow:visible;
 		}
 		
+
+		.user a {
+			color: #fff;
+			text-decoration: none;
+			font-size:11px;	
+		}
+
 		.menu{
 			height: 0; /* instead of display:none; (because height is animatable but display isn't) */
 			opacity:0;
-			margin-top:-60px;
+			margin-top:-50px;
 			padding-top: 0px;
 			transition:padding 1s .1s, opacity .6s, height 1s .1s; /* animation: backwarts */;
 			overflow: hidden;
@@ -121,7 +128,7 @@
 		.open .menu {
 			height: 200px;
 			opacity:1;
-			padding-top: 30px;
+			padding-top: 40px;
 			transition:padding ease-out .6s, opacity .6s; /* animation */
 		}
 
@@ -939,7 +946,40 @@
 			margin:-20px auto;
 		}
 
+/* BUTTONS */
 
-				  
+		.btn2 img{
+			margin:0 10px;
+		}
 
-		
+		.cancel img{
+			margin:0 10px;
+		}
+
+
+
+		.buttonbutton{
+			position: absolute;
+			text-align: center;
+			margin:auto;
+			bottom:250px;
+			left:0;
+			width:858px;
+		}
+
+		.buttonbutton button{
+			position: relative;
+			display:inline-block;
+			transform: translate(0,0);
+			margin:10px;
+			bottom:auto;
+			left: auto;
+		}
+
+		.next2 img{
+			margin:0 10px;
+		}
+
+		.cancel2 img{
+			margin:0 10px;
+		}
