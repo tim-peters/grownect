@@ -1,9 +1,9 @@
 $(document).ready(function() {
 		$("textarea").each(function() {
-			var hash = $(this).attr("id");
 			var that = $(this);
-			$(this).after("<a href=\"#\" class=\"startVoiceRecog\" data-id=\""+hash+"\">start Voice Recognition</a>\n")
-			.next().click(function() {
+			var hash = $(this).attr("id");
+			$(this).parent().find(".input img:first-of-type")
+			.click(function() {
 				var text = that.val();
 				var dataObject = {
 					id: techID,
@@ -11,7 +11,7 @@ $(document).ready(function() {
 					'hash': hash,
 					value: text
 				};
-				
+				//console.dir(dataObject);
 				$.ajax({
 					type: "POST",
 					url: "./api/api_braceletAnswer.php",

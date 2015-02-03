@@ -122,7 +122,7 @@ switch($progress) {
 			switch($startway) {
 				case 1:
 					$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
-					$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
+					$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";\n";
 					$content['body'] .= "<h2>Have you ever acted in a similiar way?<br>Explain the situation.</h2>";
 					$content['body'] .= "<div class=\"textarea\">";
 					$content['body'] .= "	<textarea name='description' placeholder=\"Type your description in here\" id=\"".createHash()."\"></textarea>";
@@ -196,7 +196,7 @@ switch($progress) {
 						else // .. else if not
 						{	// Frage nach letzter Positiver Handlung
 							$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
-							$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";";
+							$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";\n";
 							$content['body'] .= "<h2>What has ".$user_objects[$actual_conflict->created_with]->name." done for you lately?</h2>";
 							$content['body'] .= "<div class=\"textarea\">";
 							$content['body'] .= "<textarea placeholder='Describe something positive...' id=\"".createHash()."\" required></textarea>";
@@ -298,6 +298,8 @@ switch($progress) {
 			}
 			else
 			{
+				$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
+				$content['script'] .= "var techID = \"".$user_objects[$actual_user]->tech_id."\";\n";
 				$content['script'] .=	"$(function() {\n";
 				$content['script'] .=	"		$(\".arrowleft\").click(function() {\n";
 				$content['script'] .=	"			if(parseInt($(\"input.minutes\").val()) > 0)\n";

@@ -29,6 +29,8 @@ switch($_GET['progress']) {
 
 		$id_hash = createHash();
 		$content['js'][] = "./js/custom/change_profile.js";
+		$content['js'][] = "./js/custom/textareaVoiceRecognition.js";#
+		$content['script'] .= "var techID = '".$user_objects[$actual_user]->tech_id."';\n";
 		$content['script'] .= "var apiurl = \"./api/api_pictureUpload.php?state=check&id=".$id_hash."\";\n";
 		
 		$content['body'] .= "<div class=\"userlarge\" style=\"background-image:url('".$user_objects[$actual_user]->picture."')\"> 
@@ -47,7 +49,7 @@ switch($_GET['progress']) {
 		$content['body'] .= "	<form method='post' action='?state=".$state."&progress=1'>\n";
 
 		$content['body'] .=	"<div class=\"textarea\">\n";
-		$content['body'] .= "	<textarea name='description'>".$user_objects[$actual_user]->description."</textarea>\n";
+		$content['body'] .= "	<textarea name='description' id=\"".createHash()."\">".$user_objects[$actual_user]->description."</textarea>\n";
 		$content['body'] .= "<div class=\"input\"><img src=\"img/voicerecording.png\" width=\"30\"><img src=\"img/keyboard.png\" width=\"30\">\n";
 		$content['body'] .= "</div>";
 		$content['body'] .= "</div>";
