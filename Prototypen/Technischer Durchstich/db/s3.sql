@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 26. Jan 2015 um 17:13
+-- Erstellungszeit: 03. Feb 2015 um 17:39
 -- Server Version: 5.6.16
--- PHP-Version: 5.5.9
+-- PHP-Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -42,16 +42,14 @@ CREATE TABLE IF NOT EXISTS `conflicts` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Daten für Tabelle `conflicts`
 --
 
 INSERT INTO `conflicts` (`id`, `created`, `solved`, `created_by`, `created_with`, `moment_used`, `progress`, `weight`, `description`, `improvements`, `time_costs`, `explanation`) VALUES
-(24, '2015-01-22 21:41:20', '0000-00-00 00:00:00', 2, 3, 0, 1, 0, '', '', 0, ''),
-(25, '2015-01-23 14:33:01', '0000-00-00 00:00:00', 1, 2, 0, 1, 0, '', '', 0, ''),
-(38, '2015-01-26 15:13:09', '0000-00-00 00:00:00', 1, 3, 0, 1, 0, '', '', 0, '');
+(3, '2015-02-03 16:35:14', '0000-00-00 00:00:00', 3, 1, 0, 6, 76, 'beeing in abetter mood', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -61,6 +59,8 @@ INSERT INTO `conflicts` (`id`, `created`, `solved`, `created_by`, `created_with`
 
 CREATE TABLE IF NOT EXISTS `moments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(512) NOT NULL,
+  `date` timestamp NULL DEFAULT NULL,
   `created_by` int(11) NOT NULL,
   `created_with` int(11) NOT NULL,
   `type` int(11) NOT NULL,
@@ -69,17 +69,7 @@ CREATE TABLE IF NOT EXISTS `moments` (
   `rating` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Daten für Tabelle `moments`
---
-
-INSERT INTO `moments` (`id`, `created_by`, `created_with`, `type`, `path`, `content`, `rating`) VALUES
-(1, 3, 1, 0, '', 'hello', 0),
-(2, 1, 2, 0, '', 'Moment zwischen 1 und 2. Erstellt von 2', 30),
-(3, 2, 1, 0, '', 'Konflikt zwischen 2 und 1. Erstellt bei 2', 0),
-(5, 1, 2, 1, './api/files/87e5b1559d104c16f2d812795c814d08/tmp_23200-IMG-20150122-WA0009450471060.jpg', '', 25);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -93,14 +83,7 @@ CREATE TABLE IF NOT EXISTS `moments_use` (
   `user` int(11) NOT NULL,
   `used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
-
---
--- Daten für Tabelle `moments_use`
---
-
-INSERT INTO `moments_use` (`id`, `moment`, `user`, `used`) VALUES
-(1, 2, 1, '2015-01-19 15:28:24');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -129,9 +112,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `tech_id`, `name`, `description`, `color`, `picture`, `created`, `last_modified`, `initialized`) VALUES
-(1, '12345techid', 'Tim Scheller', 'Der beste', '#ff0000', './img/users/8df7a6c0b85fef40c47bbfb6468ca708_tmp_21353-IMG_20150124_141704~2-184854930.jpg', '2015-01-07 18:56:02', '0000-00-00 00:00:00', 1),
-(2, 'dfgdfgfdsg', 'Nadine Peters', 'Hi Folks!', '#44ff44', './img/user.png', '2015-01-09 12:46:29', '2015-01-09 18:46:21', 1),
-(3, 'dhgffjdfhj', 'Doreen Mlakar', 'sdfasdf sdfdsaf', '#0000ff', './img/user.png', '2015-01-09 12:46:29', '2015-01-09 18:44:57', 1);
+(1, '3b6b1192472a51adc2e7054f16a8ceba', 'Doreen Scheller', 'Ich bin sehr ordentlich organisiert und ja es reicht.', '#acda8d', './img/moments/4e1ee2a22b10baa12bdac47c44ea90ed_bca4424174d209ad38efc7dd49667eaf_8df7a6c0b85fef40c47bbfb6468ca708_tmp_21353-IMG_20150124_141704~2-184854930.jpg', '2015-02-03 16:31:12', '2015-02-03 16:31:12', 1),
+(2, '82f585baeae099c070aba8457633ca21', 'Tim J. Peters', 'I''m the coder :)', '#f59556', './img/moments/296240a2286b75ed06102226f859b3a2_2015-02-03 17.32.43.jpg', '2015-02-03 16:33:24', '2015-02-03 16:33:24', 1),
+(3, '76cf4ecb943fc5282061fffd96ff4df9', 'Nadine Mlakar', 'Ich mag Rothaarige', '#8d1c1c', './img/moments/3a6a5ed927dc5ce3a0a9ce5ac4945be4_de0c2ea7bf798d79451c766faa29eeee_a29b360ffb38e9434c08a4af85c01656_2eb3d648295c14c2055a39fe25af9b8c_2015-01-28 16.00.39.jpg', '2015-02-03 16:34:13', '2015-02-03 16:34:13', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
