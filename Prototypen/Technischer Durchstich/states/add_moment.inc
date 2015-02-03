@@ -23,10 +23,13 @@ switch($progress) {
 			$content['body'] .= "<select name='rating' size='1'><option value='0'>*</option><option value='25'>**</option><option value='50'>***</option><option value='75'>****</option><option value='100' selected>*****</option></select>\n";
 			$content['body'] .= "<input type='submit' value='save moment'>\n";
 			$content['body'] .= "</form>\n";
+			// FIXME: Add Title and Date
 			break;
 
 			case 1:
 				$id_hash = createHash();
+				$content['head'] .= "<meta charset='UTF-8'>\n";
+				$content['js'][] = "./js/custom/rating.js";
 				$content['script'] .= "function isItUploaded()\n";
 				$content['script'] .= "{\n";
 				$content['script'] .= "	console.log(\"run: isItUploaded()\");\n";
@@ -37,9 +40,8 @@ switch($progress) {
 				$content['script'] .= "	.done(function( msg ) {\n";
 				$content['script'] .= "		if(msg != 0)\n";
 				$content['script'] .= "		{\n";
-				$content['script'] .= "			$(\".do\").text('The mirror has received this photo. Do you wanna take it?');\n";
-				$content['script'] .= "			$(\"img.qr\").attr(\"src\", msg);\n";
-				$content['script'] .= "			$(\"img.qr\").after(\"<form method='POST' action='?state=".$state."&progress=2&id=".$id."&type=1'><input type='hidden' name='img' value='\"+msg+\"' /><select name='rating' size='1'><option value='0'>*</option><option value='25'>**</option><option value='50'>***</option><option value='75'>****</option><option value='100' selected>*****</option></select><input type='submit' value='save'></form>\");\n";
+				$content['script'] .= "			$(\".qr img\").attr(\"src\", msg);\n";
+				$content['script'] .= "			$(\"input.signup2\").after(\"<input type='hidden' name='img' value='\"+msg+\"' />\");\n";
 				$content['script'] .= "		}\n";
 				$content['script'] .= "		else\n";
 				$content['script'] .= "			setTimeout(function() { isItUploaded() },1000);\n";
@@ -47,8 +49,24 @@ switch($progress) {
 				$content['script'] .= "}\n";
 				$content['script'] .= "setTimeout(function() { isItUploaded(); },5000);\n";
 
-				$content['body'] .= "<h3 class=\"do\">Scan the QR-Code to upload a photo from your smartphone!<h3>\n";
-				$content['body'] .= "<img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\" width=\"159\" class=\"qr\"> <br>\n";
+
+				$content['body'] .= "<div class=\"container\">\n";
+				$content['body'] .= "	<div class=\"kasteneinbild\">\n";
+				$content['body'] .= "		<div class=\"qr\">\n";
+				$content['body'] .= "			<img src=\"./api/api_pictureUpload.php?state=img&id=".$id_hash."\">\n";
+				$content['body'] .= "		</div>\n";
+				$content['body'] .= "	</div>\n";
+				$content['body'] .= "	<form method=\"POST\" action=\"?state=".$state."&progress=2&id=".$id."&type=1\"> 	\n";
+				$content['body'] .= "	<p>\n";
+				$content['body'] .= "		<input type='text' class=\"signup2\" name='title' placeholder='Type in the title' required>		<input type='date' class=\"signup3\" name='date' placeholder='Date'>\n";
+				$content['body'] .= "	</p>\n";
+				$content['body'] .= "	<input type=\"hidden\" name=\"rating\" />\n";
+				$content['body'] .= "	<div class=\"rating\">\n";
+				$content['body'] .= "		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>\n";
+				$content['body'] .= "	</div>\n";
+				$content['body'] .= "<button type=\"submit\" class=\"btn\"><img src=\"./img/confirm.png\" width=\"25\">Okay</button>\n";
+				$content['body'] .= "	</form>\n";
+				$content['body'] .= "</div>\n";
 
 				// FIXME: Enhancement: Integrate Name and Date (optional)
 			break;
@@ -60,7 +78,7 @@ switch($progress) {
 			default:
 				if(isset($_POST['text']) && isset($_POST['rating']))
 				{
-					$instance = Moment::fromNew($actual_user, $id, 0, secureString($_POST['rating']), null, secureString($_POST['text']));
+					$instance = Moment::fromNew($actual_user, $id, 0, secureString($_POST['title']), date("Y-m-d H:i:s", strtotime($_POST['date'])), secureString($_POST['rating']), null, secureString($_POST['text']));
 					$content['body'] .= "Erfolgreich erstellt!\n"; // FIXME: Change wording
 				}
 				else
@@ -68,7 +86,7 @@ switch($progress) {
 			break;
 
 			case 1:
-				if(isset($_POST['img']) && isset($_POST['rating']))
+				if(isset($_POST['img']) && isset($_POST['rating']) && isset($_POST['title']))
 				{
 
 					$uri_parts = explode("/", $_POST['img']);
@@ -79,8 +97,8 @@ switch($progress) {
 					//if(true) // FOR DEBUG ONLY!
 					{
 						//echo $actual_user.", ".$id.", 1, ".$_POST['rating'].", ".$_POST['img']."\n";
-						$instance = Moment::fromNew($actual_user, $id, 1, secureString($_POST['rating']), "./img/moments/".$file_id."_".$file_name);
-						$content['body'] .= "Erfolgreich erstellt!\n";
+						$instance = Moment::fromNew($actual_user, $id, 1, secureString($_POST['title']), date('Y-m-d H:i:s', strtotime($_POST['date'])),secureString($_POST['rating']), "./img/moments/".$file_id."_".$file_name);
+						$content['body'] .= "<h2>Successfully uploaded</h2>\n";
 					}
 					else
 						$GLOBALS['log']->error("Image could not be found/moved.",__FILE__,__LINE__,null,true);

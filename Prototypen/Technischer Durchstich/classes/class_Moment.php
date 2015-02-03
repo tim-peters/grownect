@@ -16,9 +16,9 @@ class Moment {
 			return false;
 	}
 
-	public static function fromNew($_created_by, $_created_with, $_type, $_rating, $_path = null, $_content = null) {
+	public static function fromNew($_created_by, $_created_with, $_type, $_title, $_date, $_rating, $_path = null, $_content = null) {
 		$instance = new self();
-		if($instance->createNewMoment($_created_by, $_created_with, $_type, $_rating, $_path, $_content))
+		if($instance->createNewMoment($_created_by, $_created_with, $_type, $_title, $_date, $_rating, $_path, $_content))
 			return $instance;
 		else
 			return false;		
@@ -34,14 +34,14 @@ class Moment {
 		return true;
 	}
 
-	protected function createNewMoment($_created_by, $_created_with, $_type, $_rating, $_path, $_content) {
+	protected function createNewMoment($_created_by, $_created_with, $_type, $_title, $_date, $_rating, $_path, $_content) {
 		global $db;
 
 		//echo $_created_by.", ".$_created_with.", ".$_type.", ".$_rating.", ".$_path.", ".$_content."\n";
-		$query = "INSERT INTO moments(created_by, created_with, type, rating";
+		$query = "INSERT INTO moments(created_by, created_with, type, title, date, rating";
 		if($_type==0) $query .= ", content";
 		else 		$query .= ", path";
-		$query .= ") VALUES ('".$_created_by."', '".$_created_with."', '".$_type."', '".$_rating."'";
+		$query .= ") VALUES ('".$_created_by."', '".$_created_with."', '".$_type."', '".$_title."', '".$_date."', '".$_rating."'";
 		if($_type==0) $query .= ", '".$_content."'";
 		else 		$query .= ",  '".$_path."'";
 		$query		.= ")";

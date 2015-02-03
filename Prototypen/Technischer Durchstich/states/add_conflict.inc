@@ -383,7 +383,7 @@ switch($progress) {
 			$user_objects[$actual_conflict->created_with]->sendToBracelet("conflictCreated",['value' => $actual_user->color, 'conflict' => $conflict_id, 'text' => $user_objects[$actual_conflict->created_with]->name.' has a Problem. Do you have an idea what it could be about?']);
 			$GLOBALS['log']->event("Conflict: Sent out conflictCreated event",__FILE__,__LINE__);
 			//$actual_conflict->setProgress($state); // FIXME: uncomment
-			$content['body'] .= "<h3>Successfully created</h3>\n";
+			$content['body'] .= "<h2>Successfully created</h2>\n";
 		}
 		else
 			$GLOBALS['log']->error("On this Step, the conflict needs to be definied completely but not be finsihed",__FILE__,__LINE__,null,true);

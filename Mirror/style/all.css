@@ -834,16 +834,16 @@
 				margin:70px auto 0;
 				text-align:center;
 				vertical-align:middle;
-				background-color:#ffffff;
 				width: 350px;
 				height: 350px;
+				overflow: hidden;
 				}
 
 		.qr img {
 				margin:0 auto;
-				padding:80px 20px 20px 20px;
 				text-align:center;
 				vertical-align:middle;
+				max-width: 100%;
 		}
 
 
@@ -854,11 +854,12 @@
 		  unicode-bidi: bidi-override;
 		  direction: rtl;
 		  text-align: center;
+		  font-size: 30px;
 		}
 		.rating > span {
 		  display: inline-block;
 		  position: relative;
-		  width: 2.0em;
+		  width: 1em;
 		  cursor: default;
 		  color:#fff;
 		}
@@ -934,11 +935,3 @@
 			text-align: center;
 
 		}
-
-
-
-
-
-				  
-
-		

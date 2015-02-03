@@ -81,29 +81,23 @@
 
 <!--oben Menü - unten die der spalten-container-->
 
-<div class="container">
-		<h2>Last good Moment with {User}</h2>
-
-	<div class="kasteneinbild">
-		<div class="qr">
-			<img src="img/grownect_doreen.png" width="159">
+<div class=\"container\">
+	<h2>Last good Moment with {User}</h2>
+	<div class=\"kasteneinbild\">
+		<div class=\"qr\">
+			<img src=\"img/grownect_doreen.png\" width=\"159\">
 		</div>
 	</div>
-		
+	<form method=\"POST\" action=\"?state=".$state."&progress=2&id=".$id."&type=1\"> 	
 	<p>
-		<input type='text2' class="signup2" name='name2' placeholder='Type in the title' required>		<input type='text3' class="signup3" name='name3' placeholder='Date'>
+		<input type='text' class=\"signup2\" name='title' placeholder='Type in the title' required>		<input type='date' class=\"signup3\" name='date' placeholder='Date'>
 	</p>
-
-
-	<!-- Sternerating sollte feststehen hier nur die Anzeige -->
-	<input type="hidden" name="rating" />
-	<div class="rating">
+	<input type=\"hidden\" name=\"rating\" />
+	<div class=\"rating\">
 		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 	</div>
-	<!-- Ende Rating -->
-
-
-	</div>
+	</form>
+</div>
 
 	   <button type="button" type="submit" class="btn"><img src="img/confirm.png" width="25">Okay</button>
 
