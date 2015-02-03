@@ -298,6 +298,18 @@ switch($progress) {
 			}
 			else
 			{
+				$content['script'] .=	"$(function() {\n";
+				$content['script'] .=	"		$(\".arrowleft\").click(function() {\n";
+				$content['script'] .=	"			if(parseInt($(\"input.minutes\").val()) > 0)\n";
+				$content['script'] .=	"				$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())-1);\n";
+				$content['script'] .=	"			else\n";
+				$content['script'] .=	"				$(\"input.minutes\").val(0);\n";
+				$content['script'] .=	"		});\n";
+				$content['script'] .=	"		$(\".arrowright\").click(function() {\n";
+				$content['script'] .=	"			$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())+1);\n";
+				$content['script'] .=	"		});\n";
+				$content['script'] .=	"	});\n";
+
 				$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);	
 
 				$content['body'] .= "<h2>What exactly is the problem?<br>\nTry to explain it specifically. </h2>\n";

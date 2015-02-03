@@ -5,6 +5,19 @@
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
 		<title>Mirror</title>
 	<script type="text/javascript" src="./js/core/jquery.js"></script>
+	<script>
+	$(function() {
+		$(".arrowleft").click(function() {
+			if(parseInt($("input.minutes").val()) > 0)
+				$("input.minutes").val(parseInt($("input.minutes").val())-1);
+			else
+				$("input.minutes").val(0);
+		});
+		$(".arrowright").click(function() {
+			$("input.minutes").val(parseInt($("input.minutes").val())+1);
+		});
+	});
+	</script>
 
      <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
