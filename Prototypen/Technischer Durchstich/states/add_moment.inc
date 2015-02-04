@@ -52,8 +52,7 @@ switch($progress) {
 				$content['script'] .= "	$.ajax({\n";
 				$content['script'] .= "		type: \"POST\",\n";
 				$content['script'] .= "		url: \"./api/api_pictureUpload.php?state=check&id=".$id_hash."\"\n";
-				$content['script'] .= "	})\n";
-				$content['script'] .= "	.done(function( msg ) {\n";
+				$content['script'] .= "		success: function( msg ) {\n";
 				$content['script'] .= "		if(msg != 0)\n";
 				$content['script'] .= "		{\n";
 				$content['script'] .= "			$(\".qr img\").attr(\"src\", msg);\n";
@@ -61,6 +60,7 @@ switch($progress) {
 				$content['script'] .= "		}\n";
 				$content['script'] .= "		else\n";
 				$content['script'] .= "			setTimeout(function() { isItUploaded() },1000);\n";
+				$content['script'] .= "		}\n";
 				$content['script'] .= "	});\n";
 				$content['script'] .= "}\n";
 				$content['script'] .= "setTimeout(function() { isItUploaded(); },5000);\n";
