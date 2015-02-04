@@ -76,10 +76,13 @@ switch($state) {
 		include("./states/edit_profile.inc");
 	break;
 
+	case "show_statistics":
+		include("./states/statistics.inc");
+	break;
+
 	case "add_moment":
 		include("./states/add_moment.inc");
 	break;
-
 
 	case "add_conflict": {
 		include("./states/add_conflict.inc");
