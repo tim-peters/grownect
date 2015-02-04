@@ -1,0 +1,41 @@
+
+		body {
+			position:relative;
+			border:1px dotted white;
+			background-color: black;
+			width: 858px;
+			height: 1533px;			
+			margin:0 auto;
+			padding: 0;
+			font-family: 'PT Sans', sans-serif; 
+			font-size: 16px;
+			/*line-height: 12px;*/
+			color:white;
+		}
+
+
+		.container {
+			background-color:black;
+			width: inherit;
+			width: 500px;
+			height:600px;
+			margin:100px auto;
+			top: 300px;
+			padding:30px;
+		}
+
+		.kasteneinbild {
+				margin:70px auto 0;
+				text-align:center;
+				vertical-align:middle;
+				background-color:#ffffff;
+				width: 350px;
+				height: 350px;
+				}
+
+		.qr img {
+				margin:0 auto;
+				padding:80px 20px 20px 20px;
+				text-align:center;
+				vertical-align:middle;
+		}
