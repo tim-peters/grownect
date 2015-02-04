@@ -64,7 +64,7 @@ switch($progress) {
 
 			if(!isset($actual_conflict))
 				$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
-
+			
 			$actual_conflict->setCreated_with($id);
 			$GLOBALS['log']->event("Conflict opponent set to ".$id." (id:".$conflict_id.")",__FILE__,__LINE__);
 			header("Location: ?state=".$state."&progress=2&conflict_id=".$conflict_id);

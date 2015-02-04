@@ -24,18 +24,18 @@ function isItUploaded()
 	console.log("run: isItUploaded()");
 	$.ajax({
 		type: "POST",
-		url: apiurl
-	})
-	.done(function( msg ) {
-		if(msg != 0)
-		{
-			$(".qr").remove();
-			$(".usersignup").css("background-image", "url('"+msg+"'");
-			$("input[name='img']").val(msg);
-			$(".edit img").hide();
+		url: apiurl,
+		success: function( msg ) {
+			if(msg != 0)
+			{
+				$(".qr").remove();
+				$(".usersignup").css("background-image", "url('"+msg+"'");
+				$("input[name='img']").val(msg);
+				$(".edit img").hide();
+			}
+			else
+				setTimeout(function() { isItUploaded() },1000);
 		}
-		else
-			setTimeout(function() { isItUploaded() },1000);
 	});
 }
 
