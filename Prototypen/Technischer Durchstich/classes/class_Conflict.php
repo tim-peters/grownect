@@ -237,6 +237,28 @@ class Conflict {
 		if($updateDatabase)
 			$this->updateDatabase();
 	}
+
+	/**
+	* Sets the explanation attribute to
+	* @param String 	$_explanation 	Why did it happen? (by dussel)
+	*/
+	public function setExplanation($_explanation, $updateDatabase = true) {
+		$this->progress = 8;
+		$this->explanation = $_explanation;
+
+		if($updateDatabase)
+			$this->updateDatabase();
+	}
+
+	/**
+	* Sets the conflict state to solved (inkl. dependencies)
+	*/
+	public function solve() {
+		$this->solved = time();
+		$this->progress = 10;
+
+		$this->updateDatabase();
+	}
 }
 
 ?>

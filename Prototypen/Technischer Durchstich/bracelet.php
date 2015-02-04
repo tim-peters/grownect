@@ -14,7 +14,6 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 <html>
 <head>
 	<title>Bracelet</title>
-	<link rel="stylesheet" href="./style/all.css" type="text/css" />
 	<script type="text/javascript" src="./js/core/pusher.min.js"> </script>
 	<script type="text/javascript" src="./js/core/jquery.js"> </script>
 	<script type="text/javascript">
@@ -151,10 +150,10 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 		clearID = setTimeout(function() { read(data.text); }, 5000);
 		
 		$(".buttons").append(function() {
-			return $("<button name='nope'>Hauen (nein)</button>").click(function() {knowsProblem(false, data.conflict)});
+			return $("<button name='nope'>Hauen (nein)</button>").click(function() {$(this).hide(); $("button[name='jep']").hide(); knowsProblem(false, data.conflict)});
 		});
 		$(".buttons").append(function() {
-			return $("<button name='jep'>Wischen (ja)</button>").click(function() {knowsProblem(true, data.conflict)});
+			return $("<button name='jep'>Wischen (ja)</button>").click(function() {$(this).hide(); $("button[name='nope']").hide(); knowsProblem(true, data.conflict)});
 		});
 	}
 
@@ -179,15 +178,97 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 		return result;
 	}
 
+	function blurMirror(id) {
+		var dataObject = {
+			id: techID,
+			name: "blurMirror",
+			value: id
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "./api/api_braceletAnswer.php",
+			data: dataObject
+		});
+	}
+
+	function solve(id) {
+		var dataObject = {
+			id: techID,
+			name: "solveConflict",
+			value: id
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "./api/api_braceletAnswer.php",
+			data: dataObject,
+			success: function(data) {
+				if(data == '1')
+					read("conflict solved");
+			}
+		});
+	}
+
+	function askIfSolved(id) {
+		$(".buttons").append(function() {
+			return $("<button name='nope'>Hauen (nein)</button>").click(function() {$(this).hide(); $("button[name='jep']").hide(); blurMirror(id);});
+		});
+		$(".buttons").append(function() {
+			return $("<button name='jep'>Wischen (ja)</button>").click(function() {$(this).hide(); $("button[name='nope']").hide(); solve(id);});
+		});
+	}
+
+	function deliverExplanation(explan, id) {
+		var dataObject = {
+			id: techID,
+			name: "setExplanation",
+			value: id,
+			text: explan
+		};
+
+		var result="";
+		$.ajax({
+			type: "POST",
+			url: "./api/api_braceletAnswer.php",
+			data: dataObject,
+			async:false
+		});
+	}
+
+	function getExplanation(id) {
+		$(".buttons").append(function() {
+			return $("<button name='nope'>Hauen (nein)</button>").click(function() {$(this).hide(); $("button[name='jep']").hide(); $("textarea[name='explanation']").hide(); blurMirror(id)});
+		});
+		$(".buttons").append(function() {
+			return $("<textarea name='explanation'></textarea>").focus();
+		});
+		$(".buttons").append(function() {
+			return $("<button name='jep'>Wischen (ja)</button>").click(function() {$(this).hide(); $("button[name='nope']").hide(); $("textarea[name='explanation']").hide(); deliverExplanation($("textarea[name='explanation']").val(), id) });
+		});
+	}
+
 	function demandExplanation(id) {
 		var name = getNameFromConflict(id);
-		read("You should let "+name+" know why you acted that way, to let him understand the situation better. If you don't want to help solving the conflict, it's time to hit the bracelet now. Otherwise tab and hold the bracelet and start talking.");
+		read("You should let "+name+" know why you acted that way, to let him understand the situation better. If you don't want to help solving the conflict, it's time to hit the bracelet now. Otherwise tab and hold the bracelet and start talking.", getExplanation(id));
 	}
 
 	function read(text, callback) {
 		console.log("reading: "+text);
-		if(callback != undefined)
-			callback();
+
+	    var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'http://tts-api.com/tts.mp3?q='+encodeURIComponent(text));
+        audioElement.setAttribute('autoplay', 'autoplay');
+        //audioElement.load()
+        $.get();
+        audioElement.addEventListener("load", function() {
+        	audioElement.play();
+        }, true);
+    
+    	if(callback != undefined)
+			audioElement.addEventListener("ended", function() {
+				callback();
+			}, false);
 	}
 
 	function knowsProblem(jep, id) {
@@ -270,8 +351,13 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 					initializeConflict(data);
 				break;
 
+				case "setExplanation":
+					read(data.text,askIfSolved(data.conflict));
+				break;
+
 				default:
 					console.error("Received event could not be identified");
+					console.dir(data);
 			}
 		}
 	});
@@ -332,15 +418,6 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 			//callback(129);
 		}, 1000);
 	}
-
-	/*
-	function getLoudness(callback) {
-		setTimeout(function() {
-			console.log("Loudness ermittelt");
-			callback(Math.random());
-		}, 50);
-	}
-	*/
 
 	/**
 	 * SOURCE: http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript

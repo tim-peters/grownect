@@ -4,6 +4,7 @@ require_once("../classes/class_Pusher.php");
 require_once("../db_connect.inc");
 require_once("../classes/class_Conflict.php");
 require_once("../classes/class_User.php");
+require_once("../helper_functions.inc");
 require_once("../classes/class_Log.php");
 $GLOBALS['log'] = new Log("../log/events.txt");
 
@@ -97,6 +98,39 @@ if($_POST)
 			$actual_conflict = Conflict::fromDb($conflict_id);
 			$user_object = User::fromDb($actual_conflict->created_by);
 			echo $user_object->name;
+		break;
+
+		case "blurMirror";
+			// FIXME: Add
+		break;
+
+		case "setExplanation":
+			$data['name'] = "setExplanation";
+			$data['conflict'] = $_POST['value'];
+
+			$actual_conflict = Conflict::fromDb($_POST['value']);
+			$actual_conflict->setExplanation(secureString($_POST['text']));
+			$user_object = User::fromDb($actual_conflict->created_by);
+			$data['id'] = $user_object->tech_id;
+			$user_object_opponent = User::fromDb($actual_conflict->created_with);
+			$data['text'] = $user_object_opponent->name." has explained the situation as following: ".$_POST['text'].". Is the conflict solved for you, with this explanation?";
+			
+
+			$pusher->trigger('grownect', 'events', $data);
+			$GLOBALS['log']->event("API: triggered '".$data['name']."' to id '".$data['id']."'",__FILE__,__LINE__);
+			echo 1;
+		break;
+
+		case "solveConflict":
+			$actual_conflict = Conflict::fromDb($_POST['value']);
+			$user_object = User::fromDb($actual_conflict->created_by);
+			if($user_object->tech_id == $_POST['id'])
+			{
+				$actual_conflict->solve();
+				echo 1;
+			}
+			else
+				echo 0;
 		break;
 
 		default:
