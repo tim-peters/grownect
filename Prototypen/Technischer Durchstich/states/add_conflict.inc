@@ -400,7 +400,7 @@ switch($progress) {
 			$content['body'] .= "		<p>Do you want to remind ".$user_objects[$actual_conflict->created_with]->name."?</p>\n";
 			$content['body'] .= "		<p>Remindings:</p>\n";
 			$content['body'] .= "		<div class=\"arrowleft\"><img src=\"img/pfeil_left.png\"></div>\n";
-			$content['body'] .= "		<input type='text' class=\"reminding\" name='name' placeholder='0'> \n";
+			$content['body'] .= "		<input type='text' class=\"minutes\" name='name' placeholder='0'> \n";
 			$content['body'] .= "		<div class=\"arrowright\"><img src=\"img/pfeil_right.png\"></div>\n";
 			$content['body'] .= "	</div>\n";
 			$content['body'] .= "	<p>When?</p>\n";
@@ -414,8 +414,8 @@ switch($progress) {
 			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
 			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='".$redirect_url."'\" class=\"next2\"><img src=\"img/next.png\" width=\"25\">Next</button>\n";
 			$content['body'] .= "</div>\n";
-			$actual_conflict->setProgress(6);
-		}
+			$GLOBALS['log']->event("Conflict: Showed Overview/Reminder site (id=".$conflict_id.")",__FILE__,__LINE__);
+			$actual_conflict->setProgress('6');					}
 		else
 			header("Location: ".$redirect_url);
 	break;

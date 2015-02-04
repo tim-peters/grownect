@@ -10,7 +10,7 @@ channel.bind('events', function(data) {
 		break;
 
 		case "reloadMirror":
-			window.location.reload();
+			window.location.replace("./");
 		break;
 
 		case "blurMirror":

@@ -107,10 +107,10 @@ class Conflict {
 			$this->moment_used = $row->moment_used;
 			$this->progress = $row->progress;
 			$this->weight = $row->weight;
-			$this->description = $row->description;
-			$this->improvements = $row->improvements;
+			$this->description = stripslashes($row->description);
+			$this->improvements = stripslashes($row->improvements);
 			$this->time_costs = $row->time_costs;
-			$this->explanation = $row->explanation;
+			$this->explanation = stripslashes($row->explanation);
 
 			return true;
 		}
@@ -140,12 +140,12 @@ class Conflict {
 				moment_used  = '".$this->moment_used."',
 				progress  = '".$this->progress."',
 				weight  = '".$this->weight."',
-				description  = '".$this->description."',
-				improvements  = '".$this->improvements."',
+				description  = '".addslashes($this->description)."',
+				improvements  = '".addslashes($this->improvements)."',
 				time_costs  = '".$this->time_costs."',
-				explanation  = '".$this->explanation."'
+				explanation  = '".addslashes($this->explanation)."'
 			WHERE
-				id = ".$this->id 
+				id = '".$this->id."'" 
 		))
 		{
 			return true;
@@ -186,7 +186,6 @@ class Conflict {
 	*/
 	public function setProgress($_progress, $updateDatabase = true) {
 		$this->progress = $_progress;
-
 
 		if($updateDatabase)
 			$this->updateDatabase();

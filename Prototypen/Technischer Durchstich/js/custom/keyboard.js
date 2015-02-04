@@ -777,6 +777,7 @@ $(document).ready(function() {
     	$('#jKeyboard').show();
     	var pos = $(this).position();
     	pos.top += $(this).height();
+    	pos.top += 30;
     	$("#jKeyboard").css({"top":pos.top});
     });
     $("textarea, input[type='text'], input[type='date']").focusout(function() {
