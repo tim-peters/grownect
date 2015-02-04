@@ -113,13 +113,12 @@ var startKb =  function() {
 		.attr('style', 'border: solid 0px #fff; padding:5px; position: absolute; left:100px;\
 			top:100px;\
 			left:50%;\
-			transform:translate(-35%,0);\
 			-moz-border-radius: 15px;\
 			-webkit-border-radius: 15px;\
 			background:transparent;\
-			filter:alpha(opacity=60);\
-			-moz-opacity:0.6;\
-			-khtml-opacity: 0.6;\
+			filter:alpha(opacity=90);\
+			-moz-opacity:0.9;\
+			-khtml-opacity: 0.9;\
 			opacity: 0.9;\
 			display: none;\
 			');
@@ -772,13 +771,17 @@ function startScripts($) {
 })()
 
 $(document).ready(function() {
+    var timer;
     $("textarea, input[type='text'], input[type='date']").focusin(function() {
+    	clearInterval(timer);
     	$('#jKeyboard').show();
     	var pos = $(this).position();
     	pos.top += $(this).height();
     	$("#jKeyboard").css({"top":pos.top});
     });
     $("textarea, input[type='text'], input[type='date']").focusout(function() {
-    	$('#jKeyboard').hide();	
+    	timer = setTimeout(function() {
+	    	$('#jKeyboard').fadeOut("300");	
+	    }, 1000);
     });
 });
