@@ -2,6 +2,10 @@ $(document).ready(function() {
 		$("textarea").each(function() {
 			var that = $(this);
 			var hash = $(this).attr("id");
+			$(this).parent().find(".input img:nth-of-type(2)")
+			.click(function() {
+				$(that).focus();
+			});
 			$(this).parent().find(".input img:first-of-type")
 			.click(function() {
 				var text = that.val();

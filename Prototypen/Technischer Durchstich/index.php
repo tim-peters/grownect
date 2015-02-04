@@ -50,7 +50,8 @@ $content = [
 	"js" => [
 		"./js/core/jquery.js",
 		"./js/core/pusher.min.js",
-		"./js/custom/app.js"
+		"./js/custom/app.js",
+		"./js/custom/keyboard.js"
 	]
 ];
 //////////////////////////////////////////
