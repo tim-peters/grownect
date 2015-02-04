@@ -411,12 +411,11 @@
 
 		.statistic{
 			display:block;
-			width:600px;
-			height:300px;
-			background-color: #222222;
+			width:700px;
 			text-align: center;
-			margin:100px auto;
+			margin:50px auto;
 		}
+
 
 
 		/*QUESTION_LAST_FAVOUR*/
@@ -984,3 +983,4 @@
 		.cancel2 img{
 			margin:0 10px;
 		}
+

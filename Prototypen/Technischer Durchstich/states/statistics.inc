@@ -28,7 +28,7 @@ $content['body'] .= "		<li><input type=\"text\" value=\"".$amount_my_solved_conf
 $content['body'] .= "		<li><input type=\"text\" value=\"".$amount_my_open_conflicts."\" class=\"dial\" data-min=\"0\" data-max=\"".$amount_open_conflicts."\"></li>\n";
 $content['body'] .= "		<li><input type=\"text\" value=\"".$amount_my_created_conflicts."\" class=\"dial\" data-min=\"0\" data-max=\"".$amount_conflicts."\"></li>  \n";
 $content['body'] .= "	</ul>\n";
-$content['body'] .= "	<div class=\"statistic\">Hier wird die ultimativ geile statistik angezeigt.</div>\n";
+$content['body'] .= "	<div class=\"statistic\"><img src=\"img/statisticexample.png\"></div>\n";
 
 $content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel\"><img src=\"img/cancel.png\" width=\"25\">Back to homescreen</button>\n";
 ?>
