@@ -336,7 +336,7 @@ switch($progress) {
 				$content['body'] .= "\n";
 				$content['body'] .= "	<div class=\"inputcloze\">\n";
 				$content['body'] .= "	<p>A solution could be / I wish...<br></p> \n";
-				$content['body'] .= "	<textarea name='event' id='".createHash()."' placeholder=\"Type in your wish here..\"></textarea>\n";
+				$content['body'] .= "	<textarea name='wish' id='".createHash()."' placeholder=\"Type in your wish here..\"></textarea>\n";
 				$content['body'] .= "	<div class=\"input\">\n";
 				$content['body'] .= "		<img src=\"img/voicerecording.png\" width=\"21\">\n";
 				$content['body'] .= "		<img src=\"img/keyboard.png\" width=\"21\">\n";
@@ -379,12 +379,30 @@ switch($progress) {
 		{
 			// FIXME: Enhancement: Übersicht anzeigen
 			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
-			$content['body'] .= "<h1>Add Reminder</h1>\n";
+			$content['body'] .= "<h1>Overview</h1>\n";
 
+			$content['body'] .= "<div class=\"inputcloze\">\n";
+			$content['body'] .= "	<p>overview of the conflict between you and ".$user_objects[$actual_conflict->created_with]->name.":</p>\n";
+			$content['body'] .= "	<p>\"".$actual_conflict->description."\"</p>\n";
+			$content['body'] .= "	<div class=\"remindings\">\n";
+			$content['body'] .= "		<p>Do you want to remind ".$user_objects[$actual_conflict->created_with]->name."?</p>\n";
+			$content['body'] .= "		<p>Remindings:</p>\n";
+			$content['body'] .= "		<div class=\"arrowleft\"><img src=\"img/pfeil_left.png\"></div>\n";
+			$content['body'] .= "		<input type='text' class=\"reminding\" name='name' placeholder='0'> \n";
+			$content['body'] .= "		<div class=\"arrowright\"><img src=\"img/pfeil_right.png\"></div>\n";
+			$content['body'] .= "	</div>\n";
+			$content['body'] .= "	<p>When?</p>\n";
+			$content['body'] .= "	<select> \n";
+			$content['body'] .= "		<option>rubbish bin has to be taken out</option>		\n";
+			$content['body'] .= "		<option>toilet paper has to be filled up</option>\n";
+			$content['body'] .= "		<option>etc.</option>\n";
+			$content['body'] .= "	</select>\n";
+			$content['body'] .= "</div>\n";
 			$content['body'] .= "<div class=\"buttonbutton\">\n";
 			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='./'\" class=\"cancel2\"><img src=\"img/cancel.png\" width=\"25\">Cancel</button>\n";
 			$content['body'] .= "	<button type=\"button\" onClick=\"window.location.href='".$redirect_url."'\" class=\"next2\"><img src=\"img/next.png\" width=\"25\">Next</button>\n";
 			$content['body'] .= "</div>\n";
+			$actual_conflict->setProgress(6);
 		}
 		else
 			header("Location: ".$redirect_url);
@@ -402,7 +420,7 @@ switch($progress) {
 			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
 			$user_objects[$actual_conflict->created_with]->sendToBracelet("conflictCreated",['value' => $actual_user->color, 'conflict' => $conflict_id, 'text' => $user_objects[$actual_conflict->created_with]->name.' has a Problem. Do you have an idea what it could be about?']);
 			$GLOBALS['log']->event("Conflict: Sent out conflictCreated event",__FILE__,__LINE__);
-			//$actual_conflict->setProgress($state); // FIXME: uncomment
+			$actual_conflict->setProgress($state); // FIXME: uncomment
 			$content['body'] .= "<h2>Successfully created</h2>\n";
 
 			$content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./'\"class=\"btn2\"><img src=\"img/confirm.png\" width=\"25\">back to homescreen</button>";
