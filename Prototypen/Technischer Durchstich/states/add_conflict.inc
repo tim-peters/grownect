@@ -381,6 +381,18 @@ switch($progress) {
 			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
 			$content['body'] .= "<h1>Overview</h1>\n";
 
+			$content['script'] .=	"$(function() {\n";
+			$content['script'] .=	"		$(\".arrowleft\").click(function() {\n";
+			$content['script'] .=	"			if(parseInt($(\"input.minutes\").val()) > 0)\n";
+			$content['script'] .=	"				$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())-5);\n";
+			$content['script'] .=	"			else\n";
+			$content['script'] .=	"				$(\"input.minutes\").val(0);\n";
+			$content['script'] .=	"		});\n";
+			$content['script'] .=	"		$(\".arrowright\").click(function() {\n";
+			$content['script'] .=	"			$(\"input.minutes\").val(parseInt($(\"input.minutes\").val())+5);\n";
+			$content['script'] .=	"		});\n";
+			$content['script'] .=	"	});\n";
+
 			$content['body'] .= "<div class=\"inputcloze\">\n";
 			$content['body'] .= "	<p>overview of the conflict between you and ".$user_objects[$actual_conflict->created_with]->name.":</p>\n";
 			$content['body'] .= "	<p>\"".$actual_conflict->description."\"</p>\n";
@@ -418,9 +430,9 @@ switch($progress) {
 		if($actual_conflict->progress == 6) 
 		{
 			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
-			$user_objects[$actual_conflict->created_with]->sendToBracelet("conflictCreated",['value' => $actual_user->color, 'conflict' => $conflict_id, 'text' => $user_objects[$actual_conflict->created_with]->name.' has a Problem. Do you have an idea what it could be about?']);
+			$user_objects[$actual_conflict->created_with]->sendToBracelet("conflictCreated",['value' => $actual_user->color, 'conflict' => $conflict_id, 'text' => $user_objects[$actual_user]->name.' has a Problem. Do you have an idea what it could be about?']);
 			$GLOBALS['log']->event("Conflict: Sent out conflictCreated event",__FILE__,__LINE__);
-			$actual_conflict->setProgress($state); // FIXME: uncomment
+			$actual_conflict->setProgress(7); // FIXME: uncomment
 			$content['body'] .= "<h2>Successfully created</h2>\n";
 
 			$content['body'] .= "<button type=\"button\" onClick=\"window.location.href='./'\"class=\"btn2\"><img src=\"img/confirm.png\" width=\"25\">back to homescreen</button>";

@@ -768,16 +768,10 @@
 			background-color: #111;
 			border: 1px solid #333;
 			color:white;
-			width:200px;
+			width:210px;
 			height:40px;
-			padding:20px;
+			padding:0 6px;
 			border-radius: 0;
- 			/*-webkit-appearance: none;  /*Removes default chrome and safari style
-			-moz-appearance: none;/* Removes Default Firefox style*/
-			background: #111 url(img/pfeil_down.png) no-repeat 90% center;
-			text-indent: 0.01px; /* Removes default arrow from firefox*/
-			text-overflow: ""
-
 		}
 
 /*. CONTAINER MOMENTS (2 KASTEN UND 2 ZEILEN) */

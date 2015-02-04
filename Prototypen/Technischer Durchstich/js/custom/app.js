@@ -8,6 +8,14 @@ channel.bind('events', function(data) {
 		case "leaveUser":
 			window.location.replace("./?change_user=-1");
 		break;
+
+		case "reloadMirror":
+			window.location.reload();
+		break;
+
+		case "blurMirror":
+			window.location.replace("./?state=blurred&conflict_id="+data.conflict_id);
+		break;
 	}
 });
 

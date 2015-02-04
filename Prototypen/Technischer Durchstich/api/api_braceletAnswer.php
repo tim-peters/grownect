@@ -101,7 +101,9 @@ if($_POST)
 		break;
 
 		case "blurMirror";
-			// FIXME: Add
+			$data['name'] = "blurMirror";
+			$data['conflict_id'] = $_POST['value'];
+			$pusher->trigger('grownect', 'events', $data);
 		break;
 
 		case "setExplanation":
@@ -127,6 +129,9 @@ if($_POST)
 			if($user_object->tech_id == $_POST['id'])
 			{
 				$actual_conflict->solve();
+
+				$data['name'] = "reloadMirror";
+				$pusher->trigger('grownect', 'events', $data);
 				echo 1;
 			}
 			else
