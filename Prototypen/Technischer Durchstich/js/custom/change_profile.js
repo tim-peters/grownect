@@ -24,18 +24,18 @@ function isItUploaded()
 	console.log("run: isItUploaded()");
 	$.ajax({
 		type: "POST",
-		url: apiurl
-	})
-	.done(function( msg ) {
-		if(msg != 0)
-		{
-			$(".qr").remove();
-			$(".userlarge").css("background-image", "url('"+msg+"'");
-			$("textarea[name='description']").after("<input type='hidden' name='img' value='"+msg+"' />");
-			$(".editprofile img").hide();
+		url: apiurl,
+		success: function( msg ) {
+			if(msg != 0)
+			{
+				$(".qr").remove();
+				$(".userlarge").css("background-image", "url('"+msg+"'");
+				$("textarea[name='description']").after("<input type='hidden' name='img' value='"+msg+"' />");
+				$(".editprofile img").hide();
+			}
+			else
+				setTimeout(function() { isItUploaded() },1000);
 		}
-		else
-			setTimeout(function() { isItUploaded() },1000);
 	});
 }
 
