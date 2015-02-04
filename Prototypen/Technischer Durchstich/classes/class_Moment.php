@@ -63,7 +63,7 @@ class Moment {
 
 		switch($this->type) {
 			case 1: // image
-				$content .= "<img src=\"".$this->path."\">\n";
+				$content .= "<div class=\"container\">\n<h2>First take a look at better times...</h2>\n<div class=\"kastenbild qr\">\n<img src=\"".$this->path."\">\n</div>\n</div>\n";
 			break;
 
 			case 2: // sound file
@@ -75,7 +75,6 @@ class Moment {
 			default: // text
 				$content .= $this->content."\n";
 		}
-		$content .= "Schöner Moment wird angezeigt\n";
 		return $content;
 	}
 

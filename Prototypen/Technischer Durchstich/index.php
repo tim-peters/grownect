@@ -85,6 +85,10 @@ switch($state) {
 		include("./states/add_moment.inc");
 	break;
 
+	case "blurred":
+		include("./states/blurred.inc");
+	break;
+
 	case "add_conflict": {
 		include("./states/add_conflict.inc");
 	break; }
