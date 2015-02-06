@@ -33,6 +33,12 @@ function filterMoments($workingCopy, $maxUseTimestamp) {
 switch($progress) {
 	default: // CREATE NEW CONFLICT
 
+	/**
+	 * Checks whether there is an undefined conflict with this user which could be continued
+	 * @param  Int 					$opponent  	user id
+	 * @param  array of objects 	$src_array 	Array of conflicts
+	 * @return Int            					Conflict id or null
+	 */
 		function findUndefinedConflicts($opponent,$src_array) {
 			foreach($src_array as $id => $conflict)
 			{
@@ -41,7 +47,7 @@ switch($progress) {
 			}
 		};
 
-		if(isset($id) && $conflict_id = findUndefinedConflicts($id, $user_objects[$actual_user]->conflicts_active)) // FIXME: Gibt es diesen Fall überhaupt real?
+		if(isset($id) && $conflict_id = findUndefinedConflicts($id, $user_objects[$actual_user]->conflicts_active)) // FIXME: Gibt es diesen Fall überhaupt tatsächlich real?
 		{
 			$actual_conflict = &$user_objects[$actual_user]->conflicts_active[$conflict_id];
 			$GLOBALS['log']->event("Conflict (id:".$conflict_id.") found to continue",__FILE__,__LINE__);
