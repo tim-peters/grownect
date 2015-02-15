@@ -62,45 +62,47 @@ strong {
 #menu {
 	margin-top: 200px;
 	position: fixed;
-	text-decoration:none;
 }
 
 #menu ul {
-	padding: 0px;
-	
+	margin: 0;
+	padding: 0;
 	list-style-type: none;
-	text-decoration: none; /*???? Warum hier unterstrichen?*/
+	
 
 }
 
 #menu li {
 	font-size: 16px;
-
 	padding: 4px 10px 4px 10px; /*Zeilenabstand*/
+	opacity: .2;
+	text-decoration: none;
+	transition:all 1s ease-out;
+}
+
+#menu li.active {
+	opacity:1;
+}
+
+#menu li a {
 	text-decoration: none;
 }
- 
 
- ul:hover li {
- 	text-decoration: none;
-	opacity: 1
-}
-
- li.active a { 
-  opacity: 1;
-  text-decoration: none;
-  background-color:white;
+#menu .active a { 
+  	opacity: 1;
+  	text-decoration: none;
+  	background-color:white;
 	color:black;
-  padding:6px; 
-} 
-
-
- ul li {
-	opacity: 0;
-	text-decoration: none;
-	padding:10px;
-	
+  	padding:6px; 
 }
+
+
+ #menu ul:hover li {
+ 	text-decoration: none;
+	opacity: 1;
+}
+
+
 
 
 #inhalt {
