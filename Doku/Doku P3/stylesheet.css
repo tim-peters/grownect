@@ -40,12 +40,14 @@ strong {
 	background-image:url("bilder/infobox.png");
 	position:fixed;	/*Jedem nebenstehenden block diese
 	funktion auch geben!*/
+	z-index: 100;
 	width: 300px;
 	height: 300px;
-	margin-top:185px;
-	margin-left: 1200px; /*im uhrzeigersinn immer 4 werte bei auto immer zentriert von top aus top right bottom left*/
+	margin-top:149px;
+	margin-left: 1188px; /*im uhrzeigersinn immer 4 werte bei auto immer zentriert von top aus top right bottom left*/
 	padding: 0px;
 	zoom: 1;
+	
 
 	/*display:none; /*Menue soll nicht sichtbar sein nur wenn man auf pfeil klickt*/
 }
@@ -61,11 +63,11 @@ strong {
 			margin-left: 60px;
 			margin-top: 10px;
 			color:black;
-			text-decoration:none;
+			
 		}
 
 		#infobox ul li{
-			text-decoration:none; /*fuck you punkte*/
+			list-style-type: none; /*fuck you punkte*/
 		}
 
 	
@@ -125,26 +127,60 @@ strong {
 	overflow: hidden; /*Damit das Layout mit float funktioniert*/
 	padding: 10px 15px 10px 15px;
 	margin-top: 185px;
-	margin-left: 210px;
+	margin-left: 240px;
 	background-color: #333;
 	opacity: .7;
 	color:white;
+	border: 1px solid #ccc;
 }
 
 #inhalt h2 {
+	padding: 0px 0px 0px 15px;
 	text-align: left;
 	font-size: 16px;
 	line-height: 1.4;
 }
 
 #inhalt p {
-	font-size: 15px;
-	line-height: 1.3;
-	padding: 30px 15px 30px 15px;
+	font-size: 13px;
+	line-height: 1.8;
+	padding: 20px 15px 30px 15px;
 }
 
-#startbild {
+#inhalt h3 {
+	font-size: 17px;
+	line-height: 1.3;
+	padding: 5px 15px 7px 55px;
+}
+
+
+/*D#startbild {
 	float: none;
 	margin: 0 auto;
 	text-align:center;
-	}
+}*/
+
+
+
+		.btn img{
+			margin:0 10px;
+		}
+
+
+
+	button{
+			position: fixed;
+			margin-top: 80px;
+			left: 50%;
+			transform:translate(-50%,0);
+   			background-color: #333;
+   			color: #ffffff;
+   			font-size: 11px;
+   			border: 1px solid #ccc;
+   			padding: 1px 11px 11px 0;
+		}
+
+
+
+
+	
