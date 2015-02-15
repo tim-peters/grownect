@@ -4,7 +4,7 @@ body {
 	
 	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans serif";
 	color: #555555;
-	background-color: #f2f1f0;
+	background-color: black;
 }
 
 strong {
@@ -60,6 +60,7 @@ strong {
 }
 
 #menu {
+	margin-top: 200px;
 	position: fixed;
 	text-decoration:none;
 }
@@ -86,9 +87,11 @@ strong {
 }
 
  li.active a { 
-  border: 1px solid red;
   opacity: 1;
-  text-decoration: none; 
+  text-decoration: none;
+  background-color:white;
+	color:black;
+  padding:6px; 
 } 
 
 
@@ -100,16 +103,12 @@ strong {
 }
 
 
-
-
-
 #inhalt {
 	width: 800px; /*feste Breite!!!*/
 	height: auto;
 	overflow: hidden; /*Damit das Layout mit float funktioniert*/
 	padding: 10px 15px 10px 15px;
-	margin: 100px;
-	
+	margin: 200px;
 	background-color: #FAF9F8;
 }
 
