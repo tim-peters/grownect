@@ -1,12 +1,12 @@
 body {
 	width:1366px;
-	max-height: 768px;
+	min-height: 768px;
 	margin: 0px;
 	padding: 8px;
 	
 	font-family: 'PT Sans', sans-serif;
 	/*background-color: black;*/
-	background:url("_MG_8030.JPG") center center no-repeat;
+	
 }
 
 strong {
@@ -47,6 +47,7 @@ strong {
 	margin-left: 1188px; /*im uhrzeigersinn immer 4 werte bei auto immer zentriert von top aus top right bottom left*/
 	padding: 0px;
 	zoom: 1;
+	font-size: 13px;
 	
 
 	/*display:none; /*Menue soll nicht sichtbar sein nur wenn man auf pfeil klickt*/
@@ -75,6 +76,7 @@ strong {
 #menu {
 	margin-top: 185px;
 	position: fixed;
+	margin-left: 20px;
 
 }
 
@@ -82,13 +84,11 @@ strong {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	
-
 }
 
 #menu li {
 	font-size: 16px;
-	padding: 4px 10px 4px 10px; /*Zeilenabstand*/
+	padding: 8px 10px 8px 10px; /*Zeilenabstand*/
 	opacity: .2;
 	text-decoration: none;
 	transition:all 1s ease-out;
@@ -125,7 +125,7 @@ strong {
 	width: 700px; /*feste Breite!!!*/
 	height: auto;
 	overflow: hidden; /*Damit das Layout mit float funktioniert*/
-	padding: 10px 15px 10px 15px;
+	padding: 30px;
 	margin-top: 185px;
 	margin-left: 240px;
 	background-color: #333;
@@ -142,25 +142,42 @@ strong {
 }
 
 #inhalt p {
+	padding: 0px 0px 0px 15px;
 	font-size: 13px;
 	line-height: 1.8;
-	padding: 20px 15px 30px 15px;
+}
+
+#inhalt p.klein {
+	padding: 0px 0px 0px 15px;
+	font-size:10px;
 }
 
 #inhalt h3 {
 	font-size: 17px;
 	line-height: 1.3;
-	padding: 5px 15px 7px 55px;
+	padding: 0px 0px 0px 15px;
+}
+
+#inhalt h3.rahmen {
+	padding: 5px 0px 5px 15px;
+	margin:15;
+	font-size: 17px;
+	/*background-color: white;
+	color:black;*/
+	text-align:center;
 }
 
 
-/*D#startbild {
+#startbild {
 	float: none;
 	margin: 0 auto;
 	text-align:center;
-}*/
+}
 
-
+.buttoncentered{
+	margin: 0 auto;
+	text-align: center;
+}
 
 		.btn img{
 			margin:0 10px;
@@ -169,15 +186,82 @@ strong {
 
 
 	button{
-			position: fixed;
+			display: inline-block;
+			width:120px;
+			margin-left: 300px;
 			margin-top: 80px;
-			left: 50%;
 			transform:translate(-50%,0);
    			background-color: #333;
    			color: #ffffff;
    			font-size: 11px;
    			border: 1px solid #ccc;
    			padding: 1px 11px 11px 0;
+   			opacity: .7;
+   			vertical-align: center;
+		}
+
+
+
+			.btn2 img{
+			margin:0 10px;
+		}
+
+
+
+	button{
+			display:inline-block;
+			width:120px;
+			margin-left:10px;
+			margin-bottom: 70px;
+			transform:translate(-50%,0);
+   			background-color: #333;
+   			color: #ffffff;
+   			font-size: 11px;
+   			border: 1px solid #ccc;
+   			padding: 1px 11px 11px 0;
+   			opacity: .7;
+   			vertical-align: center;
+		}
+
+
+
+		.usercontainer{
+
+			width:858px;
+			margin-top: 50px;
+			text-align: center;
+		}
+
+
+
+		.user > img, .user > a > img {
+			width:100%;
+			height:100%;
+			border:none;
+			border-radius:50%;
+		}
+
+		.small .user{
+
+			display: inline-block;
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+			border-radius: 150px;
+			margin: 15px;			
+			text-align: center;
+			vertical-align: top;
+			
+    		
+		}
+
+		.details ul li {
+			display: inline-block;
+			width:100px;
+			color:white;
+			list-style: none;
+			text-align: left;
+			font-size: 12px;
 		}
 
 
