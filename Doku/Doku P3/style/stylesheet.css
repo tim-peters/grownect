@@ -125,10 +125,10 @@ strong {
 	padding: 30px;
 	margin-top: 185px;
 	margin-left: 240px;
-	background-color: rgba(51,51,51,0.7);
+	/*background-color: rgba(51,51,51,0.7); */
 	/* opacity: .7; besser nur den Hintergrund transparent, nicht alles! ;) */
 	color:white;
-	border: 1px solid rgba(204,204,204,0.7);
+	/*border: 1px solid rgba(204,204,204,0.7); */
 }
 
 #inhalt h2 {
