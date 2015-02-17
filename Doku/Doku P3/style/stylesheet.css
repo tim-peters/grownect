@@ -20,11 +20,6 @@ strong {
 	height: 80px;
 	margin: 10px 0px 15px 0px;
 	padding: 0px 0px 0px 15px;
-
-	/*background-image: url("Bilder/Logo grownect.png");
-	background-size: 80px;*/
-	
-	/*background-color: black;*/
 }
 
 #kopfleiste h1 {
@@ -37,39 +32,37 @@ strong {
 }
 
 #infobox {
-	background-image:url("bilder/infobox.png");
+	background-image:url("../Bilder/infobox.png");
 	position:fixed;	/*Jedem nebenstehenden block diese
 	funktion auch geben!*/
 	z-index: 100;
 	width: 300px;
 	height: 300px;
-	margin-top:149px;
-	margin-left: 1188px; /*im uhrzeigersinn immer 4 werte bei auto immer zentriert von top aus top right bottom left*/
+	margin-top:150px;
+	right: -248px; 
 	padding: 0px;
 	zoom: 1;
 	font-size: 13px;
-	
-
-	/*display:none; /*Menue soll nicht sichtbar sein nur wenn man auf pfeil klickt*/
+ 	transition:all 1s ease-in;	
 }
 
  #infobox:hover {
- 	margin-left:900px;
- 	transition:all 1s ease-out;
+ 	right:0;
+ 	transition:all .5s ease-out;	
 }
 
-		#infobox ul {
-			position: absolute;
-			padding:10px;
-			margin-left: 60px;
-			margin-top: 10px;
-			color:black;
-			
-		}
+#infobox ul {
+	position: absolute;
+	padding:10px;
+	margin-left: 60px;
+	margin-top: 10px;
+	color:black;
+	
+}
 
-		#infobox ul li{
-			list-style-type: none; /*fuck you punkte*/
-		}
+#infobox ul li{
+	list-style-type: none; /*fuck you punkte*/
+}
 
 	
 
@@ -102,11 +95,17 @@ strong {
 	text-decoration: none;
 	color: white;
 	font-size: 14px;
-	padding: 30px 10px 30px 0px;
-	
+  	padding: 6px 6px 6px 0;
+  	transition:all .3s; 	
 }
 
-#menu .active a { 
+
+#menu li:hover a {
+	background:rgba(255,255,255,0.1);
+	padding:6px;
+}
+
+#menu .active a, #menu li.active:hover a { 
   	opacity: 1;
   	text-decoration: none;
   	background-color:white;
