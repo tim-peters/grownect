@@ -43,43 +43,64 @@
 
 
 	<div id="inhalt">
-		<h2>TECHNIK</h2>
+		<h2>GRUNDSÄTZLICHE HERANGEHENSWEISE</h2>
 
-		<p>Beim technischen Aufbau unseres Systems handelt es sich im Grunde um eine klassische 3-Tier-Architektur. Hierbei kommt ein Apache-Server zum Einsatz (bei unserem Prototypen hängt dieser direkt am Spiegel). An den Server angebunden ist eine relationale Datenbank - hier kommt MySQL zum Einsatz - die die für die Arbeit des Servers nötigen Daten, aus denen dann die Views für die beiden Clients erzeugt werden liefert. Als Clients können hier sowohl der Spiegel mit seiner View als auch das Bracelet, dass in unserem Prototyp durch ein Smartphone simuliert wird bezeichnet werden.
-Warum unser System trotzdem streng genommen mehr als eine 3-Tier-Architektur ausmacht, zeigt sich beim Blick auf die Kommunikation der Devices.
+		<p>Technische liegt der Fokus darauf, die Technik so unauffällig und zurückhaltend wie möglich zu halten. Der Nutzer soll einfach mit dem System interagieren können ohne das Gefühl zu haben eine komplizierte Maschine vor sich zu haben. Die Technik soll den Nutzer aktiv beeinflussen und beeinflusst werdem, aber in keinem Fall selbst im Mittelpunkt stehen.
+Dies macht die Entwicklung nicht etwa, wie man fälschlich denken könnte einfacher, sondern wesentlich anspruchsvoller. Sämtliche Funktionen muessen nämlich nicht nur zu einhundert Prozent funktional sein - etwaige Fehler würden den Nutzer ja wieder daran erinnern, dass er einen Computer vor sich hat - sondern auch die technische Infrastruktur muss sich so weit im Hintergrund halten, dass der Nutzer sie im Idealfall vergisst.
+<br><br>Um dies zu erreichen, Nutzen wir ein vielfach eingesetztes und erprobtes Grundsystem, dass so abgewandelt und angepasst ist, dass es unsere Anforderungen perfekt erfüllt - im Idealfall sowohl für den entstehenden Prototypen als auch darüber hinaus, für die etwaige Entwicklung eines finalen Produkts. <br>
+Somit stand vor der eigentlichen Entwicklung eine ausführliche Phase der technischen Konzeption und Entwicklung einer geeigneten Architektur. Auch wenn diese Phase durchaus ausführlicher hätte ausfallen können, so hat sich das einfache Existieren übergeordneter Gedanken doch vielfach ausgezahlt und so mit Blick auf den gesamten Projektzeitraum wohl vielfach ausgezahlt. <br>
+			Beim technischen Aufbau des Systems handelt es sich im Grunde um eine klassische 3-Tier-Architektur. Hierbei kommt ein Apache-Server zum Einsatz (bei unserem Prototypen hängt dieser direkt am Spiegel). Auf diesem lauft das eigentliche Programm, geschrieben in objektorientiertem und in weiten Teilen modular aufgebautem PHP. 
+An den Server angebunden ist eine relationale Datenbank - hier kommt MySQL zum Einsatz - die die für die Arbeit des Servers nötigen Daten, aus denen dann die Views für die beiden Clients erzeugt werden liefert. Die Datenbankarchitektur ist hierbei so aufgebaut, dass Informationen so separiert wie möglich aber trotzdem stets so nah und verknüpft wie nötig abgelegt sind. Dies soll beim späteren Betrieb ermöglichen, dass ein groesstmoeglicher Anteil an Informationen herausgezogen werden kann, bei gleichzeitig kleinstmöglichem Arbeitsaufwand.
+Als Clients im System können sowohl der Spiegel mit seiner View als auch das Bracelet, dass in unserem Prototyp durch ein Smartphone simuliert wird (hierzu später mehr) bezeichnet werden.
 		</p>
 		<div id="startbild">
 		<img src="Bilder/kommunikation.png" alt="Start" width="670" ></div>
 </div>
 
 	<div id="inhalt">
-		<h2>HERANGEHENSWEISE</h2>
-
-		<p>Text
-		</p>
-</div>
-
-	<div id="inhalt">
 		<h2>KOMMUNIKATION/EVENTBUSSES</h2>
 
-		<p>Text
+		<p>Warum das System trotzdem streng genommen mehr als eine 3-Tier-Architektur ausmacht, zeigt sich beim Blick auf die Kommunikation der Devices. Diese ist entgegen der klassischen Server-Client-Beziehung zu jeder Zeit bi-direktional möglich. Dies bedeutet, dass nicht nur die Clients Requests an den Server senden können, der daraufhin anfängt zu arbeiten und (im Idealfall) mit dem Code zum anzeigen einer View antwortet, sondern dass auch der Server (ungefragt) Events auf Seite der beiden Clients auslösen kann. Ein solches Vorgehen gibt das http-Protokoll in seiner klassischen Form nicht her. Das System bedient sich hier dem Eventbus-Standard, ausgerüstet mit zahlreichen Fallbacks zur Gewährleistung der Kompatibilität auch mit alten Systemen. Im Prototyp ist dieser Schritt zur Gewährleistung des bestmöglichen Zeit-Nutzen-Verhältnisses an einen externen Dienstleister ausgelagert. Dieser stellt die nötige Infrastruktur und eine Schnittstelle zur Verfügung.
+Innerhalb des Systems ist die Kommunikation über den Eventbus sowohl logisch in die Klassenarchitektur integriert (wo sie innerhalb der normalen serverseitigen Berechnungen stattfindet) als auch an einer extra hierfür erstellten Stelle gebündelt. Diese Stelle empfängt zum einen die Antworten der Clients und wertet sie (anfänglich) aus, zum anderen sendet sie diese Events aus, die sich unmittelbar aus Antworten von Devices ergeben. Über diesen API-Teil läuft somit ein Großteil der Client-Server-Kommunikation abseits von klassischen HTTP-Requests. Eine Übersicht der Kommunikationsarchitektur findet sich hier (FIXME: Link zur API-Tabelle). 
+
 		</p>
 </div>
+
 
 	<div id="inhalt">
 		<h2>BILDER-UPLOAD</h2>
 
+		<p>Ein Kernteil des Systems, der in seiner Art von der ueblichen Client-Server-Kommunikation abweicht ist der Bilder-Upload. Hierbei kommt das einzige Mal auch konzeptionell ein weiteres Geraet (und damit ein weiterer Client) zu unserem System dazu.
+Der Bilder-Upload taucht an verschiedenen Stellen des Systems, fuer verschiedene Einsatzzwecke auf. Seine Grundfunktionalitaet ist aber immer die gleiche. Somit bot sich ein modularer Aufbau an.
+Der Bilder-Upload funktioniert stets ueber einen (serverseitig) generierten QR-Code. Ueber diesen wird eine URL uebergeben, die eine einzigartige ID enthaelt, zu der ein gleichnamiges Verzeichnis angelegt wird. Scannt der Nutzer nun den QR-Code, folgt also dem Link, wird er auf eine Seite geleitet, auf der er (Bspw. von seinem Smartphone) gespeicherte oder auch grade fotografierte Bilder in das extra angelegte Verzeichnis hochladen kann. Parallel kommt auf der Seite auf der der QR-Code angezeigt wird ein JavaScript zum tragen, welches in Sekundenabstaenden bei der API anfragt, ob bereits ein Upload mit dieser ID passiert ist, ob also bereits ein Bild im genannten Verzeichnis liegt. Ist dies der Fall, wird der QR-Code durch das hochgeladene Bild ersetzt. Der Nutzer kann das Ergebniss also nochmal auf dem Spiegel sehen, bevor er es, ueblicherweise mit dem Bestaetigen-Button final einrichtet.
+<br><br>
+Spaeter zeigte sich, dass anstatt der sich wiederholenden Nachfrage bei der API auch eine Erkennung eines Uploads ueber ein Event moeglich gewesen waere. Da die zu diesem Zeitpunkt bereits existierende Loesung aber zufriedenstellend und ohne stoerende Verzoegerung oder zu groszen Ressourcenverbrauch funktionierte, gab es keinen Grund diese vorerst nochmal umzustellen.
+
+</p>
+</div>
+
+<div id="inhalt">
+		<h2>SPRACHEINGABE/-AUSGABE</h2>
+
 		<p>Text
 		</p>
-</div
+</div>
 
-	<div id="inhalt">
-		<h2>KONZEPT SMARTHOME</h2>
+<div id="inhalt">
+		<h2>KONZEPT SMARTHOME DEVICES</h2>
 
 		<p>Text
 		</p>
 </div>
 	
+	<div id="inhalt">
+		<h2>MIRROR AUFBAU</h2>
+
+		<p>Text
+		</p>
+</div>
+
+
 
 	
 <div class="buttoncentered">
