@@ -122,7 +122,7 @@ switch($progress) {
 			$GLOBALS['log']->event("Conflict: First step of conflict solving initiated (id:".$conflict_id.")",__FILE__,__LINE__);
 			$content['body'] .= showUserbar($user_objects, $actual_user, $actual_conflict->created_with);
 
-			$startway = rand(1,2);
+			$startway = 2; //rand(1,2); // FIXME: presentation state
 			switch($startway) {
 				case 1:
 					$content['js'][] = "./js/custom/textareaVoiceRecognition.js";
@@ -141,7 +141,7 @@ switch($progress) {
 					$daysSinceUse = .5;
 					$maxUseTimestamp = time() -($daysSinceUse*24*60*60);
 
-					if(!$moment_db_outcome = $db->query("
+					/*if(!$moment_db_outcome = $db->query("
 						SELECT
 							m.id,
 							m.created_by,
@@ -174,17 +174,30 @@ switch($progress) {
 						ORDER BY
 							m.rating DESC,
 							u.used ASC
-					"))
+					")) */ // FIXME: presentation state
+					if(!$moment_db_outcome = $db->query("SELECT
+							m.id,
+							m.created_by,
+							m.created_with,
+							m.type,
+							m.path,
+							m.content,
+							m.rating
+						FROM
+							moments as m
+						ORDER BY
+							m.id DESC"))
 					{
 						$GLOBALS['log']->error("Database Error",__FILE__,__line__,$db->error,true);
 					}
 					else
 					{
-						// Filter DB results
+						/*// Filter DB results
 						$moments= array();
 						while($moments[] = mysqli_fetch_assoc($moment_db_outcome));
-						$moment_row = filterMoments($moments, $maxUseTimestamp)[0];
+						$moment_row = filterMoments($moments, $maxUseTimestamp)[0];*/ // FIXME: presentation state
 
+						$moment_row = mysqli_fetch_assoc($moment_db_outcome); // FIXME: presentation state
 						if(count($moment_row)) // If at least one fitting positive moment was found..
 						{
 							$moment = Moment::fromRowArray($moment_row);

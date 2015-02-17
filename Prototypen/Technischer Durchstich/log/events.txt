@@ -1,0 +1,628 @@
+04.Feb.2015|16.32.37|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:6)
+04.Feb.2015|16.37.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|16.38.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+04.Feb.2015|16.49.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+04.Feb.2015|16.54.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:422|Conflict: Sent out conflictCreated event
+04.Feb.2015|16.56.43|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:120|API: triggered 'setExplanation' to id '76cf4ecb943fc5282061fffd96ff4df9'
+04.Feb.2015|17.00.09|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|17.00.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:7)
+04.Feb.2015|17.00.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:7)
+04.Feb.2015|17.00.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:7)
+04.Feb.2015|17.00.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:145) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|17.00.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '2'
+04.Feb.2015|17.00.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|17.00.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|17.00.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:8)
+04.Feb.2015|17.00.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:8)
+04.Feb.2015|17.00.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:8)
+04.Feb.2015|17.00.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:165) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|17.01.09|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:104|Conflict: Conflict->progress to high for step 2 (Conflict->progress: 2). Redirect...
+04.Feb.2015|17.01.09|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:8)
+04.Feb.2015|17.01.09|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:8)
+04.Feb.2015|17.02.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:8)
+04.Feb.2015|17.02.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:8)
+04.Feb.2015|17.02.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:8)
+04.Feb.2015|17.03.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:299|Conflict: Processed cloze and redirected to reminder site (id:8)
+04.Feb.2015|17.04.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:422|Conflict: Sent out conflictCreated event
+04.Feb.2015|17.04.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:8)
+04.Feb.2015|17.04.39|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:8)
+04.Feb.2015|17.06.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:120|API: triggered 'setExplanation' to id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|17.06.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:147) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|17.08.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|17.20.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\classes\class_Moment.php, line:51|Moment created
+04.Feb.2015|17.21.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:9)
+04.Feb.2015|17.21.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:9)
+04.Feb.2015|17.21.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:9)
+04.Feb.2015|17.21.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:78) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|17.21.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:9)
+04.Feb.2015|17.21.36|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:198|Conflict: Showed the moment with id 1 (id:9)
+04.Feb.2015|17.22.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:9)
+04.Feb.2015|17.22.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:9)
+04.Feb.2015|17.22.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:9)
+04.Feb.2015|17.24.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:305|Conflict: Processed cloze and redirected to bracelet send site (id:9)
+04.Feb.2015|17.24.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:422|Conflict: Sent out conflictCreated event
+04.Feb.2015|17.25.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:9)
+04.Feb.2015|17.25.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:9)
+04.Feb.2015|17.25.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:81) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|17.25.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:9)
+04.Feb.2015|17.25.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:9)
+04.Feb.2015|17.26.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:10)
+04.Feb.2015|17.26.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:10)
+04.Feb.2015|17.26.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:10)
+04.Feb.2015|17.26.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:74) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|17.26.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:10)
+04.Feb.2015|17.26.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:10)
+04.Feb.2015|17.26.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:10)
+04.Feb.2015|17.26.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:9)
+04.Feb.2015|17.27.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:9)
+04.Feb.2015|17.27.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:9)
+04.Feb.2015|17.27.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:305|Conflict: Processed cloze and redirected to bracelet send site (id:9)
+04.Feb.2015|17.28.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:422|Conflict: Sent out conflictCreated event
+04.Feb.2015|17.28.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:120|API: triggered 'setExplanation' to id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|17.28.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:9)
+04.Feb.2015|17.28.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:9)
+04.Feb.2015|17.28.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:121) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|17.30.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '99'
+04.Feb.2015|17.32.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '4'
+04.Feb.2015|17.32.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:11)
+04.Feb.2015|17.32.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:11)
+04.Feb.2015|17.32.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:11)
+04.Feb.2015|17.32.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:158) for bracelet with id 'd2ab1b817736bf790ca530b6bd705c5a'
+04.Feb.2015|17.33.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id 'd2ab1b817736bf790ca530b6bd705c5a'
+04.Feb.2015|17.33.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id 'd2ab1b817736bf790ca530b6bd705c5a'
+04.Feb.2015|17.33.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:11)
+04.Feb.2015|17.33.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:11)
+04.Feb.2015|17.33.44|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:11)
+04.Feb.2015|17.33.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:11)
+04.Feb.2015|17.33.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:11)
+04.Feb.2015|17.34.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:299|Conflict: Processed cloze and redirected to reminder site (id:11)
+04.Feb.2015|17.35.02|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:422|Conflict: Sent out conflictCreated event
+04.Feb.2015|17.36.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:11)
+04.Feb.2015|17.36.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:11)
+04.Feb.2015|17.36.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:100) for bracelet with id 'd2ab1b817736bf790ca530b6bd705c5a'
+04.Feb.2015|17.36.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:11)
+04.Feb.2015|17.36.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:11)
+04.Feb.2015|17.37.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:120|API: triggered 'setExplanation' to id 'd2ab1b817736bf790ca530b6bd705c5a'
+04.Feb.2015|17.37.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '4'
+04.Feb.2015|17.37.43|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '4'
+04.Feb.2015|18.14.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\classes\class_Moment.php, line:51|Moment created
+04.Feb.2015|18.14.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|18.15.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:12)
+04.Feb.2015|18.15.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 5 (id:12)
+04.Feb.2015|18.15.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:12)
+04.Feb.2015|18.15.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:71) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|18.15.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:12)
+04.Feb.2015|18.15.07|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:198|Conflict: Showed the moment with id 2 (id:12)
+04.Feb.2015|18.15.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:13)
+04.Feb.2015|18.15.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 5 (id:13)
+04.Feb.2015|18.15.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:13)
+04.Feb.2015|18.15.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:85) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|18.15.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:13)
+04.Feb.2015|18.15.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:13)
+04.Feb.2015|18.15.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:14)
+04.Feb.2015|18.15.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 5 (id:14)
+04.Feb.2015|18.15.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:14)
+04.Feb.2015|18.15.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:103) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|18.15.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:14)
+04.Feb.2015|18.15.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:14)
+04.Feb.2015|18.16.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:15)
+04.Feb.2015|18.16.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 5 (id:15)
+04.Feb.2015|18.16.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:15)
+04.Feb.2015|18.16.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:170) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|18.16.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|18.16.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:15)
+04.Feb.2015|18.16.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:15)
+04.Feb.2015|18.17.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:15)
+04.Feb.2015|18.17.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:15)
+04.Feb.2015|18.17.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:15)
+04.Feb.2015|18.18.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:305|Conflict: Processed cloze and redirected to bracelet send site (id:15)
+04.Feb.2015|18.18.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|18.19.24|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:122|API: triggered 'setExplanation' to id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|18.20.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|18.20.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|18.20.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '5'
+04.Feb.2015|18.20.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|18.20.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '5'
+04.Feb.2015|18.20.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '5'
+04.Feb.2015|18.21.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:16)
+04.Feb.2015|18.21.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:16)
+04.Feb.2015|18.21.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:16)
+04.Feb.2015|18.21.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:91) for bracelet with id 'beddf554eb637cbe8c079b879c79c29b'
+04.Feb.2015|18.21.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:16)
+04.Feb.2015|18.21.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:198|Conflict: Showed the moment with id 2 (id:16)
+04.Feb.2015|18.22.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:16)
+04.Feb.2015|18.22.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:16)
+04.Feb.2015|18.22.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:16)
+04.Feb.2015|18.23.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:299|Conflict: Processed cloze and redirected to reminder site (id:16)
+04.Feb.2015|18.25.30|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|18.28.24|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:122|API: triggered 'setExplanation' to id 'beddf554eb637cbe8c079b879c79c29b'
+04.Feb.2015|18.29.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:17)
+04.Feb.2015|18.29.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:17)
+04.Feb.2015|18.29.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:17)
+04.Feb.2015|18.29.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:129) for bracelet with id 'beddf554eb637cbe8c079b879c79c29b'
+04.Feb.2015|18.29.41|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id 'beddf554eb637cbe8c079b879c79c29b'
+04.Feb.2015|18.29.41|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id 'beddf554eb637cbe8c079b879c79c29b'
+04.Feb.2015|18.29.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:17)
+04.Feb.2015|18.29.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:17)
+04.Feb.2015|18.29.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:17)
+04.Feb.2015|18.29.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:17)
+04.Feb.2015|18.29.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:17)
+04.Feb.2015|18.30.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:305|Conflict: Processed cloze and redirected to bracelet send site (id:17)
+04.Feb.2015|18.30.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|19.22.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '6'
+04.Feb.2015|19.23.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:18)
+04.Feb.2015|19.23.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:18)
+04.Feb.2015|19.23.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:18)
+04.Feb.2015|19.23.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:117) for bracelet with id 'b2f627fff19fda463cb386442eac2b3d'
+04.Feb.2015|19.23.37|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id 'b2f627fff19fda463cb386442eac2b3d'
+04.Feb.2015|19.23.37|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id 'b2f627fff19fda463cb386442eac2b3d'
+04.Feb.2015|19.23.41|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:18)
+04.Feb.2015|19.23.41|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:18)
+04.Feb.2015|19.24.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:18)
+04.Feb.2015|19.24.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:18)
+04.Feb.2015|19.24.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:18)
+04.Feb.2015|19.26.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:299|Conflict: Processed cloze and redirected to reminder site (id:18)
+04.Feb.2015|19.35.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.36.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.36.39|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.38.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.40.37|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.43.24|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.43.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.43.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.49.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.51.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=18)
+04.Feb.2015|19.55.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|19.56.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|19.56.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|19.56.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|19.56.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|19.56.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|19.57.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|19.57.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|19.57.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|19.57.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|19.57.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+04.Feb.2015|19.57.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|19.58.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|20.00.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '99'
+04.Feb.2015|20.14.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '35'
+04.Feb.2015|20.18.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '7'
+04.Feb.2015|20.18.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|20.29.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|20.29.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '2'
+04.Feb.2015|20.29.08|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|20.29.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:19)
+04.Feb.2015|20.29.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:19)
+04.Feb.2015|20.29.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:19)
+04.Feb.2015|20.29.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:164) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.29.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.29.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:19)
+04.Feb.2015|20.29.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:198|Conflict: Showed the moment with id 1 (id:19)
+04.Feb.2015|20.30.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:19)
+04.Feb.2015|20.30.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:19)
+04.Feb.2015|20.30.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:19)
+04.Feb.2015|20.34.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\classes\class_Moment.php, line:51|Moment created
+04.Feb.2015|20.35.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:20)
+04.Feb.2015|20.35.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:20)
+04.Feb.2015|20.35.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:20)
+04.Feb.2015|20.35.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:104) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.35.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:20)
+04.Feb.2015|20.35.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:20)
+04.Feb.2015|20.36.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:20)
+04.Feb.2015|20.36.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:20)
+04.Feb.2015|20.36.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:20)
+04.Feb.2015|20.38.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:305|Conflict: Processed cloze and redirected to bracelet send site (id:20)
+04.Feb.2015|20.38.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|20.39.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|20.40.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|20.45.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|20.45.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:21)
+04.Feb.2015|20.45.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:21)
+04.Feb.2015|20.45.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:21)
+04.Feb.2015|20.45.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:76) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.45.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:21)
+04.Feb.2015|20.45.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:21)
+04.Feb.2015|20.46.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:22)
+04.Feb.2015|20.46.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 8 (id:22)
+04.Feb.2015|20.46.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:22)
+04.Feb.2015|20.46.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:75) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.46.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:22)
+04.Feb.2015|20.46.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:22)
+04.Feb.2015|20.46.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:22)
+04.Feb.2015|20.46.44|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:22)
+04.Feb.2015|20.46.44|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:22)
+04.Feb.2015|20.54.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:23)
+04.Feb.2015|20.54.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:23)
+04.Feb.2015|20.54.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:23)
+04.Feb.2015|20.54.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:104) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.54.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:23)
+04.Feb.2015|20.54.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:23)
+04.Feb.2015|20.55.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '2'
+04.Feb.2015|20.55.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|20.55.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:24)
+04.Feb.2015|20.55.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:24)
+04.Feb.2015|20.55.39|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:24)
+04.Feb.2015|20.55.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:60) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.55.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:24)
+04.Feb.2015|20.55.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:24)
+04.Feb.2015|20.55.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:25)
+04.Feb.2015|20.55.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:25)
+04.Feb.2015|20.55.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:25)
+04.Feb.2015|20.55.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:90) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.55.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:25)
+04.Feb.2015|20.55.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:25)
+04.Feb.2015|20.56.20|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:26)
+04.Feb.2015|20.56.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:26)
+04.Feb.2015|20.56.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:26)
+04.Feb.2015|20.56.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:90) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.56.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:26)
+04.Feb.2015|20.56.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:26)
+04.Feb.2015|20.56.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:27)
+04.Feb.2015|20.56.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:27)
+04.Feb.2015|20.56.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:27)
+04.Feb.2015|20.56.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:167) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.57.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.57.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+04.Feb.2015|20.57.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:27)
+04.Feb.2015|20.57.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:27)
+04.Feb.2015|20.57.42|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:27)
+04.Feb.2015|20.58.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:27)
+04.Feb.2015|20.58.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:27)
+04.Feb.2015|20.58.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:305|Conflict: Processed cloze and redirected to bracelet send site (id:27)
+04.Feb.2015|20.59.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|22.07.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|22.07.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '8'
+04.Feb.2015|22.08.08|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:28)
+04.Feb.2015|22.08.08|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:28)
+04.Feb.2015|22.08.09|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:28)
+04.Feb.2015|22.08.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:91) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.08.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:95) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.08.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:28)
+04.Feb.2015|22.08.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:28)
+04.Feb.2015|22.14.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:28)
+04.Feb.2015|22.17.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:28)
+04.Feb.2015|22.17.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:28)
+04.Feb.2015|22.23.41|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:299|Conflict: Processed cloze and redirected to reminder site (id:28)
+04.Feb.2015|22.23.42|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=28)
+04.Feb.2015|22.24.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|22.26.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:122|API: triggered 'setExplanation' to id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.44.30|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '8'
+04.Feb.2015|22.44.42|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|22.46.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '8'
+04.Feb.2015|22.48.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:29)
+04.Feb.2015|22.48.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:29)
+04.Feb.2015|22.48.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:29)
+04.Feb.2015|22.48.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:124) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.48.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:137) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.49.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:29)
+04.Feb.2015|22.49.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:29)
+04.Feb.2015|22.50.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:30)
+04.Feb.2015|22.50.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:30)
+04.Feb.2015|22.50.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:30)
+04.Feb.2015|22.50.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:117) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.50.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:153) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.50.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:31)
+04.Feb.2015|22.50.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:31)
+04.Feb.2015|22.50.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:31)
+04.Feb.2015|22.50.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:151) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.50.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:167) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.51.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '7'
+04.Feb.2015|22.51.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:32)
+04.Feb.2015|22.51.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 8 (id:32)
+04.Feb.2015|22.51.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:32)
+04.Feb.2015|22.51.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:86) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|22.51.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:32)
+04.Feb.2015|22.51.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:32)
+04.Feb.2015|22.51.42|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:104|Conflict: Conflict->progress to high for step 2 (Conflict->progress: 3). Redirect...
+04.Feb.2015|22.51.42|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:32)
+04.Feb.2015|22.51.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:33)
+04.Feb.2015|22.51.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 8 (id:33)
+04.Feb.2015|22.51.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:33)
+04.Feb.2015|22.51.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:117) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|22.52.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '8'
+04.Feb.2015|22.52.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:34)
+04.Feb.2015|22.52.31|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:34)
+04.Feb.2015|22.52.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:34)
+04.Feb.2015|22.52.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:74) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:34)
+04.Feb.2015|22.52.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:34)
+04.Feb.2015|22.52.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:77) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:112) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.44|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:35)
+04.Feb.2015|22.52.44|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:35)
+04.Feb.2015|22.52.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:35)
+04.Feb.2015|22.52.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:128) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:84) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:103) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:35)
+04.Feb.2015|22.52.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:137|Conflict: Displayed 'explain situation' site (id:35)
+04.Feb.2015|22.52.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:36)
+04.Feb.2015|22.52.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:36)
+04.Feb.2015|22.52.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:36)
+04.Feb.2015|22.52.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:157) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:61) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:36)
+04.Feb.2015|22.52.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:107) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.52.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:36)
+04.Feb.2015|22.53.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:37)
+04.Feb.2015|22.53.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:37)
+04.Feb.2015|22.53.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:37)
+04.Feb.2015|22.53.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:90) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.53.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:111) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.53.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:37)
+04.Feb.2015|22.53.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:37)
+04.Feb.2015|22.53.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:38)
+04.Feb.2015|22.53.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:38)
+04.Feb.2015|22.53.39|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:38)
+04.Feb.2015|22.53.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:91) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.53.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:38)
+04.Feb.2015|22.53.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:136) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.53.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:38)
+04.Feb.2015|22.53.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:39)
+04.Feb.2015|22.53.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:39)
+04.Feb.2015|22.53.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:39)
+04.Feb.2015|22.53.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:141) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.53.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:126) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.54.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '8'
+04.Feb.2015|22.54.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:40)
+04.Feb.2015|22.54.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:40)
+04.Feb.2015|22.54.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:40)
+04.Feb.2015|22.54.07|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:119) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.54.07|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:118) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.54.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:41)
+04.Feb.2015|22.54.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:41)
+04.Feb.2015|22.54.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:41)
+04.Feb.2015|22.54.24|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:120) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.54.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '8'
+04.Feb.2015|22.54.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:42)
+04.Feb.2015|22.54.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 7 (id:42)
+04.Feb.2015|22.54.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:42)
+04.Feb.2015|22.54.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:104) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.54.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:68) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|22.54.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:42)
+04.Feb.2015|22.54.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Asked for last positive thing (id:42)
+04.Feb.2015|22.55.02|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:265|Conflict: Asked for feelings (id:29)
+04.Feb.2015|22.56.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:246|Conflict: processed feelings and redirected (id:29)
+04.Feb.2015|22.56.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:362|Conflict: showed sloze (id:29)
+04.Feb.2015|23.02.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:299|Conflict: Processed cloze and redirected to reminder site (id:29)
+04.Feb.2015|23.02.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:417|Conflict: Showed Overview/Reminder site (id=29)
+04.Feb.2015|23.02.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:434|Conflict: Sent out conflictCreated event
+04.Feb.2015|23.05.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:122|API: triggered 'setExplanation' to id '3b6b1192472a51adc2e7054f16a8ceba'
+04.Feb.2015|23.27.13|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:43)
+04.Feb.2015|23.27.13|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:43)
+04.Feb.2015|23.27.13|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:43)
+04.Feb.2015|23.27.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:104|Conflict: Conflict->progress to high for step 2 (Conflict->progress: 2). Redirect...
+04.Feb.2015|23.27.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:43)
+04.Feb.2015|23.27.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:43)
+04.Feb.2015|23.27.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:43)
+04.Feb.2015|23.28.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:43)
+04.Feb.2015|23.28.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:43)
+04.Feb.2015|23.28.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 3 (id:43)
+04.Feb.2015|23.28.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:43)
+04.Feb.2015|23.31.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:1)
+04.Feb.2015|23.31.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:1)
+04.Feb.2015|23.31.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:1)
+04.Feb.2015|23.32.02|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+04.Feb.2015|23.32.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:1)
+04.Feb.2015|23.32.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 3 (id:1)
+04.Feb.2015|23.32.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:1)
+04.Feb.2015|23.32.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:1)
+04.Feb.2015|23.32.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:1)
+04.Feb.2015|23.32.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:1)
+04.Feb.2015|23.32.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+04.Feb.2015|23.33.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+04.Feb.2015|23.33.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:2)
+04.Feb.2015|23.33.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:2)
+04.Feb.2015|23.33.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:2)
+04.Feb.2015|23.33.20|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|23.33.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'skipScream' (Pulse:108) for bracelet with id '82f585baeae099c070aba8457633ca21'
+04.Feb.2015|23.33.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:2)
+04.Feb.2015|23.33.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 3 (id:2)
+04.Feb.2015|23.34.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:2)
+04.Feb.2015|23.34.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:2)
+04.Feb.2015|23.34.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:2)
+04.Feb.2015|23.34.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:2)
+04.Feb.2015|23.34.39|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+05.Feb.2015|8.58.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\classes\class_Moment.php, line:51|Moment created
+05.Feb.2015|8.58.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:3)
+05.Feb.2015|8.58.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:3)
+05.Feb.2015|8.58.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:3)
+05.Feb.2015|8.59.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:3)
+05.Feb.2015|8.59.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 4 (id:3)
+05.Feb.2015|8.59.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:3)
+05.Feb.2015|8.59.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:3)
+05.Feb.2015|8.59.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:3)
+05.Feb.2015|8.59.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:3)
+05.Feb.2015|8.59.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+05.Feb.2015|9.02.14|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+05.Feb.2015|9.02.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:4)
+05.Feb.2015|9.02.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:4)
+05.Feb.2015|9.02.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:4)
+05.Feb.2015|9.02.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|9.03.20|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|9.03.20|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|9.03.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:4)
+05.Feb.2015|9.03.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 4 (id:4)
+05.Feb.2015|9.04.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:4)
+05.Feb.2015|9.04.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:4)
+05.Feb.2015|9.04.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:4)
+05.Feb.2015|9.07.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:312|Conflict: Processed cloze and redirected to reminder site (id:4)
+05.Feb.2015|9.07.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:430|Conflict: Showed Overview/Reminder site (id=4)
+05.Feb.2015|9.07.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+05.Feb.2015|9.09.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:122|API: triggered 'setExplanation' to id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|12.38.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+05.Feb.2015|12.38.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '3'
+05.Feb.2015|12.38.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+05.Feb.2015|12.39.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '2'
+05.Feb.2015|12.39.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+05.Feb.2015|12.39.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|12.57.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\classes\class_Moment.php, line:51|Moment created
+05.Feb.2015|12.58.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+05.Feb.2015|12.58.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:5)
+05.Feb.2015|12.58.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:5)
+05.Feb.2015|12.58.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:5)
+05.Feb.2015|12.58.58|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|12.59.36|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|12.59.36|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|13.00.14|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:5)
+05.Feb.2015|13.00.14|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 5 (id:5)
+05.Feb.2015|13.00.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:5)
+05.Feb.2015|13.01.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:5)
+05.Feb.2015|13.01.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:5)
+05.Feb.2015|13.03.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:312|Conflict: Processed cloze and redirected to reminder site (id:5)
+05.Feb.2015|13.03.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:430|Conflict: Showed Overview/Reminder site (id=5)
+05.Feb.2015|13.03.42|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+05.Feb.2015|13.04.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:6)
+05.Feb.2015|13.04.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:6)
+05.Feb.2015|13.04.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:6)
+05.Feb.2015|13.04.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|13.05.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:104|Conflict: Conflict->progress to high for step 2 (Conflict->progress: 2). Redirect...
+05.Feb.2015|13.05.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:6)
+05.Feb.2015|13.05.02|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 5 (id:6)
+05.Feb.2015|13.05.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:6)
+05.Feb.2015|13.05.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:6)
+05.Feb.2015|13.05.10|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:6)
+05.Feb.2015|13.05.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:312|Conflict: Processed cloze and redirected to reminder site (id:6)
+05.Feb.2015|13.05.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:430|Conflict: Showed Overview/Reminder site (id=6)
+05.Feb.2015|13.05.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+05.Feb.2015|13.07.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:122|API: triggered 'setExplanation' to id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|13.27.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:7)
+05.Feb.2015|13.27.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 1 (id:7)
+05.Feb.2015|13.27.49|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:7)
+05.Feb.2015|13.28.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:7)
+05.Feb.2015|13.28.01|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 5 (id:7)
+05.Feb.2015|13.28.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:7)
+05.Feb.2015|13.28.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:7)
+05.Feb.2015|13.28.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:7)
+05.Feb.2015|13.28.07|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '3b6b1192472a51adc2e7054f16a8ceba'
+05.Feb.2015|13.31.05|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|13.31.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:8)
+05.Feb.2015|13.31.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:8)
+05.Feb.2015|13.31.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:8)
+05.Feb.2015|13.32.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+05.Feb.2015|15.33.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|15.33.53|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+05.Feb.2015|15.34.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|15.35.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:9)
+05.Feb.2015|15.35.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:9)
+05.Feb.2015|15.35.39|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:9)
+05.Feb.2015|15.35.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+05.Feb.2015|15.35.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+05.Feb.2015|15.35.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:9)
+05.Feb.2015|15.36.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 5 (id:9)
+05.Feb.2015|15.36.06|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:9)
+05.Feb.2015|15.36.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:9)
+05.Feb.2015|15.36.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:9)
+05.Feb.2015|15.38.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:9)
+05.Feb.2015|15.38.48|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+05.Feb.2015|15.43.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:8)
+05.Feb.2015|15.43.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 5 (id:8)
+05.Feb.2015|16.01.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|16.02.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+05.Feb.2015|16.02.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|16.03.30|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|16.03.33|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+05.Feb.2015|16.03.36|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|16.06.34|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|16.06.37|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '1'
+05.Feb.2015|16.06.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+05.Feb.2015|16.08.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\classes\class_Moment.php, line:51|Moment created
+05.Feb.2015|16.09.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:10)
+05.Feb.2015|16.09.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:10)
+05.Feb.2015|16.09.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:10)
+05.Feb.2015|16.09.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+05.Feb.2015|16.10.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:104|Conflict: Conflict->progress to high for step 2 (Conflict->progress: 2). Redirect...
+05.Feb.2015|16.10.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:10)
+05.Feb.2015|16.10.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 6 (id:10)
+05.Feb.2015|16.10.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:10)
+05.Feb.2015|16.10.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:10)
+05.Feb.2015|16.10.54|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:10)
+05.Feb.2015|16.12.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:312|Conflict: Processed cloze and redirected to reminder site (id:10)
+05.Feb.2015|16.12.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:430|Conflict: Showed Overview/Reminder site (id=10)
+05.Feb.2015|16.12.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+11.Feb.2015|15.16.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '1'
+11.Feb.2015|15.20.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:11)
+11.Feb.2015|15.20.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:11)
+11.Feb.2015|15.20.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:11)
+11.Feb.2015|15.21.09|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+11.Feb.2015|15.31.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:12)
+11.Feb.2015|15.31.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 2 (id:12)
+11.Feb.2015|15.31.13|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:12)
+11.Feb.2015|15.31.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '7fea637fd6d02b8f0adf6f7dc36aed93'
+11.Feb.2015|15.37.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+11.Feb.2015|15.37.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:84|API: triggered 'leaveUser' for id '3'
+11.Feb.2015|15.37.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+11.Feb.2015|15.38.17|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:7)
+11.Feb.2015|15.39.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:7)
+11.Feb.2015|15.39.55|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+11.Feb.2015|16.03.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '4'
+11.Feb.2015|16.10.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+11.Feb.2015|16.18.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+11.Feb.2015|16.19.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:13)
+11.Feb.2015|16.19.56|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 4 (id:13)
+11.Feb.2015|16.19.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:13)
+11.Feb.2015|16.19.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '82f585baeae099c070aba8457633ca21'
+11.Feb.2015|16.20.35|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '82f585baeae099c070aba8457633ca21'
+11.Feb.2015|16.20.36|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:43|API: triggered 'endScream' for bracelet with id '82f585baeae099c070aba8457633ca21'
+11.Feb.2015|16.20.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:13)
+11.Feb.2015|16.20.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 6 (id:13)
+11.Feb.2015|16.21.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:13)
+11.Feb.2015|16.39.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:13)
+11.Feb.2015|16.39.00|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:13)
+11.Feb.2015|16.40.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:13)
+11.Feb.2015|16.40.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+11.Feb.2015|16.42.29|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '4'
+11.Feb.2015|16.43.44|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:14)
+11.Feb.2015|16.43.44|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:14)
+11.Feb.2015|16.43.45|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:14)
+11.Feb.2015|16.43.47|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id 'ce2e8d5238ea7f69cfd6b0db27a09cb8'
+11.Feb.2015|16.44.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:14)
+11.Feb.2015|16.44.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 6 (id:14)
+11.Feb.2015|16.44.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:14)
+11.Feb.2015|16.51.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '3'
+11.Feb.2015|16.57.46|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:75|API: triggered 'setUser' to id '2'
+11.Feb.2015|17.03.37|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:15)
+11.Feb.2015|17.03.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 3 (id:15)
+11.Feb.2015|17.03.38|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:15)
+11.Feb.2015|17.03.40|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '82f585baeae099c070aba8457633ca21'
+11.Feb.2015|17.05.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:15)
+11.Feb.2015|17.05.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 6 (id:15)
+11.Feb.2015|17.05.13|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:15)
+11.Feb.2015|17.05.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:15)
+11.Feb.2015|17.05.16|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:15)
+11.Feb.2015|17.05.18|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:15)
+11.Feb.2015|17.05.19|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+11.Feb.2015|17.06.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:16)
+11.Feb.2015|17.06.11|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 4 (id:16)
+11.Feb.2015|17.06.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:16)
+11.Feb.2015|17.06.15|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '82f585baeae099c070aba8457633ca21'
+11.Feb.2015|17.06.20|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:16)
+11.Feb.2015|17.06.21|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 6 (id:16)
+11.Feb.2015|17.06.23|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:16)
+11.Feb.2015|17.06.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:16)
+11.Feb.2015|17.06.25|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:16)
+11.Feb.2015|17.06.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:16)
+11.Feb.2015|17.06.28|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+11.Feb.2015|17.13.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:17)
+11.Feb.2015|17.13.50|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 4 (id:17)
+11.Feb.2015|17.13.51|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:17)
+11.Feb.2015|17.13.52|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '82f585baeae099c070aba8457633ca21'
+11.Feb.2015|17.13.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:17)
+11.Feb.2015|17.13.57|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 6 (id:17)
+11.Feb.2015|17.13.59|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:17)
+11.Feb.2015|17.14.03|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:17)
+11.Feb.2015|17.14.04|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:17)
+11.Feb.2015|17.14.12|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:17)
+11.Feb.2015|17.14.13|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event
+11.Feb.2015|17.14.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:54|Created new Conflict (id:18)
+11.Feb.2015|17.14.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:69|Conflict opponent set to 4 (id:18)
+11.Feb.2015|17.14.22|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:100|Conflict: Pulse check intitiated (id:18)
+11.Feb.2015|17.14.24|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\api\api_braceletAnswer.php, line:25|API: triggered 'startScream' (Pulse:140) for bracelet with id '82f585baeae099c070aba8457633ca21'
+11.Feb.2015|17.14.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:122|Conflict: First step of conflict solving initiated (id:18)
+11.Feb.2015|17.14.26|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:211|Conflict: Showed the moment with id 6 (id:18)
+11.Feb.2015|17.14.27|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:278|Conflict: Asked for feelings (id:18)
+11.Feb.2015|17.14.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:259|Conflict: processed feelings and redirected (id:18)
+11.Feb.2015|17.14.32|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:375|Conflict: showed sloze (id:18)
+11.Feb.2015|17.14.36|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:318|Conflict: Processed cloze and redirected to bracelet send site (id:18)
+11.Feb.2015|17.14.36|seite:C:\Users\TimJ\Development\XAMPP\htdocs\grownect\Prototypen\Technischer Durchstich\states\add_conflict.inc, line:447|Conflict: Sent out conflictCreated event

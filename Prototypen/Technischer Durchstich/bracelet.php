@@ -414,8 +414,8 @@ if(!isset($_GET['id']) || !$user_object = User::FromDb($_GET['id']))
 	function getPulse(callback) {
 		setTimeout(function() {
 			console.log("Pulse ermittelt");
-			callback(Math.floor(Math.random() * (170 - 55 + 1)) + 55); // create random pulse value
-			//callback(129);
+			//callback(Math.floor(Math.random() * (170 - 55 + 1)) + 55); // create random pulse value
+			callback(140); // FIXME: presentation state
 		}, 1000);
 	}
 
