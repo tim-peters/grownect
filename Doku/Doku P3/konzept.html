@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="cmsApp">
+<head>
+	<meta charset="UTF-8">
+	<title>grownect</title>
+	<link rel="stylesheet" type="text/css" href="./style/stylesheet.css">
+  <script src="./js/angular.min.js"></script>
+  <script src="./js/cmsApp.js"></script>
+</head>
+<body ng-controller="cmsCtrl" ng-init="getData('concept_states')" ng-include="url">
+
+<a href="" ng-click="next($event)" ng-show="(num<content.length-1)">next</a>
+
+</body>
+</html>
