@@ -19,7 +19,7 @@ app.controller('cmsCtrl', function($scope, $http, $location) {
     console.log($scope.num);
 
 	$scope.getData = function(name) {
-		console.log("getData");
+		//console.log("getData");
         var url = "./data/"+name+".json";
         $http.get(url).then(function(dataResponse) {
             $scope.content = dataResponse.data;

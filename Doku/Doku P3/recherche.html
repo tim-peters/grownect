@@ -1,135 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cmsApp">
 <head>
 	<meta charset="UTF-8">
 	<title>grownect</title>
 	<link rel="stylesheet" type="text/css" href="./style/stylesheet.css">
-
-<script src="./js/jquery-1.10.2.js" type="text/javascript"></script>
-<script type="text/javascript">
-
-
-</script>
+  <script src="./js/angular.min.js"></script>
+  <script src="./js/cmsApp.js"></script>
 </head>
-<body bgcolor="black";>
+<body ng-controller="cmsCtrl" ng-init="getData('recherche_states')" ng-include="url">
 
-	<div id="kopfleiste">
-		<img src="Bilder/Logo grownect.png" height="60" style="margin-left:20px">
-	</div>
-	
-
-<!--<div id="infobox">
-<ul>
-	<li><strong>Schema</strong></li>
-	<br> 
-	<li> Notizen stehen immer hier -
-		<br> zu einzelnen Elementen.</li> 
-</ul>
-</div>-->
-
-
-<div id="menu">
-		<ul>
-			<li><a href="trailer.html">Trailer</a></li>
-			<li><a href="connect.html">Connect</a></li>
-			<li class="active"><a href="recherche.html">Recherche</a></li>
-			<li><a href="konzept.html">Konzept</a></li>
-			<li><a href="interaktion.html">Interaktion...</a></li>
-			<li><a href="technik.html">Technik</a></li>
-			<li><a href="design.html">Design</a></li>
-			<li><a href="management.html">Management</a></li>
-			<li><a href="kontakt.html">Kontakt</a></li>
-		</ul>
-	</div>
-
-	<div id="inhalt">
-		<h2>BEVOR SIE DAS PRODUKT GELIEFERT BEKOMMEN</h2>
-
-		<p>Möchten wir Ihnen einen kleinen Überblick geben.<br> Wir beziehen uns im folgenden auf Wissenschaftliche Grundlagen.
- 	</p>
-	</div>
-
-	<div id="inhalt">
-		<h2>WISSENSCHAFTLICHE GRUNDLAGEN</h2>
-
-		<p><strong>„Man kann nicht nicht kommunizieren!“ </strong> ist der Grundsatz der Kommunikationstheorie von Paul Watzlawick. Sobald zwei Personen einander wahrnehmen, kommunizieren sie miteinander, da jedes Verhalten kommunikativen Charakter hat. Watzlawick versteht also Verhalten jeder Art, sowohl verbal als auch nonverbal, bewusst und unbewusst, als Kommunikation. <br>
-Kommunikation ist somit unvermeidbar, immer vorhanden und von enormer Wichtigkeit, um sich austauschen zu können. Das Zusammenleben von Menschen erfordert dauerhafte Kooperation.<br><br>
-Der Grundsatz des Projekts ist, Kommunikation nicht zu ersetzen oder ihr aus dem Weg zu gehen, sondern eine neue Form von Kommunikation als Unterstützungshilfe zu schaffen, um mögliches Konfliktpotential im Vorhinein zu vermeiden.
-<br><br>
-Aufgrund unterschiedlicher Erziehung, verschiedenen Vorstellungen, Erwartungen sowie diversen Persönlichkeitsmerkmalen ergibt sich ein gewisses Konfliktpotential. Schnell können Auseinandersetzungen bezüglich Verpflichtungen, die beispielsweise nicht rechtzeitig erledigt werden oder Gewohnheiten, derer man sich oftmals gar nicht bewusst ist entstehen. Man spricht von einem Konflikt, wenn zwei Elemente gegensätzlich oder unvereinbar sind. <br><br>
-Hinsichtlich des Projekts ist es wichtig, beide Parteien, die an der Auseinandersetzung beteiligt sind zu betrachten. Während die eine Person beispielsweise emotional unkontrolliert ist und Ärger verspürt, ist die andere Person ruhig, gelassen und geht ihren Gewohnheiten weiterhin nach, da sie sich dem bevorstehenden Problem völlig unbewusst ist. Ziel ist es, einerseits nachsichtig zu werden, jedoch sich auch des Problems bewusst zu werden und aufeinander einzugehen. Hierbei ist es wichtig, „sich einen Spiegel vorzuhalten“, um sich selbst reflektieren zu können.
-</p>
-</div>
-
-
-	<div id="inhalt">
-		<h2>PERSÖNLICHKEIT</h2>
-
-		<p>Jeder Mensch ist ein Individuum, geprägt durch die Erziehung, Vorstellungen und Erwartungen gegenüber unseren Mitmenschen. <br> <br>
-Hinsichtlich der Persönlichkeitspsychologie wird das Modell der „Big 5“ herangezogen, um Persönlichkeitsmerkmale genauer zu definieren. Es existieren verschiedene Arten von Persönlichkeiten in unserer Gesellschaft. Die fünf Hauptdimensionen belaufen sich auf:
- <br> <br>
-<strong>Extraversion</strong>, das Maß inwieweit wir auf Reize von außen reagieren
- <br><strong>Bedürfnis nach Stabilität</strong>, das Maß inwieweit wir auf Rückschläge reagieren, Empfindlichkeit
- <br><strong>Offenheit</strong>, das Maß inwieweit wir aktiv nach  neuen Ideen und Erfahrungen suchen
- <br><strong>Umgänglichkeit</strong>, das Maß inwieweit wir eigene Interessen über die anderer stellen, Rücksichtnahme
- <br><strong>Gewissenhaftigkeit</strong>, das Maß inwieweit wir organisiert und Ergebnisorientiert arbeiten
- <br> <br>
-Diese Persönlichkeitseigenschaften helfen enorm, um sich der Vielfalt von Charakteren bewusst zu werden, diese einordnen zu können und somit ein gewisses Verständnis für Konfliktpotential zu entwickeln, wenn unterschiedliche Persönlichkeiten aufeinander treffen. <br><br>
-Vor allem der Begriff des Neurotizismus erschien im Bezug auf Konfliktpotential interessant. Dies ist die Eigenschaft, die die Empfindlichkeit gegenüber möglichen negativen Einflüssen beschreibt. Empfindliche Menschen, sind stressanfälliger, häufiger nervös und reagieren schneller auf Probleme oder negative Gefühle. Menschen mit niedriger Ausprägung dieser Eigenschaft hingegen sind emotional widerstandsfähiger, ruhiger und gelassener, sobald Probleme auftreten. Diese Resistenz kann jedoch dazu führen, dass man Probleme oder Konflikte schnell unterschätzen kann oder diese nicht ernst genug nimmt.
-<br><br>
-Hierbei ist es immer wieder wichtig sich in andere hineinzuversetzen. Empathie bezeichnet das Mitgefühl gegenüber unseren Mitmenschen. Es ist die Fähigkeit, Gedanken, Persönlichkeitsmerkmale und Emotionen anderer zu erkennen und zu verstehen. Grundlage dafür ist jedoch die Selbstwahrnehmung. Je offener man mit den eigenen Emotionen umgeht, desto einfacher ist es, sich in andere hineinzuversetzen. Empathie ist hierbei nicht nur in Bezug auf das Umfeld wichtig, sondern auch für einen jeden selbst. 
-<br><br>
-Wie bereits genannt, klassifizieren die Big Five die Persönlichkeit eines Menschen. Forscher haben herausgefunden und demonstriert, dass sich die Big Five auf einer noch umfassenderen Ebene beschreiben lassen. Der Stabilität und Plastizität. <br><br>
-Stabilität lässt sich anhand der Big Five mit den Begriffen Gewissenhaftigkeit, Verträglichkeit und Ausgeglichenheit vereinen und charakterisiert den Menschen im Innersten. Es ist das Ausmaß, in dem Menschen dazu neigen, sich im Vertrauen zu arrangieren und potenziellen Gefahren aus dem Weg zu gehen.<br><br>
-Die zweite Ebene der Persönlichkeit nennt sich Plastizität. Hierbei geht es um den Grad der Bereitschaft eines Menschen, unbekannte Wege zu beschreiten und dabei Risiken einzugehen. Sie setzt sich aus den Bereichen Offenheit für Neues und Extraversion zusammen.<br><br>
-Diese beiden Grunddimensionen lassen sich zwei grundlegenden Schaltkreisen des Gehirns zuordnen.<br><br>
-Das Merkmal Serotonin zielt darauf ab, das „Innere“ des Menschen still zu halten. Es sorgt für eine ausgeglichene, entspannte Stimmung. Aggressionen und Emotionen werden abgeschwächt und keine Risiken eingegangen während bei dem Überträgerstoff Dopamin nach Abenteuern gesucht wird. Man verfolgt den Wunsch, seine Erfahrungen durch neue Erkenntnisse und Erlebnisse von außen zu erweitern. Der Horizont des Denkens wird dadurch weiter und kreativer, jedoch nicht unbedingt ausführlicher.<br><br>
-Diese Einordnung von Persönlichkeitseigenschaften ist hinsichtlich Motivation von großer Bedeutung und hat sich auch aufgrund einer weiteren Studie bewahrheitet. Plastizität kurbelt vielerlei Verhalten an während Stabilität hingegen verhaltenshemmend wirken kann.
-</p>
-</div>
-
-<div id="inhalt">
-		<h2>VERHALTEN UND GEWOHNHEITEN</h2>
-
-		<p>Jedem Menschen ist seine Gesundheit mit das höchste Gut auf Erden. Trotzdem agieren wir oftmals leichtsinnig und unvernünftig. Es stellt sich die Frage, wie eine Verbindung zwischen einer gewissen Haltung und Verhalten herstellt werden kann. Zwischen Denken und Handeln steht das Gefühl. Menschliches Verhalten wird durch Gefühle gesteuert und jeder Gedanke einer gefühlsmäßigen Bewertung unterzogen. Sobald die Bewertung einen positiven Wert hat und man sogar Spaß daran hat Ziele zu erreichen, kann sie angestrebt werden. Eine Erkenntnis selbst ist nicht die Herausforderung, sondern eher die eigentliche Umsetzung des Wunsches. Jedoch ist der Mensch ein Gewohnheitstier, was es dem Menschen schwieriger erscheinen lässt, Dinge zu ändern. Sobald man jedoch ein bestimmtes Verhalten neu erlernt hat, wird es schlussendlich zum Automatismus und somit einfacher.
-<br><br>
-Wissenschaftler belegen, dass <strong>Verhalten</strong> bis zu 60% genetisch bedingt ist. Bestimmte Charaktermerkmale wie beispielsweise Geselligkeit, Selbstbewusstsein oder Gewissenhaftigkeit können denen der Eltern entsprechen. Es ist jedoch unabhängig davon, um welche Charakterzüge es sich bei der Vererbung  handelt. <br><br>
-Hinsichtlich der menschlichen Entwicklung wird man allerdings keinen Einfluss nehmen können, da jeder Mensch ein Individuum ist und unterschiedliche Entwicklungsstadien bezüglich der Erziehung durchläuft. <br><br>
-<strong>Gewohnheiten</strong> können demnach einerseits genetisch bedingt sein als auch entwicklungsbezogen.
-<br><br>
-Laut einer Studie, in der zwischen automatischem und dem Einüben von Verhalten unterschieden wurde, wurde eine Durchschnittsdauer von 66 Tagen festgestellt, um beispielsweise negative Gewohnheiten mit positiven zu überlagern. Dies kann jedoch zwischen 18 und 254 Tagen variieren. Es kommt hierbei auf die Art des Verhaltens und der Gewohnheit an. Sich anzugewöhnen, jedes mal nach dem Verlassen eines Raumes das Licht auszuschalten, sollte einfacher umsetzbar sein, als täglich einer selbstauferlegten Verpflichtung wie zum Beispiel zu jedem Termin pünktlich zu erscheinen, nachzugehen. Wichtig hierbei ist die Art und Weise der <strong>Motivation</strong>, um sein angestrebtes Ziel zu erreichen. 
-</p>
-</div>
-
-<div id="inhalt">
-		<h2>MANIEREN</h2>
-
-		<p>Jeder Mensch möchte höflich und respektvoll behandelt werden. Unangemessenes Handeln kann unser tägliches Miteinander belasten. Was mögliche Gründe für schlechte Manieren sein können und was man dagegen tun kann, wurde untersucht und diskutiert.<br><br>
-Ein häufiger Grund für „Dusseligkeiten“ nennt ein Wissenschaftler Stress. Um richtig und höflich zu handeln, muss man sich Zeit nehmen. Es ist nötig, Empathie und Achtsamkeit zu empfinden, um sich anderen gegenüber aufmerksam bzw. liebenswürdig zu verhalten und um sich in sie hineinversetzen zu können. Sobald jemand gestresst ist, fühlt sich derjenige unter Zeitdruck, schaut nicht genau hin und vergisst   anderen gegenüber einfühlsam zu handeln. Meist ist sich die gestresste Person dessen gar nicht bewusst. <br><br>
-Bei vielen unhöflichen Vorkommnissen handelt es sich um „versehentliche“ Grobheiten. Sobald beispielsweise ein Mitbewohner an den vollen Müllbeuteln vorbeiläuft, heißt es noch lange nicht, dass er jemanden verärgern will. Es hat nichts mit den Menschen in seinem Umfeld zu tun, führt jedoch des öfteren zu Streitigkeiten. <br><br>
-Der Philosoph Emrys Westacott beschreibt Grobheit als „Bruch sozialer Umgangsregeln“. Aufgrund des immer schnelleren Kulturwandels in unserer Gesellschaft verändern sich Normen und Sitten dauerhaft. Dies führt dazu, dass sich Menschen unterschiedlich verhalten und Regeln brechen. 
-<br><br>
-</p>
-</div>
-
-<div id="inhalt">
-		<h2>MOTIVATION</h2>
-
-		<p>Motivation bedeutet „Triebkraft oder auch bewegen“ und ist das Streben nach bestimmten Zielen eines Menschen. Sie lässt sich durch emotionalen und neuronalen Aktivitäten steuern. Gewisse Motive sind ausschlaggebend für die Motivation und bestimmen ein solches Handeln. <br><br>
-Es existieren unterschiedliche Arten von Motivationen, die dazu dienen könnten, beispielsweise möglichem Konfliktpotential im Vorhinein aus dem Weg zu gehen. <br><br>
-Motivation selbst als auch die Motive können selbstbestimmt sein oder auch von außen auferlegt werden. <br><br>
-Es wurde sich hauptsächlich auf die intrinsische und im Zweifelsfall auf die extrinsische Motivation berufen.
-<br><br>
-Die intrinsische bzw. Selbstmotivation zählt zu den am intensivsten und längsten anhaltenden Arten der Motivation. Sie entsteht ausschließlich aus eigenem Antrieb. Sobald man Freude oder auch Interesse an einer Sache verspürt kommt diese zum tragen. Die selbst auferlegte Motivation hat den höchsten Wert aller Motivationsarten. Es handelt sich dabei um einen rein individuellen Zustand zur Handlungsbereitschaft. <br><br>
-Bei der extrinsischen Motivation handelt es sich vergleichsweise um eine Fremdmotivation, welche das Ziel verfolgt, dem Nutzer zu einem bestimmten Verhalten zu veranlassen. Mittel für die extrinsische Motivation können emotional positiv erlebte Kriterien wie Anerkennung oder Lob, allerdings auch materielle Zugeständnisse, zum Beispiel Gehaltserhöhungen oder Beförderungen sein. Der Wert dieser Art von Motivation ist weit aus geringer, da man Personen immer wieder Belohnungen zur Zielerreichung vor Augen führen muss um sie zur Handlungsbereitschaft zu führen. Sie hält demnach nicht lange an und ist von anderen Menschen und materiellen Zugeständnissen abhängig. <br><br>
-Laut einem Video der Royal Society for the encouragement of Arts, Manufactures & Commerce (RSA) über die wesentlichen Motivationsfaktoren können klassische Belohnungsansätze hinsichtlich Wissensarbeiten auch genau das Gegenteil bewirken. Inhaltlich geht es generell darum, was den Menschen wirklich motiviert. (link) Wichtig für den zu Motivierenden sind grundsätzlich drei Faktoren. Unabhängigkeit, Streben nach Perfektion und die Sinnhaftigkeit. Die Möglichkeit über Inhalt und Arbeitsweisen autonom zu entscheiden ist von großer Wichtigkeit, jemandem also einen gewissen Freiraum zu geben und Vertrauen zu schenken hilft, Motivation zu fördern. Ebenso die Möglichkeit zu geben, eigene Fähigkeiten anzuwenden und zu verbessern hilft, Interessen auszubauen und somit Motivation aus eigenem Antrieb zu erzeugen. Sobald der eigene Profit in den Hintergrund rückt, tritt das eigentliche Motiv der Sinnhaftigkeit des eigenen Tuns in den Vordergrund. Der Zweck wird demnach deutlicher und genauer verfolgt.
-</p>
-</div>
-	
-<div class="buttoncentered">
-		 <a href="connect2.html"> <button type="button" type="submit" class="btn2"><img src="bilder/back.png" width="25">Zurück</button></a>
-		  <a href="interaktion.html"> <button type="button" type="submit" class="btn"><img src="bilder/confirm.png" width="25">Weiter</button></a>
-</div>
+<a href="" ng-click="next($event)" ng-show="(num<content.length-1)">next</a>
 
 </body>
 </html>
