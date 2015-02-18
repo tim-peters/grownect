@@ -20,10 +20,10 @@
 
 <div id="infobox">
 <ul>
-	<li><strong>Schema</strong></li>
+	<li><strong>Weitere Details</strong></li>
 	<br> 
-	<li> Notizen stehen immer hier -
-		<br> zu einzelnen Elementen.</li> 
+	<li> Zu Armband: Auflistung benötigter Sensoren aus Pad <br> <br>Im Grunde ist die View auf dem Spiegel-Display mit einer Webseite gleichzusetzen.
+		<br></li> 
 </ul>
 </div>
 
@@ -70,37 +70,52 @@ Innerhalb des Systems ist die Kommunikation über den Eventbus sowohl logisch in
 	<div id="inhalt">
 		<h2>BILDER-UPLOAD</h2>
 
-		<p>Ein Kernteil des Systems, der in seiner Art von der ueblichen Client-Server-Kommunikation abweicht ist der Bilder-Upload. Hierbei kommt das einzige Mal auch konzeptionell ein weiteres Geraet (und damit ein weiterer Client) zu unserem System dazu.
-Der Bilder-Upload taucht an verschiedenen Stellen des Systems, fuer verschiedene Einsatzzwecke auf. Seine Grundfunktionalitaet ist aber immer die gleiche. Somit bot sich ein modularer Aufbau an.
-Der Bilder-Upload funktioniert stets ueber einen (serverseitig) generierten QR-Code. Ueber diesen wird eine URL uebergeben, die eine einzigartige ID enthaelt, zu der ein gleichnamiges Verzeichnis angelegt wird. Scannt der Nutzer nun den QR-Code, folgt also dem Link, wird er auf eine Seite geleitet, auf der er (Bspw. von seinem Smartphone) gespeicherte oder auch grade fotografierte Bilder in das extra angelegte Verzeichnis hochladen kann. Parallel kommt auf der Seite auf der der QR-Code angezeigt wird ein JavaScript zum tragen, welches in Sekundenabstaenden bei der API anfragt, ob bereits ein Upload mit dieser ID passiert ist, ob also bereits ein Bild im genannten Verzeichnis liegt. Ist dies der Fall, wird der QR-Code durch das hochgeladene Bild ersetzt. Der Nutzer kann das Ergebniss also nochmal auf dem Spiegel sehen, bevor er es, ueblicherweise mit dem Bestaetigen-Button final einrichtet.
-<br><br>
-Spaeter zeigte sich, dass anstatt der sich wiederholenden Nachfrage bei der API auch eine Erkennung eines Uploads ueber ein Event moeglich gewesen waere. Da die zu diesem Zeitpunkt bereits existierende Loesung aber zufriedenstellend und ohne stoerende Verzoegerung oder zu groszen Ressourcenverbrauch funktionierte, gab es keinen Grund diese vorerst nochmal umzustellen.
+		<p>Ein Kernteil des Systems, der in seiner Art von der üblichen Client-Server-Kommunikation abweicht ist der Bilder-Upload. Hierbei kommt das einzige Mal auch konzeptionell ein weiteres Gerät (und damit ein weiterer Client) zu unserem System dazu.
+Der Bilder-Upload taucht an verschiedenen Stellen des Systems, für verschiedene Einsatzzwecke auf. Seine Grundfunktionalität ist aber immer die gleiche. Somit bot sich ein modularer Aufbau an.
+Der Bilder-Upload funktioniert stets über einen (serverseitig) generierten QR-Code. Über diesen wird eine URL übergeben, die eine einzigartige ID enthält, zu der ein gleichnamiges Verzeichnis angelegt wird. Scannt der Nutzer nun den QR-Code, folgt also dem Link, wird er auf eine Seite geleitet, auf der er (Bspw. von seinem Smartphone) gespeicherte oder auch grade fotografierte Bilder in das extra angelegte Verzeichnis hochladen kann. Parallel kommt auf der Seite auf der der QR-Code angezeigt wird ein JavaScript zum Einsatz, welches in Sekundenabständen bei der API anfragt, ob bereits ein Upload mit dieser ID passiert ist, ob also bereits ein Bild im genannten Verzeichnis liegt. Ist dies der Fall, wird der QR-Code durch das hochgeladene Bild ersetzt und der Pfad zum Bild in ein unsichtbares Formularfeld geschrieben. Der Nutzer kann das Ergebnis also nochmal auf dem Spiegel sehen, bevor er es mit dem Bestätigen-Button final einrichtet. Hier passiert dann auch erst die Verarbeitung des Bildes (konvertieren, beschneiden, verkleinern).
 
+<br><br>
+Später zeigte sich, dass anstatt der sich wiederholenden Nachfrage bei der API auch eine Erkennung eines Uploads über den Eventbus möglich gewesen wäre. Da die zu diesem Zeitpunkt bereits existierende Lösung aber zufriedenstellend und ohne störende Verzögerung oder zu großem Ressourcenverbrauch funktionierte, gab es keinen Grund diese vorerst nochmal umzustellen.
 </p>
 </div>
+
+
+<div id="inhalt">
+		<h2>ARMBAND</h2>
+
+		<p>Für die technische Konzeption des Prototyps musste zuerst anhand des Konzepts eine Aufstellung aller benötigten Sensoren und technischen Komponenten erstellt werden. Hierbei zeigte sich schnell, dass eine Komplettumsetzung eines Armbands in der Kürze der Zeit wohl kaum möglich sein würde. Auch der ursprüngliche Plan die Technik auf Basis eines Klein- oder Einplatinencomputers (z.B. Raspberry Pi) umzusetzen und zusätzlich einen Design-Dummy per 3D-Druck zu erstellen, stellte sich schnell als zu ambitioniert heraus.
+Letztendlich bietet die Unterbringung der Armband-Technik in einem Smartphone erhebliche Vorteile. So existiert nicht nur die gesamte technische Infrastruktur bereits - es musst nichts selbst zusammengelötet werden - sondern auch die softwareseitige Umsetzung wird durch das bestehende System, in diesem Fall Android erheblich vereinfacht. Gleichzeitig ist das System aber so nah an modernen Kleinstcomputern dran, dass mittelfristig eine Portierung auf ein System in einem Armband durchaus realistisch erscheint.
+
+	</p>
+</div>
+
+
 
 <div id="inhalt">
 		<h2>SPRACHEINGABE/-AUSGABE</h2>
 
-		<p>Text
+		<p>An verschiedenen Stellen des Systems, insbesondere auf Seiten des Armbands kommt Sprachein- und -Ausgabe zum Einsatz. Auch hier galt es, funktionierende Lösungen für den Prototyp zu finden, die so wenig Implementierungsaufwand wie möglich erforderten.
+<br><br>
+
+Für die Sprachausgabe (Text-to-Speech) nutzt das System wieder einen externen Service. Hierbei standen diverse Systeme zur Auswahl, in sich in ihrer Funktionalität stets ähnelten. Fast immer wird ein Text als String (ggf. zusammen mit weiteren Parametern) an eine API übermittelt, die dann eine Sounddatei zurück sendet.<br>
+Die Impementierung der Sprachausgabe erfolgt hier stets vom Armband aus. Dieses erhält den auszugebenden Text und lässt diesen selbstständig in Sprache umwandeln, die es dann ausgibt.<br><br>
+Eine Schwierigkeit lag hierbei darin, Überschneidungen verschiedener Ausgaben oder auch mit anderen Funktionen zu vermeiden. Somit musste ein komplett sequenzieller Aufbau mit asynkroner Kommunikation mit  teilweise mehrfach verschachtelten Callback-Funktionen gewählt werden.
+<br><br>
+Für die Spracheingabe bedient sich das System der in modernen Android Smartphones bereits integrierten Spracheingabe-Funktion mit Hilfe eines Google Services. Diese bietet die Möglichkeit, Spracheingabe anstatt einer Software-Tastatur zu benutzen und ist somit an jeder Stelle verfügbar, an der normalerweise Eingaben mit der Tastatur getätigt werden können. Stellt man die Spracheingabe auf dem Smartphone als Standard ein, und generiert ein einfaches, aktives Textfeld, so poppt auf dem Display automatisch die Spracheingabe-Funktion auf. Der Nutzer muss dies nurnoch bestätigen und anfangen zu sprechen. Per Javascript wird dann der diktierte Text ausgelesen und über die API an den Spiegel übertragen. <br><br>
+Diese vereinfachte Art der Implementierung hat in so fern ihre Berechtigung, als dass die Funktionalität hiermit eins-zu-eins gezeigt werden kann (eine eigene, finale Implementierung würde auf die gleiche Voice-Recognition-Schnittstelle zugreifen), bei einem Bruchteil des Programmieraufwands. Um nur zu zeigen wie ein Konzept funktioniert und was machbar ist, ist sie also ideal.
 		</p>
 </div>
 
 <div id="inhalt">
 		<h2>KONZEPT SMARTHOME DEVICES</h2>
 
-		<p>Text
+		<p>Wie im konzeptionellen Teil bereits angesprochen, ist eine Erweiterung des Systems um eine Event-Tracking Funktion mittelfristig denkbar. Hierbei soll das System eigenständig verschiedene Situationen erkennen. Diese reichen von einfachen Software-Events (“Der Nutzer hat einen Termin in seinem Kalender der jetzt anfängt”), über Events auf Basis der systemeigenen Sensoren (“Der Nutzer befindet sich an der Positon X,Y”) bis hin zu Events, die von externen Geräten und Sensoren erkannt werden müssen (“Der Nutzer hat die Milch leer gemacht”). <br><br>
+Um diese letzte Gruppe von Events tracken zu können, muss das System mit verschiedenen anderen Geräten kommunizieren können. Konzeptionell sind hier sowohl eigene Geräte auf Basis von Kleinstcomputern, wie z.B. einem Toilettenpapier-Halter, der erkennt, ob eine leere oder volle Rolle Toilerrenpapier aufgehängt ist als auch die Kommunikation mit Smart-Home-Geräten angedacht. So soll zukünftig beispielsweise erkannt werden können, ob der Nutzer beim Verlassen des Wohnung (getrackt per GPS oder schlicht durch Verlassen des heimischen Wlans) das Licht ausgeschaltet hat oder nicht. Wichtig ist, dass die externen Geräte stets nur die nötigen Informationen und Events liefern. Eine Auswertung erfolgt ausschließlich auf dem Systemeigenen Server. <br>
+Auch wenn diese Funktion im Rahmen des Prototyps nicht voll umgesetzt ist, so ist sie in der Software-Architektur doch bedacht und sind Grundstrukturen angelegt.
+
 		</p>
 </div>
 	
-	<div id="inhalt">
-		<h2>MIRROR AUFBAU</h2>
-
-		<p>Text
-		</p>
-</div>
-
-
 
 	
 <div class="buttoncentered">
