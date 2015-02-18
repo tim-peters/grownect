@@ -4,7 +4,7 @@ body {
 	margin: 0px;
 	padding: 8px;
 	font-family: 'PT Sans', sans-serif;
-	/*background-color: black;*/
+	background:url('../Bilder/_MG_8030.JPG') no-repeat fixed center center;
 }
 
 a:link, a:visited {

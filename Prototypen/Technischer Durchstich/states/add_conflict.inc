@@ -190,7 +190,7 @@ switch($progress) {
 						$moments= array();
 						while($moments[] = mysqli_fetch_assoc($moment_db_outcome));
 						$moment_row = filterMoments($moments, $maxUseTimestamp)[0];
-
+						
 						if(count($moment_row)) // If at least one fitting positive moment was found..
 						{
 							$moment = Moment::fromRowArray($moment_row);
