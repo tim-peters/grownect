@@ -1,5 +1,5 @@
 body {
-	width:1366px;
+	/*width:1366px;*/
 	min-height: 768px;
 	margin: 0px;
 	padding: 8px;
@@ -182,10 +182,10 @@ strong {
 	text-align:center;
 }
 
-.buttoncentered{
+/*.buttoncentered{
 	margin: 0 auto;
 	text-align: center;
-}
+}*/
 
 .btn img{
 	margin:0 10px;
@@ -199,7 +199,13 @@ strong {
     width: 430px;
 }
 
-button{
+.stateImage2 {
+    border: 1px solid #333;
+    margin: 15px;
+    width: 600px;
+}
+
+/*button{
 	display: inline-block;
 	width:120px;
 	margin-left: 300px;
@@ -212,7 +218,7 @@ button{
 	padding: 1px 11px 11px 0;
 	opacity: .7;
 	vertical-align: center;
-}
+}*/
 
 
 
@@ -227,7 +233,8 @@ button{
 	width:120px;
 	margin-left:10px;
 	margin-bottom: 70px;
-	transform:translate(-50%,0);
+	margin-top: 80px;
+	/*transform:translate(-5%,0);*/
 		background-color: #333;
 		color: #ffffff;
 		font-size: 11px;
