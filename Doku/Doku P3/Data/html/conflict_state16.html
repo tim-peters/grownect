@@ -55,5 +55,8 @@ Sollten die vorhandenen Bedingungen aber trotzdem einmal nicht ausreichen, oder 
 Der große Vorteil des Baukastenprinzips ist, dass sich das System fortlaufend weiterentwickelt. Mit jeder neuen Bedingung, mit jedem eingebundenen Sensor bieten sich multiple neue Möglichkeiten für Events. Der Ersteller einer Bedingung muss hierbei mit Nichten alle Anwendungsfälle seiner Bedingung kennen. Entscheidend ist die Kreativität der User.
 
 </p>
-	<a href="" ng-click="next()" ng-show="num<content.length-1">Weiter</a>
 	</div>
+<div class="buttonbox">
+ <a href="" ng-click="back()" ng-show="num > 0"> <button type="button" type="submit" class="btn2"><img src="bilder/back.png" width="25">Zurück</button></a>
+  <a href="" ng-click="next()" ng-show="num<content.length-1"> <button type="button" type="submit" class="btn"><img src="bilder/confirm.png" width="25">Weiter</button></a>
+</div>

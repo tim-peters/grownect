@@ -34,5 +34,8 @@
 	<p>Hier lässt sich das Profilbild und die Selbstbeschreibung ändern.
 		<br><br> Mit on-Klick auf die Icons neben dem Textfeld lässt sich per Spracheingabe durch das Armband oder die Eingabe auf der Tastatur (die nach on-Klick auf dem Spiegel angezeigt wird) der Text verändern.
 	</p>
-	<a href="" ng-click="next()" ng-show="num<content.length-1">Weiter</a>
 	</div>
+	<div class="buttonbox">
+ <a href="" ng-click="back()" ng-show="num > 0"> <button type="button" type="submit" class="btn2"><img src="bilder/back.png" width="25">Zurück</button></a>
+  <a href="" ng-click="next()" ng-show="num<content.length-1"> <button type="button" type="submit" class="btn"><img src="bilder/confirm.png" width="25">Weiter</button></a>
+</div>

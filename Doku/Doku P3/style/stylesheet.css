@@ -221,8 +221,12 @@ strong {
 }*/
 
 
+.buttonbox {
+	clear:both;
+	margin:-50px 260px;
+}
 
-	.btn2 img{
+.btn2 img{
 	margin:0 10px;
 }
 
