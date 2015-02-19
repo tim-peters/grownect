@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Feb 2015 um 17:39
+-- Erstellungszeit: 19. Feb 2015 um 11:39
 -- Server Version: 5.6.16
 -- PHP-Version: 5.5.11
 
@@ -42,14 +42,17 @@ CREATE TABLE IF NOT EXISTS `conflicts` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Daten für Tabelle `conflicts`
 --
 
 INSERT INTO `conflicts` (`id`, `created`, `solved`, `created_by`, `created_with`, `moment_used`, `progress`, `weight`, `description`, `improvements`, `time_costs`, `explanation`) VALUES
-(3, '2015-02-03 16:35:14', '0000-00-00 00:00:00', 3, 1, 0, 6, 76, 'beeing in abetter mood', '', 0, '');
+(1, '2015-02-04 22:31:29', '0000-00-00 00:00:00', 1, 3, 3, 7, 38, 'is always eating my milks', 'stop it', 0, ''),
+(4, '2015-02-05 08:02:50', '2015-02-05 08:10:06', 3, 2, 4, 10, 94, 'Tim is always forgetting to turn the light off', 'tht he would care more about it.', 10, 'EHealth to get my train at harry sorry aber sofort next time'),
+(8, '2015-02-05 12:31:56', '0000-00-00 00:00:00', 1, 2, 5, 3, 0, '', '', 0, ''),
+(9, '2015-02-05 14:35:38', '0000-00-00 00:00:00', 1, 2, 5, 7, 38, 'You know the problem is I love you and you don''t know it', 'kiss a frog', 5, '');
 
 -- --------------------------------------------------------
 
@@ -69,7 +72,14 @@ CREATE TABLE IF NOT EXISTS `moments` (
   `rating` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Daten für Tabelle `moments`
+--
+
+INSERT INTO `moments` (`id`, `title`, `date`, `created_by`, `created_with`, `type`, `path`, `content`, `rating`) VALUES
+(7, 'Eating selfmade pizza', '2014-11-23 00:00:00', 2, 3, 1, './img/moments/6ae0089b83af7f9558e1de83662682be_IMG_20141119_211335.jpg', '', 75);
 
 -- --------------------------------------------------------
 
@@ -83,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `moments_use` (
   `user` int(11) NOT NULL,
   `used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 -- --------------------------------------------------------
 
@@ -105,16 +115,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `tech_id` (`tech_id`,`picture`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Daten für Tabelle `users`
 --
 
 INSERT INTO `users` (`id`, `tech_id`, `name`, `description`, `color`, `picture`, `created`, `last_modified`, `initialized`) VALUES
-(1, '3b6b1192472a51adc2e7054f16a8ceba', 'Doreen Scheller', 'Ich bin sehr ordentlich organisiert und ja es reicht.', '#acda8d', './img/moments/4e1ee2a22b10baa12bdac47c44ea90ed_bca4424174d209ad38efc7dd49667eaf_8df7a6c0b85fef40c47bbfb6468ca708_tmp_21353-IMG_20150124_141704~2-184854930.jpg', '2015-02-03 16:31:12', '2015-02-03 16:31:12', 1),
-(2, '82f585baeae099c070aba8457633ca21', 'Tim J. Peters', 'I''m the coder :)', '#f59556', './img/moments/296240a2286b75ed06102226f859b3a2_2015-02-03 17.32.43.jpg', '2015-02-03 16:33:24', '2015-02-03 16:33:24', 1),
-(3, '76cf4ecb943fc5282061fffd96ff4df9', 'Nadine Mlakar', 'Ich mag Rothaarige', '#8d1c1c', './img/moments/3a6a5ed927dc5ce3a0a9ce5ac4945be4_de0c2ea7bf798d79451c766faa29eeee_a29b360ffb38e9434c08a4af85c01656_2eb3d648295c14c2055a39fe25af9b8c_2015-01-28 16.00.39.jpg', '2015-02-03 16:34:13', '2015-02-03 16:34:13', 1);
+(2, '82f585baeae099c070aba8457633ca21', 'Tim J. Peters', 'I''m the coder', '#f59556', './img/users/df799861426ac8cfbddd5342c233cc09_grownect_tim.jpg', '2015-02-03 16:33:24', '2015-02-17 22:06:42', 1),
+(3, '3b6b1192472a51adc2e7054f16a8ceba', 'Doreen Scheller', 'Ich bin sehr ordentlich organisiert und ja es reicht.', '#acda8d', './img/users/5a5a9f70e2184243e69354720f2105b5_grownect_doreen.jpg', '2015-02-03 16:31:12', '0000-00-00 00:00:00', 1),
+(4, 'ce2e8d5238ea7f69cfd6b0db27a09cb8', 'Nadine', '', 'rgb(141, 28, 28)', './img/users/d420ff06350deab229936a5d07499e3b_grownect_nadine.jpg', '2015-02-11 15:08:45', '0000-00-00 00:00:00', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
