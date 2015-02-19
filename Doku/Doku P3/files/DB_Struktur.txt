@@ -1,0 +1,51 @@
+s3 [
+    users {
+        id:int; // index
+        tech_id:String; // ID which the connected bracelet sends out (depending on NFC)
+        name:varchar;
+        description: vartext;
+        color: color;
+        picture:varchar; // = path to profile picture
+        created:date;
+        last_modified:date;
+        initalized:boolean; // ob der Nutzer bereits seine Daten eingegeben hat
+    }
+    
+    conflicts {
+        id: Int; // index
+        created: timestamp;
+        solved: timestamp;
+        created_by: Int // = user.id
+        created_with: Int // = other user.id
+        moment_used: Int //=id of the moment which was showen to the angry user (important to rate the moments) // deprecated?
+        progress:Int; // in which state is the conflict actually? -1=unsolveable (blurred mirror), 0=bracelet hewn, 1=created_with specified, 2=puls messured, 3=first therapie done, 4=ratet (declared feelings), 5=lückentext, 6=reminder set, 7=send to bracelet, 8=explanation set, 9=reminder active, 10=solved
+        weight:Int[0-100]; // how angry  is the concerned user? (is at the sam time: rating: How important is the conflict)
+        description: text; // whats the problem?
+        improvements: text; // what is needed to solve the conflict and/or to avoid this problem in the future?
+        time_costs: int; // in minutes; expenditure of time for the angry user cause by the conflicts reason
+        explanation: text; // reason of the conflict explained by the dussel user
+    }
+
+    moments {
+        id: Int; // index
+        created_by: Int // = user.id
+        created_with: Int // = other user.id
+        type: Int // 0=text,1=image,2=sound file,3=video (alternativ: MIME-type?)
+        path: varchar // where to find the content (obsolete if type==0)
+        content: vartext // (obsolete if type!=0)
+        rating: int // 0-100
+    }
+
+    moments_use {
+        id: Int;
+        moment: Int // Moment-ID
+        user: Int // User-ID
+        used: timestamp
+    }
+
+    reminders {
+        id: Int // index
+        user: Int; // = user.id
+        conflict: Int // = conflict.id
+    }
+]   

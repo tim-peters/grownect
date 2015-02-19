@@ -71,7 +71,9 @@ strong {
 	list-style-type: none; /*fuck you punkte*/
 }
 
-	
+#infobox a  {
+	color:#333;
+}
 
 #menu {
 	margin-top: 185px;
@@ -280,6 +282,7 @@ button{
 .sources {
 	font-size: 10px;
 	color:#333333;
+	margin-left:15px;
 }
 
 

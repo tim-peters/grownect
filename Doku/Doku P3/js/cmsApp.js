@@ -10,6 +10,9 @@ app.filter('html', ['$sce', function ($sce) {
     };    
 }])
 
+
+// first loads an index and includes the first file linked in it. Then gives the user the possibility to switch backwarts and forwarts without reloading the whole site.
+// actually the whole body is getting reloaded every time. With a bit more implementation time, just the infobox and the content area (#inhalt) should have been loaded dynamically 
 app.controller('cmsCtrl', function($scope, $http, $location) {
     if(window.location.hash.substring(1) == "")
         $scope.num = 0;
