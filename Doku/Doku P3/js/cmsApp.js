@@ -38,6 +38,11 @@ app.controller('cmsCtrl', function($scope, $http, $location) {
     	$scope.num++;
     	$scope.fillData($scope.num);
     }
+
+    $scope.back = function() {
+        $scope.num--;
+        $scope.fillData($scope.num);
+    }
 });
 
 

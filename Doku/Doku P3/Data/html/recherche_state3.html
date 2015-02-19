@@ -59,7 +59,11 @@ Wie lange braucht es, um sein Verhalten dauerhaft zu ändern? http://www.persoen
 
 Möller, C.: Verhalten ändern - aber wie? http://www.boell-sh.de/fileadmin/user_upload/boellfiles/dokumente/Fachbeitraege_mit_Logo/08_-_Verhalten_aendern_-_aber_wie____Logo.pdf (Letzter Zugriff: 03.12.2014)</div>
 
-<a href="" ng-click="next()" ng-show="num<content.length-1">Weiter</a>
+
+<div class="buttoncentered">
+ <a href="" ng-click="back()" ng-show="num > 0"> <button type="button" type="submit" class="btn2"><img src="bilder/back.png" width="25">Zurück</button></a>
+  <a href="" ng-click="next()" ng-show="num<content.length-1"> <button type="button" type="submit" class="btn"><img src="bilder/confirm.png" width="25">Weiter</button></a>
+</div>
 </div>
 
 </body>
