@@ -1,5 +1,4 @@
 body {
-	/*width:1366px;*/
 	min-height: 768px;
 	margin: 0px;
 	padding: 8px;
@@ -155,9 +154,10 @@ strong {
 	line-height: 1.8;
 }
 
-/*#inhalt p.klein {
-	padding: 0px 0px 0px 15px;
-	font-size:10px;*/
+.sources {
+	font-size: 10px;
+	color:#333333;
+	margin-left:15px;
 }
 
 #inhalt h3 {
@@ -182,11 +182,6 @@ strong {
 	text-align:center;
 }
 
-/*.buttoncentered{
-	margin: 0 auto;
-	text-align: center;
-}*/
-
 .btn img{
 	margin:0 10px;
 }
@@ -204,21 +199,6 @@ strong {
     margin: 15px;
     width: 600px;
 }
-
-/*button{
-	display: inline-block;
-	width:120px;
-	margin-left: 300px;
-	margin-top: 80px;
-	transform:translate(-50%,0);
-	background-color: #333;
-	color: #ffffff;
-	font-size: 11px;
-	border: 1px solid #ccc;
-	padding: 1px 11px 11px 0;
-	opacity: .7;
-	vertical-align: center;
-}*/
 
 
 .buttonbox {
@@ -238,14 +218,13 @@ button{
 	margin-left:10px;
 	margin-bottom: 70px;
 	margin-top: 80px;
-	/*transform:translate(-5%,0);*/
-		background-color: #333;
-		color: #ffffff;
-		font-size: 11px;
-		border: 1px solid #ccc;
-		padding: 1px 11px 11px 0;
-		opacity: .7;
-		vertical-align: center;
+	background-color: #333;
+	color: #ffffff;
+	font-size: 11px;
+	border: 1px solid #ccc;
+	padding: 1px 11px 11px 0;
+	opacity: .7;
+	vertical-align: center;
 }
 
 
@@ -287,14 +266,6 @@ button{
 	text-align: center;
 	font-size: 12px;
 }
-
-
-.sources {
-	font-size: 10px;
-	color:#333333;
-	margin-left:15px;
-}
-
 
 
 
