@@ -36,7 +36,6 @@
 
 		<p>An verschiedenen Stellen des Systems, insbesondere auf Seiten des Armbands kommt Sprachein- und -Ausgabe zum Einsatz. Auch hier galt es, funktionierende Lösungen für den Prototyp zu finden, die so wenig Implementierungsaufwand wie möglich erforderten.
 <br><br>
-
 Für die Sprachausgabe (Text-to-Speech) nutzt das System wieder einen externen Service. Hierbei standen diverse Systeme zur Auswahl, in sich in ihrer Funktionalität stets ähnelten. Fast immer wird ein Text als String (ggf. zusammen mit weiteren Parametern) an eine API übermittelt, die dann eine Sounddatei zurück sendet.<br>
 Die Impementierung der Sprachausgabe erfolgt hier stets vom Armband aus. Dieses erhält den auszugebenden Text und lässt diesen selbstständig in Sprache umwandeln, die es dann ausgibt.<br><br>
 Eine Schwierigkeit lag hierbei darin, Überschneidungen verschiedener Ausgaben oder auch mit anderen Funktionen zu vermeiden. Somit musste ein komplett sequenzieller Aufbau mit asynkroner Kommunikation mit  teilweise mehrfach verschachtelten Callback-Funktionen gewählt werden.
