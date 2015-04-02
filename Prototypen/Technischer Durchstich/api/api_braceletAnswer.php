@@ -18,7 +18,7 @@ if($_POST)
 	switch($_POST['name']) {
 
 		// tell the mirror, that a user is now standing in front of it (and who it is)
-		case "setUser":$
+		case "setUser":
 			$data['name'] = "setUser";
 			$data['id'] = $_POST['user'];
 			$pusher->trigger('grownect', 'events', $data);
