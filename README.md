@@ -1,6 +1,6 @@
 # grownect
 The 3rd semester project of the course of studies 'Interactive Media Design B.A.' (IMD) 2014/15 at the Darmstadt University of Applied Sciences (h_da).
-By Tim J. Peters, Doreen Scheller and Nadine Mlakar.
+By <a href="http://www.timjpeters.com" title="Tim Peters">Tim J. Peters</a>, <a href="http://doreenscheller.de/" title="Doreen Scheller">Doreen Scheller</a> and Nadine Mlakar.
 
 # Getting started
 ## Requirements
